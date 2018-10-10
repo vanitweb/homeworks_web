@@ -1,0 +1,50 @@
+.name1{
+   width: 40px; 
+   height: 40px; 
+   background-color: white;
+   margin-top:100px;
+   margin-left: 100px;
+   z-index: 5;
+}
+
+.name2{
+  width: 60px; 
+  height: 60px; 
+  background-color: black;
+  margin-top: 90px;
+  margin-left: 90px;
+  z-index: 4;
+}   
+
+.name3{
+   width: 80px; 
+   height: 80px; 
+   background-color: blue;
+   margin-top: 80px;
+   margin-left:80px;
+   z-index: 3;
+}
+
+.name4{
+   width: 100px; 
+   height: 100px; 
+   background-color: green;  
+   margin-top:70px;
+   margin-left: 70px;
+   z-index: 2;
+ }
+
+.name5{
+   width: 120px; 
+   height:120px; 
+   background-color: red; 
+   margin-top: 60px;
+   margin-left:60px;
+   z-index: 1;
+   }
+   
+div{
+	position: absolute; 
+}
+
+

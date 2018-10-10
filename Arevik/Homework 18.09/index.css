@@ -1,0 +1,41 @@
+.name1{
+    background-color: red;
+    margin-left: 100px;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+.name2{
+    background-color:gold;
+    margin-left: 120px;
+    margin-top: 80px;
+    z-index: 5;
+}
+
+.name3{
+    background-color: blue;
+    margin-left: 140px;
+    margin-top: 60px;
+    z-index: 2;
+}
+
+.name4{
+    background-color: yellow;
+    margin-left: 160px;
+    margin-top: 40px;
+    z-index: 3;
+}
+
+.name5{
+    background-color: fuchsia;
+    margin-left: 180px;
+    margin-top: 20px;
+    z-index: 4;
+}
+
+div{
+	width: 100px;
+    height: 100px;
+	outline: 2px;
+	position: absolute;
+}
