@@ -1,0 +1,223 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	height:230vh;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	line-height:1.7em;
+}
+
+header {
+	width:100%;
+	height:15vh;
+	background-color:#000;
+	margin-bottom: 0;    
+}
+
+header img {
+	width:30%;
+	height:15vh;
+	margin-left:2em;
+}
+
+nav {
+	width:50%;
+	height:15vh;
+	float:right;
+}
+
+ul {
+	height:15vh;
+}
+
+ul li {
+	width: 10%;   
+	display:inline-block;
+	list-style-type:none;
+	color:#FFF;
+	margin:1em;
+	font-size: 1em;
+}
+
+
+
+.main {
+	width:100%;
+	height:100vh;
+}
+
+.main1 {
+	width:100%;
+	height:80vh;
+	background-image:url(images/Desert.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.par1 {
+	width:40%;
+	margin-top:37vh;
+	margin-right:1em;
+	font-weight:700;
+	font-size:100%;
+	background-color:#FFF;
+	color:#464245;
+	float:right;
+	padding:1.5em;
+	text-align: center;
+}
+
+.slide {
+	width:100%;
+	height:25vh;
+	background-color:#000;
+	display:flex;
+	justify-content:center;
+}
+
+.slide img {
+	width:16%;
+	height:13.5vh;
+	background-color:#000;
+	opacity:0.3;
+	justify-content:center;
+	margin:2em 1em;
+}
+
+footer {
+	position:relative;
+	display:flex;
+	flex-wrap: wrap;
+	word-break: break-all;
+	flex-direction:row;
+	width:100%;
+	justify-content:center;
+	padding:10em 0;
+}
+
+.logo1 {
+	text-align:center;
+	width:20%;
+	height:35vh;
+    margin: 1em;
+}
+
+footer img {
+	max-width:40%;
+}
+
+footer p {
+	font-size:.7em;
+	color:#959595;
+}
+
+h5 {
+	margin:1em;
+}
+
+.slide img:hover {
+	opacity:1;
+}
+
+@media screen and (max-width:660px) and (min-device-width:320px) {
+    body{
+        width: 100%;
+    }
+    
+    nav{
+        margin-left: 2em;
+        float: none;
+        
+    }
+    ul li{
+        display: block;
+        color:#000;
+        font-weight: 900;
+        font-size: 1.5em;
+    }
+   .par1 {
+        width:50%; 
+        margin-top: 45vh;
+        padding:.3em;
+        font-size: 60%;
+    }
+    header {
+        width: 100%;
+        height:10vh;
+    }
+    header img {
+        width: 60%;
+        height:10vh;
+        margin: 0 2em 0 2em;
+    }
+    .slide {
+        width: 100%;
+        height: 40vh;
+        display:block;
+        position: absolute;
+    }
+    .slide img{
+        width: 50%;
+        position: absolute;
+    }
+    
+    .pic1{
+        z-index: 1;
+        left:2em;
+        top:4em;
+    }
+    .pic2{
+        z-index: 2;
+        left:3em;
+        top:3em;
+    }
+    .pic3{
+        z-index: 3;
+        left:4em;
+        top:2em;
+    }
+    .pic4{
+        z-index: 4;
+        left:5em;
+        top:1em;
+    }
+    .pic5{
+        z-index: 5;
+        left:6em;
+        top:0;
+    }
+    .pic1:hover{
+        z-index: 6;
+    }
+    .pic2:hover{
+        z-index: 6;
+    }
+    .pic3:hover{
+        z-index: 6;
+    }
+    .pic4:hover{
+        z-index: 6;
+    }
+    .pic5:hover{
+        z-index: 6;
+    }
+    footer{
+        width: 100%;
+        margin-top: 7em;
+        padding: 1em;
+        display:inline-block;
+        position: absolute;
+        
+    }
+    .logo1 {
+        width:100%;
+        height: 50vh;
+        position: relative; 
+        margin: 0;
+    }
+    footer img {
+        width:20%;
+    }
+}
