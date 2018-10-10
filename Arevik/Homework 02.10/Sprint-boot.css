@@ -1,0 +1,46 @@
+.fon{
+    background-image: url(images/Desert.jpg);
+    background-size: cover;
+    height: 900px;
+}
+
+.text{
+    height: 40px;
+    text-align: center;
+    margin-top: 500px;
+}
+
+ul li{
+	margin-left: 30px;
+}
+
+.slide{
+    padding-top:20px;
+    padding-bottom:20px;
+ }
+
+.slide img{
+    opacity:0.3;
+	margin-top: 20px;
+}
+
+.slide img:hover{
+	opacity:1;
+}
+
+.logo1{
+       text-align: center;
+}
+
+.footer{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+
+
+
+
+
+
+
