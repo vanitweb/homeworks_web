@@ -1,0 +1,207 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family:sans-serif;
+}
+ .list a:hover {
+	color: #919191;
+}
+h1 {
+	font-size: 64px;
+}
+
+
+.green {
+        background: #28a745;
+		font-size: 16px;
+		width: 100%;
+		color:white;
+	}
+
+button  {	
+	color: white;
+	border: none;
+	border-radius: 2px;
+	padding: 20px;
+	font-size: 18px;
+}
+header {
+	background: #222;
+	display: grid;
+	padding: 15px 0;
+	width: 100%;
+	max-width:1824px;
+}
+
+nav {
+	margin: auto;
+	width: 75%;
+	max-width:1368px;
+}
+
+header li {
+	float: left;
+	margin-left: 3%;
+	list-style: none;
+	padding: 8px 2px;
+
+}
+nav input {
+	padding: 5px;
+	border: none;
+	border-radius: 4px;
+	background: #aaa;
+	width: 100%;
+	}
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+ul:nth-of-type(1) {
+	float: left;
+	width: 45%;
+	max-width: 615px;
+}
+
+ul:nth-of-type(2) {
+	float: right;
+	width: 50%;
+	max-width: 684px;
+}
+
+
+svg {
+	float: left;
+}
+span {
+	margin-right: 10px;
+	text-decoration: none;
+	cursor: context-menu;
+	color:gray;
+	
+}
+.main {
+	background: url(https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg) #2b3137;
+	display: grid;
+	width: 100%;
+	max-width:1824px;
+	padding-top: 64px;
+	padding-bottom: 64px;
+
+}
+.main>div {
+	z-index: 9999;
+	width: 75%;
+	max-width: 1368px;
+	margin: auto;
+	padding: 80px 0;
+}
+.left-section {
+	width: 54%;
+	max-width: 918px;
+	color: #fff;
+	float: left;
+}
+
+
+.main a{
+	color:white;
+}
+.main a:hover{
+	text-decoration: none;
+}
+
+form {
+	background: #FAFBFC;
+	padding: 25px;
+	float: right;
+	width: 38%;
+	border-radius: 5px;
+	}
+.p1{
+	text-align: left;
+}
+.main1 p{ 
+	font-size: 12px;
+	text-align: left;
+	color: #6a737d;
+	cursor: pointer;
+	margin: 10px 0;
+	text-align: center;
+}
+
+form input {
+	width: 90%;
+	padding: 12px;
+	margin: 10px 0;
+	font-size: 14px;
+	color: #9FA2A4;
+	border-radius:5px;
+}
+.main1 p a { 
+	color: #0366d6;
+	text-decoration:none;
+}
+.left-section p{
+	color: #AAACAF;
+	text-align: justify;
+	font-size: 21px;
+	line-height: 1.5;
+}
+
+.footer {
+	width: 100%;
+	max-width:1824px;
+	background-size: cover;
+	text-align: center;
+	margin: 0;
+	padding:0;
+
+	}
+	
+footer {
+	width: 100%;
+	margin: 0;
+	padding:0;
+	text-align: center;
+	border:1px;
+	display:inline;
+
+}
+h2 {
+	font-size: 30px;
+	width: 77%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+footer p {
+	color: #777;
+	line-height: 25px;
+    margin-bottom: 10px;
+	text-align: center;
+
+	
+}
+.blue{
+        background: blue;
+		color:white;
+
+}
+.left{
+	width:19%;
+	max-width: 320px;
+	float:left;
+	}
+	
+.right{
+	width:19%;
+	max-width: 320px;
+	float:right;
+	}
+	#btn1,#btn2{
+		color: white;
+		text-decoration:none;
+	}
+
+
