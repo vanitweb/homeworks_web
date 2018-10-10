@@ -1,0 +1,276 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.header {
+	padding: 10px;
+	background-color: #24292e;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.content-center {
+	justify-content: center;
+}
+
+.align-items {
+	align-items: center;
+}
+
+.list-style-none {
+	list-style: none;
+}
+
+.margin-auto {
+	margin: 1auto;
+}
+
+.margin-left16 {
+	margin-left: 16px;
+}
+
+.font-14 {
+	font-size: 18px;
+	color: white;
+}
+
+.max-width {
+	max-width: 960px;
+}
+
+.d-none {
+	display: none;
+}
+
+.flex-grow1 {
+	flex-grow: 1;
+}
+
+.flex-grow8 {
+	flex-grow: 8;
+}
+
+.image-href {
+	width: 35px;
+	height: 35px;
+}
+
+.image-href img {
+	width: 35px;
+	height: 35px;
+}
+
+.header-menu {
+	max-width: 900px;
+}
+
+.ma-lr {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+.search {
+	width: 200px;
+	height: 50px;
+}
+
+.search-input {
+	height: 30px;
+}
+
+.inp-width {
+	padding: 5px;
+	margin-left: -35px;
+}
+
+.b-rad {
+	border-radius: 5px;
+	width: 100%;
+}
+
+.ma-tb {
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.d-block {
+	display: block;
+}
+
+.t-dec {
+	text-decoration: none;
+}
+
+.t-b {
+	font-weight: bold
+}
+
+.d-inline-bl {
+	display: inline-block;
+}
+
+.list-style-type {
+	list-style-type: none;
+}
+
+.float-l {
+	float: left;
+}
+
+.m-w-500 {
+	max-width: 500px;
+}
+
+.pad-top-100 {
+	padding-top: 100px;
+}
+
+.m-w-300 {
+	max-width: 350px;
+}
+
+form > p {
+	text-align: center;
+}
+
+dd{
+	width: 100%;
+}
+
+.bg-image {
+	color: rgba(255, 255, 255, 0.6);
+	background-image: url("https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg");
+	background-color: #2b3137;
+	background-position: center 10%;
+	background-size: cover;
+}
+
+h1 {
+	font-size: 60px;
+	color: white;
+}
+
+.lead-mktg {
+	font-size: 22px;
+	font-weight: normal;
+	font-family: Helvetica Neue;
+	color: lightgrey;
+}
+
+.col-white {
+	color: white;
+}
+
+.bg-col-white {
+	background-color: white;
+}
+
+.mt-0 {
+	margin-top: 0;
+}
+
+.form-group {
+	margin: 15px 0;
+}
+
+p {
+	font-family: Helvetica Neue;
+	font-size: 12px;
+}
+
+.btn-large-mktg {
+	padding: 20px 32px;
+	font-size: 16px;
+}
+
+.btn-primary-mktg {
+	background-color: #2ebc4f;
+}
+
+.f4 {
+	font-size: 16px;
+}
+
+.padding {
+	padding: 30px;
+}
+
+label {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.py-sm-8 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.color {
+	color: black;
+}
+
+.enterprise-prompt {
+	background: url(/images/modules/site/patterns/dots-large.svg);
+	background-position: center 10%;
+}
+
+.footer-contain {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	max-width: 700px;
+	background: white;
+}
+
+footer {
+	background: url(https://github.com/images/modules/site/patterns/dots-large.svg);
+}
+
+.h1foot {
+	font-size: 45px;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.text-gray {
+	color: gray;
+	text-align: center;
+	font-size: 17px;
+}
+
+.main {
+	padding: 30px;
+}
+
+.btn-mktg {
+	display: inline-block;
+	padding: 16px 24px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #fff;
+	background-color: #1277eb;
+	border: 0;
+	border-radius: 3px;
+	transition: .2s;
+}
+@media screen and (max-width: 640px) {
+	.main {
+		display: block;
+	}
+	.main > div {
+		width: 100%;
+	}
+}

@@ -1,0 +1,198 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url(https://wallpapertag.com/wallpaper/full/f/3/a/133931-vertical-city-street-background-1920x1080-mac.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+header {
+	border-bottom-color: rgba(128, 128, 128, 0.2);
+    border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	display: inline-block;
+}
+
+.site-logo {
+	width: 15%;
+	padding: 5px;
+	text-align: center;
+}
+
+
+.site-logo img {
+	margin-right: 10px;
+	float: left;
+	width: 30px;
+	height: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a img {
+	width: 20px;
+	height: 20px;
+}
+
+.main {
+	margin: 25px auto;
+}
+
+.dir {
+	width: 40%;
+	padding: 20px;
+}
+
+.form {
+	padding: 20px;
+	background: rgba(10, 171, 154, 0.7);
+}
+
+h1 {
+	color: white;
+	font-size: 30px;
+}
+
+p {
+	color: white;
+}
+
+.href {
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	padding: 0;
+}
+
+.href a {
+	display: inline-block;
+	padding: 20px;
+	margin: 0 10px;
+	background: rgb(10, 171, 154);
+}
+
+.href :nth-child(2) {
+	background: rgb(173, 148, 22);
+}
+
+h3 {
+	color: white;
+	font-size: 20px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.recomendet {
+	flex-wrap: wrap;
+	padding: 25px;
+}
+
+.recomendet div {
+	padding: 20px;
+}
+
+.wordpress {
+	background: url(https://s.w.org/style/images/about/WordPress-logotype-standard.png);
+}
+
+.nodejs {
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT902X7BmDYgSHdzEcBfEBIOB4_nMoFJEutUsIn_zGMvERKZOqS);
+}
+
+.drupal {
+	background: url(https://www.ide.kz/wp-content/uploads/drupal-logo.png);
+}
+
+.jquery {
+	background: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Jquery-mobile-logo.png);
+}
+
+.angular {
+	background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/800px-AngularJS_logo.svg.png);
+}
+
+.text-contain {
+	padding-top: 30px;
+}
+
+.text-contain h2 {
+	font-size: 25px;
+	padding-bottom: 25px;
+}
+
+.footer-flex {
+	padding: 15px;
+}
+
+.footer-flex div {
+	height:150px;
+}
+
+.cofee {
+	background: url(https://media-cdn.tripadvisor.com/media/photo-s/11/7f/0c/7d/cofee.jpg);
+}
+
+.food {
+	background: url(https://tupelohoneycafe.com/wp-content/uploads/2018/04/39777732170_93f4f7a0c0_k-450x450.jpg);
+}
+
+.restaurant {
+	background: url(https://cdn.beachcomber-hotels.com/v8.beachcomber-hotels/img/content/restaurants/mu_d/450x450-l-harmonie.jpg);
+}
+
+.vacation {
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN8Gb7D3NPcjIHpAQQN8g-_ayAvhCeIOlsdjzrnPhsj7dAbUip);
+}
+
+.background {
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 640px) {
+	.site-logo {
+		display: none;
+	}
+}

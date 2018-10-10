@@ -1,0 +1,67 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header {
+	padding: 25px;
+	border: 2px;
+	border-bottom-style: dashed;
+}
+
+#check:checked ~ h1 {
+	direction: rtl;
+	font-size: 25;
+}
+
+.main {
+	padding: 25px;
+	border: 2px;
+	border-style: none dashed dashed none;
+	width: 50%
+}
+
+.contain {
+	border: 2px solid;
+	width: 90%;
+	height: 600px;
+	overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+p::first-letter {
+    font-size: 200%;
+    color: #8A2BE2;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.absolute {
+	position: absolute;
+	border: 1px;
+	width: 120px;
+	height: 120px;
+    top: 300px;
+    right: 100px;
+	background: url(http://pikchyriki.net/avatar/minony/120/3.jpg);
+	background-size: cover;
+}
+
+.absolute:hover {
+	background: url(https://www.linux.org.ru/photos/139767:675124446.jpg);
+	background-size: cover;
+}
+
+.fixed {
+    position: fixed;
+	border: 1px;
+	width: 120px;
+	height: 120px;
+    bottom: 0;
+    right: 0;
+	background: url(http://pikchyriki.net/avatar/minony/120/3.jpg);
+	background-size: cover;
+}
