@@ -1,0 +1,27 @@
+p{
+    margin: 30px;
+}
+
+.check1:checked ~.text1, .check2:checked ~.text2, .check3:checked ~.text3{
+	column-rule: 3px solid green;
+}
+
+.check1:checked ~.text1{
+    column-count: 3;
+}
+
+.check2:checked ~.text2{
+    column-count: 2;
+}
+
+.check1:not(:checked) ~.text1 {
+    display:none;
+}
+
+.check2:not(:checked) ~.text2 {
+     display:none;
+}
+
+.check3:not(:checked) ~.text3 {
+     display:none;
+}
