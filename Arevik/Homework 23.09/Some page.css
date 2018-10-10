@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    position: absolute;
+}
+
+header{
+    width: 100%;
+    padding: 1em;
+    border-bottom: 0.2em dashed black;
+}
+input{
+  width: 2em;
+  height: 2em;
+}
+
+content{
+    width: 100%;
+   
+}
+
+.side_L{
+   width: 70%; 
+   margin-bottom: 5em;
+   text-align: justify; 
+   display: inline-block;
+   float: left;
+   padding: 2em;
+   border-right: 0.2em dashed black;
+   border-bottom: 0.2em dashed black;
+}
+
+h1{
+    margin-bottom: 1em;
+}
+
+.side_R{
+    width: 30%; 
+    float: right;
+    display: inline;
+    margin-bottom: 1em;  
+    
+}
+
+.pic1, .pic2{
+    width: 20%;
+    position: absolute;
+    top: 5em;
+    right: 1em;
+}
+
+.pic1{
+    z-index: 2;
+    cursor: pointer;
+}
+.pic2{
+    z-index: 1;
+}
+
+.pic3{
+    width: 20%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+p::first-line{
+    color:aqua;
+}
+
+.pic1:hover ~ .pic2{
+    z-index: 3;
+}
+
+#check[type="checkbox"]:checked h1{
+    direction: rtl;
+}
+
+
+
