@@ -1,0 +1,61 @@
+
+#kvadrat1 {
+	width: 50px;
+	height: 50px;
+	background: red;
+	top: 600px;
+	left: 20px;
+	position: absolute;
+    z-index: 4;
+}
+#kvadrat2 {
+	width: 100px;
+	height: 100px;
+	background: blue;
+	top: 620px;
+	left: 40px;
+	position: absolute;
+    z-index: 3;
+}
+#kvadrat3 {
+	width: 150px;
+	height: 150px;
+	background: yellow;
+	top: 640px;
+	left: 60px;
+	position: absolute;
+    z-index: 2;
+}
+#kvadrat4 {
+	width: 200px;
+	height: 200px;
+	background: gray;
+	top: 660px;
+	left: 80px;
+	position: absolute;
+    z-index: 1;
+}
+#kvadrat5 {
+	width: 250px;
+	height: 250px;
+	background: pink;
+	top: 680px;
+	left: 100px;
+	position: absolute;
+    z-index: 0;
+}
+.div5 {
+	background-color: #eee;
+    width: 200px;
+    height: 100px;
+    border: 1px dotted black;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+label {
+	width: 150px;
+	display: inline-block;
+	cursor: pointer;
+}

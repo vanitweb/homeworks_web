@@ -1,0 +1,87 @@
+input {
+	width: 200px;
+	height: 20px;
+	margin-left: 5px;
+}
+
+.one {
+	width: 100%;
+	top: 1px;
+	height: 40px;
+	border-bottom: 2px dashed blue;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+#div2 {
+	overflow: scroll;
+	width: 40%;
+	height: 250px;
+	background-color: rgba(204, 230, 255, 0.5);
+	text-align: justify;
+	padding: 6px;
+	margin-left: 30%;
+	margin-top: 40px;
+}
+
+p::first-line {
+	background-color: yellow;
+}
+
+.div1 {
+	width: 60%;
+	height: 350px;
+	top: 60px;
+	position: absolute;
+	border-right: 2px dashed blue;
+	border-bottom: 2px dashed blue;
+}
+
+.div3 {
+	margin-left: 85%;
+}
+
+.picture1 {
+	margin-top: 10px;
+	position: fixed;
+}
+
+.picture2 {
+	margin-top: 250px;
+	position: fixed;
+}
+
+img:last-child {
+	display: none;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+p:hover img:last-child {
+	display: block;
+}
+
+p:hover img:first-child {
+	display: none;
+}
+
+body {
+	border: 2px solid blue;
+	height: 450px;
+}
+
+#titul {
+	width: 30%;
+	height: 100px;
+	margin-left: 27%;
+}
+
+input[value="1"]:checked~div[id="titul"] {
+	direction: rtl;
+}
+COPY TO CLIPBOARD

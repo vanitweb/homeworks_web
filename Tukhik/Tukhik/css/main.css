@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.color {
+	background-color: #24292e;
+	height: 70px;
+}
+.section1 {
+	background: url(https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg) #2b3137;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 650px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+	padding-left: 26%;
+	padding-top: 1%;
+}
+
+.menu li {
+	margin-right: 1%;
+}
+
+.menu a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.5em;
+	font-family: "Open Sans";
+}
+
+.menu a:hover {
+	color: #636568;
+}
+
+.menu input {
+	border: 1px solid #24292e;
+	border-radius: 6px;
+	width: 75%;
+	height: 60%;
+	background-color: #636568;
+	padding-left: 10px;
+}
+
+.menu input:focus {
+	background-color: #fff;
+}
+
+.menu p {
+	padding-top: 61%;
+	font-size: 1.2em;
+	color: gray;
+}
+
+.li1 {
+	cursor: pointer;
+}
+
+.li1:hover {
+	color: #636568;
+}
+
+h1 {
+	color: #fff;
+	font-size: 3em;
+	margin-left: 10%;
+	padding-top: 1%;
+	margin-left: 1px;
+	font-family: "Open Sans";
+}
+.div1 {
+	width: 33%;
+	font-size: 1.5em;
+	margin-left: 27%;
+	padding-top: 10%;
+	font-family: "Open Sans";
+}
+.div1 p {
+	margin-left: 1px;
+	text-align: justify;
+}
+.div2 {
+	width: 20%;
+	height: 8%; 
+	top: 15%;
+	left:1%;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: white;
+	margin-left: 63%;
+	margin-top: 1px;
+	padding-top: 2%;
+	margin-right: 1%;
+	padding-bottom: 20%;
+	position:absolute; 
+	color: black;
+
+}
+.div2 input{
+	border: 1px solid grey;
+	border-radius: 5px;
+	width: 90%;
+	height: 55px;
+	background-color: #fff;
+	padding-left: 1%;
+}
+.div2 p {
+	margin-left: 20px;
+	font-size: 14px;
+}
+.text {
+	text-align: center;
+}
+.btn {
+	padding-top: 20px;
+    padding-right: 32px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    margin-left: 22px;
+    width: 82%;
+    color: white;
+    background-color: #2ebc4f;
+}
+.btn:hover {
+    background-color: #28a745;
+    color: white;
+    }
+.container {
+	height: 100px;
+	top: 40px;
+	bottom: 45px;
+	padding-top: 1px;
+    padding-right: 32px;
+	color: black;
+	width: 57%;
+	margin: 0 auto;
+    }
+.h1-mktg{
+	font-size: 38px;
+	font-weight:500;
+	color:black;
+	text-align: center;
+}
+.end {
+	color: #586069;
+	 text-align: center;
+	 font-size: 16px;
+	 margin-bottom: 16px ;
+}
+.btn1 {
+	font-size: 14px;
+    padding: 16px 24px;
+    color: #fff;
+    background-color: #1277eb;
+    border: 0;
+    border-radius: 3px;
+    transition: .2s;
+    margin-left: 500px;
+}
+.btn1:hover {
+    background-color: #0366d6;
+    color: white;
+    }
+nav {
+	position: fixed;
+}
