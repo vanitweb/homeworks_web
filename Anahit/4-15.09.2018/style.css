@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-size: 100%; 
+    background-attachment: fixed;
+    border-style: none;
+    opacity: 05;
+    background: #253033;
+}
+header { 
+   background: #13181A;
+}
+nav {
+    background: #13181A;
+    width: 70%;
+    margin: auto;
+    padding: 1em;
+}
+ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 0.3em;   
+}
+img {  
+    height: 2em;
+    width: 2em;
+}
+div {
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 10%;
+    width: 35%;
+     
+}
+div p {
+    color: grey;
+    font-size: 1.3em;
+    font-family: sans-serif;
+}
+div h1 {
+    color: white;
+    font-size: 3em;
+    font-family: sans-serif;
+}
+li a {
+    font-size: 0.9em;
+    border: 0;	
+    color: white;
+    background: transparent; 
+}
+li a:hover{
+     color: grey;
+}
+li span {
+   margin:0.5em;
+   font-size:0.8em;
+   color: grey;
+}
+li input {
+    padding: 0.5em;
+    border-style: none;
+    font-size: 0.9em;
+    color: grey;
+    opacity: 0.7;
+    background: #253033;
+    margin-left: 5em ;
+}
+li button {
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 0;
+    color: white;
+    background: transparent;
+} 
+form{
+    width:25%;
+    position: absolute; 
+    padding: 1%; 
+    margin-left: 55%;
+    margin-top: 5%;
+    background: #FFFFFF;
+}
+form label {
+    font-size: 0.8em;
+    color: grey;
+    font-family: sans-serif;
+    margin:0.5em;
+}
+form input {
+    width: 80%;
+    height: 5%;
+    font-size: 0.9em;
+    color: grey;
+    font-family: sans-serif;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+form p {
+    font-size: 0.7em;
+    color: grey;
+    font-family: sans-serif;
+    margin:0.5em;   
+    text-align: center;
+
+}
+form button {
+    width: 90%;
+    height: 6vh;
+    font-size: 0.9em;
+    border: 0;
+    color: white;
+    background: green;
+    opacity: 0.8;
+    border-radius: 0.128em;
+}
+footer {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height:30%;  
+    background-image: url(./background.jpg); 
+}
+footer h2 {
+    margin-left:25%;    
+    font-size: 2em;
+    font-family: sans-serif;
+}
+footer p {
+    color: grey;
+    font-size: 1em;
+    font-family: sans-serif;
+    margin-top: 3%;
+    text-align: center; 
+}
+footer div{
+    position:absolute;
+    width: 60%;
+    padding: 2em;
+    display: block;
+    margin: 2% 20% 2% 20%;
+    background:#FFFFFF;
+}
+footer button {
+    height: 4vh;
+    width: 10vw;
+    padding: 0.4em;
+    font-size: 1em;
+    border: 0;
+    color: white;
+    background: #33BBFF;
+    margin-left:40%;
+    margin-top: 3%;
+}
+a{
+   color: white;
+}
+.blulink{
+    color: #33BBFF;
+}
