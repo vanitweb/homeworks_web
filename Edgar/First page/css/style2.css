@@ -1,0 +1,392 @@
+ /*--------------------------fonts import start-------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+ /*-------------------------- fonts import end--------------------------*/
+*{
+    box-sizing: border-box;
+    transition: all .3s;
+}
+body {
+  font-family: 'Raleway', sans-serif !important;
+  border-right-color: #dedede;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+    width: 100%;
+  max-width:100%;
+}
+.A{
+   width: 100%;
+   height: auto;
+   background-image: url(../img/My_img_2.jpg);  
+   margin:  0 auto;
+   background-position:center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.B,
+.C_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.B,
+.C_1
+{
+   /* background-color: tomato;*/
+    width: 70%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 50px 0;
+  /*  border: 5px solid black;*/
+    
+}
+.B_1_main{
+    background-color: #f1f1f1;
+}
+.B_1{
+     margin: 0 auto;
+     height: 100%;
+     padding-top: 10px;
+    /* width: 70%;*/
+}
+
+.C{
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px 250px;
+}
+
+hr{
+    width: 30px;
+    height: 2px;
+    text-align: center;
+    border: 1px solid #f39c12;
+}
+.cols .col_1,
+.cols .col_2{
+    
+    width: 45%;
+    float: left;
+    margin: 1%;
+    padding: 10px;
+    
+}
+
+.logo{
+    text-align: center;
+    margin-bottom: 60px;
+    
+}
+.col_1 h1{
+    padding: 0px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 45px;
+}
+.col_1 p  {
+    color: #f1f1f1;
+    font-size: 17px;
+    line-height: 28px;
+    margin-top: 0px;
+    font-weight: 300;
+    padding: 0px;
+    margin-bottom: 30px;
+}
+.col_2 p{
+    float: right;
+}
+
+/*--------------------------Section 2 start--------------------------*/
+.container_3 .col_3{
+    text-align: right;
+    float: left;
+    position: relative;
+}
+.container_3>div{
+    width: 40%;
+    display: inline-block;
+    margin-right: 10%;
+        
+}
+/*
+.gg:before {
+    content: url(../img/jam.svg); 
+    position: absolute;
+
+
+
+   
+}*/
+[id=svg]{
+position: absolute;
+left: 45%;
+top: 128%;
+
+}
+[id=svg_2]{
+position: absolute;
+left: 45%;
+top: 140%;
+
+}
+[id=svg_3]{
+position: absolute;
+left: 45%;
+top: 152%;
+
+}
+[id=svg_icon]{
+   
+    width: auto;
+
+
+    cursor: pointer;
+}
+#svg_icon img{
+    background-color: #9E8446;;
+    fill:green;
+    color: beige;
+    width: 17px;
+    height: 18px;
+}
+[type~=button], h1, h2, h3 {
+    text-transform: uppercase;
+    padding: 10px;
+}
+video_title+h2{
+    padding: 0px;
+}
+#gg_3 p{
+  margin-bottom:20px;/*vor heraxosy mi gci vra lini*/
+}
+h3 {
+    padding-left: 0px;
+}
+
+
+/*--------------------------Section 2 end--------------------------*/
+
+
+
+
+/*--------------------------Section 3 start--------------------------*/
+.C_1_main{
+    background-color: #E4E4E4;
+} 
+
+.container_section_3,/*1 u 3 elementneri =-uny*/
+.cols{
+   /* display: inline-block;
+    margin: 0 5%;*/
+    display: table-cell;
+    vertical-align: middle;
+}
+.container_section_3>div{
+    float: left;
+    width: 45%;
+    margin-right: 2%
+}
+
+/*--------------------------Section 3 end--------------------------/
+
+
+
+/*--------------------------@media start--------------------------*/
+@media (max-width: 768px) { 
+
+    .col_3_2,
+    .C
+    {
+        text-align: center;
+        width: 100%;
+        float: none;
+        padding: 15px;
+        margin-top: 15px;
+        display: inline-block;
+        
+    }
+      .container_section_3>div
+    {
+        text-align: center;
+        width: 100%;
+        float: none;
+        padding: 15px;
+        margin-top: 15px;
+        display: block;
+        
+    }
+    .col_3_2{
+        position: relative;
+    }
+    .C{
+    margin-top: 15px;
+    text-align: center;
+ 
+    padding: 10px;
+    width: 100%;
+    }
+    .container_3 .col_3{
+        display: none;
+    }
+    .container_3 .col_3_2{
+        width: 100%;
+        display: block;
+       
+    }
+    h1{
+      padding-top: 30px;
+    }
+    .gg:before{
+    position: absolute;
+    width: 20px; 
+    height: 20px; 
+    align-content: center;
+    }
+}
+
+@media (max-width: 991.98px) { 
+    
+     .container_3>div,
+    .container_3 .col_3,
+     .section_3 .video_title,
+    .my_video,
+    .col_3_2,
+     .C{
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 20px;
+    }
+    [id*=svg]{
+        position: relative;
+        left: 0px;
+        
+    }
+    img .col_3,
+    .col_2 img{
+        position: absolute;
+        display: none;
+    }
+    .col_1
+    {
+        width: 100% !important;
+        text-align: center;
+        clear: both;
+        margin: -10% auto;
+    }
+
+    .A{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+}
+
+  
+
+@media (max-width: 468px) {
+    .col_3 img{
+        height: 200px;
+        width: auto;
+    }
+    .gg>img{
+        width: 25px;
+        height: 25px;
+    }
+    [id="svg_icon"] {
+    padding-right: 0px !important; 
+    }
+    [id="svg_icon"]::after{
+        padding: 0px;
+    }
+   
+}
+
+@media (min-width: 1900px){
+[id=svg]{
+position: absolute;
+left: 45%;
+top: 95%;
+
+}
+[id=svg_2]{
+position: absolute;
+left: 45%;
+top: 101%;
+
+}
+[id=svg_3]{
+position: absolute;
+left: 45%;
+top: 108%;
+
+}
+.col_3 img{
+    height: 525px;
+    width: auto;
+}
+}
+@media (max-width: 1441px) and (min-width: 885px)  {
+    [id=svg]{
+position: absolute;
+left: 45%;
+top: 142%;
+
+}
+[id=svg_2]{
+position: absolute;
+left: 45%;
+top: 154%;
+
+}
+[id=svg_3]{
+position: absolute;
+left: 45%;
+top: 166%;
+
+}
+}
+/*--------------------------@media end*--------------------------------------*/
+
+/*--------------------------buttons start-------------------------- */
+
+[id=my_btn_1]{
+    background-color: transparent;
+    border: 1px solid #9E8446;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #9E8446;
+    font-size: 16px;
+}
+[id=my_btn_3]{
+    color: #929292;
+    background-color: transparent;
+    border: 1px solid #929292;
+    border-radius: 3px;
+    padding: 12px 35px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#my_btn_1:hover,
+#my_btn_3:hover{
+    background-color: #f39c12;
+    color: #fff;
+    transition: all 1s; 
+}
+[type~=button], h1, h2 {
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+[id=svg_icon]{
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: normal;
+}
+/*--------------------------buttons end --------------------------*/
+
