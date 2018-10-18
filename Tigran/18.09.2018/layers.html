@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+  <head> <title> Layers position </title>
+   <style>
+    div {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+    
+        }
+    .a {
+ 	   background-color:  red;
+ 	   top: 0px;
+ 	   left: 0px;
+ 	   z-index: 1;
+       }
+    .b{
+    	background-color:  blue;
+ 	   top: 30px;
+ 	   left: 30px;
+ 	   z-index: 5;
+      }
+ 
+    .c{
+ 	    background-color:  green;
+ 	    top: 60px;
+ 	    left: 60px;
+ 	    z-index: 3;
+      }
+    .d{
+ 	   background-color:  yellow;
+ 	   top: 90px;
+ 	   left: 90px;
+ 	   z-index: 2;
+      }
+  </style>
+</head>
+
+  <body>
+
+     <div class="a"> layer1 </div>
+     <div class="b"> layer2 </div>
+     <div class="c"> layer3 </div>
+     <div class="d"> layer4 </div>
+
+  </body>
+  
+</html>
