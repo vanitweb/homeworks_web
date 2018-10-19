@@ -1,0 +1,50 @@
+/* ^ sksel;
+$ vernagrum;
+* cankacac tex; */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.h1  {
+  color: #5b5b5b;
+  font-size: 150px;
+  background-color: #4c001a;
+  text-align: center;
+}
+
+.span {
+  color: #4c001a;
+  background-color: #5b5b5b;
+  font-size: 200px;
+}
+.marq {
+  background-color: #5b5b5b;
+  direction: left;
+  color: #4c001a;
+}
+/* input [type = password]{
+  background-color: blue;
+} */
+
+/*body {
+  width: 100%; /* kara grvi px, %, vw(vivport width), rem( = 16px) /
+  height: 100vh; /* kara grvi px, %, vh, /
+  color: #ffffff; /* rgba(255(max), 255,255, (tapancikutyun 0 ic 1))  /
+  background-color: #fff;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover; /*   nkar@ dzgel sax saytov    /
+  background: /* ...., ..., ..., ..., ...,; /;
+  font-size: 789px;
+  font-family: cursive;
+  font-style: oblique;
+  font-variant: small-caps;
+  border: 2px dotted #fff;
+  border-radius: 50% ;
+  margin: 0 0 0 0; /*  auto   /
+  padding:  0 0 0 0;
+  box-sizing: border-box; /* ira chaper@ pahm a /
+  float : rigth ......................... ;   tnayin !!!!!!!!!!!!!!!!
+  display : ................ ;   tnayin !!!!!!!!!!!!!!!
+} */

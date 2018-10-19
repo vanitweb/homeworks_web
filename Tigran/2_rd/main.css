@@ -1,0 +1,13 @@
+* {
+  text-decoration: none;
+  text-align: center;
+  line-height: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  border: 2px solid duble,doted,dashed,inset,none,outset,
+  border 2px
+  border-left-style:dotted;
+  position: absolute, fixed, relative, sticky,static;
+  z-index: 1,2,3,4,5;
+  overflow: scroll visible, hidden, ;
+}
