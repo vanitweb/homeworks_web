@@ -24,7 +24,7 @@ console.log(`2`);
 console.log(`3`);
 for(let j = 4; j <= 100; j++) {
 	let count = 0;
-	for(let k = 2; k <= math.sqrt(j); k++) {
+	for(let k = 2; k <= Math.sqrt(j); k++) {
 		if(j % k){
 			continue;
 		}
