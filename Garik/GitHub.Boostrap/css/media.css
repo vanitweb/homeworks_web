@@ -1,0 +1,95 @@
+@media only screen and (max-width: 1720px){
+
+    .dot {
+        background: #FFF;
+    }
+}
+@media only screen and (max-width: 1199px){
+    form input{
+        width: 130%;
+    }
+    nav, .search{
+        display: none;
+    }
+    form{
+        height: 86%;
+    }
+}
+@media only screen and (max-width: 991px){
+    form {
+        height: 89%;
+        width: 108%;
+    }
+    footer button{
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 767px){
+    .built h1 {
+        margin-top: 5%;
+    }
+    .built{
+        text-align: center;
+    }
+    
+    section{
+        height: 900px;
+    }
+    form{
+        margin-top: 12%;
+        width: 60%;
+        margin-left: 19%;
+    }
+}
+@media only screen and (max-width:530px){
+    form input{
+        width:120% ;
+    }
+}
+@media only screen and (max-width:500px){
+    form label,form p{
+        display: none;
+    }
+    form input[type=submit]{
+        width: 100%;
+        margin-left: 0%;
+    }
+    form{
+        margin-top: 1.8%;
+    }
+    section{
+        height: 500px;
+    }
+}
+@media only screen and (max-width:433px){
+    footer h1{
+        font-size: 2em;
+    }
+}
+@media only screen and (max-width:429px){
+    footer button{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .built h1{
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width:360px){
+    .built h1{
+        font-size: 3.5em;
+    }
+    
+    footer h1{
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width:320px){
+    .built h1{
+        font-size: 3em;
+    }
+}

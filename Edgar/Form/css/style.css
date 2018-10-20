@@ -1,0 +1,42 @@
+.main__form,
+.mainF{
+    margin:  auto;
+    width: 700px;
+}
+#my__text:hover{
+    content: 
+}
+.main{
+	background: lightblue;
+	height: 80px;
+	margin-top: 15px;
+    position:relative;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+}
+.list{
+   
+	text-decoration: none;
+	list-style: none;
+    text-align: center;
+	
+}
+.list__item{
+	display: inline-block;
+	padding: 15px;
+	background: green;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 10%;
+	outline: 2px solid #000;
+	outline-offset: -5px; 
+}
+
+.main__list{
+	 position: absolute;
+	 bottom: 0px;
+
+}

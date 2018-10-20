@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+      <link rel="stylesheet" href="css/style.css">
+      <title>My Homework</title>
+   </head>
+   <body>
+   <!--Section A Start-->
+<!-- <form class="main__form">
+  <div class="form-group">
+    <label for="nikogosjanedgar@gmail.com">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+                
+  <!--
+         <form action="" class="mainF needs-validation">
+           <div class="row">
+               <div class="col order-1">
+                       <div class="form-group">
+                <label for="Lastname">Lastname</label>
+                 <input type="text" name="Lastname" id="Lastname" class="form-control">
+                 <small class="form-text text-muted">
+                     Այստեղ պետք է լինի ձեր ազգանունը
+                 </small>
+            </div> 
+               </div>
+               <div class="col ofset-1">
+                <div class="form-group">
+                <label for="Firstname">Firstname </label>
+                 <input type="text" name="Firstname" id="Firstname" class="form-control is-invalid">
+                 <small class="form-text text-muted">
+                     Այստեղ պետք է լինի ձեր անունը
+                 </small>
+            </div>
+               </div>
+           </div>
+           <div class="form-group">
+                <label for="username">Username </label>
+                 <input type="text" name="username" id="username" class="form-control is-invalid" required>
+                 <div class="invalid-feedback">Please enter valid Username</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                  <input type="password" name="password" id="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Gender</label>
+                 <select name="gender" id="gender" class="form-control">
+                     <option value="Male">AS</option>
+                     <option value="Male">Ab</option>
+                     <option value="Male">Ac</option>
+                     <option value="Male">Ad</option>
+                 </select>
+
+            </div>
+        
+                <div class="form-check">
+                 <input type="checkbox" id="accept-terms" class="form-check-input">
+                 <label for="accept-terms" class="form-check-label">Accept-terms</label>
+                 </div>
+                 <button class="submit btn-success btn-lg btn-block">Submit</button>
+         </form>-->
+         
+   
+         
+               
+      <form action="" class="mainF" name="myFormName">
+    <div class="form-group">
+        <label for="nikogosjanedgar@gmail.com">Email address</label>
+        <input type="email" class="form-control" onkeyup="check();" id="email">
+        <small class="form-text text-muted">Այստեղ պետք է լինի ձեր Email-ը </small>
+    </div>
+
+
+    <div class="form-group">
+        <label for="customRange2">Example range</label>
+        <input type="number" class="form-control" min="0" max="10" id="customRange2" required data-toggle="popover" data-placement="top" data-content="Տույլատրելի է 0-10 միջակայքը" title="Տույլատրելի է 0-10 միջակայքը">
+          <div class="valid-feedback">
+        Good!
+      </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" title="My hover text1" id="username" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Now hover out." requered>
+        <small class="form-text text-muted">
+                     Այստեղ պետք է լինի ձեր Username-ը
+                 </small>
+        <div class="invalid-feedback text-muted"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="my__text">Some text</label>
+        <input type="text" class="form-control" data-toggle="tooltip" data-html="true" title="My hover text2" name="name" id="my__text">
+
+
+    </div>
+    <div class="form-check" data-toggle="popover" data-placement="top" title="Popover title" data-content="And here's">
+        <input type="checkbox" onclick="agreeForm(this.form)" name="agree" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Ես համաձայն եմ պայմանների հետ</label>
+
+    </div>
+    <button type="submit" class="btn btn-primary" name="submit" disabled>Submit</button>
+</form>
+
+
+<div class="main">
+	<div class="main__list">
+		<ul class="list">
+		<li class="list__item">Index1</li>
+		<li class="list__item">Index2</li>
+		<li class="list__item">Index3</li>
+		<li class="list__item">Index4</li>
+		<li class="list__item">Index5</li>
+		</ul>
+	</div>
+</div>
+
+  <script>
+   function agreeForm(f) {
+   
+    if (f.agree.checked) f.submit.disabled = 0 
+
+    else f.submit.disabled = 1
+   }
+      
+      $(function () {
+  $('[data-toggle="popover"]').popover()
+})
+  </script>
+         
+         
+         
+   
+         
+         
+          
+   
+   <link rel="stylesheet" href="bootstrap/js/bootstrap.bundle.js">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   </body>
+</html>

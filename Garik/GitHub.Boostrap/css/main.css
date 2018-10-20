@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+    font-family: "Open Sans";
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+/*header<<<<*/
+header ul{
+    display: inline-flex;
+}
+header{
+    color: #999b9e;
+    height: 60px;;
+    background-color: #24292e;
+}
+header a{
+    font-size: 1.15em;
+    color: #FFF;
+}
+
+header ul li{
+    margin-left: 5%;
+}
+.search{
+    padding-left: 12%;
+}
+
+header .logo , nav , .search{
+    padding-top: 2vh;
+}
+
+header input{
+    border-radius: 2%;
+    padding-left: 5%;
+    border-style:none;
+    background-color: #404448;
+    width: 45%;
+    height: 30px;
+}
+
+header input:focus{
+    background-color: #FFF;
+}
+
+header a:hover{
+    color: #919191;
+    text-decoration: none;
+}
+/*header>>>>>*/
+/*section<<<<*/
+section {
+	background: url(https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg) #2b3137;
+	background-color: rgba(36,41,46,0.95);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 610px;
+}
+.built {
+	width: 95%;
+
+}
+.built h1{
+	margin-top: 40%;
+	font-size: 4.5em;
+	color: #fff;
+}
+.built p {
+	color: #adafb2;
+	font-size: 1.19em;
+}
+.built a {
+	color: #fff;
+	border-bottom: 1px solid #adafb2;
+}
+.built a:hover {
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+form {
+	width: 82%;
+	background-color: #fff;
+	margin-top: 17%;
+	height: 83%;
+	border-radius: 2%;
+}
+form p {
+	color: #3e4042;
+	margin-left: 6%;
+
+}
+
+form a{
+    color: #0d33dd;
+}
+
+section a{
+    font-size: 1em;
+}
+
+form input {
+    background-color: #FFF;
+	width: 162%;
+	height: 45px;
+	border-style: none;
+	border: 1px solid #d1d5da;
+	border-radius: 4px;
+	margin-left: 13%;
+	padding-left: 7%;
+	font-size: 1em;
+}
+form input[type=submit] {
+	width: 90%;
+	height: 64px;
+	border-style: none;
+	background-color: #2ebc4f;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 1em;
+	margin-left: 5%;
+	cursor: pointer;
+}
+form input[type=submit]:hover{
+	background-color: #0ba816;
+}
+label p {
+    padding-left: 8%; 
+    padding-top: 1%;
+}
+
+.form_p1{
+    font-size: 0.7em;
+    font-family: "Open Sans";
+}
+
+.form_p2{
+    font-size: 0.7em;
+    text-align: center;
+    margin-right: 8%;
+}
+/*section>>>>>*/
+/*footer<<<<<*/
+footer {
+	height: 230px;
+}
+.footer {
+	text-align: center;
+	margin-top: 5%;
+}
+footer p {
+	padding-top: 3%;
+	color: #8d9093;
+	font-family: "Open Sans";
+}
+footer button {
+	width: 18%;
+	height: 55px;
+	border-style: none;
+	background-color: #1277eb;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+}
+footer button:hover{
+	background-color: #0d33dd;
+}
+.dot {
+	background-image: url(../img/7911.png),url(../img/7911.png) ;
+	background-position: left, right;
+    background-repeat: repeat-y, repeat-y;
+    height: 230px;
+}
+footer a:hover {
+	color: blue;
+	border-bottom: 1px solid;
+	text-decoration: none;
+}
+/*footer>>>>>*/
