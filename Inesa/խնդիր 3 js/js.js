@@ -6,7 +6,7 @@ for(var i = 0; i < 8; i++)
 			var temp = a[i];
 			a[i] = a[i+1];
 			a[i+1] = temp ; 
-			swapped = true;
 		}
 		else{}
 }
+console.log(a);
