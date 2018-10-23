@@ -7,6 +7,6 @@ for(var i = 0; i < 8; i++)
 			a[i] = a[i+1];
 			a[i+1] = temp ; 
 		}
-		else{}
+	else{}
 }
 console.log(a);
