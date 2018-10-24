@@ -32,7 +32,7 @@ console.log(`Սկզբնական մասիվ - [${massiv}];`);
 let number;
 for(let j = 0; j < massiv.length; j +=2) {
 	number = massiv[j];
-    massiv[j] = massiv[j+1];
+	massiv[j] = massiv[j+1];
 	massiv[j+1] = number;
 
 }
