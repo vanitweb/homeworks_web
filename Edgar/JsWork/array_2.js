@@ -64,7 +64,6 @@ for(i = 0; i < len; i++) {
 } 
     arr[i][len-j-1] = 1;
 }
-
 for(i = 0; i < len; i++) {
     for(j = 0; j < len; j++) {
         if( arr[i][j] !== 1){
