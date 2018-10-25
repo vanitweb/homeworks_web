@@ -62,9 +62,6 @@ for(let i = 0 , length = arr_4[i].length; i < length; i++){
     }//3-rd
     for(let j = i +1; j < arr_4.length - i; j++){
          arr_4[arr_4.length-1 -i][j] = 4
-    }//4-rd
-
-
-   
+    }//4-rd   
 }
 console.log(arr_4)
