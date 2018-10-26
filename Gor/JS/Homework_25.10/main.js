@@ -18,3 +18,40 @@ function summArray(arr) {
     return summ;
 }
 console.log(summArray(myFunc(1, 20, 2)));
+//նետերի քանակը
+function Arrow(sequence) {
+    let funcSeq = sequence;
+    let count = 0;
+    let item = 0;
+    let len = funcSeq.length;
+    while(item <= len - 4) {
+        if(funcSeq[item] === '<' && funcSeq[item + 1] === '-') {
+            item += 1;
+            while(funcSeq[item] === '-') {
+                item += 1;
+            }
+            if(funcSeq[item] === '<' && funcSeq[item + 1] === '<') {
+                count++;
+                item += 1;
+            }
+        }
+        item++;
+    }
+    item = 0;
+    while(item <= len - 4) {
+        if(funcSeq[item] === '>' && funcSeq[item + 1] === '>' && funcSeq[item + 2] === '-') {
+            item += 2;
+            while(funcSeq[item] === '-') {
+                item += 1;
+            }
+            if(funcSeq[item] === '>') {
+                count++;
+                item += 1;
+            }
+        }
+        item++;
+    }
+    return count;
+}
+let seqArrow = "<<<-->>>>-->><----<<<----<<>>-->>";
+console.log(Arrow(seqArrow));
