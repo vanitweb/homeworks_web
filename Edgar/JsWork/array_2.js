@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+const arr = [];
+let len,k;
+for (let i = 0; i<10; i++){
+ arr[i] = [];
+}
+
+for (let j = 0, k = arr.length,  len = arr.length; j<len; j++){
+arr[j][k] = 1;
+console.log(arr);
+k--;
+}
+/*console.log(k);*/
+=======
 // փոփոխություն անկյունագծով  
 const massiv3 = [];
 let j;
@@ -71,11 +85,6 @@ for(i = 0; i < len; i++) {
         } 
     }
 }
-for(i = 0; i < 4; i++) {
-    for(j = 1; j < len-1; j++) {
-    if( arr[i][j] !== 1 ){
-        arr[i][j] = 0; 
-    }
-    }
-}
+
 console.log(arr);
+>>>>>>> 2d471ad1112597a0f7b65217c819146ccf6cdf1c

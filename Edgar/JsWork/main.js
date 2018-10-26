@@ -1,13 +1,18 @@
-var i, j, parz;
-      
+let i, j, parz;    
 for (i = 3; i < 100; i++) {
-    parz = true;
-    for (j = 2; j < i; j++)
-    if (i % j === 0) {
+parz = true;
+    for (j = 2; j < i; j++){
+        if (i % j === 0) {
         parz = false;
     }
+}
     if (parz) {
         console.log(` ${i} թիվը պարզ է:`);
+    }
+}
+
+     }
+
         }
 }
 /*ամենաշատ հանդիպող էլեմենտը(ները) նշված մասիվում*/
@@ -29,7 +34,6 @@ for (i in arr) {
 
         }
     }
-
 }
 console.log(`[${arr}] մասիվում`);
 if (arr[count] !== arr[count1]) {
@@ -37,6 +41,3 @@ if (arr[count] !== arr[count1]) {
 } else {
     console.log(`${arr[count]} թիվը հանդիպում է ${max} անգամ։`);
 }
- 
-
-   
