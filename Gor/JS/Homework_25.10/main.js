@@ -24,7 +24,7 @@ function Arrow(sequence) {
     let count = 0;
     let item = 0;
     let len = funcSeq.length;
-    while(item <= len - 4) {
+    while(item <= len - 1) {
         if(funcSeq[item] === '<' && funcSeq[item + 1] === '-') {
             item += 1;
             while(funcSeq[item] === '-') {
@@ -38,7 +38,7 @@ function Arrow(sequence) {
         item++;
     }
     item = 0;
-    while(item <= len - 4) {
+    while(item <= len - 1) {
         if(funcSeq[item] === '>' && funcSeq[item + 1] === '>' && funcSeq[item + 2] === '-') {
             item += 2;
             while(funcSeq[item] === '-') {
@@ -46,12 +46,11 @@ function Arrow(sequence) {
             }
             if(funcSeq[item] === '>') {
                 count++;
-                item += 1;
             }
         }
         item++;
     }
     return count;
 }
-let seqArrow = "<<<-->>>>-->><----<<<----<<>>-->>";
+let seqArrow = "<<<-->>>>-->><----<<<----<<>>-->>>-->>>-->><----<<";
 console.log(Arrow(seqArrow));
