@@ -28,7 +28,7 @@ function parzTiv(number) {
     }
     return arrayParz;
 }
-console.log(parzTiv(100));
+console.log(parzTiv(200));
 //fibonachii hajordakanutyun
 function fibonachi(number) {
     let f1 = 1;
