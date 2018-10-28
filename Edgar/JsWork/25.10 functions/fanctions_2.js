@@ -1,7 +1,6 @@
-
 function showf(n,n1,step){
     const arr = [];
-	 let j = 0;
+    let j = 0;
     for(i = n; i <= n1; i += step) {
         arr[j] = i;
         j++;
