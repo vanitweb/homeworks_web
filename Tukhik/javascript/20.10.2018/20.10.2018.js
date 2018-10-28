@@ -33,4 +33,12 @@ console.log(array);
 		}
 	}
 console.log(array);
-
+console.log(`exercise 5`);
+//gtnel zangvatsi elementneri mijin tvabanakany
+let arr = [1, 1, 3, 3, 8, 12, 21];
+let mijin=0;
+for (let i =0; i<arr.length; i++) {
+mijin += arr[i];
+}
+mijin = mijin/arr.length;
+console.log(`mijin tvabanakann e " ${mijin} "` );

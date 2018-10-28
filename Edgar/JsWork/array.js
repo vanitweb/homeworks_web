@@ -1,16 +1,16 @@
 //reverse start
-/*let str = "ABCDEF";
+let str = "ABCDEF";
 let str2= "";
 for(let i = str.length - 1; i >= 0; i--) {
 	str2 += str[i];
 }
 console.log(str);
-console.log(str2);*/
+console.log(str2);
   //reverse end*
 
 
 //Ըստ աճման կարգի
-/*const arr3 = [1, 22, 2, 4, 10, 62, 8, 81, 9, 18];
+const arr3 = [1, 22, 2, 4, 10, 62, 8, 81, 9, 18];
 let newResault;
 console.log(arr3);
 for(let i = 0; i < arr3.length-1; i++) {
@@ -23,25 +23,14 @@ for(let i = 0; i < arr3.length-1; i++) {
 	}
 }
 console.log("ajman kargov dasavorvacutyun");
-console.log(arr3);*/
-
-
-
+console.log(arr3);
+//Տեղափողություն
 const massiv = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,];
 console.log(`Սկզբնական մասիվ - [${massiv}];`);
 let number;
 for(let j = 0; j < massiv.length; j +=2) {
-	number = massiv[j];
+    number = massiv[j];
     massiv[j] = massiv[j+1];
-	massiv[j+1] = number;
-
+    massiv[j+1] = number;
 }
 console.log(`Վերջնական մասիվ - [${massiv}];`);
-
-
-
-/*1. տրված ABCDEF տեքստը շրջել և ստանալ FEDCAB,
-2. 20 էլեմենտանոց զանգվածի զույգ ու կենտ էլեմենտները տեղերով փոխել,
-3. զանգվածի էլեմենտները դասավորել աճման կարգով,
-4. գտնել զանգվածի ամենաշատ կրկնվող էտեմենտը և դրա կրկնությունների քանակը,
-5. գտնել զանգվածի տարրերի միջին թվաբանականը*/
