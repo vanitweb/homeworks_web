@@ -21,6 +21,39 @@ function showArr(arr){
 }
 console.log(showArr(showf(1, 20, 2)));
 
-
-
+function netaharum(a){
+    let count = 0;
+    let item = 0;
+    let len = a.length;
+    while(item <= len - 1) {
+        if(a[item] === '<' && a[item + 1] === '-') {
+            item += 1;
+            while(a[item] === '-') {
+                item += 1;
+            }
+            if(a[item] === '<' && a[item + 1] === '<') {
+                count++;
+                item += 1;
+            }
+        }
+        item++;
+    }
+    item = 0;
+}
+while(item <= len - 1) {
+        if(a[item] === '>' && a[item + 1] === '>' && a[item + 2] === '-') {
+            item += 2;
+            while(a[item] === '-') {
+                item += 1;
+            }
+            if(a[item] === '>') {
+                count++;
+            }
+        }
+        item++;
+    }
+    return count;
+}
+let str = ">>>>--<><>>>>>-->>---<-->>>";
+console.log(netaharum(str));
 
