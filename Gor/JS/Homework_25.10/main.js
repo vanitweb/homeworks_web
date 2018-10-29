@@ -49,6 +49,4 @@ function Arrow(sequence) {
     }
     return count;
 }
-/*let seqArrow = "<<<-->>>>-->><----<<<----<<>>-->>>-->>>-->><----<<";
-console.log(Arrow(seqArrow));*/
 console.log(Arrow("<<<-->>>>-->><----<<<----<<>>-->>>-->>>-->><----<<"));
