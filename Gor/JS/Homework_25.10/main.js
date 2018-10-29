@@ -34,23 +34,21 @@ function Arrow(sequence) {
                 count++;
                 item += 1;
             }
-        }
-        item++;
-    }
-    item = 0;
-    while(item <= len - 1) {
-        if(funcSeq[item] === '>' && funcSeq[item + 1] === '>' && funcSeq[item + 2] === '-') {
-            item += 2;
-            while(funcSeq[item] === '-') {
-                item += 1;
-            }
-            if(funcSeq[item] === '>') {
-                count++;
+        } else {
+            if(funcSeq[item] === '>' && funcSeq[item + 1] === '>' && funcSeq[item + 2] === '-') {
+                item += 2;
+                while(funcSeq[item] === '-') {
+                    item += 1;
+                }
+                if(funcSeq[item] === '>') {
+                    count++;
+                }
             }
         }
         item++;
     }
     return count;
 }
-let seqArrow = "<<<-->>>>-->><----<<<----<<>>-->>>-->>>-->><----<<";
-console.log(Arrow(seqArrow));
+/*let seqArrow = "<<<-->>>>-->><----<<<----<<>>-->>>-->>>-->><----<<";
+console.log(Arrow(seqArrow));*/
+console.log(Arrow("<<<-->>>>-->><----<<<----<<>>-->>>-->>>-->><----<<"));
