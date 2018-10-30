@@ -46,6 +46,6 @@ function bajanum(number) {
 function printValue(value) {
     console.log(value);
 }
-setTimeout(printValue(gumar(10, 20)), 15000);
-setTimeout(printValue(tarberutyun(gumar(10,20),10)), 16000);
-setTimeout(printValue(bajanum(tarberutyun(gumar(10,20),10))), 17000);
+setTimeout(printValue, 12000, gumar(10, 20));
+setTimeout(printValue, 13000, tarberutyun(gumar(10,20),10));
+setTimeout(printValue, 14000, bajanum(tarberutyun(gumar(10,20),10)));
