@@ -30,26 +30,7 @@
 //
 
 
-//
-//let a = 7, b = 9,arjeq;
-//function gumarum() {
-//    arjeq = a + b;
-//    console.log(arjeq);
-//    return arjeq;
-//}
-//setTimeout(gumarum, 2000);
-//let interval1 = setInterval(function(){ 
-//    if (arjeq !== undefined) {
-//        clearInterval(interval1);
-//        setTimeout(function(){arjeq = arjeq - a;console.log(arjeq);return arjeq;}, 1000);
-//    }
-//}, 100);
-//let interval2 = setInterval(function(){ 
-//    if (arjeq === b) {
-//        clearInterval(interval2);
-//        setTimeout(function(){arjeq = arjeq / 2;console.log(arjeq);return arjeq;}, 1000);
-//    }
-//}, 100);
+
 
 
 
