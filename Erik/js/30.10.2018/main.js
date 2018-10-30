@@ -8,8 +8,8 @@
 //console.log(tiv(75,6));
 //let fak = 1;
 //function faktorial() {
-//	let tiv = 10;
-//	for (let i = 1; i <= 10; i++) {
+//	let tiv = 7;
+//	for (let i = 1; i <= 7; i++) {
 //		fak *= i;
 //	}
 //	console.log(fak);
