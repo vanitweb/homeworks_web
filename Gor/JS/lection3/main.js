@@ -1,3 +1,4 @@
+//reverse function
 let txt = ["abc", "qwerty", "asdfgh", "zxcvbn"];
 function revers(a) {
 	let newTxt = "";

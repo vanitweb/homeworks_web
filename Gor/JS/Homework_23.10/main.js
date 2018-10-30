@@ -12,52 +12,49 @@ for(let i = 0; i < n; i++) {
 }
 console.log(arr);
 //Գլխավոր անկյունագծի էլեմենտները փոխարինել օժանդակ անկյունագծի էլեմենտներով
-let arr1 = [];
+let array = [];
 for(let i = 0; i < n; i++) {
-	arr1[i] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	array[i] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 }
 let k;
 for(let i = 0; i < n; i++) {
-	k = arr1[i][i];
-	arr1[i][i] = arr1[i][n - i -1];
-	arr1[i][n - i -1] = k;
+	k = array[i][i];
+	array[i][i] = array[i][n - i -1];
+	array[i][n - i -1] = k;
 }
-console.log(arr1);
+console.log(array);
 //Շախմատի տախտակի գույների ներկման խնդիր
 let chess = [];
-let color = false;
 let m = 8;
 for(let i = 0; i < m; i++) {
 	chess[i] = [0, 0, 0, 0, 0, 0, 0, 0];
 }
 for(let i = 0; i < m; i++) {
 	for( let j = 0; j < m; j++) {
-		if(color === false) {
+		if((i + j) % 2 === 0) {
 			chess[i][j] = '*';
 		} else {
 			chess[i][j] = '#';
 		}
-		color = !color;
 	}
-	color = !color;
 }
 console.log(chess);
 //Զանգվածի էլեմենտները լցնել 0,1,2 արժեքներով
-let chess1 = [];
+let arrayOne = [];
 let size = 9;
 for(let i = 0; i < size; i++) {
-	chess1[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+	arrayOne[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
 for(let i = 0; i < size; i++) {
-	chess1[i][i] = 1;
-	chess1[i][size - i - 1] = 1;
+	arrayOne[i][i] = 1;
+	arrayOne[i][size - i - 1] = 1;
 }
 for(let i = 1; i < size - 1; i++) {
 	for(let j = 0; j < size; j++) {
 		if(j === i || j === size - i - 1) {
 			break;
 		}
-		chess1[i][j] = 2;
+		arrayOne[i][j] = 2;
 	}
 }
 for(let i = 1; i < size; i++) {
@@ -65,7 +62,7 @@ for(let i = 1; i < size; i++) {
 		if(j === i || j === size - i - 1) {
 			break;
 		}
-		chess1[i][j] = 2;
+		arrayOne[i][j] = 2;
 	}
 }
-console.log(chess1);
+console.log(arrayOne);
