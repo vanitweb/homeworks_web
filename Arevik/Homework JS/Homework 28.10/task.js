@@ -34,7 +34,7 @@ function faktorial(n){
 	}
 	return k;
 }
-setTimeout("console.log(`Ֆակրորիալը հաշված է։ ${faktorial(5)}`)", 12000);
+setTimeout("console.log(`Ֆակրորիալը հաշված է։ ${faktorial(5)/2}`)", 12000);
 
 
 
