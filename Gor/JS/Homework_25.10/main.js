@@ -1,7 +1,7 @@
 //25.10.2018 տնային աշխատանք
 //միջակայքի խնդիր
 function myFunc(numberOne, numberTwo, step) {
-    let arr = [];
+   const arr = [];
     arrIndex = 0;
     for(i = numberOne; i <= numberTwo; i += step) {
         arr[arrIndex] = i;
