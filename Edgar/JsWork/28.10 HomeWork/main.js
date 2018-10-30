@@ -1,4 +1,4 @@
-console.log("Home work 1");
+/*console.log("Home work 1");
 
 function numb() {
     function numMid(n) {
@@ -13,8 +13,8 @@ function numb() {
     return (`Գումարը հավասար է - ${count}, \nՄիջին տվաբանականը ~ ${Math.round(numMid(numb))}`);
 
 }
+console.log(numb(5, 5, 10, 20, 14, 58, 7, 4));*/
 
-console.log(numb(5, 5, 10, 20, 14, 58, 7, 4));
 console.log("---------------------------");
 console.log("Home work 2");
 let c;
@@ -37,30 +37,31 @@ setTimeout(check, 10000);
 let counter = 0;
 let setI = setInterval(function checkUnd() {
     counter += 1;
-    if (counter === 10) {
+    if (counter === 5) {
         clearInterval(setI);
         console.log("The end of")
     }
     if (c !== undefined) {
         console.log(c);
+        
     } else {
         console.log("Processing...");
     }
 }, 2000);
 
-
+/*
 console.log("---------------------------");
 console.log("Home work 3");
 function mainF(a, b) {
     setTimeout(function counter() {
         console.log(a + b);
-    }, 2000);
+    }, 5000);
     setTimeout(function counter() {
         console.log(a - b);
-    }, 3000);
+    }, 6000);
     setTimeout(function counter() {
         console.log(a / b);
     }, 4000);
     return (`Start:\nFirst number is: ${a}\nSecond number is: ${b}`);
 }
-console.log(mainF(56, 10));
+console.log(mainF(56, 10));*/
