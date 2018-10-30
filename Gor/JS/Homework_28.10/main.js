@@ -1,4 +1,4 @@
-//25.10.2018 տնային աշխատանք
+//28.10.2018 տնային աշխատանք
 //nerdrvac unknown funkcia
 function unknown() {
 	let sum = 0;
