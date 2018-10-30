@@ -1,4 +1,4 @@
-/*console.log("Home work 1");
+console.log("Home work 1");
 
 function numb() {
     function numMid(n) {
@@ -14,7 +14,7 @@ function numb() {
 
 }
 
-console.log(numb(5, 5, 10, 20, 14, 58, 7, 4));*/
+console.log(numb(5, 5, 10, 20, 14, 58, 7, 4));
 console.log("---------------------------");
 console.log("Home work 2");
 let c;
