@@ -1,0 +1,185 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	font-family: 'K2D', sans-serif, Arial, Helvtical, inherit;
+	margin: 200px;
+}
+
+nav {
+	margin-top: 0;
+	padding: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #3B5998;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav>ul {
+	display: flex;
+	justify-content: center;
+}
+
+nav>ul li {
+	display: block;
+	padding-right: 3px;
+	padding-top: 15px;
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+}
+
+.fb {
+	font-family: inherit;
+	text-align: center;
+	font-size: 30px;
+	flex-grow: 7;
+}
+
+.bt {
+	margin-right: 30px;
+	margin-top: 14px;
+}
+
+ul input {
+	height: 18px;
+}
+
+.bt input {
+	border-radius: 2px;
+	width: 55px;
+	height: 22px;
+	padding-right: 5px;
+	color: white;
+	border-color: #29487D;
+	background-color: #4267B2;
+}
+
+.bt input:hover {
+	background-color: #3B5998;
+}
+
+.password a {
+	color: lightblue;
+	text-decoration: none;
+}
+
+.password a:hover {
+	text-decoration: underline;
+}
+
+.psw {
+	align-content: left;
+}
+
+.main {
+	width: 100%;
+	height: 600px;
+	background-image: linear-gradient(to bottom, #FEFEFE 1%, #D3D8E8);
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.right {
+	width: 50%;
+	text-align: left;
+	padding-top: 50px;
+	font-size: 24px;
+	padding-left: 80px;
+	padding-right: 20px;
+}
+
+.left {
+	padding-top: 25px;
+	line-height: 40px;
+	width: 40%;
+	align-content: center;
+	float: right;
+}
+
+.text-end {
+	line-height: 15px;
+	font-size: 15px;
+}
+
+h1,
+h2 {
+	font-size: 40px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+.firstname,
+.lastname,
+.phone,
+.psw {
+	border-color: #BDC7D8;
+	height: 40px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: thin;
+}
+
+.firstname,
+.lastname {
+	margin-right: 5px;
+	width: 190px;
+}
+
+.phone,
+.psw {
+	width: 395px;
+}
+
+.left {
+	line-height: 50px;
+}
+
+input[placeholder] {
+	font-size: 20px;
+	padding-left: 5px;
+	color: #999999;
+}
+
+select {
+	margin: 0;
+	padding: 0;
+	width: 60px;
+	height: 30px;
+}
+
+.left a {
+	font-size: 11px;
+	max-width: 150px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	line-height: 14px;
+}
+
+.text-end {
+	width: 60%;
+	font-size: 11px;
+}
+
+.btngreen {
+	width: 170px;
+	height: 35px;
+	background-color: #609E4D;
+	color: #FFFFFF;
+	border-radius: 5px;
+	border-color: #3B6E22;
+	border-style: solid;
+	border-width: thin;
+}
+
+.btngreen:hover {
+	background-color: #73B25E;
+}
