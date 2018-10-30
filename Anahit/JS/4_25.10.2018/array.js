@@ -23,23 +23,26 @@
 թվի
 ինտերվալով
  */
-function fun(num1,num2,interval){
-    for(let i = num1; i <= num2; i += interval){
-	console.log(i);
+
+let arr = [];
+function interval(num1,num2,step) {
+    for(let num = num1, i = 0; num <= num2; num += step, i++) {
+	arr[i] = num;
     }
+    return arr;
 }
-fun(1,10,2);
+console.log(interval(1,10,2));
 
 /*2.
 ֆւնկցիա, որը որպես արգումենտ  կստանա  նշված զանգվածը եւ կվերադարձնի այդ զանգված էլեմենտների գումարը */
 
-function fun1(arr){
+function arrayElementsSum(arr) {
     let sum = 0;
-    for(let i = 0; i < arr.length; i++){
+    for(let i = 0; i < arr.length; i++) {
 	sum += arr[i];
     }
     return sum;
 }
-let array = [5,2,7,1];
-console.log(`${array} զանգված էլեմենտների գումարը կլինի `);
-console.log(fun1(array));
+
+console.log(`${arr} զանգված էլեմենտների գումարը կլինի `);
+console.log(arrayElementsSum(arr));
