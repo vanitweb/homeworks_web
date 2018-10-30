@@ -24,4 +24,4 @@ function metsatar(text) {
     }
     console.log(textArray);
 }
-metsatar("sdfg sdfg ff fd gd gd fg ddf")
+metsatar("sdfg sdfg ff fd gd gd fg ddf ")
