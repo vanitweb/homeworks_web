@@ -12,19 +12,8 @@ for(let j in count){
 	console.log(j + ' = ' + count[j]);
 	
 }
-
 // ֆունկցիա, որը դինամիկ վերադարձնում է իր անունը
 function myFname(){
 	console.log(myFname.name);
 }
 myFname();
-
-// ֆունկցիա, որը
-function mainF(a, ob1,ob2,ob3){
-let sum = ob1 + ob2 + ob3;
-	return a(sum);
-}
-function a(x){
- console.log( x );	
-	}
-mainF(a,5,5,5);

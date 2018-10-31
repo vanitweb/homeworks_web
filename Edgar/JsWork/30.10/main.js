@@ -11,7 +11,6 @@ unknow(6,8); //48;*/
 
 // ֆունկցիա, որը ստանում է String -բառերի առային տառերը սարքելով մեծատառ
 let Str = " list style image";
-
 function camelize(str){
     let newArr = [];
     let r = str.split(" ");
