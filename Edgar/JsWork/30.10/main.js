@@ -1,4 +1,4 @@
-/*var unknow = function unknow(a,b){
+var unknow = function unknow(a,b){
     console.log(a*b);
 }
 function unknow(a,b){
@@ -9,7 +9,7 @@ function unknow(a,b){
 }
 unknow(6,8); //48;*/
 
-
+// ֆունկցիա, որը ստանում է String -բառերի առային տառերը սարքելով մեծատառ
 let Str = " list style image";
 
 function camelize(str){
@@ -20,7 +20,5 @@ function camelize(str){
     }
      return newArr.join(" "); 
 }
-  
-
 console.log(camelize(Str));
 

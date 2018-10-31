@@ -1,3 +1,4 @@
+// ֆունկցիա, որը հածվում է տեքստի յուր․ տառի հանդիպումների քանակը։
 let str = 'abna bnm';
 let c = str.split("");
 let count = {};
@@ -11,11 +12,14 @@ for(let j in count){
 	console.log(j + ' = ' + count[j]);
 	
 }
+
+// ֆունկցիա, որը դինամիկ վերադարձնում է իր անունը
 function myFname(){
 	console.log(myFname.name);
 }
 myFname();
 
+// ֆունկցիա, որը
 function mainF(a, ob1,ob2,ob3){
 let sum = ob1 + ob2 + ob3;
 	return a(sum);

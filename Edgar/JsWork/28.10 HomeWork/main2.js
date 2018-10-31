@@ -1,3 +1,4 @@
+// ֆունկցիա, որը 10 վարկյան անց հաշվում և արտածում է թվի ֆակտորիալը, ստուգելով այն 2 վարկյանը մեկ
 console.log("---------------------------");
 console.log("Home work 2");
 let c;
@@ -12,7 +13,6 @@ function factorial() {
     }
     console.log(f);
 }
-
 function check() {
     c = factorial();
 }
