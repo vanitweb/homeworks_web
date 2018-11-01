@@ -39,3 +39,24 @@ function print() {
 }
 let f = callater(print, 5);
 f(); f(); f(); f(); f();
+
+//mystery functions
+let hidden = mystery(3);
+let jumble = mystery3(hidden);
+let result = jumble(2);
+function mystery(input) {
+    let secret = 4;
+    input += 2;
+    function mystery2(multiplier) {
+        multiplier *= input;
+        return secret * multiplier;
+    }
+    return mystery2;
+}
+function mystery3(param) {
+    function mystery4(bonus) {
+        return param(6) + bonus;
+    }
+    return mystery4;
+}
+console.log(result);
