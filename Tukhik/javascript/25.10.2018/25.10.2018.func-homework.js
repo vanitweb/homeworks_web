@@ -1,15 +1,17 @@
-function mutq(p1, p2, p3) {
+//grel funkcia, vory artahani a-ic b tvery, a-n yev b-n neraryal, c qaylov
+function mutq(a, b, c) {
 	let arr = [];
-	arr[0] = p1;
-	for (let k = 0; arr[k] < p2 ; k ++) {
-		if(arr[k] + p3 <= p2) {
-			arr[k + 1] = arr[k] + p3;
+	arr[0] = a;
+	for (let k = 0; arr[k] < b ; k ++) {
+		if(arr[k] + c <= b) {
+			arr[k + 1] = arr[k] + c;
 		}
 	}
-return arr;
+	return arr;
 }
 console.log(mutq(1, 16, 2))
 
+//gtnel neteri qnakay  <--<<   -net, >>--> -net
 function net(elements) { 
 	let qanak = 0, j; long = elements.length-1;
 	for (let i = 0; i <= long; i++) {
@@ -32,9 +34,9 @@ function net(elements) {
 			}
 		}
 	}
-return qanak;
+	return qanak;
 }
 console.log(net("<--<<<<-<<-<<>-->><----<<"));
-//<--<<, >>-->
+
 
    
