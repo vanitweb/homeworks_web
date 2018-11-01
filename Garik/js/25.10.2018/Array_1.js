@@ -29,7 +29,7 @@ for(let g in arr_2){
 }
 console.log(arr_2)
 //ankyunagcic nerqev 0 ner ankyunagic 1 verev 2
-var arr_3 = [];
+let arr_3 = [];
 for(let i = 0,length = 10; i < length; i++){
     arr_3[i] = [4, 5, 6, 7, 9, 4, 5, 6, 7, 8]
 }
@@ -44,7 +44,7 @@ for(let i = 0 , length = arr_3[i].length; i < length; i++){
 }
 console.log(arr_3)
 //homework4
-var arr_4 = [];
+let arr_4 = [];
 for(let i = 0,length = 10; i < length; i++){
     arr_4[i] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
@@ -62,9 +62,6 @@ for(let i = 0 , length = arr_4[i].length; i < length; i++){
     }//3-rd
     for(let j = i +1; j < arr_4.length - i; j++){
          arr_4[arr_4.length-1 -i][j] = 4
-    }//4-rd
-
-
-   
+    }//4-rd   
 }
 console.log(arr_4)
