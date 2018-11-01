@@ -1,24 +1,20 @@
-console.log(`arajadranq 2`);
-//hashvel tvi faktorial yev bajanel 2-i
-var timer1 = setInterval(function() {
-  console.log("unknown");
-}, 2000);
-
-var factor = function() {
-function faktorial(n){
-	let k = 1;
-	for (i = 1; i <= n; i++){
-		k *= i;	
-	}
-	return k;
+let fak = 1;
+function factorial (){
+let tiv = 10;
+for (i = 1; i <= 10; i++){
+fak *= i;
 }
-console.log (faktorial(5) ); 
-console.log((faktorial(5))/2);
+console.log(fak);
+return fak;
 }
-setTimeout(factor, 10000);
+setTimeout(factorial,10000);
+console.log(fak);
 
-setTimeout(function(){
-	clearInterval(timer1);
-	console.log();
-}, 10000); 
-
+let inter = setInterval(function(){
+if (fak === 1) {
+console.log(fak, "stuguma");
+}else {
+console.log(fak / 2, "patasxan");
+clearInterval(inter);
+}
+},2000)
