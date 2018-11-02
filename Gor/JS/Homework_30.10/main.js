@@ -16,7 +16,7 @@ function charCount(text) {
 charCount("qwertyuiopasdfghjklzxcvbnm a,b,c");
 //վերադարձնել ֆունկցիայի անունը
 function returnName() {
-    return returnName.name;
+     return arguments.callee.name;
 }
 console.log(returnName());
 //ֆւնկցիայի արգումենտին տալ ֆունկցիա

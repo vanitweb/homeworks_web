@@ -2,7 +2,7 @@
 let str = 'abna bnm';
 let c = str.split("");
 let count = {};
-for(let i = 0;i < c.length; i++ ){
+for(let i = 0;i < c.length; i++){
 	if(count[c[i]] === undefined){
 		count[c[i]] = 0;
 	}
@@ -14,6 +14,6 @@ for(let j in count){
 }
 // ֆունկցիա, որը դինամիկ վերադարձնում է իր անունը
 function myFname(){
-	console.log(myFname.name);
+	console.log(arguments.callee.name);
 }
 myFname();
