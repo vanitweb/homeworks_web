@@ -1,4 +1,3 @@
-/*
 function f1(num) {
     return function c() {
       return ++num;
@@ -9,11 +8,15 @@ let y = f1(5);
 console.log(y());
 console.log(y());
 console.log(y());
-*/
 
 var hidden = mystery(3);
 var jumble = mystery3(hidden);
 var result = jumble(2);
+console.log(result);
+console.log(jumble);
+console.log(setInterval());
+
+
 
 function mystery(input){
     var secret = 4;
