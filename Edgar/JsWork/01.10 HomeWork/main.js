@@ -7,7 +7,8 @@ let setI = setInterval(function check20() {
 		clearInterval(setI);
 		console.log("The end");
     }
-}, 5000);
+}, 1000);
+
 /* myInterval Ֆունկցիա*/
 function testF(){
     console.log("My interval");
@@ -18,3 +19,4 @@ function myInterval(f, sec){
         return myInterval(f, sec + 2000)
 }
 myInterval(testF, 2000);
+
