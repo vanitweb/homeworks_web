@@ -8,6 +8,7 @@ function myFunc(argument) {
 		}
 	}
 }
+
 let f = myFunc(20);
 setInterval(f, 2000);
 //grel mySetInterval funkcia
