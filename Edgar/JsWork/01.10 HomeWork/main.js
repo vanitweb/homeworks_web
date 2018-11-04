@@ -8,7 +8,6 @@ let setI = setInterval(function check20() {
 		console.log("The end");
     }
 }, 5000);
-
 /* myInterval Ֆունկցիա*/
 function testF(){
     console.log("My interval");
