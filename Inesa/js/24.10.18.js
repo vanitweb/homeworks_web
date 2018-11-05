@@ -1,14 +1,16 @@
 //xndir1
 let a,b,c;
-var array=[];
-a[0] = a;
+let array=[];
+array[0] = a;
 function func(a, b, c)
 {
-	for(i = 1; i <= array.length; i++)
+	for(i = 1, len = array.length; i <= len; i++)
 	{
-		a[i] = a[i - 1] + c;
+		array[i] = array[i - 1] + c;
 		if(a[array.length] <= b)
+		{
 			break
+		}
 	}
 	return array[];
 }
@@ -16,7 +18,7 @@ console.log(func(1, 8, 2));
 //xndir2 >->> <<-<
 var a = [];
 let qanak = 0;
-function F(a[])
+function func(a)
 {
 	for(let i = 1; i <= a.length; i++)
 	{
@@ -26,4 +28,4 @@ function F(a[])
 		}
 	}
 }
-console.log(func(a = [">->>"; "<<-<"; ">>>"; "<><>"; ">->>"]));
+console.log(func([">->>"; "<<-<"; ">>>"; "<><>"; ">->>"]));
