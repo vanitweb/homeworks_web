@@ -20,7 +20,7 @@ function mystery(input){
     input += 2;
     
     function mystery2(multiplier){
-       multiplier += input;
+       multiplier *= input;
         return secret * multiplier;
     }
     return mystery2;
@@ -32,4 +32,6 @@ function mystery3(param){
     return mystery4;
 }
 
-
+/*
+1-20tvery tpel 5 v heto;
+get set interval metody*/
