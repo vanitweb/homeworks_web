@@ -1,0 +1,68 @@
+//1111111111
+function unknown ()
+{
+	let sum;
+	sum = a + b;
+	function unknown()
+	{
+		let mijin = (a + b) / 2;
+	}
+	return sum, mijin;
+}
+
+//2222222222
+
+function faktorial (n)
+{
+	let f = 1;
+	for (i = 2; i <= n; i++)
+	{
+		f = f * i;
+	}
+	return f;
+}
+function faktorialiHashvum()
+{
+	fakt = faktorial(10);
+}
+setTimeout(faktorialiHashvum , 20000);
+function Stugum()
+{
+	if(fakt == undefined)
+	{
+		console.log("faktorialy der chi hashvvel");
+	}
+	else
+	{
+		console.log(fakt / 2);
+		clearInterval(Fstugum);
+	}
+}
+let Fstugum = setInterval(Stugum, 20000);
+
+//3333333333
+
+function gumarum(number1 , number2)
+{
+	return (number1 + number2);
+}
+function hanum(number1 , number2)
+{
+	return (number1 - number2);
+}
+function bajanum(number3)
+{
+	return (number3 / 2);
+}
+function tpel(tpell)
+{
+	console.log(tpell);
+}
+setTimeout(tpel(gumarum(10, 20)), 10000);
+setTimeout(tpel(hanum(10, 20)), 20000);
+setTimeout(tpel(bajanum(100, 10)), 30000);
+
+
+
+
+
