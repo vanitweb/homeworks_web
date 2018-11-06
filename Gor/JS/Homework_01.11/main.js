@@ -8,6 +8,7 @@ function myFunc(argument) {
 		}
 	}
 }
+
 let f = myFunc(20);
 setInterval(f, 2000);
 //grel mySetInterval funkcia
@@ -15,6 +16,9 @@ function print() {
 	console.log("This is mySetInterval function");
 }
 function mySetInterval(func, timeOut) {
-		setTimeout(func, timeOut * 1000);
+	setTimeout(func, timeOut);
+	while (timeOut < 10000000) {
+		return mySetInterval(func, timeOut +2000);
+	}
 }
-mySetInterval(print, 2);
+mySetInterval(print, 2000);
