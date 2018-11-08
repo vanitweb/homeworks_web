@@ -1,0 +1,16 @@
+//tpel 1-20 tvery 2 varkyany mek
+
+let k = function tpel(qanak , tpvoxtiv)
+{
+	for(tpvoxtiv = 1;tpvoxtiv<qanak;tpvoxtiv++)
+	{
+			console.log(tpvoxtiv);
+			tpvoxtiv++;
+			
+	}
+	console.log("verj!!!");
+}
+
+setInterval(k(20,1) , 2000);
+
+
