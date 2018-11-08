@@ -11,25 +11,35 @@ function printBooks(read) {
 	}
 }
 printBooks(false);
-//erku obyektneri tarberutyunner@
-function newObject(obj1, obj2) {
+//erku obyektneri tarberutyunner@ (chi ashxatum((((   )
+function diffObject(obj1, obj2) {
 	let len;
-	let newObject = {};
+	let obj3 = {};
 	if(obj1.length >= obj2.length) {
 		len = obj1.length;
 	} else {
 		len = obj2.length;
 	}
-	let keysOfObj1 = Object.keys(obj1);
-	let keysOfObj2 = Object.keys(obj2);
-	let valuesOfObj1 = Object.values(obj1);
-	let valuesOfObj2 = Object.values(obj2);
 	for(let i = 0; i < len; i++) {
-		if(keysOfObj1[i] !== keysOfObj2[i] || valuesOfObj1[i] !== valuesOfObj2[i]) {
-			newObject[keysOfObj1[i]] = valuesOfObj1[i];
-			newObject[keysOfObj2[i]] = valuesOfObj2[i];
+		if(obj1[i] != obj2[i]) {
+			obj3.i = obj1[i];
+			obj3.i = obj2[i];
 		}
 	}
-	console.log(newObject);
+	console.log(obj3);
 }
-newObject({a: 2, b: 2, c: 3, e: 4}, {a: 2, b: 2, c: 3, d: 4});
+diffObject({a: 2, b: 2, c: 3, e: 4}, {a: 2, b: 2, c: 3, d: 4});
+//shrjel obyekt@
+function reverseObject(obj) {
+	let ietm;
+	let j;
+	for(let i in obj) {
+		j = i;
+		item = i;
+		i = obj[i];
+		obj[i] = item;
+		delete obj[j];
+	}
+	console.log(obj);
+}
+reverseObject({key1: "value1", key2: "value2", key3: "value3"});
