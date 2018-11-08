@@ -4,11 +4,11 @@ function girq (a)
 	let obj = {girq1:{hexinak:"Francis Scott Key Fitzgerald",vernagir:"Tender Is the Night",kch:false}, girq2:{hexinak:"blblb",vernagir:"Մարտ համար հինգ ",kch:false} , girq3:{hexinak:" Ջորջ Օրուել ",vernagir:"1984",kch:true}} ;                        
 	if(a)
 	{
-		console.log(obj[vernagir]);
+		console.log(obj.vernagir);
 	}
 	else
 	{
-		console.log(obj[vernagir]);
+		console.log(obj.vernagir);
 	}	
 }
 console.log("True arjeqi depqum");
