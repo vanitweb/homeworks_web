@@ -14,18 +14,22 @@ printBooks(false);
 //erku obyektneri tarberutyunner@
 function diffObject(obj1, obj2) {
 	let obj3 = {};
-	let keysOfObj1 = Object.keys(obj1);
-	for(let i = 0, len = keysOfObj1.length; i < len; i++) {
-		if(obj2[keysOfObj1[i]]) {
-			delete obj2[keysOfObj1[i]];
-		} else {
-			obj3[keysOfObj1[i]] = obj1[keysOfObj1[i]];
+	if(obj1 === obj2) {
+		console.log("Erku Obyektner@ nuynn en:")
+	}else {
+		let keysOfObj1 = Object.keys(obj1);
+		for(let i = 0, len = keysOfObj1.length; i < len; i++) {
+			if(obj2[keysOfObj1[i]]) {
+				delete obj2[keysOfObj1[i]];
+			} else {
+				obj3[keysOfObj1[i]] = obj1[keysOfObj1[i]];
+			}
 		}
+		for(let item in obj2) {
+			obj3[item] = obj2[item];
+		}
+		console.log(obj3);
 	}
-	for(let item in obj2) {
-		obj3[item] = obj2[item];
-	}
-	console.log(obj3);
 }
 diffObject({a: 2, b: 2, c: 3, k: 1, p: 5, e: 4}, {a: 2, b: 2, c: 3, h: 2, d: 4});
 //shrjel obyekt@
