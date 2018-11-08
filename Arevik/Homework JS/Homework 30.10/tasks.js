@@ -37,9 +37,10 @@ console.log(countObject);
 
 //Task.3 Գրել Ֆունկցիա, որը կվերադարձնի իր անունը
 
-function myFunction() {}
-let b = new myFunction();
-console.log(b.constructor.name); 
+let nameFunction = function theNameOfFunction() {
+    console.log( arguments.callee.name );
+}
+nameFunction(); 
 
 
 
