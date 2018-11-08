@@ -35,34 +35,28 @@ girq(true);
 
 // object_neri tarberutyun@
 
-const obj1 = {'k' : 5, 'o' : 45, 'p' : 78, 'l' : 12, 'po' : 456,};
-const obj2 = {'m' : 5, 'o' : 45, 'po' : 789, 'x' : 78, 'l' : 12};
-const obj3 = {};
+let obj1 = {'k' : 5, 'o' : 45, 'p' : 78, 'l' : 12, 'po' : 456,};
+let obj2 = {'m' : 5, 'o' : 45, 'po' : 789, 'x' : 78, 'l' : 12};
+let obj3 = {};
 console.log(obj2);
 console.log(obj1);
 
 function tarberutyun(obj_1,obj_2) {
 	for (i in obj_1) {
-		// console.log(i,obj_1[i]);
 		for(j in obj_2){
-			// console.log(j,obj_2[j]);
 			if(i === j && obj_1[i] === obj_2[j]){
-				obj3[i] = obj_1[i];
-				
+				delete obj_1[i];
+				delete obj_2[j];
 			}
 		}
-		
 	}
-	return obj3;
+	obj3 = obj1;
+	for(let i in obj_2){
+		obj3[i] = obj_2[i]
+	}
+	console.log(obj3);
 }
-console.log(tarberutyun(obj1,obj2));
-
-
-
-
-
-
-
+tarberutyun(obj1,obj2);
 
 //   3rd
 
