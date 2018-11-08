@@ -53,7 +53,6 @@ function returnObj(ob1, ob2) {
                 ob3[prop2] = ob2[prop2];
             }
         }
-
     }
     return ob3;
 }
