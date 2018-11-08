@@ -51,9 +51,8 @@ while(item <= len - 1) {
             }
         }
         item++;
-    }
     return count;
-}
+    }
 let str = ">>>>--<><>>>>>-->>---<-->>>";
 console.log(netaharum(str));
 
