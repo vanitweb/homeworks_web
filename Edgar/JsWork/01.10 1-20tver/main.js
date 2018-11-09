@@ -32,12 +32,7 @@ function mystery3(param){
     }
     return mystery4;
 }
-
-<<<<<<< HEAD
-/*
-1-20tvery tpel 5 v heto;
-get set interval metody*/
-=======
+//1-20tvery tpel 5 v heto;  get set interval metody
 /*ֆունկցիա, որը 6-րդ կանչով, կանչում է ուրիշ ֆունկցիա*/
 function main(second, count){
     let i = 0;
@@ -57,9 +52,3 @@ for(let j = 0; j < 5; j++){
 m();
 }
 
-
-
-
-
-
->>>>>>> ba9c8d811cb93fdeaf8c1f3f74764544d12581d1
