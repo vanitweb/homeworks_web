@@ -34,14 +34,9 @@ function diffObject(obj1, obj2) {
 diffObject({a: 2, b: 2, c: 3, k: 1, p: 5, e: 4}, {a: 2, b: 2, c: 3, h: 2, d: 4});
 //shrjel obyekt@
 function reverseObject(obj) {
-	let item;
-	let j;
 	for(let i in obj) {
-		j = i;
-		item = i;
-		i = obj[i];
-		obj[i] = item;
-		delete obj[j];
+		obj[obj[i]] = i;
+		delete obj[i];
 	}
 	console.log(obj);
 }
