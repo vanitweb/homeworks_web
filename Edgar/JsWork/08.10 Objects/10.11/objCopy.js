@@ -48,6 +48,7 @@ var persons = {
             }
             if (val !== username || val1 !== password) {
                 console.log("nman mard chka");
+                 break;
             }
         }
     },
