@@ -14,20 +14,19 @@ printBooks(false);
 //erku obyektneri tarberutyunner@
 function diffObject(obj1, obj2) {
 	let obj3 = {};
-	if(obj1 === obj2) {
-		console.log("Erku Obyektner@ nuynn en:")
-	}else {
-		let keysOfObj1 = Object.keys(obj1);
-		for(let i = 0, len = keysOfObj1.length; i < len; i++) {
-			if(obj2[keysOfObj1[i]]) {
-				delete obj2[keysOfObj1[i]];
-			} else {
-				obj3[keysOfObj1[i]] = obj1[keysOfObj1[i]];
-			}
+	for(let item in obj1) {
+		if(obj1[item] === obj2[item]) {
+			delete obj2[item];
+		} else {
+			obj3[item] = obj1[item];
 		}
-		for(let item in obj2) {
-			obj3[item] = obj2[item];
-		}
+	}
+	for(let item in obj2) {
+		obj3[item] = obj2[item];
+	}
+	if(Object.keys(obj3).length === 0) {
+		console.log("Trvac erku obyektner@ chunen tarberutyunner");
+	} else {
 		console.log(obj3);
 	}
 }
