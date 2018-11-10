@@ -1,0 +1,115 @@
+var array_object = [];
+var object = {
+	array_object[0] = {
+		anun:"Karen",
+		azganun:"Petrosyan",
+		tariq:33,
+		ogtanun:"KP";
+		gaxtnabar:"passwordKP";
+	},
+	array_object[1] = {
+		anun:"Armen",
+		azganun:"Karapetyan",
+		tariq:29,
+		ogtanun:"AK";
+		gaxtnabar:"gaxtnabarAK";
+	},
+	array_object[2] = {
+		anun:"Armen",
+		azganun:"Karapetyan",
+		tariq:29,
+		ogtanun:"AK";
+		gaxtnabar:"gaxtnabarAK";
+	},
+	
+	function Add(anun , azganun , tariq , ogtanun , gaxtnabar)
+	{
+		for(i = array_object.length ; i > array_object.length ; )// i++)
+		{
+			this.array_object[i].push();
+		}
+	}
+	
+	function Login(mutqagrvac_ogtanun , mutqagrvac_gaxtnabar)
+	{
+		for(i = array_object.length ; i < array_object.length ; i++)
+		{
+			if(array_object[i].ogtanun = mutqagrvac_ogtanun && array_object.gaxtnabar = mutqagrvac_gaxtnabar)
+			{
+				console.log("duq chishteq...");
+			}
+			else
+			{
+				console.log("duq sxaleq...");
+			}
+		}
+	}
+	
+	function deleteuser(mutqagrvac_ogtanun , mutqagrvac_gaxtnabar)
+	{
+		for(i = array_object.length ; i < array_object.length ; i++)
+		{
+			if(array_object[i].ogtanun = mutqagrvac_ogtanun && array_object.gaxtnabar = mutqagrvac_gaxtnabar)
+			{
+				delete array_object[i];
+			}
+			else
+			{
+				console.log("duq sxaleq mutqagrel gaxtnabary kam ogtanuny...");
+			}
+		}
+	}
+	
+	function print(mutqagrvac_anun)
+	{
+		for(i = array_object.length ; i < array_object.length ; i++)
+		{
+			if(mutqagrvac_anun = array_object[i].anun)
+			{
+				console.log(array_object[i]);
+			}
+			else
+			{
+				console.log("duq sxaleq mutqagrel gaxtnabary kam ogtanuny...");
+			}
+		}
+	}
+	
+};
+
+
+
+
+let 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
