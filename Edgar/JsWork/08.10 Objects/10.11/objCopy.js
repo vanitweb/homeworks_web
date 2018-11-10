@@ -38,17 +38,19 @@ var persons = {
         });
     },
     'login': function(username, password) {
-        let val,val1;
+        let val, val1;
         for (let i in this.person__1) {
             val = this.person__1[i].username;
             val1 = this.person__1[i].password;
             if (val === username && val1 === password) {
                 console.log(`Barev ${this.person__1[i].username}`);
+                break;
             }
-            else if(!( i !== username)) {
-                 console.log("nman mard chka");
+            if (val !== username || val1 !== password) {
+                console.log("nman mard chka");
+            }
         }
-    }},
+    },
     'delete': function(username, password) {
         for (let i in this.person__1) {
             if (this.person__1[i].username === username && this.person__1[i].password === password) {
@@ -56,18 +58,16 @@ var persons = {
             }
         }
     },
-    'printuserInfo': function() {
-        for (let u of this.person__1) {
-            console.log(u);
+    'printuserInfo': function(name) {
+        for (let u in this.person__1) {
+            if (this.person__1[u].name === name) {
+                console.log(`Name: ${this.person__1[u].name}\nSurname: ${this.person__1[u].surname}\nAge: ${this.person__1[u].age}`);
+            }
         }
     }
 };
-/*console.log("person__1", persons);
-persons.addUser('Edgar', 'Nikoghosyan', 32, 'Sebo', 'Sebastian');
-console.log("person__1", persons);
-persons.login('LevKar','loveForever');*/
-/*console.log("person__1", persons);
-persons.delete( 'HakobP','Hakob_054');
-console.log("person__1", persons);*/
-// persons.printuserInfo();
-console.log(persons.login('LevKar', 'loveForever'));
+
+console.log(persons);
+persons.login("HakobP", "Hakob_054");
+persons.delete("HakobP", "Hakob_054");
+persons.login("HakobP", "Hakob_054");
