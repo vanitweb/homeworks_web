@@ -28,7 +28,15 @@ const users = {
 		}
 	],
 	addUser: function (name, surname, age, username, password){
-		return this.userNames.user4;
+		let n = this.userNames.length;
+		this.userNames.push(n);
+		this.userNames[n] = {};
+		this.userNames[n].name = name;
+		this.userNames[n].surname = surname;
+		this.userNames[n].age = age;
+		this.userNames[n].username = username;
+		this.userNames[n].password = password;
+		console.log(this.userNames);
 	},
 	login: function (username, password){
 		for (let i = 0; i < this.userNames.length; i++){
@@ -57,14 +65,7 @@ const users = {
 		}
 	}
 }
- console.log (users.addUser(users.userNames.user4 = {
-		name: 'Sargis',
-		surname: 'Sargsyan',
-		age: 33,
-		username: 'Sargis111',
-		password: 's897867'
-}));
-console.log (users);
-(users.login ('Petros111', 'p123234'));
-(users.printUserInfo ('Poghos'));
-(users.deleteUser ('Vardan111', 'v345678'));
+users.addUser('Sargis', 'Sargsyan', 33, 'Sargis111','s897867');
+users.login ('Petros111', 'p123234');
+users.printUserInfo ('Poghos');
+users.deleteUser ('Vardan111', 'v345678');
