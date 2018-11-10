@@ -10,6 +10,7 @@ setInterval(qayl, 5000);
 
 //arajadran2 - my Setinterval grel
 var mySetInterval = setTimeout(function hello() {
-  console.log( "Hello" );
+   console.log( "Hello" );
   mySetInterval = setTimeout(hello, 2000);
+ 
 }, 2000)

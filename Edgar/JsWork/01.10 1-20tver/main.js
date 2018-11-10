@@ -21,7 +21,7 @@ function mystery(input){
     input += 2;
     
     function mystery2(multiplier){
-       multiplier += input;
+       multiplier *= input;
         return secret * multiplier;
     }
     return mystery2;
@@ -32,7 +32,7 @@ function mystery3(param){
     }
     return mystery4;
 }
-
+//1-20tvery tpel 5 v heto;  get set interval metody
 /*ֆունկցիա, որը 6-րդ կանչով, կանչում է ուրիշ ֆունկցիա*/
 function main(second, count){
     let i = 0;
@@ -51,9 +51,4 @@ let m = main(second, 5);
 for(let j = 0; j < 5; j++){
 m();
 }
-
-
-
-
-
 

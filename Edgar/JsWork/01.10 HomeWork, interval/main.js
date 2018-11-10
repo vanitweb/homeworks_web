@@ -9,7 +9,20 @@ let setI = setInterval(function check20() {
     }
 }, 1000);
 
-/* myInterval Ֆունկցիա*/
+/*anather*/
+function fun(k, n){
+    let a = setInterval(function(){
+        if(k <= n){
+            console.log(k);
+        }else{
+            clearInterval(a);
+        }
+        k++;
+    },5000)
+}
+fun(1, 20)
+
+// myInterval Ֆունկցիա
 function testF(){
     console.log("My interval");
 }
@@ -19,4 +32,5 @@ function myInterval(f, sec){
         return myInterval(f, sec + 2000)
 }
 myInterval(testF, 2000);
+
 

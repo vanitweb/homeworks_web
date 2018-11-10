@@ -16,25 +16,23 @@ console.log(unknown(20, 60));
 
 // Task 2. Հաշվել թվերի ֆակտորիալը։
 
-// 2 վայրկյան ինտերվալով կրկնում է
-let timerId = setInterval(function() {
-  console.log( 'ֆակտորիալը հաշված չէ' );
-}, 2000);
-
-// 5 վայրկյան հետո դադարեցնում է կրկնությունները
-setTimeout(function() {
-  clearInterval(timerId);
-  console.log( );
-}, 12000);
-
-function faktorial(n){
-	let k = 1;
+let k = 1;
+setTimeout(function faktorial(){
+	let n = 5;
 	for (i = 1; i <= n; i++){
-		k *= i;	
+		k *= i; 
 	}
 	return k;
-}
-setTimeout("console.log(`Ֆակրորիալը հաշված է։ ${faktorial(5)/2}`)", 12000);
+},10000)
+
+let a = setInterval(function(){
+	if(k === 1){
+		console.log(123456)
+	}else{
+		clearInterval(a);
+		console.log(k /2);
+	}
+},2000)
 
 
 
