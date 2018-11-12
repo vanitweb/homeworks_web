@@ -17,7 +17,7 @@
 console.log(rand(12));*/
 
 /*function slic(value){
-var words = str.split(' ');
+let words = str.split(' ');
 console.log(words[value]);
 }
 let str = "es im anush Hayastani arev a ham bstr2 em sirum";
@@ -41,15 +41,17 @@ var matches_str2ay = str.match(regexp);
 console.log(matches_str2ay);*/
 
 // Ֆունկցիա makeShort, որը կրճատում է տրված String-ը 2-րդ արգումենտի երկարությամբ
-let s = "Adse jdhf isdh Reh";
+
+/*let s = "Adse jdhf isdh Reh";
 function makeShort(value, num = 3){
-var splite = value.split(' ', num);
-var str = splite.join(', ');
-console.log(str);
+let splite = value.split(' ', num);
+// let str = splite.join(', ');
+console.log(splite);
 }
-makeShort(s);
+makeShort(s);*/
+
 // Ֆունկցիա makeShort, որը կրճատում է տրված String-ը 2-րդ արգումենտի երկարությամբ
-const str2 = "Lorem ipsum dolor sit amet, consectetur ad ipisicing elit. Harum  debitis?";
+/*const str2 = "Lorem ipsum dolor sit amet, consectetur ad ipisicing elit. Harum  debitis?";
 function testInput(args, str) {
   let midstring,count = 0;
   if (str.search(args) != -1) {
@@ -63,3 +65,55 @@ function testInput(args, str) {
 let args ="ad";
 
 testInput(args, str2);
+const arr = [4, 87, 58, 59, 65, 5, 5, 2, 1, 5, 5, 3, 6, 9, 8, 9, 9, 9, 9, 9, 41, ];
+let count, count1, sum, i, j;
+let max = 0;
+for (i in arr) {
+    sum = 0;
+    for (j of arr) {
+        if (arr[i] === j) {
+            sum++;
+        }
+        if (sum > max) {
+            max = sum;
+            count = i;
+        }
+        if (sum === max) {
+            count1 = i;
+
+        }
+    }
+}
+console.log(`[${arr}] մասիվում`);
+if (arr[count] !== arr[count1]) {
+    console.log(`${arr[count]} եվ ${arr[count1]} թվերը հանդիպում են ${max} անգամ։`);
+} else {
+    console.log(`${arr[count]} թիվը հանդիպում է ${max} անգամ։`);
+}*/
+
+// let text1 = "Adsf rgtDsd sdrs Aewr";
+// function makeShort2(value){
+// let splite__2 = value.split(' ', num);
+// let text3 = text1.concat(" - ",text2);
+// console.log( text3);
+
+// }
+// function myFunction(data) {
+//     let arr = data.split("-", 4);
+//     let st = arr.join(' - ');
+//     console.log(arr);
+//     console.log(st);
+    
+// }
+// myFunction(text1);
+
+
+// Ֆունկցիա, concat "-"
+/*let names = "Adsf rgtDsd sdrs Aewr.";
+let arr = names.split(' ');
+console.log("arr", arr);
+let j = "";
+for (var i = 0; i < arr.length; i++) {
+  j= arr[i] + '-';
+}
+ console.log( j );*/

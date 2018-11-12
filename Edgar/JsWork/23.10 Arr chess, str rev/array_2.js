@@ -1,13 +1,13 @@
 const arr = [];
-let len,k;
-for (let i = 0; i<10; i++){
- arr[i] = [];
+let len, k;
+for (let i = 0; i < 10; i++) {
+    arr[i] = [];
 }
 
-for (let j = 0, k = arr.length,  len = arr.length; j<len; j++){
-arr[j][k] = 1;
-console.log(arr);
-k--;
+for (let j = 0, k = arr.length, len = arr.length; j < len; j++) {
+    arr[j][k] = 1;
+    console.log(arr);
+    k--;
 }
 /*console.log(k);*/
 
@@ -15,15 +15,15 @@ k--;
 const massiv3 = [];
 let j;
 let len2 = 10;
-for(let i = 0; i <len2; i++) {
-	massiv3[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+for (let i = 0; i < len2; i++) {
+    massiv3[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
-for(i = 0; i < len1; i++) {
+for (i = 0; i < len1; i++) {
     massiv3[i][i] = 1;
-    for(j = len2-1; j >i; j--) {
-    massiv3[i][j] = 1;
-    
-}
+    for (j = len2 - 1; j > i; j--) {
+        massiv3[i][j] = 1;
+
+    }
 }
 console.log(massiv3);
 
@@ -68,22 +68,21 @@ console.log(massiv2);
 // Շախմատ 0,1,2
 const arrr = [];
 let len1 = 9;
-for(let i = 0; i <len1; i++) {
-	arrr[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+for (let i = 0; i < len1; i++) {
+    arrr[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
-for(i = 0; i < len1; i++) {
-    for(j = len1-1; j > i; j--) {
-    arrr[i][i] = 1;
-} 
-    arrr[i][len1-j-1] = 1;
+for (i = 0; i < len1; i++) {
+    for (j = len1 - 1; j > i; j--) {
+        arrr[i][i] = 1;
+    }
+    arrr[i][len1 - j - 1] = 1;
 }
-for(i = 0; i < len1; i++) {
-    for(j = 0; j < len1; j++) {
-        if( arrr[i][j] !== 1){
-        arrr[i][j] = 2; 
-        } 
+for (i = 0; i < len1; i++) {
+    for (j = 0; j < len1; j++) {
+        if (arrr[i][j] !== 1) {
+            arrr[i][j] = 2;
+        }
     }
 }
 
 console.log(arrr);
-
