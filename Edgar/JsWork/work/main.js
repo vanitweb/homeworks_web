@@ -1,45 +1,43 @@
-/*function rand(max){
-   let str =  "";
+function rand(max) {
+    let str = "";
     let str1 = "";
-  for (var i = 48; i < 122; i++){
-      if(i >= 58 && i<= 65) continue;
-    str += String.fromCharCode(i);
-  }
-   
-  for (var i = 0; i < max; i++)
-    str1 += str.charAt(Math.floor(Math.random() * str.length));
-  }
-  if(typeof str1.indexOf[0]  !== "string" && typeof str1.indexOf[1]  !== "string"){
-      
-  }
-  return str1;
-};
-console.log(rand(12));*/
-
+    for (var i = 48; i < 122; i++) {
+        if (i >= 58 && i <= 65) continue;
+        str += String.fromCharCode(i);
+    }
 /*function slic(value){
 let words = str.split(' ');
 console.log(words[value]);
+=======
+    for (var i = 0; i < max; i++)
+        str1 += str.charAt(Math.floor(Math.random() * str.length));
+>>>>>>> 68ce1abecfe0764b1ae795021e0e1dbd2ff68861
+}
+if (typeof str1.indexOf[0] !== "string" && typeof str1.indexOf[1] !== "string") {
+
+}
+return str1;
+};
+console.log(rand(12));
+
+
+function slic(value) {
+    var words = str.split(' ');
+    console.log(words[value]);
 }
 let str = "es im anush Hayastani arev a ham bstr2 em sirum";
-slic(3);*/
+slic(3);
 
+let str = "Ослик Иа-Иа посмотрел на виадук"; // ищем в этой строке
+let target = "Иа"; // цель поиска
 
-
-/*var str = "Ослик Иа-Иа посмотрел на виадук"; // ищем в этой строке
-var target = "Иа"; // цель поиска
-
-var pos = -1;
+let pos = -1;
 while ((pos = str.indexOf(target, pos + 1)) != -1) {
-  alert( pos );
-}*/
+    alert(pos);
+}
 
-/*
-ar str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-var regexp = /[A-E]/gi;
-var matches_str2ay = str.match(regexp);
 
-console.log(matches_str2ay);*/
-
+<<<<<<< HEAD
 // Ֆունկցիա makeShort, որը կրճատում է տրված String-ը 2-րդ արգումենտի երկարությամբ
 
 /*let s = "Adse jdhf isdh Reh";
@@ -117,3 +115,4 @@ for (var i = 0; i < arr.length; i++) {
   j= arr[i] + '-';
 }
  console.log( j );*/
+
