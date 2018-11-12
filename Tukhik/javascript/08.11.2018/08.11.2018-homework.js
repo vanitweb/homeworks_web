@@ -22,38 +22,47 @@ const persons = {
 		password : "logo"
 	}
 ],
-login: function(username, password) {
+ 'addUser': function(name, surname, age, username, password) {
+        return this.userNames.push({
+            name: name,
+            surname: surname,
+            age: age,
+            username: username,
+            password: password
+        });
+    },
+    'login': function(username, password) {
         let val, val1;
         for (let i in this.userNames) {
             val = this.userNames[i].username;
             val1 = this.userNames[i].password;
             if (val === username && val1 === password) {
-                console.log(`Hello ${this.userNames[i].username}`);
+                console.log(`Barev ${this.userNames[i].username}`);
                 break;
             }
-            else {
-              console.log('chka nman user');
+            if (val !== username || val1 !== password) {
+                console.log("nman mard chka");
+                 break;
+            }
         }
-    }
-},
-// delete: function(username, password) {
-//         for (let i in this.userNames) {
-//             if (this.userNames[i].username === username && this.userNames[i].password === password) {
-//                 delete persons.userNames[i];
-//             }
-
-//         }
-//     },
-printUserInfo: function(name) {
-        for (let j in this.userNames) {
-            if (this.userNames[j]	.name === name) {
-              return this.userNames[j];
+    },
+    'delete': function(username, password) {
+        for (let i in this.userNames) {
+            if (this.userNames[i].username === username && this.userNames[i].password === password) {
+                delete persons.userNames[i];
+            }
+        }
+    },
+    'printuserInfo': function(name) {
+        for (let u in this.userNames) {
+            if (this.userNames[u].name === name) {
+                console.log(`Name: ${this.userNames[u].name}\nSurname: ${this.userNames[u].surname}\nAge: ${this.userNames[u].age}`);
             }
         }
     }
-}
-console.log(persons);
-persons.login("Anna", "logo");
-//persons.delete("Anna", "logo");
-console.log(persons.printUserInfo("Anna"));
+};
 
+console.log(persons);
+persons.login("Lianna", "Lil");
+persons.delete("Lianna", "Lil");
+persons.login("Lianna", "Lil");
