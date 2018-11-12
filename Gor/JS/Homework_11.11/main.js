@@ -13,10 +13,15 @@ function makeShort(str, count) {
 }
 console.log(makeShort("dbh ff sfs ds ehdtu", 3));
 //homework 3_1: find_matches_count("ab abc ssjdf abk ab sfrkl", "ab"); => "ab" is found 4 times
-function findMatchesCount(str, findStr) {
-	return str.toLowerCase().split(findStr).length - 1;
+function findMatchesCount(str, subStr) {
+	return str.toLowerCase().split(subStr).length - 1;
 }
 console.log(findMatchesCount("ab abc ssjdf abk ab sfAbrkl", "ab"));
+//homework 3_1: erkrord exanak
+function findMatchesCount1(str, subStr) {
+	return (str.match(new RegExp(subStr, 'gi')) || []).length;
+}
+console.log(findMatchesCount1("ab abc ssjdf abk ab sfAbrkl", "ab"));
 //homework 3_2: find_exact_matches_count("ab abc ssjdf abk ab sfrkl", "ab"); => "ab" is found 2 times
 function findExactMatchesCount(str, findStr) {
 	let count = 0;
@@ -31,9 +36,6 @@ function findExactMatchesCount(str, findStr) {
 console.log(findExactMatchesCount("ab abc ssjdf abk ab sfrkl ab", "ab"));
 //homework 4: fill_by_length(15, 5[, '+']); => [+]00015
 function fillByLength(num, size, sign) {
-	if(size <= num.toString().length) {
-		return num;
-	}
 	let newStr = num.toString();
 	while(newStr.length < size) {
 		newStr = '0' + newStr;
