@@ -1,27 +1,28 @@
 let x = 3;
 let foo = {
-x : 2,
-baz : {
-x :1,
-bar : function() {
-return this.x
-}
-}
+	x : 2,
+	baz : {
+		x :1,
+		bar : function() {
+			return this.x
+		}
+	}
 }
 let go = foo.baz.bar;
 console.log(go());
 console.log(foo.baz.bar());
 
+//3 devov this enq kanchum
 var key = "a";
 const obj = {
-key : "value",
-method : function() {
+	key : "value",
+	method : function() {
 // this.key= "THIS";
-return this.key;
-},
+		return this.key;
+	},
 };
 const obj1 = {
-key : "b",
+	key : "b",
 }
 //1 dzev
 console.log(obj.method());
