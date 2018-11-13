@@ -42,7 +42,7 @@ console.log("----------------------------------");
 console.log(`3.2)("ab abc ssjdf abk ab sfrkl", "ab"); => => "ab" is found 2 times`);
 console.log("----------------------------------");
 
-/*3.1) find_matches_count("ab abc ssjdf abk ab sfrkl", "ab"); => "ab" is found 2 times KISAT!*/
+/*3.1) find_matches_count("ab abc ssjdf abk ab sfrkl", "ab"); => "ab" is found 2 times*/
 // const str2 = "ab abc ssjdf abk ab sfrkl";
 function testReg2(n, num) {
     let coun2 = n.match(/ab+\s/g);
