@@ -11,7 +11,6 @@ console.log(words[value]);
 =======
     for (var i = 0; i < max; i++)
         str1 += str.charAt(Math.floor(Math.random() * str.length));
->>>>>>> 68ce1abecfe0764b1ae795021e0e1dbd2ff68861
 }
 if (typeof str1.indexOf[0] !== "string" && typeof str1.indexOf[1] !== "string") {
 
@@ -36,8 +35,6 @@ while ((pos = str.indexOf(target, pos + 1)) != -1) {
     alert(pos);
 }
 
-
-<<<<<<< HEAD
 // Ֆունկցիա makeShort, որը կրճատում է տրված String-ը 2-րդ արգումենտի երկարությամբ
 
 /*let s = "Adse jdhf isdh Reh";
