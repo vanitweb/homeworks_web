@@ -40,7 +40,7 @@ const users = {
 	},
 	login: function (username, password){
 		for (let i = 0; i < this.userNames.length; i++){
-			if (this.userNames[i].username === username && this.userNames[i].password === password){
+			if (this.userNames[i] && this.userNames[i].username === username && this.userNames[i].password === password){
 				console.log('Hello!, ' + this.userNames[i].name);
 			break;	
 			}
@@ -51,7 +51,7 @@ const users = {
 	},
 	deleteUser: function (username, password){
 		for (let i = 0; i < this.userNames.length; i++){
-			if (this.userNames[i].username === username && this.userNames[i].password === password){
+			if (this.userNames[i] && this.userNames[i].username === username && this.userNames[i].password === password){
 				delete this.userNames[i];
 				console.log(users);
 			}
@@ -59,7 +59,7 @@ const users = {
 	},
 	printUserInfo: function(name){
 		for (let i = 0; i < this.userNames.length; i++){
-			if (this.userNames[i].name === name){
+			if (this.userNames[i] && this.userNames[i].name === name){
 				console.log( this.userNames[i].name + ' ' + this.userNames[i].surname +'--' + this.userNames[i].age);
 			}
 		}
