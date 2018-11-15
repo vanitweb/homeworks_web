@@ -13,10 +13,17 @@ function mainCheck(n, n1, n2) {
     return ("r1", r1);
 }
 console.log(mainCheck(str, ")", "("));
+/*
 let regex1 = RegExp("[^A-Za-z0-9_,\.& ]", 'g');
 let array1;
 
 while ((array1 = regex1.exec(str)) !== null) {
     console.log(`Found ${array1[0]}. Next starts at ${regex1.lastIndex}.`);
 }
-console.log(array1);
+console.log(array1);*/
+function regExp(arg){
+    let reg = /^([A-Z]){1,3}$)?$/;
+    let result = reg.test(arg);
+    console.log(result)
+}
+regExp("dGd90-abs66-")
