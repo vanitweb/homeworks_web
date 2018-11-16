@@ -23,6 +23,7 @@ var regex1 = RegExp("[^A-Za-z0-9_,\. ]",'g');
 var array1;
 
 while ((array1 = regex1.exec(str)) !== null) {
+
   console.log(`Found ${array1[0]}. Next starts at ${regex1.lastIndex}.`);
   // expected output: "Found foo. Next starts at 9."
   // expected output: "Found foo. Next starts at 19."
