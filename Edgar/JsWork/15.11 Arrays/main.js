@@ -19,7 +19,7 @@ console.log('MAIN', copy(arr));
 arr[1][2] = "5";
 console.log('arr', arr);
 
-/*function copy2(arg2){
+function copy2(arg2){
     let arr2 = [];
     let y;
     const map1 = arg2.map(x => x);
@@ -33,12 +33,12 @@ console.log('arr', arr);
 }
     return arr2;
 }
+console.log("map :", copy2(arr));
 console.log("map :", copy2(arr));*/
 
-//console.log("map :", copy2(arr));
 
 // 0. (Դասարանային) Գրել ֆունկցիա, որը կհարթեցնի տրված զանգվածը։ Օրինակ
-/*let mass = [1, [2], [3, [[4]]],[5,6]];
+let mass = [1, [2], [3, [[4]]],[5,6]];
 function make_flat(arg){
    return arg.reduce((acc, val) => Array.isArray(val) ? acc.concat(make_flat(val)) : acc.concat(val), []);
 }
@@ -50,7 +50,7 @@ function m(ar){
     let summa = 0;
 for (var i = 0; i < ar.length; i++) {
     if(ar[i] > 0){
-        summa +=ar[i]; 
+        summa += ar[i]; 
     }
 }
         console.log("summa", summa);
@@ -73,7 +73,7 @@ function newArrSqrt(data){
 let sqrt = data.map(x => x * 2);
 return sqrt;
 }
-console.log("newArrSqrt", newArrSqrt(array1));*/
+console.log("newArrSqrt", newArrSqrt(array1));
 
 //4. Գրել ֆունկցիա, որը կգտնի երկու զանգվածների չկրկնվող էլեմենտները։
 let zangvac_1 = ["data6","data1", "data2", "data3", "data4", "data5" ];
