@@ -15,7 +15,7 @@ arr.forEach(function (element){
 console.log(summ);
 //homework 2: Տրված զանգվածից ստանալ նոր զանգված, որի յուրաքանչյուր էլեմենտը տրված զանգվածի էլեմենտի կրկնապատիկն է։
 let squareArray = arr.map(function (item){
-  return item * item;
+  return item * 2;
 });
 console.log(squareArray);
 //homework 3: Գրել ֆունկցիա, որը արգումենտում կստանա օբյեկտների (մարդկանց) զանգված և կսորտավորի ըստ տրված դաշտի (keyի)։ Մարդ օբյեկտը պետք է ունենա անուն, ազգանուն, տարիք և գրանցման օր դաշտերը։ obj_sort(arr, ‘name’), obj_sort(arr, ‘age’)
@@ -26,14 +26,15 @@ let users = [
 ];
 function sortObj(obj, sortKey) {
 	obj.sort(function(a, b) {
-		if(a.sortKey > b.sortKey) {
+		if(a[sortKey] > b[sortKey]) {
     		return 1;
   		}
-  		if(a.sortKey < b.sortKey) {
+  		if(a[sortKey] < b[sortKey]) {
     		return -1;
   		}
 		return 0;
 	});
+	return obj;
 }
 console.log("Sort by name: ");
 console.log(sortObj(users, 'name'));
