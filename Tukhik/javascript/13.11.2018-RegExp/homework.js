@@ -6,8 +6,19 @@ function regExp(arg){
 }
 regExp("AGA11-aaa45-a")
 
-//exec() ,  match()  indexOf    lastIndexOf()  findIndex()
+// //exec() ,  match()  indexOf    lastIndexOf()  findIndex()
 
-// function search(rgument){
-	
+// let text = 'ghgh{ghghgh  [hjhjhdjd (ghgh) ]jkjkjk }';
+// function isPrime(element, index, array) {
+//  for(let i = 0; n < text.lenght; i++){
+//  	i
+//  }
+//   while (start <= Math.sqrt(element)) {
+//     if (element % start++ < 1) {
+//       return false;
+//     }
+//   }
+//   return element > 1;
 // }
+// console.log(text.findIndex('{'));
+

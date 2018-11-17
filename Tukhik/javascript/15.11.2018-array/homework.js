@@ -1,14 +1,14 @@
 //Classw0rk - trvac zangvatsy copy anel yev 1 element ays zangvatsic popxel
 let parts = [[1, 2, 3],[4, 5, 6],[7, 8, 9]];
 function deep(parts){
-let lyrics = parts.slice();
-for(i = 0; i<lyrics.length-1; i++){
-if(lyrics[i].isArray === 'true'){
-lyrics[i] = deep(lyrics[i]);
-}
-lyrics[1] = [22, 33, 44];
-return lyrics;
-}
+	let lyrics = parts.slice();
+	for(i = 0; i<lyrics.length-1; i++){
+		if(lyrics[i].isArray === 'true'){
+			lyrics[i] = deep(lyrics[i]);
+		}
+	lyrics[1] = [22, 33, 44];
+	return lyrics;
+	}
 } 
 console.log(`arajadranq -1- ${deep(parts)}`);
 console.log(parts);
@@ -56,14 +56,51 @@ console.log(doubles);
 //զանգված և կսորտավորի ըստ տրված դաշտի (keyի)։ 
 // Մարդ օբյեկտը պետք է ունենա անուն, ազգանուն, տարիք և գրանցման օր 
 //դաշտերը։
-// obj_sort(arr, ‘name’), obj_sort(arr, ‘age’) …
-// let persons = [
-// 	{name: Sargis, surname: Poghosyan, age: 21, regDate: (2000, 0, 1)},
-// 	{name: Emma, surname: Petrosyan, age: 33, regDate: (2001, 4, 6)},
-// ];
-// function myFunction() {
-//    
-// }
+//obj_sort(arr, ‘name’), obj_sort(arr, ‘age’) …
+let persons = [
+	{name: 'Sargis', surname: 'Poghosyan', 'age': 21, regDate: '4 April 2018'},
+	{name: 'Emma', surname: 'Qaryan', 'age': 33, regDate: '30 December 2017'},
+	{name: 'Alla', surname: 'Petrosyan', 'age': 19, regDate: '25 September 2010'},
+];
+function obj_sort_Name(persons) {
+	let naMe = [];
+	for(i = 0; i < persons.length; i++){
+	naMe.push(persons[i].name);
+	naMe.sort();	
+	}  
+return naMe;
+}
+console.log(obj_sort_Name(persons));
+
+function obj_sort_surName(persons) {
+	let surName = [];
+	for(i = 0; i < persons.length; i++){
+	surName.push(persons[i].surname);
+	surName.sort();
+	}  
+return surName;
+}
+console.log(obj_sort_surName(persons));
+
+function obj_sort_age(persons, age) {
+	let aGe = [];
+	for(i = 0; i < persons.length; i++){
+	aGe.push(persons[i].age);
+	aGe.sort();
+	}  
+return aGe;
+}
+console.log(obj_sort_age(persons));
+
+function obj_sort_data(persons) {
+	let dAte = [];
+	for(i = 0; i < persons.length; i++){
+	dAte.push(persons[i].date);
+	dAte.sort();
+	}  
+return dAte;
+}
+console.log(obj_sort_data(persons));
 
 
 //4. Գրել ֆունկցիա, որը կգտնի երկու զանգվածների չկրկնվող էլեմենտները։
