@@ -6,10 +6,9 @@ var array = [ 1, 2, 3, 4, 5, -2, 23, -1, -13, 10, -52 ],
 console.log(sum);
 
 //////////////zangvaci elementneri krknapatik
-var numbers = [1, 4, 9];
-var doubles = numbers.map(function(num) {
-  return num * 2;
-});
+var array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+alert(map1);
 
 /////////////////////sortavorum(chi ashxatum :( ?
 function sortavorum(b)
