@@ -41,10 +41,91 @@ function newArrSqrt(data) {
 console.log("newArrSqrt", newArrSqrt(array1));
 
 console.log("--------------------------------------");
+
 /*3. Գրել ֆունկցիա, որը արգումենտում կստանա օբյեկտների (մարդկանց) զանգված և կսորտավորի
  ըստ տրված դաշտի (keyի)։Մարդ օբյեկտը պետք է ունենա անուն, ազգանուն, տարիք և գրանցման օր դաշտերը։
 obj_sort(arr, ‘name’), obj_sort(arr, ‘age’) Kisat*/
+let massObj = [{
+        name: "Garik",
+        surname: "Petrosyan",
+        age: 28,
+        register: "2014.05.15"
+    },
+    {
+        name: "David",
+        surname: "Hambaryan",
+        age: 39,
+        register: "2015.08.05"
+    },
+    {
+        name: "Stepan",
+        surname: "Sargsyan",
+        age: 22,
+        register: "2018.01.19"
+    },
+    {
+        name: "Carlos",
+        surname: "Zafón",
+        age: 60,
+        register: "2016.04.21"
+    },
+    {
+        name: "laura",
+        surname: "Papayan",
+        age: 59,
+        register: "2016.04.26"
+    },
+    {
+        name: "Aram",
+        surname: "Asatryan",
+        age: 69,
+        register: "2017.02.15"
+    }
+];
 
+function Main(arr, format) {
+    switch (format) {
+        case "surname":
+            return arr.sort(function(x, y) {
+                if (x.surname < y.surname) {
+                    return -1;
+                }
+                if (x.surname > y.surname) {
+                    return 1;
+                }
+                return 0;
+            });
+            break;
+        case "name":
+            return arr.sort(function(x, y) {
+                if (x.name < y.name) {
+                    return -1;
+                }
+                if (x.name > y.name) {
+                    return 1;
+                }
+                return 0;
+            });
+            break;
+        case "age":
+            return arr.sort(function(a, b) {
+                return a.age - b.age;
+            });
+            break;
+        case "register":
+            return arr.sort(function(x, y) {
+                if (x.register < y.register) {
+                    return -1;
+                }
+                if (x.register > y.register) {
+                    return 1;
+                }
+                return 0;
+            });
+            break;
+    }
+}
+console.log("by name", Main(massObj, "name"));
 
 console.log("--------------------------------------");
 //4. Գրել ֆունկցիա, որը կգտնի երկու զանգվածների չկրկնվող էլեմենտները։
