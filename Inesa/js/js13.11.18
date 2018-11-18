@@ -1,0 +1,56 @@
+//1 string concat??????????
+function Func(arr)
+{
+	let str = arr.join('-');
+	return str ;
+}
+
+let arr = ['Adsv', 'rgtdsd', 'sdrs', 'Aewr'];
+let a = Func (arr);
+console.log(a);
+
+//2 make short
+var myFish = ['dhdh', 'iksiksd', 'tsiodt', 'ollon'];
+var removed = myFish.splice(0, 2);
+alert(removed);
+
+
+//3 find
+var temp = "This is a string.";
+var count = (temp.match(/is/));
+console.log(count);
+
+//4 fill by length
+let a = '5'.padStart(4, "0");
+console.log(a);
+let b = a.padStart(5, "+");
+console.log(b);
+
+//5 find palindrome words
+
+let str = "Hello! Aba kdfk ckkc skroekr ababa";
+let arr = str.split(' ');
+for(let i = 0; i < arr.length; i = i + 2)
+{
+	console.log(arr[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
