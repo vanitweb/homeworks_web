@@ -128,6 +128,21 @@ function Main(arr, format) {
 console.log("by name", Main(massObj, "name"));
 
 console.log("--------------------------------------");
+// kam
+function Main2(arr, format) {
+    arr.sort(function(a, b) {
+        if(a[format] > b[format]) {
+            return 1;
+        }
+        if(a[format] < b[format]) {
+            return -1;
+        }
+        return 0;
+    });
+    return arr;
+}
+console.log("by name", Main2(massObj, "age"));
+console.log("--------------------------------------");
 //4. Գրել ֆունկցիա, որը կգտնի երկու զանգվածների չկրկնվող էլեմենտները։
 let zangvac_1 = ["data6", "data1", "data2", "data3", "data4", "data5"];
 let zangvac_2 = ["Alpha1", "data2", "data3", "data7", "data6"];

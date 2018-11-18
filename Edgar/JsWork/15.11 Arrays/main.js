@@ -58,12 +58,6 @@ for (var i = 0; i < ar.length; i++) {
         console.log("summa", summa);
 }
 m(mass);
->>>>>>> 6cdf67858c3e0cbd65c9221689a36951e024062c
-
-
-<<<<<<< HEAD
-
-=======
 // 2. Տրված զանգվածից ստանալ նոր զանգված, որի յուրաքանչյուր էլեմենտը տրված զանգվածի էլեմենտի կրկնապատիկն է։
 let array1 = [1, 4, 65, 2.3, 3, 2, 36, 5];
 function newArrSqrt(data){
@@ -88,4 +82,4 @@ return `in zangvac_1: ${z}, \nin zangvac_2: ${z2}`;
 
 console.log(returnObj(zangvac_1,zangvac_2));
 
->>>>>>> 6cdf67858c3e0cbd65c9221689a36951e024062c
+
