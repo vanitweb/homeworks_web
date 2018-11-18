@@ -5,10 +5,9 @@ function rand(max) {
         if (i >= 58 && i <= 65) continue;
         str += String.fromCharCode(i);
     }
-/*function slic(value){
+function slic(value){
 let words = str.split(' ');
 console.log(words[value]);
-=======
     for (var i = 0; i < max; i++)
         str1 += str.charAt(Math.floor(Math.random() * str.length));
 }
@@ -19,97 +18,45 @@ return str1;
 };
 console.log(rand(12));
 
-
-function slic(value) {
-    var words = str.split(' ');
-    console.log(words[value]);
-}
-let str = "es im anush Hayastani arev a ham bstr2 em sirum";
-slic(3);
-
-let str = "Ослик Иа-Иа посмотрел на виадук"; // ищем в этой строке
-let target = "Иа"; // цель поиска
-
-let pos = -1;
-while ((pos = str.indexOf(target, pos + 1)) != -1) {
-    alert(pos);
+/*__________________________________________________________*/
+//arag massiv tpel
+function logArrayElements(element, index, array) {
+  console.log('a[' + index + '] = ' + element);
 }
 
-// Ֆունկցիա makeShort, որը կրճատում է տրված String-ը 2-րդ արգումենտի երկարությամբ
+[2, 5, , 9].forEach(logArrayElements);
+// a[0] = 2
+// a[1] = 5
+// a[3] = 9
+/*__________________________________________________________*/
+/*Array.map*/
+var array1 = [1, 4, 9, 16];
 
-/*let s = "Adse jdhf isdh Reh";
-function makeShort(value, num = 3){
-let splite = value.split(' ', num);
-// let str = splite.join(', ');
-console.log(splite);
-}
-makeShort(s);*/
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+//kam
+var roots = numbers.map(Math.sqrt);
 
-// Ֆունկցիա makeShort, որը կրճատում է տրված String-ը 2-րդ արգումենտի երկարությամբ
-/*const str2 = "Lorem ipsum dolor sit amet, consectetur ad ipisicing elit. Harum  debitis?";
-function testInput(args, str) {
-  let midstring,count = 0;
-  if (str.search(args) != -1) {
-    midstring = ' պարունակում է ';
-    count = str.search(args);
-  } else {
-    midstring = ' չի պարունակում ';
-  }
-  console.log(`Նախադասությունուը ${midstring} ${args} ${count} `);
-}
-let args ="ad";
+console.log(map1);
+console.log(roots);
+/*__________________________________________________________*/
+//reverse key-value
+var kvArray = [{key: 1, value: 10}, 
+               {key: 2, value: 20}, 
+               {key: 3, value: 30}];
 
-testInput(args, str2);
-const arr = [4, 87, 58, 59, 65, 5, 5, 2, 1, 5, 5, 3, 6, 9, 8, 9, 9, 9, 9, 9, 41, ];
-let count, count1, sum, i, j;
-let max = 0;
-for (i in arr) {
-    sum = 0;
-    for (j of arr) {
-        if (arr[i] === j) {
-            sum++;
-        }
-        if (sum > max) {
-            max = sum;
-            count = i;
-        }
-        if (sum === max) {
-            count1 = i;
-
-        }
-    }
-}
-console.log(`[${arr}] մասիվում`);
-if (arr[count] !== arr[count1]) {
-    console.log(`${arr[count]} եվ ${arr[count1]} թվերը հանդիպում են ${max} անգամ։`);
-} else {
-    console.log(`${arr[count]} թիվը հանդիպում է ${max} անգամ։`);
-}*/
-
-// let text1 = "Adsf rgtDsd sdrs Aewr";
-// function makeShort2(value){
-// let splite__2 = value.split(' ', num);
-// let text3 = text1.concat(" - ",text2);
-// console.log( text3);
-
-// }
-// function myFunction(data) {
-//     let arr = data.split("-", 4);
-//     let st = arr.join(' - ');
-//     console.log(arr);
-//     console.log(st);
-    
-// }
-// myFunction(text1);
-
-
-// Ֆունկցիա, concat "-"
-/*let names = "Adsf rgtDsd sdrs Aewr.";
-let arr = names.split(' ');
-console.log("arr", arr);
-let j = "";
-for (var i = 0; i < arr.length; i++) {
-  j= arr[i] + '-';
-}
- console.log( j );*/
+var reformattedArray = kvArray.map(obj =>{ 
+   var rObj = {};
+   rObj[obj.value] = obj.key;
+   return rObj;
+});
+console.log(kvArray);
+console.log(reformattedArray);
+/*__________________________________________________________*/
+var map = Array.prototype.map;
+var a = map.call('Hello World', function(x) { 
+  return x.charCodeAt(0); 
+});
+// a now equals [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+/*__________________________________________________________*/
 
