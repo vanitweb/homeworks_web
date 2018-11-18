@@ -34,10 +34,6 @@ console.log(`arajadranq 0- ${makeFlat(arr0)}`)
 //1. Հաշվել զանգվածի բոլոր դրական թվերի գումարը։
 let numbers = [1, -1, 3, 5, 4, -40];
 const plus = numbers.filter(numbers => numbers > 0);
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-console.log(plus.reduce(reducer));
-
-//2-r tarberak
 let gumar = plus.reduceRight(function(a, b){
 	return a+b;
 });
