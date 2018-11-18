@@ -58,10 +58,9 @@ function tarberutyun(obj1, obj2) {
 			}	
 		}
 	}
-	console.log(obj1); 
-	console.log(obj2);
+	return(obj1 + obj2);  
 }
-tarberutyun({a: 2, b: 2, d : 4}, {a: 2, b: 2, k : 4});
+console.log(tarberutyun({a: 2, b: 2, d : 4}, {a: 2, b: 2, k : 4}));
 
 
 // grel cragir vor objecti mej key u value-i texer@ poxi

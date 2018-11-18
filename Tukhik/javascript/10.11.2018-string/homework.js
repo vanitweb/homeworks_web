@@ -1,22 +1,22 @@
 //1) string_concat("Adsf rgtDsd sdrs Aewr.") => "adsf-rgtd-sdrs-aewr"
 console.log('ARAJADRANQ 1');
-function myConcat(text, len) {
-	let newText = '';
-	for(let i = 1; i < text.length; i++) {
-		if(i % (len + 1) != 0) {
-			newText += text[i];
-		}
-		else {
-			newText += '_';	
-		}
-	}
-console.log(newText);
+function myConcat(text) {
+let text1 = text.replace(/ /g, '-').toLowerCase();
+console.log(text1);
 }
-myConcat('hefollowingexampledisplays', 3);
+myConcat('hefol low ingexam p l edisplays');
 
 
 //2) make_short("dbh ff sfs ds ehdtu", 3); => "dbh ff sfs"
+//tarberak 1
 console.log('ARAJADRANQ 2');
+function countWordsString1(string, num){
+	let string1 = string.split(' ', 3).join();
+	console.log(string1);
+}
+countWordsString1('ghgh ghghg h  jk l ');
+
+//tarberak 2
 function countWordsString(string, num){
     let str = string.trim();
     let number = 0;
@@ -41,22 +41,20 @@ countWordsString('  A new string representing the calli  ', 3);
 //3.1) find_matches_count("ab abc ssjdf abk ab sfrkl", "ab");
 // => "ab" is found 4 times
 console.log('ARAJADRANQ 3.1');
-function findRepeat (texT, f) {
-	let times = 0;
-	for (i = 0; i < texT.length; i++){
-		if (texT[i] == f[0] && texT[i+1] == f[1]) {
-				times++;
-				continue;
-		}
-	}
-console.log(`"${f}" is found  ${times} times`);
-}
-findRepeat('ab abghy nbbaab', 'ab');
+let texT = "ab abc ssjdf abk ab sfrkl";
+let texT1 = (texT.match(/ab/g) || []).length;
+console.log(texT1);
 
-
-// 3.2) find_exact_matches_count("ab abc ssjdf abk ab sfrkl", "ab"); 
-// => "ab" is found 2 times
+//3.2) find_exact_matches_count("ab abc ssjdf abk ab sfrkl", "ab"); 
+//=> "ab" is found 2 times
 console.log('ARAJADRANQ 3.2');
+
+let texT0 = "ab abcg ssjdf abk ab sfrkl ab";
+let textPrabel = ' ' + texT0 + ' ';
+let texT2 = (textPrabel.match(/ab /g) || []).length;
+console.log(texT2);
+
+//tarberak 2
 function findRepeat (textfind, f) {
 	let newTextfind = ' ' + textfind + ' ';
 	let times = 0;
@@ -72,6 +70,14 @@ findRepeat('ab abc ssjdf abk ab sfrkl ab', 'ab');
 
 //4) fill_by_length(15, 5, ['+']); => [+]00015
 console.log('ARAJADRANQ 4');
+//tarberak 1
+function numBers(striin, tiv, nshan) {
+	let st1 = striin.padStart(tiv, "0");
+	console.log(st1.padStart(tiv+3, nshan));
+}
+numBers("15", 5, '[+]');
+
+//tarberak 2
 function numbers(tiv, qanak, simbol){
 	let k = qanak - tiv.toString().length;
 	let newNumbers = '[';

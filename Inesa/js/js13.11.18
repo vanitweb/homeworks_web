@@ -1,12 +1,12 @@
 //1 string concat??????????
-function Func(array)
+function Func(arr)
 {
 	let str = arr.join('-');
 	return str ;
 }
 
 let arr = ['Adsv', 'rgtdsd', 'sdrs', 'Aewr'];
-let a = function (arr);
+let a = Func (arr);
 console.log(a);
 
 //2 make short
