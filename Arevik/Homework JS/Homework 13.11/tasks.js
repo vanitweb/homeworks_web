@@ -29,4 +29,9 @@ console.log(isBalanced('function(text);'));
 
          
 //Task2 Validate string'"ABC72_pkg15_etj56"'
-console.log(/^[A-Z]{3}[0-9]{2}_[a-z]{3}[0-9]{2}_[a-z]{3}[0-9]{2}$/g.test('ABC72_pkg15_etj56'));
+function regExp(arg){
+    let reg = /^((((|[A-Z]){3}$)?(((([a-z]|[A-Z]){3})([0-9]{2})$))?(((([a-z]|[A-Z]){3})([0-9]{2})[-]))?)+)$/;
+    let result = reg.test(arg);
+    console.log(result)
+}
+regExp("ABC72_pkg15_etj56")

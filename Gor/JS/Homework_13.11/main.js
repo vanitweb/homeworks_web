@@ -5,4 +5,4 @@ function validateProductKey(str) {
 	let boo = (str1[0] === str);
 	return boo;
 }
-foo("XXX11-xxx22-aaa33-hhh1");
+validateProductKey("XXX11-xxx22-aaa33-hhh1");
