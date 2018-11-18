@@ -6,19 +6,27 @@ function regExp(arg){
 }
 regExp("AGA11-aaa45-a")
 
-// //exec() ,  match()  indexOf    lastIndexOf()  findIndex()
+//stugel ardyoq pakagcer@ chisht e drvac
+// exec() ,  match()  indexOf    lastIndexOf()  findIndex()
 
-// let text = 'ghgh{ghghgh  [hjhjhdjd (ghgh) ]jkjkjk }';
-// function isPrime(element, index, array) {
-//  for(let i = 0; n < text.lenght; i++){
-//  	i
-//  }
-//   while (start <= Math.sqrt(element)) {
-//     if (element % start++ < 1) {
-//       return false;
-//     }
-//   }
-//   return element > 1;
-// }
-// console.log(text.findIndex('{'));
-
+	let open = ['[', '{', '('];
+	let close = [']', '}', ')'];
+let isBalanced = function(code){
+	let balanced = [];
+	let arr = code.replace(/[^\(\)\[\]\{\}]/g,'').split('');
+    if(arr.length % 2 !== 0){
+		return 0;
+	}  
+    for(let i=arr.length-1; i>=0; i--){
+        if(close.indexOf(arr[i])>=0) 
+            balanced.push(arr[i]);
+        else{  
+            if(open.indexOf(arr[i])!==close.indexOf(balanced[balanced.length-1]))
+                return 0;
+            else
+                balanced.pop();
+        }
+    }
+    return (balanced.length>0)?0:1;
+};
+console.log(isBalanced('<>[ccg[}<a>]]b{([0 {mmm }9])}'));   
