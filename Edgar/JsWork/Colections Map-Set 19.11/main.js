@@ -52,6 +52,6 @@ function check(value){
 
 myMap.set(persons[0], obj);
 check(persons[0]);
-console.log(myMap.get(persons[0]));
+//console.log(myMap.get(persons[0]));
 
 
