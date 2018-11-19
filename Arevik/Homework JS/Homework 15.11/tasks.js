@@ -1,25 +1,24 @@
 //Homework1. Հաշվել զանգվածի բոլոր դրական թվերի գումարը։
-function positivaNumberSum(value) {
-	return value > 0;
-}
 let arr = [11, -22, -34, 45, 56];
-let filtered = arr.filter(positivaNumberSum);
-let sum = 0;
-
-filtered.forEach(function(elem) {
-	sum += elem;
+var result = arr.reduce(function(sum, elem) {
+	if (elem >= 0) {
+		return sum + elem;
+	} else {
+		return sum;
+	}
 });
-console.log(`Զանգվածի բոլոր դրական թվերի գումարը ${sum} է։`);
+
+console.log(result);
 
 
 
 //Homework2. Տրված զանգվածից ստանալ նոր զանգված, որի յուրաքանչյուր էլեմենտը տրված զանգվածի էլեմենտի կրկնապատիկն է։
 let arr1 = [1, 2, 4, 6, 7];
-let copyarr = [];
-arr1.forEach(function(item){
-	copyarr.push(item * 2);
+var newArr = arr1.map(function(elem) {
+	return elem * 2;
 });
-console.log(copyarr);
+
+console.log(newArr);
 
 
 
