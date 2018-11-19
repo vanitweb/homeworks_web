@@ -43,16 +43,10 @@ messageRead.set(messages[1], read[0]);
 messageRead.set(messages[2], read[1]);
 
 function funcMessageInfo(messages) {
-	for(let [key, value] of messageRead){
-		if(messageRead.has(messages)) {
-			console.log(value);
-			break;
-		}
-		
-		else{
-			console.log("Message is not yet read:");
-			break;
-		}
+	if(messageRead.has(messages)) {
+		console.log(messageRead.get(messages));
+	} else{
+		console.log("Message is not yet read:");
 	}
 }
 funcMessageInfo(messages[0]);
