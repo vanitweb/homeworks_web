@@ -125,7 +125,7 @@ function Main(arr, format) {
             break;
     }
 }
-console.log("by name", Main(massObj, "name"));
+console.log("by name", Main(massObj, "age"));
 
 console.log("--------------------------------------");
 // kam
@@ -141,7 +141,7 @@ function Main2(arr, format) {
     });
     return arr;
 }
-console.log("by name", Main2(massObj, "age"));
+console.log("by name", Main2(massObj, "name"));
 console.log("--------------------------------------");
 //4. Գրել ֆունկցիա, որը կգտնի երկու զանգվածների չկրկնվող էլեմենտները։
 let zangvac_1 = ["data6", "data1", "data2", "data3", "data4", "data5"];

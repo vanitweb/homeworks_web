@@ -1,0 +1,55 @@
+//////////////////////////drakan tveri gumar
+var array = [ 1, 2, 3, 4, 5, -2, 23, -1, -13, 10, -52 ],
+    positive = array.filter(function (a) { return a >= 0; }),
+    sum = positive.reduce(function (a, b) { return a + b; });
+
+console.log(sum);
+
+//////////////zangvaci elementneri krknapatik
+var array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+alert(map1);
+
+/////////////////////sortavorum(chi ashxatum :( ?
+function sortavorum(b)
+{
+	return ( b.sort() );
+}
+const a = [{name:"anun1",surname:"azganun1",age:"tariq1",g8or:"gror1"},{name:"anun2",surname:"azganun2",age:"tariq2",g8or:"gror2"}];
+
+sortavorum(a);
+
+
+////////////////////////////////////////chkrknvoxner ? 
+function unite() {
+    return [].concat.apply([], arguments).filter(function(elem, index, self) {
+        return self.indexOf(elem) === index;
+    });
+}
+
+
+res = unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
+alert(res);
+
+
+//funkciayi elementneri krknutyun
+var arr = [1, 2];
+var Arr1 = arr.concat(arr);
+var newArr = Arr1.concat();
+alert( newArr );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
