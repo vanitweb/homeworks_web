@@ -63,3 +63,4 @@ function func(lett) {
   }
 }
 func({text1: "erb es galu?", from1: "esim" });
+                                           
