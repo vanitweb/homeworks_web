@@ -1,6 +1,6 @@
 /* Գրել ծրագիր, որը կօգնի հասկանալ, թե որ նամակներն են արդեն կարդացած։ Յուրաքանչյուր նամակ ունի տեքստ և թե ում կողմից է ուղարկված։*/
 //is_message_read({text: "hello”, from: "ananymous”}) => true/false
-let myMape = new Map();
+let myMape = new Set();
 let Emails = [{
         text: "hello Zara",
         from: "Davit"
@@ -22,8 +22,8 @@ let Emails = [{
 function is_message_read(value) {
     return myMape.has(value) ? true : false;
 }
-myMape.set(Emails[0], true); //?
-myMape.set(Emails[2], true);
+myMape.add(Emails[0]); 
+myMape.add(Emails[2]);
 console.log(is_message_read(Emails[0]));
 console.log(is_message_read(Emails[1]));
 console.log(is_message_read(Emails[2]));
@@ -61,3 +61,14 @@ function message_read_info(value2) {
 message_read_info(Emails[1]);
 message_read_info(Emails[0]);
 message_read_info(Emails[3]);
+
+var mySet = new Set();
+
+mySet.add(1); // Set { 1 }
+mySet.add(5); // Set { 1, 5 }
+mySet.add(5); // Set { 1, 5 }
+mySet.add("some text"); // Set { 1, 5, 'some text' }
+var o = {a: 1, b: 2};
+mySet.add(o);
+console.log(mySet); // Set(4) {1, 5, "some text", {…}}
+
