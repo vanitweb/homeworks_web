@@ -17,16 +17,15 @@ function isEmployed(person){
 	}
 }
 
-isEmployed(person[0]);
+isEmployed(person[1]);
 
 
 
 // 1. Գրել ծրագիր, որը կօգնի հասկանալ, թե որ նամակներն են 
 //արդեն կարդացած։ // ուրաքանչյուր նամակ ունի տեքստ և թե ում
 // կողմից է ուղարկված։
-
-// is_message_read({text: “hello”, from: “ananymous”}) => 
-// true/false
+	// is_message_read({text: “hello”, from: “ananymous”}) => 
+	// true/false
 let letters = [{text: 'Hello', from: 'Any'},
 				{text: 'Thank you', from: 'Alla'},
 				{text: 'By', from: 'Any'}];
@@ -41,27 +40,30 @@ console.log(redNored(letters[0]));
 
 
 // 2.Գրել ծրագիր, որը կօգնի հասկանալ, թե որ նամակներն են 
-//արդեն կարդացած և երբ(առաջին անգամ) և ում կողմից են նրանք 
-//արդեն կարդացվել։ Յուրաքանչյուր ամակ ունի տեքստ և թե 
-//ում կողմից է ուղարկված։
-
+// արդեն կարդացած և երբ(առաջին անգամ) և ում կողմից են նրանք 
+// արդեն կարդացվել։ Յուրաքանչյուր ամակ ունի տեքստ և թե 
+// ում կողմից է ուղարկված։
 // message_read_info({text: “hello”, from: “ananymous”}) => 
 // read on 2018-Nov-18 by user 1 // message is not yet read
-//kisat
-let set = new Set();
+
+let mySet = new Set();
 let message = [{text: 'Hello', from: 'Any'},
 				{text: 'Thank you', from: 'Alla'},
 				{text: 'By', from: 'Any'}];
-let user1 = {'user1': Date(2010, 10, 18)};
-let user2 = {'user2': Date(2008, 6, 10)},
-let user3 =	{'user1': Date(2011, 8, 2)}
+let user = [{'user1': Date(2010, 10, 18)},
+			{'user2': Date(2008, 6, 10)},
+			{'user1': Date(2011, 8, 2)}];
 
 
-set.add(user[0], Date[1]);
-mySet.set(user[1], Date[2]);
-mySet.set(user[1], Date[0]);
-function reading(user) {
-	return mySet.has(user, Date);
+mySet.add(message[0], user[0]);
+mySet.add(message[1], user[1]);
+mySet.add(message[1], user[2]);
+function reading(message) {
+	if(mySet.has(message)){
+		console.log(`read on ${user.Date} by ${user}`);
+	}
+	else {
+		console.log("messageic is not yet read");
+	}
 }
-console.log(redDate(MySet[1]));
-
+reading(message[0]);
