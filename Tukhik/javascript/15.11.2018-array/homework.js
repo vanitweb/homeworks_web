@@ -13,7 +13,6 @@ function deep(parts){
 console.log(`arajadranq -1- ${deep(parts)}`);
 console.log(parts);
 
-
 //0. (Դասարանային) Գրել ֆունկցիա, որը կհարթեցնի տրված զանգվածը։ Օրինակ
 // make_flat([1, [2], [3, [[4]]],[5,6]]) => [1, 2, 3, 4, 5, 6]
 let arr0 = [1, [2, 9], [3, [4]], [5,[6,[7]]]];
@@ -33,11 +32,19 @@ console.log(`arajadranq 0- ${makeFlat(arr0)}`)
 
 //1. Հաշվել զանգվածի բոլոր դրական թվերի գումարը։
 let numbers = [1, -1, 3, 5, 4, -40];
+
 const plus = numbers.filter(numbers => numbers > 0);
 let gumar = plus.reduceRight(function(a, b){
 	return a+b;
 });
 console.log(gumar)
+
+//tbreak 2  --- 1. Հաշվել զանգվածի բոլոր դրական թվերի գումարը։ 
+let numbers1 = [1, -1, 3, 5, -10, -40];
+const plus1 = numbers1.filter(numbers1 => numbers1 > 0).reduceRight(function(c, d){
+	return c + d;
+});
+console.log(plus1)
 
 // 2. Տրված զանգվածից ստանալ նոր զանգված, որի յուրաքանչյուր էլեմենտը
 //տրված զանգվածի էլեմենտի կրկնապատիկն է։
@@ -54,50 +61,22 @@ console.log(doubles);
 //դաշտերը։
 //obj_sort(arr, ‘name’), obj_sort(arr, ‘age’) …
 let persons = [
-	{name: 'Sargis', surname: 'Poghosyan', 'age': 21, regDate: '4 April 2018'},
+	{name: 'Sargis', surname: 'Poghosyan', 'age': 9, regDate: '4 April 2018'},
 	{name: 'Emma', surname: 'Qaryan', 'age': 33, regDate: '30 December 2017'},
 	{name: 'Alla', surname: 'Petrosyan', 'age': 19, regDate: '25 September 2010'},
 ];
-function obj_sort_Name(persons) {
-	let naMe = [];
-	for(i = 0; i < persons.length; i++){
-	naMe.push(persons[i].name);
-	naMe.sort();	
-	}  
-return naMe;
-}
-console.log(obj_sort_Name(persons));
 
-function obj_sort_surName(persons) {
-	let surName = [];
-	for(i = 0; i < persons.length; i++){
-	surName.push(persons[i].surname);
-	surName.sort();
-	}  
-return surName;
+function obj_sort(array, key) {
+	array.sort(function (a, b) {
+		if(a[key] < b[key]){
+			return -1;
+		}else{
+			return 1;
+		}
+	});
+	console.log(array);
 }
-console.log(obj_sort_surName(persons));
-
-function obj_sort_age(persons, age) {
-	let aGe = [];
-	for(i = 0; i < persons.length; i++){
-	aGe.push(persons[i].age);
-	aGe.sort();
-	}  
-return aGe;
-}
-console.log(obj_sort_age(persons));
-
-function obj_sort_data(persons) {
-	let dAte = [];
-	for(i = 0; i < persons.length; i++){
-	dAte.push(persons[i].date);
-	dAte.sort();
-	}  
-return dAte;
-}
-console.log(obj_sort_data(persons));
-
+obj_sort(persons,'regDate');
 
 //4. Գրել ֆունկցիա, որը կգտնի երկու զանգվածների չկրկնվող էլեմենտները։
 Array.prototype.diff = function(a) {
