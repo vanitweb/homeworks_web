@@ -43,18 +43,19 @@ mainAdd(Emails[0], obj3[0]);
 let mySet = new Set();
 
 function who_is_read(massege) {
+     if (mySet.has(massege)) {
+     return `Heriqa `;
+    }
     if (myMape.has(massege)) {
         let r = (Object.values(myMape.get(massege)).join(" by: "));
-        mySet.add(massege);
         console.log(`massege is read: ${r}: `);
     } else {
         console.log("Message is not read yet:");
     }
-    if (mySet.has(massege)) {
-        return `Heriqa `;
-    }
+   
+        mySet.add(massege);
 
 }
 who_is_read(Emails[0]);
 who_is_read(Emails[1]);
-who_is_read(Emails[0]);
+console.log(who_is_read(Emails[0]));
