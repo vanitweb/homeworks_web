@@ -19,8 +19,8 @@ let messages = [
 	}
 ];
 let read = new Set();
-read.add(messages[0],true);
-read.add(messages[2],true);
+read.add(messages[0]);
+read.add(messages[2]);
 function isMessageRead(message) {
 	return read.has(message);
 }
