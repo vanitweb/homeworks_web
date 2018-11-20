@@ -63,40 +63,6 @@ console.log(messigefunc(messagege[0]));
 console.log(messigefunc(message[1]));
 console.log(messigefunc(message[2]));
 
-//qani angam e kardacvel sxal...
- let message = 
-[
-	{
-		"text":"ABC",
-		"user":"AB"
-	},
-	{
-		"text":"ABCD",
-		"user":"ABC"
-	},
-	{
-		"text":"ABCDE",
-		"user":"ABCD"
-	}
-];
-
-var namak = new Map();
-namak.add(message[0]);
-namak.add(message[1]);
-namak.add(message[2]);
-function func(persone)
-{	
-	return (namak.get(persone));
-}
-for(i = 1; i < 10; i++)
-{
-	console.log(func(message[1]));
-	if(i = 1)
-	{
-		console.log("kardacvel e araji angam");
-	}
-}
-
 
 
 
