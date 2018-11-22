@@ -75,7 +75,7 @@ Employment(persons[5]);
 ////1. Գրել ծրագիր, որը կօգնի հասկանալ, թե որ նամակներն են արդեն կարդացած։ Յուրաքանչյուր նամակ ունի տեքստ և թե ում կողմից է ուղարկված։
 
 //is_message_read({text: “hello”, from: “ananymous”}) => true/false
-var read = new Map();
+var read = new Set();
 var messages = [{
     text: "Hi",
     from: "Rob"
@@ -86,8 +86,8 @@ var messages = [{
     text: "I'm fine,thank you",
     from: "Rob"
 }];
-read.set(messages[1]);
-read.set(messages[2]);
+read.add(messages[1]);
+read.add(messages[2]);
 
 function isMessageRead(messages) {
     return read.has(messages)
