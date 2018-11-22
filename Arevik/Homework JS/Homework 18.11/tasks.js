@@ -25,31 +25,49 @@ console.log(isMessageRead(message[3]));
 
 //homework 2: Գրել ծրագիր, որը կօգնի հասկանալ, թե որ նամակներն են արդեն կարդացած և երբ(առաջին անգամ) և ում կողմից են նրանք արդեն կարդացվել։ Յուրաքանչյուր նամակ ունի տեքստ և թե ում կողմից է ուղարկված։ message_read_info({text: “hello”, from: “ananymous”}) => read on 2018-Nov-18 by user 1 // message is not yet read
 
-let read = [
-	{user1: new Date(2018, 11, 18)},
-	{user2: new Date(2018, 11, 19)},
-	{user3: new Date(2018, 11, 20)}
-];
-
 let messages = [
 	{text: "What is this?", from: 'Daniel'},
 	{text: "What is your name?", from: 'Narine'},
 	{text: "Hou old are you?", from: 'Sergey'},
-	{text: "What colot is it?",	from: 'Anna'}
+	{text: "What colot is it?", from: 'Anna'}
 ];
 
-let messageRead = new Map();
-messageRead.set(messages[1], read[0]);
-messageRead.set(messages[2], read[1]);
+let readMessages = new Map();
 
-function funcMessageInfo(messages) {
-	if(messageRead.has(messages)) {
-		console.log(messageRead.get(messages));
-	} else{
-		console.log("Message is not yet read:");
-	}
+
+function didUserRead(users, username) {
+	//return !!users.username ;
+	return typeof users.username === 'undefined' || users.username === null? false: true;
 }
-funcMessageInfo(messages[0]);
-funcMessageInfo(messages[1]);
-funcMessageInfo(messages[2]);
-funcMessageInfo(messages[3]);
+
+
+function readMessage(message, username) {
+	if (!readMessages.has(message)) {
+		readMessages.set(message, {});
+	} else if (didUserRead(readMessages.get(message), username)){
+		return 
+	}
+	const users = readMessages.get(message);
+	users[username] = new Date();
+	readMessages.set(message, users);
+}
+
+
+function firstRead(message){
+	if(readMessages.has(message)){
+		console.log(readMessages.get(message));
+	}else{
+		console.log("Message is not yet read:");
+	} 
+}
+
+readMessage(messages[0], 'user 1');
+readMessage(messages[1], 'user 1');
+readMessage(messages[0], 'user 1');
+readMessage(messages[2], 'user 2');
+readMessage(messages[0], 'user 2');
+readMessage(messages[1], 'user 2');
+readMessage(messages[1], 'user 3');
+firstRead(messages[0]);
+firstRead(messages[1]);
+firstRead(messages[2]);
