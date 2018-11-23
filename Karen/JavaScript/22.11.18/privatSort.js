@@ -20,7 +20,7 @@ let washer = new Washer();
 ///////////////////////////
 let fruits = ['apple', 'orange', 'pear', 'cherry'];
 function sort() { 
-		fruits[0] = 1;
+	fruits[0] = 1;
 }
 fruit = new sort();
 fruit._proto_ = fruits;
