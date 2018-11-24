@@ -17,20 +17,14 @@ arr.print()
 //homework2
 let obj = {
     arr : [],
-    arrlength: "",
     set arrset(value) {
         this.arr.push(value);
     },
-    set arrlengthset(value) {
-        this.arrlength = this.arr.length / value;
+    get arrlength(){
+		return this.arr.length
     },
-    get print(){
-        console.log(`arr - ${this.arr} \narrlength - ${this.arrlength}`)
-    }
 }
 obj.arrset = 15;
 obj.arrset = 12;
 obj.arrset = 16;
-obj.arrlengthset = 2;
-console.log(obj);
-obj.print
+console.log(obj.arrlength);
