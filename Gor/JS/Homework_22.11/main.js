@@ -16,20 +16,18 @@ Array.prototype.gumar = function() {
 console.log(`zangvatsi elementneri gumar@: ${arr.gumar()}`);
 //Homework 2: Ստեղծել օբյեկտ, որի բոլոր արգումենտները փակ են, հասանելի չեն դրսից կանցհի համար, օբյեկտներին արժեք տալու և նրանցից արժեք ստանալու համար օգտագործել set և get ֆունկցիաները
 let person = {
-	firsName: "",
-	lastName: "",
-	age: "",
+	myPerson: {},
 	set fName(a) {
-		this.firsName = a;
+		this.myPerson.firstName = a;
 	},
 	set lName(a) {
-		this.lastName = a;
+		this.myPerson.lastName = a;
 	},
 	set personAge(a){
-		this.age = a;
+		this.myPerson.age = a;
 	},
 	get personInfo() {
-		return this.firsName + " " + this.lastName + " " + this.age + " years old...";
+		return this.myPerson.firstName + " " + this.myPerson.lastName + " " + this.myPerson.age + " years old...";
 	},
 };
 person.fName = "Gor";
