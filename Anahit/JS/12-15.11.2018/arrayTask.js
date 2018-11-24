@@ -12,9 +12,26 @@ function make_flat(arr) {
     return arr.flat(depth);;
 }
 console.log(make_flat(arr));
+/*aveli optimal exanak
+let mass = [1, [2],[3, [[4]]],[5, 6]];
 
+function make_flat(arg) {
+    return arg.reduce((acc, val) => Array.isArray(val) ? acc.concat(make_flat(val)) : acc.concat(val), []);
+}
+console.log("make_flat()", make_flat(mass));
+console.log("--------------------------------------");
+
+*/
 //Task 2. Հաշվել զանգվածի բոլոր դրական թվերի գումարը։
 
+function positive_sum(arr) {
+    let arrReturn = arr.filter(num => num > 0);
+    let sum = arrReturn.reduce((num1,num2) => num1 + num2);
+    console.log(sum);    
+}
+positive_sum([5, -2, 7, 1, -3, 1]);
+/* 
+//2rd exanak
 function positive_sum(arr) {
     function isPositive(num) {
         return num > 0;
@@ -27,10 +44,8 @@ function positive_sum(arr) {
     console.log(sum);    
 }
 positive_sum([5,-2,7,1,-3,1]);
-
-//2rd exanak
-
-var array = [-3, 5, 2,-1];
+//3rd exanak
+var array = [-3, 5, 2, -1];
 var sum = 0;
 array.forEach(function(element) {
     if(element > 0) {
@@ -38,10 +53,19 @@ array.forEach(function(element) {
     } 
 });
 console.log(sum); 
-
+*/
 //Task 3. Տրված զանգվածից ստանալ նոր զանգված, որի յուրաքանչյուր էլեմենտը տրված զանգվածի էլեմենտի կրկնապատիկն է
 //forEach i mej nuyn zangvaci vra chilinum poxel elementner@ ?
 
+function twice(arr) {
+    let arrReturn = arr.map(function(element){
+                                return element * 2;
+                            });
+    console.log(arrReturn);
+}
+twice([3, 5, 2,1]);
+
+/*2rd exanak
 function twice(arr) {
     let arrReturn = [];
     arr.forEach(function(element) {
@@ -50,6 +74,7 @@ function twice(arr) {
 console.log(arrReturn);
 }
 twice([3, 5, 2,1]);
+*/
 /*
 //Task 4. Գրել ֆունկցիա, որը արգումենտում կստանա օբյեկտների (մարդկանց) զանգված և կսորտավորի ըստ տրված դաշտի (keyի)։ Մարդ օբյեկտը պետք է ունենա անուն, ազգանուն, տարիք և գրանցման օր դաշտերը։
 
@@ -111,3 +136,14 @@ function non_recurring(arr1,arr2) {
     console.log(arr3);
 }
 non_recurring([2,4,5,7,6],[1,3,5,2]);
+/* aveli optimal exanak
+rray.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+let arr1 = [2, 1, 5, 4, 'text', [1,2], 'a'];
+let arr2 = ['b', 'text', 1, 2, 4, 5]; 
+let arr3 = arr1.diff(arr2);
+let arr4 = arr2.diff(arr1);
+let result = arr3.concat(arr4);
+console.log(result); 
+*/
