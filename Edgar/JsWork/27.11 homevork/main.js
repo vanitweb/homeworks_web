@@ -1,17 +1,3 @@
-var a = {a: 1}; 
-// a ---> Object.prototype ---> null
-
-var b = Object.create(a);
-// b ---> a ---> Object.prototype ---> null
-console.log(b.a); // 1 (унаследовано)
-
-var c = Object.create(b);
-// c ---> b ---> a ---> Object.prototype ---> null
-
-var d = Object.create(null);
-// d ---> null
-console.log(d.hasOwnProperty); 
-// undefined, т.к. 'd' не наследуется от Object.prototype
 function Person(name, surname, age, Id, workTitle){
 	this.name = name;
 	this.surname = surname;
@@ -33,3 +19,12 @@ function Developer(name, surname, age, Id, workTitle) {
 }
 let developer = new Developer('Gor', 'Manukyan', 25, 'gorman93', 'Developer');
 console.log(developer.printInfo());
+
+function JsDeveloper(name, surname, age, Id, workTitle) {
+	Developer.apply(this, [name, surname, age, Id, workTitle]);//?
+	this.printInfo = function() {
+		return `Person name is: ${name}, \nsurname: ${surname}, \nage: ${age}, \nworkTitle: ${workTitle},`;
+	}
+}
+let new_JS_Developer = new JsDeveloper('Ani', 'Poghosyan', 45, 65992, 'JsDeveloper');
+console.log(new_JS_Developer.printInfo());
