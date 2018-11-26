@@ -1,9 +1,9 @@
 //1.1 array-ի ցանկացած մեթոդ վերցնել, օրինակ sort-ը, փոխել
 
 let phones = ["Xiaomi Redmi", "Huawey", "Samsung", "Nokia"];
-Array.prototype.filter = function(phone){
+Array.prototype.filter = function(phone) {
 	if(phone ==="Samsung"){
-	console.log(1);
+		console.log(1);
 	}else{
 		console.log('it is not Samsung');
 	}
@@ -25,30 +25,22 @@ console.log(array.myFunction());
 
 //2. Հայտարարել տիպ, որի բոլոր property-ները privat են, օգտագործել get, set
 
-let phones = {
-	name: "",
-	HDD: "",
-	RAM: "",
-	price: "",
-	
-	set phone(value){
-		this.phones.name = value;		
-	},	
-	set phHdd(value){
-		this.phones.HDD = value;
-	},
-	set phRam(value){
-		this.phones.RAM = value;
-	},
-	set phPrice(value){
-		this.phones.price = value;
-	},
-	get phone(){
+let phone = {
+	name: 'Samsung',
+	HDD: '64GB',
+	RAM: '4GB',
+	price: '130000',
+	get smartPhone() {
 		return `${this.name} ${this.HDD} ${this.RAM} ${this.price}`;
 	},
+	set smartPhone(value) {
+		const param = value.split(',');
+		this.name = param[0];
+		this.HDD = param[1];
+		this.RAM = param[2];
+		this.price = param[3];
+	}
 };
-phones.name = "Xiaomi Redmi 5";
-phones.HDD = "16GB";
-phones.RAM = "2GB";
-phones.price = "98000dr";
-console.log(phones.phone);
+phone.smartPhone = 'Xiaomi Redmi, 32GB, 2GB, 80000';
+//phone.smartPhone = 'Nokia, 8GB, 1GB, 50000';
+console.log(phone);
