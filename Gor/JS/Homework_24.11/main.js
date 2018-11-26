@@ -7,26 +7,48 @@ function Person(name, surname, age, username, password) {
 	this.username = username;
 	this.password = password;
 	this. printInfo = function() {
-		return `Person info: ${name} ${surname} ${age} years old...`;
+		let property = "";
+		for(let item in this) {
+			if(this.hasOwnProperty(item) && typeof(this[item]) !== "function") {
+				property += item + ':' + this[item] + '\n';
+			}	
+		}
+		return property;
 	}
 }
 let person = new Person('Gor', 'Manukyan', 25, 'gorman93', 'gor93');
 console.log(person.printInfo());
 function Developer(name, surname, age, username, password) {
 	Person.call(this, name, surname, age, username, password);
-	this.category = 'Developer';
+	this.workTitle = 'Developer';
 	this.printInfo = function() {
-		return `Person info: ${name} ${surname} ${age} years old..., staff: ${this.category}`;
+		let property = "";
+		for(let item in this) {
+			if(this.hasOwnProperty(item) && typeof(this[item]) !== "function") {
+				property += item + ':' + this[item] + '\n';
+			}	
+		}
+		return property;
 	}
 }
-let developer = new Developer('Gor', 'Manukyan', 25, 'gorman93', 'gor93');
+Developer.prototype = Object.create(Person.prototype);
+Developer.prototype.constructor = Developer;
+let developer = new Developer('Edgar', 'Nikhogosyan', 32, 'edgarnik86', 'edgar86');
 console.log(developer.printInfo());
 function JsDeveloper(name, surname, age, username, password) {
 	Developer.call(this, name, surname, age, username, password);
-	this.category = 'JsDeveloper';
+	this.staff = 'JsDeveloper';
 	this.printInfo = function() {
-		return `Person info: ${name} ${surname} ${age} years old..., work type: ${this.category}, staff: ${this.category}`;
+		let property = "";
+		for(let item in this) {
+			if(this.hasOwnProperty(item) && typeof(this[item]) !== "function") {
+				property += item + ':' + this[item] + '\n';
+			}	
+		}
+		return property;
 	}
 }
-let jsDeveloper = new JsDeveloper('Gor', 'Manukyan', 25, 'gorman93', 'gor93');
+JsDeveloper.prototype = Object.create(Developer.prototype);
+JsDeveloper.prototype.constructor = JsDeveloper;
+let jsDeveloper = new JsDeveloper('David', 'Manukyan', 27, 'davman91', 'dav91');
 console.log(jsDeveloper.printInfo());
