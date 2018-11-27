@@ -1,49 +1,53 @@
-let messages = [
-{text: "What is this?", from: 'Daniel'},
-{text: "What is your name?", from: 'Narine'},
-{text: "Hou old are you?", from: 'Sergey'},
-{text: "What colot is it?", from: 'Anna'}
-];
+//Փոխել ստանդարտ օբյեկտներից որևէ մեկի որևէ ստանդարտ մեթոդ
 
-let readMessages = new Map();
-
-
-function didUserRead(users, username) {
-//return !!users.username ;
-return typeof users.username === 'undefined' || users.username === null? false: true;
+function Car(types, model, year) {
+  this.types = types;
+  this.model = model;
+  this.year = year;
+  this.speed = 0;
 }
+let mycar1 = new Car("Nissan", "kicks", 2018);
+let mycar2 = new Car("Audi", "A6,", 2008);
+console.log(mycar1);
 
-function readMessage(message, username) {
-if (!readMessages.has(message)) {
-readMessages.set(message, {});
-} else if (didUserRead(readMessages.get(message), username)){
-return 
+mycar1.model = 'Juke';
+console.log(mycar1);
+
+mycar1.color = 'white';
+console.log(mycar1);
+
+
+// Ստանդարտ օբյեկտներից որևէ մեկի համար ստեղծել սեփական մեթոդ
+function Car(types, model, year, color) {
+  this.types = types;
+  this.model = model;
+  this.year = year;
+  this.color = color;
 }
-const users = readMessages.get(message);
-users[username] = new Date();
-readMessages.set(message, users);
-
+let theCar = new Car ('Nissan', 'kicks', 2018, 'white' );
+Car.prototype.toString = function carToString() {
+  var ret = 'car ' + this.types + ' - ' + this.model + ', ' + this.year + ' ' + this.color;
+  return ret;
 }
+console.log(theCar.toString())
 
 
-function firstRead(message){
-//for(let key of readMessages.keys()){
-if(readMessages.has(message)){
-return readMessages.get(message);
-}else{
-console.log("Message is not yet read:");
 
-} 
+// set, get
 
-}
-
-readMessage(messages[0], 'user 1');
-readMessage(messages[1], 'user 1');
-readMessage(messages[0], 'user 1');
-readMessage(messages[2], 'user 2');
-readMessage(messages[0], 'user 2');
-readMessage(messages[1], 'user 2');
-readMessage(messages[1], 'user 3');
-console.log(firstRead(messages[0]));
-setTimeout(function() {console.log(firstRead(messages[1])) }, 2000);
-setTimeout(function() { console.log(firstRead(messages[2]))}, 4000);
+var employee = {
+    first: "",
+    last: "",
+    get fullName() {
+        return this.first + " " + this.last;
+    },
+    set fullName(value) {
+        var parts = value.toString().split(" ");
+        this.first = parts[0] || "";
+        this.last = parts[1] || "";
+    },
+}; 
+employee.fullName = "Any Nazaryan";
+console.log(employee.first);
+console.log(employee.last);
+console.log(employee.fullName);
