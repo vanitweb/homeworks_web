@@ -5,14 +5,14 @@ let persone = function() {
 	this.name = 'programmers',
 	this.surname = 'surname',
 	printInfo = function() {
-		let prop = object.cetOwnPropertyNames(persone);
+		let prop = object.getOwnPropertyNames(persone);
 		console.log(prop);
 	};
 };
 let developer = function() {
 	this.degree = 'bachelor'
 	printInfo = function() {
-		let prop = object.cetOwnPropertyNames(developer);
+		let prop = object.getOwnPropertyNames(developer);
 		console.log(prop);
 	};
 };
@@ -20,7 +20,7 @@ developer.prototype = new persone;
 let jsdeveloper = function() {
 	this.programm = 'JavaScript'
 	printInfo = function() {
-		let prop = object.cetOwnPropertyNames(jsdeveloper);
+		let prop = object.getOwnPropertyNames(jsdeveloper);
 		console.log(prop);
 	};
 };
