@@ -27,7 +27,7 @@ let Person = function	(firstname, lastname, age) {
 Person.prototype.printinfo = function (){
 	return this.firstname + " " + this.lastname + " "+ this.age;
 }
-let person = new Person('a', 'b', 10);
+let person = new Person('Any', 'Kazaryan', 10);
 console.log(person.printinfo());
 
 let Developer = function(firstname, lastname, age, komp) {
@@ -38,7 +38,7 @@ Developer.prototype = Object.create(Person.prototype);
 Developer.prototype.printinfo = function (){
 	return this.komp;
 }
-let developer = new Developer('a', 'b', 10, 'hp');
+let developer = new Developer('Any', 'Kazaryan', 10, 'hp');
 console.log(developer.printinfo());
 
 
@@ -50,5 +50,42 @@ JSDeveloper.prototype = Object.create(Developer.prototype);
 JSDeveloper.prototype.printinfo = function (){
 	return this.webEj;
 }
-let jsDeveloper = new JSDeveloper('a', 'b', 10, 'hp', 'gitHub');
+let jsDeveloper = new JSDeveloper('Any', 'Kazaryan', 10, 'hp', 'gitHub');
 console.log(jsDeveloper.printinfo());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let u = 0;
+let age = 3;
+while(true) {
+	if(u === age) {
+		console.log('be Happy Hamlet & Naira');
+		break;
+	}
+	else {u +=1};
+}

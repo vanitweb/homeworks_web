@@ -33,9 +33,10 @@ console.log(theCar.toString())
 
 
 
-// set, get
+//  Ստեղծել օբյեկտ, որի բոլոր արգումենտները փակ են, հասանելի 
+//չեն դրսից կանցհի համար, օգտագործել set և get ֆունկցիաները
 
-var employee = {
+let employee = {
     first: "",
     last: "",
     get fullName() {
