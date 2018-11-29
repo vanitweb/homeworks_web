@@ -11,24 +11,22 @@ class Institut {
 }
 class Facultet extends Institut {
 	constructor (ambion, lesson, dekanat) {
-		// this.ambion = ambion;
-		// this.lesson = lesson;
-		// this.dekanat = dekanat;
-		console.log(this.facultet + ' ' + this.name );
+		super();
+		this.ambion = ambion;
+		this.lesson = lesson;
+		this.dekanat = dekanat;
 	}
 } 
 class Dekanat extends Facultet {
-	constructor (){
-		super(ambion, lesson, dekanat);
+	constructor (dekan, assistent){
+	super();
 	this.dekan = dekan;
 	this.assistent = assistent;
-		let prop = object.getOwnPropertyNames(Institut);
-		console.log(prop);
 	}
 }
-let institut = new Institut();
-let facultet = new Facultet()
-institut.complete();
-
-console.log(Institut);
-console.log(facultet);
+let institut = new Institut('fizmat', 'VPH', 'MatGradaran');
+let fakultet = new Facultet('matanalis', 'matem', 'Fizika');
+let dekanat = new Dekanat('Grigoryan', 'Sargsyan');
+console.log(institut);
+console.log(fakultet);
+console.log(dekanat.dekan);
