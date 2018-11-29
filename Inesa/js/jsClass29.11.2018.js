@@ -90,7 +90,7 @@ class Lsaran extends Fakultet
 	{
 		this.qanak = qanak;
 	}
-	info = function()
+	info()
 	{
 		return qanak;
 	}
