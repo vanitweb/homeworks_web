@@ -1,5 +1,6 @@
 //Homeworks 24.11.2018
 //Create object with literal
+console.log("**********************************************************************");
 let institut = {
 	name: 'VSU',
 	library: 45000,
@@ -15,19 +16,17 @@ let institut = {
 				ararka: 'Busabanutyun',
 			},
 		},
-		dekanat: {
-			dekan: {
+		dekan: {
 				name: 'Zaruhi',
 				surnam: 'Vardanyan',
 				age: 55,
 				ararka: 'Kensabanutyun',
-			},
-			ashxatox: {
+		},
+		ashxatox: {
 				name: 'Gohar',
 				surname: 'Simonyan',
 				age: 45,
 				hastiq: 'operator',
-			},
 		},
 	},
 };
@@ -35,6 +34,5 @@ console.log(institut);
 console.log(institut.fakultet);
 console.log(institut.fakultet.ambion);
 console.log(institut.fakultet.ambion.dasaxos);
-console.log(institut.fakultet.dekanat);
-console.log(institut.fakultet.dekanat.ashxatox);
-console.log(institut.fakultet.dekanat.dekan);
+console.log(institut.fakultet.ashxatox);
+console.log(institut.fakultet.dekan);

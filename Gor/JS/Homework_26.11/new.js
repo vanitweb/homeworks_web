@@ -1,5 +1,6 @@
 //Homeworks 24.11.2018
 //Create object with new Object()
+console.log("**********************************************************************");
 let Institut = new Object();
 Institut.name = 'VSU';
 Institut.library = 45000;
