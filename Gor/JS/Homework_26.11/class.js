@@ -29,9 +29,9 @@ class Ambon extends Facultet {
 	}
 }
 
-let universiti = new Universiti('VSU', 45000);
+const universiti = new Universiti('VSU', 45000);
 console.log(universiti.printInfo);
-let facultet = new Facultet('VSU', 'Fizmath');
+const facultet = new Facultet('VSU', 'Fizmath');
 console.log(facultet.printInfo);
-let ambon = new Ambon('VSU', 'Fizmath', 'Matemi');
+const ambon = new Ambon('VSU', 'Fizmath', 'Matemi');
 console.log(ambon.printInfo);
