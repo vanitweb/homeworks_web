@@ -41,10 +41,40 @@ let Persone ={
 	return this;
 	},
 printInfo: function(){
-	console.log( "Person name is: " + this.name + "surname: " + this.surname + "age: " + this.age + "workTitle: " + this.workTitle);
+	console.log( "Person name is: " + this.name + "surname: " + this.surname + "age: " + this.age + " workTitle: " + this.workTitle);
 }
 };
 let person = Object.create(Persone).construktor('Ani', 'Poghosyan', 45, 65992, 'JsDeveloper');
 let person2 = Object.create(Persone).construktor('Gor', 'Pohosyan', 25, 25192, 'JsDeveloper');
 person.printInfo();
 person2.printInfo();
+
+//26.11 homework
+class Institut {
+	constructor(facultet, name, gradaran) {
+		this.facultet = facultet;
+		this.name = name;
+		this.gradaran = gradaran;
+	}
+}
+class Facultet extends Institut {
+	constructor (ambion, lesson, dekanat) {
+		super();
+		this.ambion = ambion;
+		this.lesson = lesson;
+		this.dekanat = dekanat;
+	}
+} 
+class Dekanat extends Facultet {
+	constructor (dekan, ognakan){
+	super();
+	this.dekan = dekan;
+	this.ognakan = ognakan;
+	}
+}
+let institut = new Institut('fizmat', 'VPH', 'Fizikayi gradaran');
+let fakultet = new Facultet('Informatika', 'inform', 'Inform');
+let dekanat = new Dekanat('Mazmanyan', 'Apresyan');
+console.log(institut);
+console.log(fakultet);
+console.log(dekanat.ognakan);

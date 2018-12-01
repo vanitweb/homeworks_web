@@ -46,15 +46,15 @@ let Ashxatox = function(univName, library, fakName, ashxName, ashxSurname, ashxA
 Ashxatox.prototype = Object.create(Fakultet.prototype);
 Ashxatox.prototype.constructor = Ashxatox;
 
-let university = new University('VSU', 45000);
+const university = new University('VSU', 45000);
 console.log(university);
-let fakultet = new Fakultet('VSU', 45000, 'Fizikamatematikakan');
+const fakultet = new Fakultet('VSU', 45000, 'Fizikamatematikakan');
 console.log(fakultet);
-let ambion = new Ambion('VSU', 45000, 'Mankavarjutyan', 'Hogebanutyan ambion', 40);
+const ambion = new Ambion('VSU', 45000, 'Mankavarjutyan', 'Hogebanutyan ambion', 40);
 console.log(ambion);
-let dasaxos = new Dasaxos('VSU', 45000, 'Mankavarjutyan', 'Mankavarjutyan ambion', 10, 'Pargev', 'Gevorgyan', 70, 'Mankavarjutyun ev metodika');
+const dasaxos = new Dasaxos('VSU', 45000, 'Mankavarjutyan', 'Mankavarjutyan ambion', 10, 'Pargev', 'Gevorgyan', 70, 'Mankavarjutyun ev metodika');
 console.log(dasaxos);
-let dekan = new Dekan('VSU', 45000, 'Fizikamatematikakan', 'Hermine', 'Grigoryan', 45, 'Matematikakan analiz');
+const dekan = new Dekan('VSU', 45000, 'Fizikamatematikakan', 'Hermine', 'Grigoryan', 45, 'Matematikakan analiz');
 console.log(dekan);
-let ashxatox = new Ashxatox('VSU', 45000, 'Fizikamatematikakan', 'Tehmine', 'Tavaratsyan', 36, 'Dekani ognakan');
+const ashxatox = new Ashxatox('VSU', 45000, 'Fizikamatematikakan', 'Tehmine', 'Tavaratsyan', 36, 'Dekani ognakan');
 console.log(ashxatox);
