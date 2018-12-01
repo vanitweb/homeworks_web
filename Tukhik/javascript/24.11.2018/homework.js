@@ -36,7 +36,7 @@ let Developer = function(firstname, lastname, age, komp) {
 }
 Developer.prototype = Object.create(Person.prototype);
 Developer.prototype.printinfo = function (){
-	return this.komp;
+	return this.firstname;
 }
 let developer = new Developer('Any', 'Kazaryan', 10, 'hp');
 console.log(developer.printinfo());
