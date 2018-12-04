@@ -3,3 +3,24 @@
 	height: 150px;
 	background: orangered;
 }
+.block{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border: 1px solid white;
+	box-sizing: border-box;
+	line-height: 50px;
+	text-align: center;
+	font-style: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#btn{
+	background: orangered;
+	padding: 10px;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 10px;
+	font-weight: 600;
+	border: 2px dashed #000;
+}
