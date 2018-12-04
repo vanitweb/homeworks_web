@@ -1,5 +1,5 @@
 'use strict';
-const x = function() {
+const x = function(CELL_SIZE) {
     let count = 0;
     let isX = true;
     return function(e){
@@ -16,7 +16,7 @@ const x = function() {
               else {
               if(cell[0].innerHTML == 'X'){
                 alert('haxtaec X');
-                document.getElementsByTagName('button')[0].textContent ="Try again";
+                document.getElementsByTagName('button')[0].textContent ="New Game";
                 document.getElementsByTagName('button')[0].style.display = 'block';
                 const table = document.getElementsByTagName('table')[0];
                 table.innerHTML = "";
@@ -25,7 +25,7 @@ const x = function() {
               }
               else {
                 alert('haxtaec 0');
-                document.getElementsByTagName('button')[0].textContent ="Try again";
+                document.getElementsByTagName('button')[0].textContent ="New Game";
                 document.getElementsByTagName('button')[0].style.display = 'block'; 
                 const table = document.getElementsByTagName('table')[0];
                 table.innerHTML = "";
