@@ -5,6 +5,7 @@ window.onload = function() {
 	var hod = 0;
 	document.getElementById('game').onclick = function(event) {
 		console.log(event);
+		
 		if(event.target.className == 'block') {
 			if(hod%2 == 0){
 				event.target.innerHTML = 'X';
@@ -16,8 +17,9 @@ window.onload = function() {
 			checkWinner();
 		}
 	}
-	function checkWinner(){
-		var allblock = document.getElementsByClassName('block');
+	
+	function Stugum(){
+		var dt = document.getElementsByClassName('block');
 
 		if(allblock[0].innerHTML == "X"  && allblock[1].innerHTML == 'X' && allblock[2].innerHTML == 'X') alert ('haxtecin X-er@');
 		if(allblock[3].innerHTML == "X"  && allblock[4].innerHTML == 'X' && allblock[5].innerHTML == 'X') alert ('haxtecin X-er@');
