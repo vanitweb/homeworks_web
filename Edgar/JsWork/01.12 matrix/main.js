@@ -40,7 +40,3 @@ window.onload = function() {
         if (all_block[2].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[6].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
     }
 }
-
-function myFunction() {
-    document.getElementsByClassName('block').reset();
-}
