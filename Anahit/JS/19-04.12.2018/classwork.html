@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> classwork DOM</title>
+        <meta charset="UTF-8">
+    </head> 
+    <body>
+        <textarea id='area'>
+            div {
+                width: 300px;
+                height: 200px;
+                font-size: 3em;
+                }
+        </textarea>
+        <div style="background-color:#01AAE1;"> Hiiiiiiiiiiiii</div>
+        <div style="background-color:#00FFEE;"> Byyyyyyyyy </div>
+    </body>
+    <script>
+        setInterval(function(){
+                       var value = document.getElementById('area').value; 
+                       const style = document.createElement('style');
+                       document.body.appendChild(style);
+                       style.textContent = value;
+                       }, 5000);
+    </script>       
+</html>
