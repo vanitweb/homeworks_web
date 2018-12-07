@@ -2,13 +2,12 @@ function setBodyAttr(attr, value){
       if (document.body) eval('document.body.'+attr+'="'+value+'"');
       else notSupported();
 }
+function myFunc() {
+	let stile = document.getElementsByTagName("textarea").value;
+	document.body.style.cssText = stile;
+}
 function cssStyle() {
-	console.log(document.getElementById("text"));
-	setInterval(myFunction, 5000);
-	function myFunction() {
-		document.body.style.cssText = style;
-		console.log(style);
-	}
+	setInterval(myFunc, 5000);
 }
 
 //homework2
@@ -38,4 +37,9 @@ function homework2(attr) {
 		document.getElementById("addElem").style.display = "none";
 		document.getElementById("printAtrr").style.display = "block";
 	}
+}
+function addButton() {
+	let atr = document.getElementById("atr").value;
+	let value = document.getElementById("val").value;
+	document.getElementById("addAtrr").style.atr = value;
 }

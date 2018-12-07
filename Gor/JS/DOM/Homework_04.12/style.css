@@ -9,7 +9,7 @@
 	margin: auto;
 }
 .addAtrr {
-	display: none;
+	display: block;
 }
 .change {
 	display: none;
