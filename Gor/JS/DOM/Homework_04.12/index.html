@@ -7,9 +7,35 @@
 	</head>
 	<body>
 		<script src="main.js"></script>
-		<div>
+		<div class="homweork1">
 			<h1>Homewotk 1</h1>
 			<textarea name="" id="text" cols="30" rows="10" placeholder="Css" onChange="cssStyle()"></textarea>
+		</div>
+		<hr>
+		<div class="homework2">
+			<form>
+				<select name="select" id="1" onChange="homework2(this.selectedIndex)">
+					<option value="addAtrr">Ավելացնել ատրիբուտ</option>
+					<option value="change">Փոխել պարունակությունը</option>
+					<option value="addElem">Ավելացնել էլեմենտ</option>
+					<option value="printAtrr">Տպել ատրիբուտը</option>
+				</select>
+			</form>
+			<div class="addAtrr" id="addAtrr">
+				<input type="text" class="atr" placeholder="Atrribute">
+				<input type="text" class="atr" placeholder="Value">
+				<input type="button" value="Add">
+			</div>
+			<div class="change" id="change">
+				<input type="text" class="changeAtrr" placeholder="Atrribute">
+				<input type="button" value="Change">
+			</div>
+			<div class="addElem" id="addElem">
+				<input type="text" class="addElement" placeholder="Atrribute">
+				<input type="button" value="AddElement">
+			</div>
+			<div class="printAtrr" id="printAtrr">
+			</div>
 		</div>
 		<hr>
 	 	<div style="margin: .5in; height: 400;">
