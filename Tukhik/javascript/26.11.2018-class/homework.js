@@ -1,7 +1,5 @@
-
-
-
-
+//Ստեղծել օբյեկտ հետևյալ կառուցվածքով՝ Institut-> name, gradaran, 
+//fakultet->ambion,lsaran, dekanat->dekan ashxatoxner 
 class Institut {
 	constructor(facultet, name, gradaran) {
 		this.facultet = facultet;
@@ -11,7 +9,7 @@ class Institut {
 }
 class Facultet extends Institut {
 	constructor (ambion, lesson, dekanat) {
-		super();
+		super('fizmat', 'VPH', 'MatGradaran');
 		this.ambion = ambion;
 		this.lesson = lesson;
 		this.dekanat = dekanat;
@@ -19,14 +17,15 @@ class Facultet extends Institut {
 } 
 class Dekanat extends Facultet {
 	constructor (dekan, assistent){
-	super();
+	super('matanalis', 'matem', 'Fizika');
 	this.dekan = dekan;
 	this.assistent = assistent;
 	}
 }
-let institut = new Institut('fizmat', 'VPH', 'MatGradaran');
-let fakultet = new Facultet('matanalis', 'matem', 'Fizika');
-let dekanat = new Dekanat('Grigoryan', 'Sargsyan');
+const institut = new Institut('fizmat', 'VPH', 'MatGradaran');
+const fakultet = new Facultet('matanalis', 'matem', 'Fizika');
+const dekanat = new Dekanat('Grigoryan', 'Sargsyan');
 console.log(institut);
 console.log(fakultet);
-console.log(dekanat.dekan);
+console.log(dekanat);
+

@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.homework1, homework2 {
+	width: 80%;
+	padding: 15px;
+	margin: auto;
+}
+.addAtrr {
+	display: none;
+}
+.change {
+	display: none;
+}
+.addElem {
+	display: none;
+}
+.printAtrr {
+	display: none;
+}
