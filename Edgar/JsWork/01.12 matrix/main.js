@@ -7,3 +7,7 @@ let matrix = function matrix(m = 3, n = 3) {
     return result
 }
 console.log(matrix(3,3));
+
+for(let i = 0; i<9; i++){
+	 
+}
