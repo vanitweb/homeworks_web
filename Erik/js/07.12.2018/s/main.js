@@ -1,6 +1,5 @@
 function avel(){
-	// let a =
-	// document.getElementsByTagName('input')[1];
+	
 	 document.getElementById("input1").style.display = "block";
 	 document.getElementById("input2").style.display = "block";	
 	 document.getElementById("btn").style.display = "none";
