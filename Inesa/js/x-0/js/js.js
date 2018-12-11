@@ -1,72 +1,71 @@
 var k = 0;
 var syun = [];
-const x = function() 
+        
+var x = function() 
 {
+	
     const stugum = function()
     {
+        
+		var CELL_SIZE;
+		var size = document.getElementById("input").value;
+		CELL_SIZE = size;
+		syun.length = CELL_SIZE * CELL_SIZE;
+        syun = document.getElementsByTagName("td");
 		//տողեր
 		var chisht;
-		for(let qanak = 1; qanak <= CELL_SIZE; qanak++)
+		for(let qanak = 0; qanak < ((CELL_SIZE * CELL_SIZE) - 3); qanak++)
 		{
-			for(let m = 0; m < CELL_SIZE; m++)
+			for(let i = 0; i <= CELL_SIZE; i = i + 3)
 			{
-				for(let n = 1; n <= CELL_SIZE; n++)
+				if(syun[qanak + i].textContent === "X" && syun[qanak + i+1].textContent === "X" && syun[qanak + i+2].textContent === "X")
 				{
-					for(let i = 0 + (m * CELL_SIZE); i < n * CELL_SIZE; i++)
-					{
-						if(syun[i-1] != syun[i])
-						{
-							chisht = false;
-						}
-						else
-						{
-							chisht = true;
-						}
-					}
+					chisht = true;
+				}
+				else
+				{
+					chisht = false;
 				}
 			}
 		}
 		//սյուներ
-		for(let qanak = 0; qanak < CELL_SIZE; qanak++)
+		for(qanak = 0; qanak <= CELL_SIZE; qanak++)
 		{
-			for(let i = qanak; i <= ((CELL_SIZE-1)*CELL_SIZE)+1; i = i+CELL_SIZE)
+			for(let i = qanak; i < (CELL_SIZE * CELL_SIZE); i += CELL_SIZE)
 			{
-				if(syun[i-1] != syun[i])
+				if(syun[i].textContent === "X" &&  syun[i+CELL_SIZE] === "X" && syun[i + CELL_SIZE + CELL_SIZE] === "X")
 				{
-					chisht = false;
+					chisht = true;
 				}
 				else
 				{
-					chisht = true;
+					chisht = false;
 				}
 			}
 		}
 		//անկյունագծեր
-
-		for(let i = 0; i < CELL_SIZE; i = i+(CELL_SIZE+1))
+		for(i = 0; i <= syun.length; i += CELL_SIZE+1)//glxavor ankyunagic
 		{
-			if(syun[i-1] != syun[i])
-			{
-				chisht = false;
-			}
-			else
+			if(syun[i].textContent ==="X" && syun[CELL_SIZE+1] === "X" && syun[CELL_SIZE + CELL_SIZE] === "X") 
 			{
 				chisht = true;
 			}
-		}
-
-		for(let i = CELL_SIZE-1; i < CELL_SIZE * (CELL_SIZE - 1); i = i +(CELL_SIZE-1))
-		{
-			if(syun[i-1] != syun[i])
+			else
 			{
 				chisht = false;
 			}
-			else
+		}
+		for(i = CELL_SIZE; i <= syun.length; i += CELL_SIZE - 1)//erkrordakan ankyunagic
+		{
+			if(syun[i].textContent ==="X" && syun[i + CELL_SIZE - 1] === "X" && syun[i + CELL_SIZE + CELL_SIZE - 2] === "X") 
 			{
 				chisht = true;
 			}
+			else
+			{
+				chisht = false;
+			}
 		}
-
 		if(chisht = true)
 		{
 			alert("հաղթանակ");
@@ -80,16 +79,8 @@ const x = function()
 		if (!e.target.textContent) 
         {
 			count++;
-			e.target.textContent = isX ? 'X' : '0';
+			e.target.textContent = isX ? 'X' : 'O';
 			isX = !isX;
-          /* ?????????????? if(isX === true)
-                {
-                    syun[count-1] = 1;
-                }
-            else
-            {
-                syun[count-1] = 0;
-            }????????????????*/
              
 		}
         if(count >= 5)
@@ -104,22 +95,19 @@ const setValue = x();
 const drawTable = function() //նկարել
 {
 	var CELL_SIZE;
-    let size = document.getElementById("input").value;
+    var size = document.getElementById("input").value;
     CELL_SIZE = size;
-    
-    syun.length = CELL_SIZE*CELL_SIZE;
 	const table = document.getElementsByTagName('table')[0];
 	for(let i = 0; i < CELL_SIZE; ++i)
     {
 		const tr = document.createElement('tr');
+		table.appendChild(tr);
         for(let j = 0; j < CELL_SIZE; ++j)
         {
             const td = document.createElement('td');
-            
             tr.appendChild(td);
             td.setAttribute('onclick', 'setValue(event)');
-            table.appendChild(tr);
-            syun[i] = td; //vercnum e 1in ev 2rd vandaknery!!!
+            
         }
 	}
 }

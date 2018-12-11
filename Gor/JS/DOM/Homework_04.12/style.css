@@ -3,8 +3,20 @@
 	margin: 0;
 	padding: 0;
 }
-div {
+.homework1, homework2 {
 	width: 80%;
 	padding: 15px;
 	margin: auto;
+}
+.addAtrr {
+	display: block;
+}
+.change {
+	display: none;
+}
+.addElem {
+	display: none;
+}
+.printAtrr {
+	display: none;
 }
