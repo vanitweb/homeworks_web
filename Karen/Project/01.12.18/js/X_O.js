@@ -8,7 +8,7 @@ const setValue = function(e) {
         isX = !isX;
     }
     if (count >= 5) {
-    	stugum();
+    	stugum(e);
     };
 }
 
@@ -31,20 +31,11 @@ const startGame = function() {
    document.getElementsByTagName('button')[0].style.display = 'none';    
 }
 
-const stugum = function () {
+const stugum = function(e) {
 	let n = 3, j = 0;
-	let table = document.getElementsByTagName('table')[0];
-	if(j < n) {
-		for(let i = 0; i < n - 1; i++) {
-			if(table.rows[j].cells[i].innerHTML == table.rows[j].cells[i + 1].innerHTML) {
-				if(i < (n - 1)) {
-					i++;
-				}
-				if(i == (n - 1)) {
-					console.log('haxt');
-				}
-			}
-		}
-		j++;
-	}
+    let y = e.target.textContent;
+	let td = document.getElementsByTagName('td');
+	if(td[0].textContent === y && td[1].textContent === y && td[2].textContent === y){
+        console.log(12345)
+    }
 }
