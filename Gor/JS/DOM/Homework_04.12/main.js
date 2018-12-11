@@ -3,11 +3,15 @@ function setBodyAttr(attr, value){
       else notSupported();
 }
 function myFunc() {
-	let stile = document.getElementsByTagName("textarea").value;
-	document.body.style.cssText = stile;
+	let inputText = document.getElementsByTagName("textarea")[0].value;
+	let newStyle = document.getElementsByTagName("style")[0];
+	newStyle.textContent = inputText;
 }
 function cssStyle() {
-	setInterval(myFunc, 5000);
+	if(document.getElementsByTagName("textarea")[0].value) {
+		setInterval(myFunc, 5000);
+	}
+	
 }
 
 //homework2
