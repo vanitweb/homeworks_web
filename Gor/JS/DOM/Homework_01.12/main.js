@@ -1,93 +1,52 @@
 let haxtanak = false;
 let step = 0;
+const boxSize = 3;
 window.onload = function() {
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < boxSize * boxSize; i++) {
         document.getElementById('game').innerHTML += '<div class="block"></div>';
     }
     document.getElementById('game').onclick = function(event) {
         console.log(event);
-        if (event.target.className == 'block' && event.target.innerHTML == '') {
+        if (event.target.className == 'block' && event.target.textContent == '') {
             if (step % 2 == 0) {
-                event.target.innerHTML = 'X';
+                event.target.textContent = 'X';
             } else {
-                event.target.innerHTML = 'O';
+                event.target.textContent = 'O';
             }
             step++;
             check();
         }
     }
-    
     function check() {
         let block = document.getElementsByClassName('block');
 		if(haxtanak) {
 			alert("Xaxn avartvec");
 			reset();
 		}
-        if (block[0].innerHTML == 'X' && block[1].innerHTML == 'X' && block[2].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
+		if(step >= 5) {
+			//check rows
+			for(let i = 0; i < boxSize * boxSize; i += 3) {
+				if(block[i].textContent === block[i + 1].textContent && block[i].textContent === block[i + 2].textContent && block[i].textContent !== '') {
+					alert(`haxtec ${block[i].textContent} xaxacox@`);
+					haxtanak = true;
+				}
+			}
+			//check cols
+			for(let i = 0; i < boxSize; i++) {
+				if(block[i].textContent === block[i + boxSize].textContent && block[i].textContent === block[i + 2 * boxSize].textContent && block[i].textContent !== '') {
+					alert(`haxtec ${block[i].textContent} xaxacox@`);
+					haxtanak = true;
+				}
+			}
+			if(block[0].textContent === block[4].textContent && block[0].textContent === block[8].textContent && block[0].textContent !=='') {
+				alert(`haxtec ${block[0].textContent} xaxacox@`);
+				haxtanak = true;
+			} else if(block[6].textContent === block[4].textContent && block[6].textContent === block[2].textContent && block[4].textContent !=='') {
+				alert(`haxtec ${block[6].textContent} xaxacox@`);
+				haxtanak = true;
+			}
 		}
-        if (block[3].innerHTML == 'X' && block[4].innerHTML == 'X' && block[5].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[6].innerHTML == 'X' && block[7].innerHTML == 'X' && block[8].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[0].innerHTML == 'X' && block[3].innerHTML == 'X' && block[6].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[1].innerHTML == 'X' && block[4].innerHTML == 'X' && block[7].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[2].innerHTML == 'X' && block[5].innerHTML == 'X' && block[8].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[0].innerHTML == 'X' && block[4].innerHTML == 'X' && block[8].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[2].innerHTML == 'X' && block[4].innerHTML == 'X' && block[6].innerHTML == 'X') {
-			alert("hastec X-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[0].innerHTML == 'O' && block[1].innerHTML == 'O' && block[2].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[3].innerHTML == 'O' && block[4].innerHTML == 'O' && block[5].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[6].innerHTML == 'O' && block[7].innerHTML == 'O' && block[8].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[0].innerHTML == 'O' && block[3].innerHTML == 'O' && block[6].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[1].innerHTML == 'O' && block[4].innerHTML == 'O' && block[7].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[2].innerHTML == 'O' && block[5].innerHTML == 'O' && block[8].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[0].innerHTML == 'O' && block[4].innerHTML == 'O' && block[8].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-        if (block[2].innerHTML == 'O' && block[4].innerHTML == 'O' && block[6].innerHTML == 'O') {
-			alert("hastec O-erov xaxacox@");
-			haxtanak = true;
-		}
-		if(step === 8 && !haxtanak) {
+		if(step === boxSize * boxSize && !haxtanak) {
 			alert("xaxn avartvec voch voqi");
 			reset();
 		}
@@ -96,8 +55,8 @@ window.onload = function() {
 
 function reset() {
 	let blocks = document.getElementsByClassName('block');
-	for(let i = 0; i < 9; i++){
-		blocks[i].innerHTML = '';
+	for(let i = 0; i < boxSize * boxSize; i++){
+		blocks[i].textContent = '';
 	}
 	haxtanak = false;
 	step = 0;
