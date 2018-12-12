@@ -9,7 +9,7 @@ function myFunc() {
 }
 function cssStyle() {
 	if(document.getElementsByTagName("textarea")[0].value) {
-		setInterval(myFunc, 5000);
+		setTimeout(myFunc, 5000);
 	}
 	
 }
