@@ -43,7 +43,13 @@ function homework2(attr) {
 	}
 }
 function addButton() {
-	let atr = document.getElementById("atr").value;
-	let value = document.getElementById("val").value;
-	document.getElementById("addAtrr").style.atr = value;
+	let elem = document.getElementById("elem").value;
+	let element = document.getElementsByTagName(elem)[0];
+	let att = document.createAttribute(document.getElementById("atr").value);
+	att.value = document.getElementById("val").value;
+	element.setAttributeNode(att);
+}
+function change() {
+	let newContent = document.getElementById("elem").value;
+	document.getElementsByTagName(newContent)[0].textContent = document.getElementsByClassName("changeAtrr")[0].value;
 }
