@@ -51,6 +51,25 @@ const stugum = function(e){
     if(countSyun === size){
         return alert(`haxtanak ${arg}`)
     }
+    for(let i = 0; i < td.length; i += size){
+        let j = i / size;
+        if(td[i + j].textContent === arg){
+            countAnkyun1++;
+        }
+    }
+    if(countAnkyun1 === size){
+        return alert(`haxtanak ${arg}`)
+    }
+    for(let i = size; i <= td.length; i += size){
+        let j = i / size;
+        if(td[i - j].textContent === arg){
+            countAnkyun2++;
+            console.log(i,j)
+        }
+    }
+    if(countAnkyun2 === size){
+        return alert(`haxtanak ${arg}`)
+    }
 }
 const xaxacox1 = function(){
     let count = 0;
