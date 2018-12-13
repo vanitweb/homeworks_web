@@ -14,41 +14,41 @@ const x = function() {
             if(count > 2*CELL_SIZE-1){
                 let qanak = 0;
                 for(let i = 0; i < CELL_SIZE; i++){
-                    if(table.tr[e.target.parentNode.rowIndex].td[i] == table.tr[e.target.parentNode.rowIndex].td[0]){
+                    if(table.tr[e.target.parentNode.rowIndex].td[i].textContent  == table.tr[e.target.parentNode.rowIndex].td[0].textContent ){
                         qanak++
                         if(qanak = CELL_SIZE){
-                                alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[0]} xaxacox@`); 
+                                alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[0].textContent } xaxacox@`); 
                                 newGame();
                                 break;
                             }
                         }
                         qanak = 0;
-                        if(table.tr[i].td[e.target.cellIndex] === table.tr[0].td[e.target.cellIndex] ){
+                        if(table.tr[i].td[e.target.cellIndex].textContent  === table.tr[0].td[e.target.cellIndex].textContent  ){
                         qanak++
                         if(qanak = CELL_SIZE){
-                            alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[0]} xaxacox@`); 
+                            alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[0].textContent } xaxacox@`); 
                             newGame();
                             break;
                         }
                     }
-                    if(e.target.cellIndex === e.target.parentNode.rowIndex){
+                    if(e.target.cellIndex  === e.target.parentNode.rowIndex){
                         qanak = 0;
-                        if(table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex] == table.tr[0].td[0]){
+                        if(table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex].textContent  == table.tr[0].td[0].textContent ){
                         qanak++
                             if(qanak = CELL_SIZE){
-                                alert(`haxtec ${table.tr[0].td[0]} xaxacox@`); 
+                                alert(`haxtec ${table.tr[0].td[0].textContent} xaxacox@`); 
                                 newGame();
                                 break;
                             }
                 
                         }
                     }
-                    else if (e.target.cellIndex + e.target.parentNode.rowIndex == CELL_SIZE){
+                    else if (e.target.cellIndex  + e.target.parentNode.rowIndex  == CELL_SIZE){
                         qanak = 0;
-                        if(table.tr[CELL_SIZE-i].td[i] == table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex]){
+                        if(table.tr[CELL_SIZE-i].td[i].textContent  == table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex].textContent ){
                             qanak ++
                             if(qanak = CELL_SIZE){
-                                alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex]} xaxacox@`); 
+                                alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex].textContent } xaxacox@`); 
                                 newGame();
                                 break;
                             }
