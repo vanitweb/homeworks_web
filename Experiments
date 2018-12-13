@@ -35,3 +35,14 @@ const bmw = new Meqena('name', 'model', 120);
 const bmwDrive = bmw.drive;
 console.log(bmwDrive());
 console.log(bmw.drive())
+
+
+
+//validation fun for x-0
+const validate = function(startValue, step) {
+	const secondValue = startValue + step;
+	const thirdValue = startValue + 2 * step;
+	const isEqual = cell[startValue].textContent === cell[secondValue].textContent === cell[thirdValue].textContent;
+	if (isEqual) {
+	}
+}
