@@ -27,11 +27,13 @@
 function myFunction() {
         let x = document.getElementById("mySelect").selectedIndex;
         if(x==0){ 
-       
-    let name = document.createElement("input");
-     document.body.appendChild(name);
-    let valu = document.createElement("input");
-    document.body.appendChild(valu);
+        let name = document.createElement("input");
+        document.body.appendChild(name);
+        let valu = document.createElement("input");
+        document.body.appendChild(valu);
+    click() 
+
+
         }
          if(x==1){
  let poxelParnakutyun = document.createElement("input");
@@ -39,13 +41,23 @@ function myFunction() {
          }
         if(x==2){
 let norParnakutyun = document.createElement("input");
-     document.body.appendChild(norParnakutyun);
+     document.body.a ppendChild(norParnakutyun);
         }
         if(x==3){
             
         }
 
 }
+let click =function() {
+    let btn = document.createElement("BUTTON");
+    let t = document.createTextNode("CLICK ME");
+    btn.appendChild(t);
+    document.body.appendChild(btn);
+     //<span onclick="this.parentElement.style.display = 'none';">x</span>
+}
+
 </script>
 </body>
 </html>
+
+

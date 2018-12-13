@@ -25,6 +25,8 @@ returnName();
 // ստացված  թվի քառակուսին - F(square, 4, 5, 6)
 // - Փոխանցել prime ֆունկցիան, որը կարտածի True եթե արգումենտով 
 // ստացված թիվը պարզ է, False՝ հակառակ դեպքում- F(prime, 4, 5, 6) (edited)
+
+
 let a = 2, b = 1, c = 1;
 function bigFunction(f, a, b, c) {
 	let sum = a + b + c;
