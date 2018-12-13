@@ -1,4 +1,4 @@
-function main() {
+/*function main() {
     let f = document.getElementById('changer').value;
     const mystyle = document.createElement('style');
     document.body.appendChild(mystyle);
@@ -8,7 +8,7 @@ function myFunction() {
 	setInterval(function(){
     main();
 }, 5000);
-};
+};*/
 
 setInterval(function(){
     if(document.getElementsByTagName("textarea")[0].value){
