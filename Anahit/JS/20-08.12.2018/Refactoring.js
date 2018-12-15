@@ -39,7 +39,7 @@ function func1(s, a, b) {
         if (s[i] == a ||  s[i] == b) {
            return i;
         } else {
-            return -1;
+           return -1;
         }
     }
 }
