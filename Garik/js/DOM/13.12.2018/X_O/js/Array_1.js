@@ -4,6 +4,7 @@ const stugum = function(e){
     let tox,
         syun;
     let count = 0;
+    let tdTextContent = e.target.textContent; 
     for(let i in td){
         if(td[i] === e.target){
             tox = parseInt(i/size);
@@ -11,46 +12,46 @@ const stugum = function(e){
         }
     }
     for(let i = tox * size; i < tox * size + size; i++){
-        if(td[i].textContent === e.target.textContent){
+        if(td[i].textContent === tdTextContent){
             count++;
         }
     }
     if(count === size){
         noric();
-        return alert(`haxtanak ${e.target.textContent}`)
+        return alert(`haxtanak ${tdTextContent}`)
     }
     count = 0;
     for(let i = syun; i < td.length; i += size){
-        if(td[i].textContent === e.target.textContent){
+        if(td[i].textContent === tdTextContent){
             count++;
         }
     }
     if(count === size){
         noric();
-        return alert(`haxtanak ${e.target.textContent}`)
+        return alert(`haxtanak ${tdTextContent}`)
     }
     if(tox === syun){
         count = 0;
         for(let i = 0; i < td.length; i += size){
-            if(td[i + i/size].textContent === e.target.textContent){
+            if(td[i + i/size].textContent === tdTextContent){
                 count++;
             }
         }
         if(count === size){
             noric();
-            return alert(`haxtanak ${e.target.textContent}`)
+            return alert(`haxtanak ${tdTextContent}`)
         }
     }
     if(tox + syun === size -1){
         count = 0;
         for(let i = size; i <= td.length; i += size){
-            if(td[i - i/size].textContent === e.target.textContent){
+            if(td[i - i/size].textContent === tdTextContent){
                 count++;
             }
         }
         if(count === size){
             noric();
-            return alert(`haxtanak ${e.target.textContent}`)
+            return alert(`haxtanak ${tdTextContent}`)
         }   
     }
 }
