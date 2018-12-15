@@ -2,88 +2,32 @@
 <html>
    <head>
       <title>domStyle</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script src="script.js" defer></script>
+     <style>
+div {
+   height: 1300px;
+   width: 500px;
+}
+</style>
    </head>
    <body>
-      <br>
-	 
-      <div class="container">
-      <div class="card">
-         <div class="card-deck">
-            <div class="card">
-               <h3 class="card-header">Title</h3>
-               <div class="card-body">
-                  <h3 class="card-title text-center">Now you can watch the video again and test your listening skills without the text.</h3>
-                  <p class="card-text text-justify">Now you can watch the video again and test your listening skills without the text. Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.</p>
-                  <div>
-                     <button type="button" class="btn btn-primary btn-lg">Small</button>
-                  </div>
-               </div>
-               <div class="card-footer text-muted">
-                  end
-               </div>
-            </div>
-            <div class="card border-success text-justify">
-               <p class="card-text">Now you can watch the video again and test your listening skills without the text. Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.Now you can watch the video again and test your listening skills without the text. Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.Now you can watch the video again and test your listening skills without the text. Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.</p>
-             
-			 
-			 
-			<b>TEXTAREA-um greq dzer uzac style-@ hetevelov css-i kanonnerin</b>
-			 <textarea rows="10" cols="15" id='domStyle' placeholder="imput your style"> 
-				*
-				{
-				 background-color: ;
-				color: ;
-				font-size: px
-				}
-        </textarea>
-		
-		
-			</div>
-         </div>
-         <br>
-         <div class="card"  >
-            <img class="card-img-top" style="height:200px"  src="images/photo.jpg" alt="Card image">
-            <div>
-               <button data-toggle="collapse" data-target="#demo">Collapse1</button>
-               <div id="demo" class="collapse">
-                  <div class="panel-group" id="accordion">
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                           <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Accordion1</a>
-                           </h4>
-                        </div>
-                        <div id="collapse1"class="panel-collapse collapse">
-                           <div class="panel-body">Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.</div>
-                        </div>
-                     </div>
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                           <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Accordion2</a>
-                           </h4>
-                        </div>
-                        <div id="collapse2" class="panel-collapse collapse">
-						
-           
-                           <div class="panel-body">
-		Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.</div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <button data-toggle="collapse" data-target="#demo1">Collapse2</button>
-               <div id="demo1" class="collapse">Reading is a very important language learning skill. It helps you improve all parts of the English language – vocabulary, spelling, grammar, and writing.
-               </div>
-            </div>
-         </div>
-      </div>
-	    
+	  <p id='domStyle2'>
+     *
+{
+background-color: white;
+color: black;
+font-size: 10px
+}
+
+      <textarea rows="10" cols="50" id='domStyle' placeholder="imput your style"> 
+*
+{
+background-color: yellow;
+color: green;
+font-size: 15px
+}
+      </textarea>
+      </p>
+      <div id=MyElement onclick="newStyle()">TEXTAREA-um greq dzer uzac style-@ hetevelov css-i kanonnerin</div>
    </body>
 </html>

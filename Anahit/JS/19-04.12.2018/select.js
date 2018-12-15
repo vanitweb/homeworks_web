@@ -10,43 +10,48 @@
 
 const input = document.getElementsByTagName('input')[0];
 const button = document.getElementsByTagName('button')[0];
+const options = document.getElementsByTagName('option');
+const div = document.getElementsByTagName('div')[0];
 let toMake1 = function() {
     const input1 = document.getElementsByTagName('input')[1];
     const input2 = document.getElementsByTagName('input')[2];
-    input.setAttribute(input1.value, input2.value);
+    document.getElementsByTagName(input.value)[0].setAttribute(input1.value, input2.value);
 }
 let toMake2 = function() {
-    const input3 = document.getElementsByTagName('input')[3];
-    input.value = input3.value;
+    const input1 = document.getElementsByTagName('input')[1];
+    document.getElementsByTagName(input.value)[0].innerHTML = input1.value;
 }
-//chi ashxatum
+//chisht chi ashxatum
 let toMake3 = function() {
-    const input4 = document.getElementsByTagName('input')[4];
-    input.value = input.value + input4.value;
+    const input1 = document.getElementsByTagName('input')[1];
+    document.getElementsByTagName(input.value)[0].innerHtml += input1.value;
 }
-function funOpt1() {
+options[0].onclick = function() {
+    div.innerHTML = "";
     const input1 = document.createElement('input');
-    document.body.appendChild(input1);
+    div.appendChild(input1);
     const input2 = document.createElement('input');
-    document.body.appendChild(input2);
+    div.appendChild(input2);
     input1.placeholder = "atributName";
     input2.placeholder = "atributValue";
     button.setAttribute('onclick', 'toMake1()');                               
-}
-function funOpt2() {
+} 
+options[1].onclick = function() {
+    div.innerHTML = "";
     const input = document.createElement('input');
-    document.body.appendChild(input);
+    div.appendChild(input);
     input.placeholder = "NewContent";
     button.setAttribute('onclick', 'toMake2()');
 }
-function funOpt3() {
+options[2].onclick = function() {
+    div.innerHTML = "";
     const input = document.createElement('input');
-    document.body.appendChild(input);
+    div.appendChild(input);
     input.placeholder = "addContent";
 }
-function funOpt4() {
-    for(let i = 0; i < input.attributes.length; ++i) {
-        console.log(input.attributes[i]);
+options[3].onclick =  function() {
+    for(let i = 0; i < document.getElementsByTagName(input.value)[0].attributes.length; ++i) {
+        console.log(document.getElementsByTagName(input.value)[0].attributes[i]);
     }
 }
 

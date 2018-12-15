@@ -2,53 +2,74 @@
 const x = function() {
     let count = 0;
     let isX = true;
+    let table = document.getElementsByTagName("table")[0]; 
+    let tr = document.getElementsByTagName("tr"); 
+    let td = document.getElementsByTagName("td");
     return function(e){
         if (!e.target.textContent) {
             count++;
+            let cell = e.target || window.event.srcElement;
             e.target.textContent = isX ? 'X' : '0';
             isX = !isX;
-            let cell = document.getElementsByTagName("td"); 
-            for(let i = 0; i< 9; i++){
-                if(
-                cell[0].innerHTML == 'X' && cell[1].innerHTML == 'X' && cell[2].innerHTML == 'X' ||
-                cell[3].innerHTML == 'X' && cell[4].innerHTML == 'X' && cell[5].innerHTML == 'X' || 
-                cell[6].innerHTML == 'X' && cell[7].innerHTML == 'X' && cell[8].innerHTML == 'X' || 
-                cell[0].innerHTML == 'X' && cell[3].innerHTML == 'X' && cell[6].innerHTML == 'X' ||
-                cell[1].innerHTML == 'X' && cell[4].innerHTML == 'X' && cell[7].innerHTML == 'X' ||
-                cell[2].innerHTML == 'X' && cell[5].innerHTML == 'X' && cell[8].innerHTML == 'X' || 
-                cell[0].innerHTML == 'X' && cell[4].innerHTML == 'X' && cell[8].innerHTML == 'X' ||
-                cell[2].innerHTML == 'X' && cell[4].innerHTML == 'X' && cell[6].innerHTML == 'X') {
-                    alert("haxtec arajin xaxacox@"); 
-                    document.getElementsByTagName('button')[0].textContent ="Try again";
-                    document.getElementsByTagName('button')[0].style.display = 'block';
-                    const table = document.getElementsByTagName('table')[0];
-                    table.innerHTML = "";
-                    isX = !isX;
-                    break;
+            if(count > 2*CELL_SIZE-1){
+                let qanak = 0;
+                for(let i = 0; i < CELL_SIZE; i++){
+                    if(table.tr[e.target.parentNode.rowIndex].td[i].textContent  == table.tr[e.target.parentNode.rowIndex].td[0].textContent ){
+                        qanak++
+                        if(qanak = CELL_SIZE){
+                                alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[0].textContent } xaxacox@`); 
+                                newGame();
+                                break;
+                            }
+                        }
+                        qanak = 0;
+                        if(table.tr[i].td[e.target.cellIndex].textContent  === table.tr[0].td[e.target.cellIndex].textContent  ){
+                        qanak++
+                        if(qanak = CELL_SIZE){
+                            alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[0].textContent } xaxacox@`); 
+                            newGame();
+                            break;
+                        }
+                    }
+                    if(e.target.cellIndex  === e.target.parentNode.rowIndex){
+                        qanak = 0;
+                        if(table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex].textContent  == table.tr[0].td[0].textContent ){
+                        qanak++
+                            if(qanak = CELL_SIZE){
+                                alert(`haxtec ${table.tr[0].td[0].textContent} xaxacox@`); 
+                                newGame();
+                                break;
+                            }
+                
+                        }
+                    }
+                    else if (e.target.cellIndex  + e.target.parentNode.rowIndex  == CELL_SIZE){
+                        qanak = 0;
+                        if(table.tr[CELL_SIZE-i].td[i].textContent  == table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex].textContent ){
+                            qanak ++
+                            if(qanak = CELL_SIZE){
+                                alert(`haxtec ${table.tr[e.target.parentNode.rowIndex].td[e.target.cellIndex].textContent } xaxacox@`); 
+                                newGame();
+                                break;
+                            }
+                        }
+                    }
                 }
-                if(
-                cell[0].innerHTML == '0' && cell[1].innerHTML == '0' && cell[2].innerHTML == '0' ||
-                cell[3].innerHTML == '0' && cell[4].innerHTML == '0' && cell[5].innerHTML == '0' || 
-                cell[6].innerHTML == '0' && cell[7].innerHTML == '0' && cell[8].innerHTML == '0' || 
-                cell[0].innerHTML == '0' && cell[3].innerHTML == '0' && cell[6].innerHTML == '0' ||
-                cell[1].innerHTML == '0' && cell[4].innerHTML == '0' && cell[7].innerHTML == '0' ||
-                cell[2].innerHTML == '0' && cell[5].innerHTML == '0' && cell[8].innerHTML == '0' || 
-                cell[0].innerHTML == '0' && cell[4].innerHTML == '0' && cell[8].innerHTML == '0' ||
-                cell[2].innerHTML == '0' && cell[4].innerHTML == '0' && cell[6].innerHTML == '0') {
-                    alert("haxtec 2-rd xaxacox@");
-                    document.getElementsByTagName('button')[0].textContent ="New Game";
-                    document.getElementsByTagName('button')[0].style.display = 'block'; 
-                    const table = document.getElementsByTagName('table')[0];
-                    table.innerHTML = "";
-                    break;
-                }
-            
             }
         }
-        
     }
-
 }
+let newGame =function () {
+    document.getElementsByTagName('button')[0].textContent ="Try again";
+    document.getElementsByTagName('button')[0].style.display = 'block';
+    const table = document.getElementsByTagName('table')[0];
+    table.innerHTML = "";
+    isX = !isX;
+}
+
+         //[].forEach.call(row.querySelectorAll('td'),node=>node.onclick=myPosition);
+                 
+
 
 const setValue = x();
 const drawTable = function() {
@@ -69,3 +90,23 @@ const startGame = function() {
     drawTable();
    document.getElementsByTagName('button')[0].style.display = 'none';    
 }
+
+
+
+// let tbl = document.getElementsByTagName("table")[0];
+// function alertRowCell (e) {
+//   var cell = e.target || window.event.srcElement;
+//   if ( cell.cellIndex >= 0 )
+//     alert( cell.cellIndex + ' : ' + cell.parentNode.rowIndex );
+// }
+
+// if ( tbl.addEventListener ) {
+//   tbl.addEventListener("click", alertRowCell, false);
+// } else if ( tbl.attachEvent ) {
+//   tbl.attachEvent("onclick", alertRowCell);
+// }
+
+
+
+
+    /////https://jsbin.com/bezezesoda/edit?html,js,output -nayel

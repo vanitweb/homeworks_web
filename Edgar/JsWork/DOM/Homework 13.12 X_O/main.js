@@ -1,6 +1,7 @@
 'use strict';
 let isX = true;
 const CELL_SIZE = 7;
+const CELL_SIZE2 = 5;
 const table = document.getElementsByTagName('table')[0];
 const button = document.getElementsByTagName('button')[0];
 
@@ -17,10 +18,10 @@ const x = function() {
 }
 
 const setValue = x();
-const drawTable = function() {
-    for(let i = 0; i< CELL_SIZE; ++i) {
+const drawTable = function (m = 7, n = 7) {
+    for(let i = 0; i< m; ++i) {
         const tr = document.createElement('tr');
-        for(let j = 0; j< CELL_SIZE; ++j) {
+        for(let j = 0; j< n; ++j) {
             const td = document.createElement('td');
             td.setAttribute('onclick', 'setValue(event)');
             tr.appendChild(td);
@@ -29,11 +30,12 @@ const drawTable = function() {
     }
 }
 
+
 let  step = 0;
 const validate = function() {
 	let flag = false;
 	let flag1 = false;
-	for(let i = 0; i < CELL_SIZE; i++){
+	for(let i = 0; i < CELL_SIZE2; i++){
 		step++;
 		let winRowX = true,
 		winColumnX = true,
@@ -43,7 +45,7 @@ const validate = function() {
 		winColumn0 = true,
 		winLeftTop0 = true,
 		winLeftBottom0 = true;
-		for(let k = 0; k < CELL_SIZE; k++){
+		for(let k = 0; k < CELL_SIZE2; k++){
 			if(table.rows[i].cells[k].textContent !== 'X') {
 				winRowX = false;
 			}
@@ -56,7 +58,7 @@ const validate = function() {
 				winLeftTopX = false;
 			}
 			
-			if(table.rows[CELL_SIZE-1-k].cells[k].textContent !== 'X' ) {
+			if(table.rows[CELL_SIZE2-1-k].cells[k].textContent !== 'X' ) {
 				winLeftBottomX = false;
 			}
 			if(table.rows[i].cells[k].textContent !== '0') {
@@ -71,7 +73,7 @@ const validate = function() {
 				winLeftTop0 = false;
 			}
 			
-			if(table.rows[CELL_SIZE-1-k].cells[k].textContent !== '0' ) {
+			if(table.rows[CELL_SIZE2-1-k].cells[k].textContent !== '0' ) {
 				winLeftBottom0 = false;
 			}
 		}
@@ -88,7 +90,7 @@ const validate = function() {
 		alert("Win");
 		tryAgain();
 	}
-	else if(flag == false && step == Math.pow(CELL_SIZE, 3)){
+	else if(flag == false && step == Math.pow(CELL_SIZE2, 3)){
 		alert("Standoff");
 		tryAgain();
 	}
