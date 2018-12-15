@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+	<style>
+		
+		.par1{
+			color: #D0FF96;
+			font-size: 20px;
+		}
+		.par2{
+			color: #FD3C9C;
+			font-size: 25px;
+		}
+		.par3{
+			color: #B87CE2;
+			font-size: 30px;
+		}
+		.par4{
+			color: #FF2723;
+			font-size: 35px;
+		}
+			}
+		.par5{
+			color: #F8FF32;
+			font-size: 40px;
+		}
+		.par6{
+			color:green;
+			font-size: 45px;
+		}
+		.par7{
+			color: #FF2395;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<p class="par1">Պարբերություն1, class="par1"</p>
+	<p class="par2">Պարբերություն2, class="par2"</p>
+	<p class="par3">Պարբերություն3, class="par3"</p>
+	<p class="par4">Պարբերություն4, class="par4"</p>
+	<p class="par7">"Our  free classis are: par5, par6, par7</p>
+	<hr>
+	<form>
+	<input type="text" id="test" placeholder="par3">
+	<select onchange="selectChanged(this.value)">
+		<option value="#">selectOption</option>
+		<option value="1">addAtribute</option>
+		<option value="2">changeContent</option>
+		<option value="3">addElement</option>
+		<option value="4">printAtributs</option>
+	</select>
+	<p>
+		<input type="button" onclick="addAtribute111()" value="addAtribute">
+		<input type="button" onclick="addAtribute222()" value="removeaddAtribute">
+	</p>
+	<p>
+		<input type="button" onclick="changeContent111()" value="changeContent">
+		<input type="button" onclick="changeContent222()" value="removechangeContent">
+	</p>
+	<p>
+		<input type="button" onclick="addElement111()" value="addElement">
+		<input type="button" onclick="addElement222()" value="removeaddElement">
+	</p>
+</form>
+</body>
+</html>

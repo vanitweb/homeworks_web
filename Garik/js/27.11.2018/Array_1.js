@@ -42,3 +42,21 @@ developer1.printinfo();
 console.log(developer1);
 jsdeveloper1.printinfo();
 console.log(jsdeveloper1)
+//2
+function Person(name,surname,age) {
+	this.name = name;
+	this.surname = surname;
+	this.age = age;
+};
+function Developer(name,surname,age,work) {
+	Person.call(this,name,surname,age);
+	this.work = work;
+}
+Developer.prototype = Object.create(Person.prototype);
+Developer.prototype.constructor = Developer;
+function JSDeveloper(name,surname,age,work,ECMAVersion) {
+	Developer.call(this,name,surname,age,work);
+	this.ECMAVersion = ECMAVersion;
+}
+JSDeveloper.prototype = Object.create(Developer.prototype);
+JSDeveloper.prototype.constructor = JSDeveloper;

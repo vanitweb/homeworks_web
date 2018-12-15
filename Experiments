@@ -1,0 +1,48 @@
+// Working with object references
+
+const passObject = function(num, obj) {
+    console.log('arajin:', num, obj);   // 0, {prop1: 'value1', prop2: 'value1'}
+    obj.newItem = '9';
+    obj = 7;
+    console.log('erkrord:', obj); // 7
+    num = 8;
+    return obj;
+}
+let num = 0;
+let obj = {prop1: 'value1', prop2: 'value1'};
+passObject(num, obj);   //function call
+
+console.log('errord:', a, obj);
+
+
+
+// Working with nested object
+const literalObj = {prop1: 'value1', prop2: 'value2', prop3: {newProp1: 'newValue', newProp2: 'newValue1', newProp3: {prop1: 'value1'}}};
+literalObj.prop1 = 'value';
+literalObj.prop3 = {prop2: 'value1', prop1: 'value2'};
+
+console.log(literalObj);
+
+// Working with context
+const Meqena = function(name, model, speed) {
+    this.name = name;
+    this.model = model;
+    this.drive = function() {        
+        return this.name;
+    }
+}
+const bmw = new Meqena('name', 'model', 120);
+const bmwDrive = bmw.drive;
+console.log(bmwDrive());
+console.log(bmw.drive())
+
+
+
+//validation fun for x-0
+const validate = function(startValue, step) {
+	const secondValue = startValue + step;
+	const thirdValue = startValue + 2 * step;
+	const isEqual = cell[startValue].textContent === cell[secondValue].textContent === cell[thirdValue].textContent;
+	if (isEqual) {
+	}
+}

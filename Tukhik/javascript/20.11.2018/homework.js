@@ -33,16 +33,17 @@ console.log(theCar.toString())
 
 
 
-// set, get
+//  Ստեղծել օբյեկտ, որի բոլոր արգումենտները փակ են, հասանելի 
+//չեն դրսից կանցհի համար, օգտագործել set և get ֆունկցիաները
 
-var employee = {
+let employee = {
     first: "",
     last: "",
     get fullName() {
         return this.first + " " + this.last;
     },
     set fullName(value) {
-        var parts = value.toString().split(" ");
+        let parts = value.toString().split(" ");
         this.first = parts[0] || "";
         this.last = parts[1] || "";
     },
@@ -51,3 +52,24 @@ employee.fullName = "Any Nazaryan";
 console.log(employee.first);
 console.log(employee.last);
 console.log(employee.fullName);
+
+
+//myus tarberak@
+let user = {
+  firstName: "Gayane",
+  surname: "Gaboyan"
+}
+Object.defineProperty(user, "fullName", { 
+	//добавления свойства к объекту через defineProperty() 
+	// с дескриптором данных
+  get: function() {
+    return this.firstName + ' ' + this.surname;
+  },
+  set: function(value) {
+      let split = value.split(' ');
+      this.firstName = split[0];
+      this.surname = split[1];
+    }
+});
+user.fullName = "Katya Vasilyan";
+console.log(user.fullName);

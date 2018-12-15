@@ -9,30 +9,24 @@ Person.prototype.printinfo = function() {
     return this.name + " " + this.surname;
 };
 let person = new Person('Aram', 'Hakobyan');
-console.log(person.printinfo());
+console.log(person);
 
-function Developer(name, surname, age) {
-    Person.call(this, name, surname, age);
-    this.age = age;
+function Developer(name, surname, language) {
+    Person.call(this, name, surname, language);
+    this.language = language;
 }
 Developer.prototype = Object.create(Person.prototype);
-Developer.prototype.printinfo = function() {
-    return this.age;
-};
-let developer = new Developer('Hrant', 'Hakobyan', 25);
-console.log(developer.printinfo());
+Developer.prototype.constructor = Developer;
 
-function JSDeveloper(name, surname, age, profession) {
-    Developer.call(this, name, surname, age, profession);
+let developer = new Developer('Hrant', 'Hakobyan', 'English');
+console.log(developer);
+
+function JSDeveloper(name, surname, language, profession) {
+    Developer.call(this, name, surname, language, profession);
     this.profession = profession;
 }
 JSDeveloper.prototype = Object.create(Developer.prototype);
-JSDeveloper.prototype.printinfo = function() {
-    return this.profession;
-};
-let jsDeveloper = new JSDeveloper('Vahan', 'Yeghyan', 27, 'programmer');
-console.log(jsDeveloper.printinfo());
+JSDeveloper.prototype.constructor = JSDeveloper;
 
-console.log(person);
-console.log(developer);
+let jsDeveloper = new JSDeveloper('Vahan', 'Yeghyan', 'French', 'programmer');
 console.log(jsDeveloper);
