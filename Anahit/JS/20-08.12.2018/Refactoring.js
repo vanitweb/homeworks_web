@@ -39,11 +39,11 @@ function func1(s, a, b) {
         return -1;
     } else {
         for(var aIndex = -1, bIndex = -1, i = s.length -1; i > 0; i--) {
-            if (s.substring(i, i + 1) == a) {
+            if (s[i] == a) {
                 aIndex = i;
                 break;
             } 
-            if (s.substring(i, i + 1) == b) {
+            if (s[i]) == b) {
                 bIndex = i;
                 break;
             }
