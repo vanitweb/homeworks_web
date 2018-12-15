@@ -126,7 +126,7 @@ function func(s, a, b) {
 	if (indexA === -1 && indexB === -1) {
 		return -1;
 	}else if (indexA !== -1) {
-		if (s.lastIndexOf(b) === -1) {
+		if (indexB === -1) {
 			return indexA;
 		}else if(indexB !== -1){
 			if (indexA > indexB){
