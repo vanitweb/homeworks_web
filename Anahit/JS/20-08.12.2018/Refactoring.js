@@ -35,7 +35,7 @@ console.log(func("sfgryhf", "g", "f"));
 //optimal darzdrac
 
 function func1(s, a, b) {
-    if (s.match(/^$/)) {
+    if (s.length == 0) {
         return -1;
     } else {
         for(var aIndex = -1, bIndex = -1, i = s.length -1; i > 0; i--) {
