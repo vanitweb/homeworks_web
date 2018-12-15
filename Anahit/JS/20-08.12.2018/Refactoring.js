@@ -40,25 +40,11 @@ function func1(s, a, b) {
         return -1;
     } else {
         for(var aIndex = -1, bIndex = -1; i > 0; i--) {
-            if (s[i] == a) {
-                aIndex = i;
-                break;
-            } 
-            if (s[i]) == b) {
-                bIndex = i;
-                break;
+            if (s[i] == a ||  s[i] == b) {
+               return i;
             }
         }
-      /*  if(aIndex != -1 && bIndex == -1) {
-            return aIndex;
-        } else if (aIndex == -1 && bIndex != -1) {
-            return bIndex;
-        } else if(aIndex != -1 && bIndex != -1) {
-            return Math.max(aIndex, bIndex);
-        } 
-        return -1;
-    }*/
-     return Math.max(aIndex, bIndex);
+    }
 }
 console.log('2rd lucum');
 console.log(func1("sfgryhf", "g", "f"));
