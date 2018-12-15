@@ -1,18 +1,9 @@
 function func(s, a, b) {
-    if(s.length <= 0){
+    if(s.length === 0){
         return -1;
     }
     const aIndex = s.lastIndexOf(a); 
     const bIndex = s.lastIndexOf(b);
-    if(aIndex === -1 && bIndex === -1){
-        return -1;
-    }
-    if(aIndex !== -1 && bIndex === -1){
-        return aIndex;
-    }
-    if(aIndex === -1 && bIndex !== -1){
-        return bIndex;
-    }
     if(aIndex > bIndex){
         return aIndex;
     }else{
