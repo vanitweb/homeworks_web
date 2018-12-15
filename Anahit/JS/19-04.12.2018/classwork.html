@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> classwork DOM</title>
+        <meta charset="UTF-8">
+    </head> 
+    <body>
+        <textarea id='area'>
+            div {
+                width: 300px;
+                height: 200px;
+                font-size: 3em;
+                }
+            body {
+                 background-color: green;
+                 }
+        </textarea>
+        <div style="background-color:#01AAE1;"> Hiiiiiiiiiiiii</div>
+        <div style="background-color:#00FFEE;"> Byyyyyyyyy </div>
+    </body>
+    <script>
+        var textArea = document.getElementById('area'); 
+        textArea.onblur = function() { 
+            if(!document.getElementsByTagName('style')) {
+                const style = document.createElement('style');
+                document.body.appendChild(style);
+            } else {
+                const style = document.getElementsByTagName('style');
+            } 
+            style.textContent = textArea.value;
+            setTimeout(function() { style.textContent = " ";} , 5000);
+        }        
+    </script>       
+</html>

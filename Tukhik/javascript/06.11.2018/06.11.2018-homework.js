@@ -1,10 +1,10 @@
 //elementner e avelacnum objecti mej
 function updateObject() {
-const persons = {};
-return function (key,value){
-persons[key] = value;
-console.log(persons);
-}
+	const persons = {};
+	return function (key,value){
+	persons[key] = value;
+	console.log(persons);
+	}
 }
 const update = updateObject();
 update("name1", 20);

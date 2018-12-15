@@ -1,0 +1,18 @@
+table {
+    margin: auto; 
+}
+td {
+    width: 50px;
+    height: 50px;	
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #666;
+}
+button {
+    width: 200x;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    color: #fff;
+    background: orange;
+}

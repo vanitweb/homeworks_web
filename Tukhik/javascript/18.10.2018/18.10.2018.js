@@ -1,7 +1,7 @@
 console.log(`mijin tvabanakan`);
 let a = 0;
 for(let i = 1; i < 10; i++){
-a += i;
+	a += i;
 }
 a = a / 9;
 console.log(`միջին թվաբանականն է ${a}`);
@@ -11,10 +11,10 @@ let c = 0;
 let b = 1;
 let d = 1; 
 for (let i = 2; i < 20; i ++){
-c = b;
-b = d;
-d = c + b;
-console.log(d);
+	c = b;
+	b = d;
+	d = c + b;
+	console.log(d);
 }
 
 console.log(`parz tver`);

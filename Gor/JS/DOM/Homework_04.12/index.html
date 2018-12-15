@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homeworks 04.12.2018</title>
+		<link rel="stylesheet" href="style.css">
+		<style></style>
+	</head>
+	<body>
+		<script src="main.js"></script>
+		<div class="homework1">
+			<h1>Homework 1</h1>
+			<textarea name="" id="text" cols="30" rows="10" placeholder="Css" onblur="cssStyle()"></textarea>
+		</div>
+		<hr>
+		<div class="homework2">
+			<h1>Homework 2</h1>
+			<form>
+				<select name="select" id="1" onChange="homework2(this.selectedIndex)">
+					<option value="addAtrr">Ավելացնել ատրիբուտ</option>
+					<option value="change">Փոխել պարունակությունը</option>
+					<option value="addElem">Ավելացնել էլեմենտ</option>
+					<option value="printAtrr">Տպել ատրիբուտը</option>
+				</select>
+			</form>
+			<input type="text" id="elem" placeholder="Element">
+			<div class="addAtrr" id="addAtrr">
+				<input type="text" id="atr" placeholder="Atrribute">
+				<input type="text" id="val" placeholder="Value">
+				<button onclick="addButton()">Add</button>
+			</div>
+			<div class="change" id="change">
+				<input type="text" class="changeAtrr" placeholder="Atrribute">
+				<input type="button" onclick="change()" value="Change">
+			</div>
+			<div class="addElem" id="addElem">
+				<input type="button" value="AddElement" onclick="addElement()">
+			</div>
+			<div class="printAtrr" id="printAtrr">
+			<input type="button" onclick="print()" value="Print">
+			</div>
+		</div>
+	</body>
+</html>
