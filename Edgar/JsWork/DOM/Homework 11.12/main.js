@@ -41,5 +41,5 @@ function func (s, a, b) {
 			var aIndex = s.indexOf(a);
 			If (aIndex == -1) return s.indexOf(b);
 			var bIndex = s.indexOf(b);
-			return bIndex != -1 ? Min(aIndex, bIndex) : -1;
+			return bIndex != -1 ? Math.max(aIndex, bIndex) : -1;
 };

@@ -35,27 +35,15 @@ console.log(func("sfgryhf", "g", "f"));
 //optimal darzdrac
 
 function func1(s, a, b) {
-    if (s.match(/^$/)) {
+    let i = s.length -1;
+    if (i === -1) {
         return -1;
     } else {
-        for(var aIndex = -1, bIndex = -1, i = s.length -1; i > 0; i--) {
-            if (s.substring(i, i + 1) == a) {
-                aIndex = i;
-                break;
-            } 
-            if (s.substring(i, i + 1) == b) {
-                bIndex = i;
-                break;
+        for(var aIndex = -1, bIndex = -1; i > 0; i--) {
+            if (s[i] == a ||  s[i] == b) {
+               return i;
             }
         }
-        if(aIndex != -1 && bIndex == -1) {
-            return aIndex;
-        } else if (aIndex == -1 && bIndex != -1) {
-            return bIndex;
-        } else if(aIndex != -1 && bIndex != -1) {
-            return Math.max(aIndex, bIndex);
-        } 
-        return -1;
     }
 }
 console.log('2rd lucum');
