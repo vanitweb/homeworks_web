@@ -116,3 +116,26 @@ function func(s, a, b) {
 		return s.lastIndexOf(b);
 	}
 }
+
+function func(s, a, b) {
+	if (s === "") {
+		return -1;
+	}
+	const indexA = s.lastIndexOf(a);
+	const indexB = s.lastIndexOf(b);
+	if (indexA === -1 && indexB === -1) {
+		return -1;
+	}else if (indexA !== -1) {
+		if (indexB === -1) {
+			return indexA;
+		}else if(indexB !== -1){
+			if (indexA > indexB){
+				return indexA;
+			}else {
+				return indexB;
+			}
+		}
+	}else if (indexB !== -1){
+		return indexB;
+	}
+}
