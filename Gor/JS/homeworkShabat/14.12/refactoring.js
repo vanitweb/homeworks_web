@@ -34,7 +34,10 @@ function func(s, a, b) {
 	if(s.length === 0) {
 		return -1;
 	}
-	let aIndex = s.lastIndexOf(a);
-	let bIndex = s.lastIndexOf(b);
-	return Math.max(aIndex, bIndex);
+	for(let i = s.length - 1; i > 0; i--) {
+		if(s[i] === a || s[i] === b) {
+			return i;
+		}
+	}
+	return -1;
 }
