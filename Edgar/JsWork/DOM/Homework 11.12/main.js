@@ -1,4 +1,5 @@
-
+/*Реализовать функцию, создающую глубокую копию 
+(deep copy) объекта без использования JSON.stringify*/
 let object2 = {
   a: 1,
   b: 2,
@@ -13,3 +14,32 @@ let cop2 = {...object2};
 console.log("cop2", cop2);
 //tarberak 3
 console.log(JSON.parse(object2));
+
+/*1. Задача
+Реализовать функцию checkBraces($str), 
+проверяющую на синтаксическую верность последовательность скобок*/
+function checkBraces(value) {
+	var str = text.split('');
+	var arr = [];
+	for (var i = 0; i < str.length; i++) {
+		if (str[i] === "(" || str[i] === "[" || str[i] === "<") {
+			arr.push(str[i]);
+		} else if (str[i] === ")") {
+			if (arr.pop() !== "(") { return 0 }
+		} else if (str[i] === "]") {
+			if (arr.pop() !== "[") { return 0 }
+		} else if (str[i] === ">")  {
+			if (arr.pop() !== ">") { return 0 }
+		}
+	}
+	return 1;
+}
+
+/*3. Рефакторинг*/
+function func (s, a, b) {
+			If (s.match(/^$/)) return -1;
+			var aIndex = s.indexOf(a);
+			If (aIndex == -1) return s.indexOf(b);
+			var bIndex = s.indexOf(b);
+			return bIndex != -1 ? Min(aIndex, bIndex) : -1;
+};
