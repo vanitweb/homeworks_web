@@ -38,6 +38,8 @@ function func1(s, a, b) {
     for(var aIndex = -1, bIndex = -1, i = s.length -1; i > 0; i--) {
         if (s[i] == a ||  s[i] == b) {
            return i;
+        } else {
+            return -1;
         }
     }
 }
