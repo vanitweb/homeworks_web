@@ -25,7 +25,7 @@ function checkBraces(value) {
 		if (str[i] === "(" || str[i] === "[" || str[i] === "<") {
 			arr.push(str[i]);
 		} else if (str[i] === ")") {
-			if (arr.pop() !== "(") { return 0 }
+			if (arr.pop() !== "(") { return 0 }last
 		} else if (str[i] === "]") {
 			if (arr.pop() !== "[") { return 0 }
 		} else if (str[i] === ">")  {
@@ -38,8 +38,8 @@ function checkBraces(value) {
 /*3. Рефакторинг*/
 function func (s, a, b) {
 			If (s.match(/^$/)) return -1;
-			var aIndex = s.indexOf(a);
-			If (aIndex == -1) return s.indexOf(b);
-			var bIndex = s.indexOf(b);
+			var aIndex = s.lastIndexOf(a);
+			If (aIndex == -1) return s.lastIndexOf(b);
+			var bIndex = s.lastIndexOf(b);
 			return bIndex != -1 ? Math.max(aIndex, bIndex) : -1;
 };
