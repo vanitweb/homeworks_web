@@ -21,7 +21,6 @@ window.onload = function() {
     function check() {
         let all_block = document.getElementsByClassName('block');
         // X-ri hamar
-        if (all_block[0].innerHTML == 'X' && all_block[1].innerHTML == 'X' && all_block[2].innerHTML == 'X') alert("hastec arajin xaxacoxy");
         if (all_block[3].innerHTML == 'X' && all_block[4].innerHTML == 'X' && all_block[5].innerHTML == 'X') alert("hastec arajin xaxacoxy");
         if (all_block[6].innerHTML == 'X' && all_block[7].innerHTML == 'X' && all_block[8].innerHTML == 'X') alert("hastec arajin xaxacoxy");
         if (all_block[0].innerHTML == 'X' && all_block[3].innerHTML == 'X' && all_block[6].innerHTML == 'X') alert("hastec arajin xaxacoxy");
@@ -29,14 +28,26 @@ window.onload = function() {
         if (all_block[2].innerHTML == 'X' && all_block[5].innerHTML == 'X' && all_block[8].innerHTML == 'X') alert("hastec arajin xaxacoxy");
         if (all_block[0].innerHTML == 'X' && all_block[4].innerHTML == 'X' && all_block[8].innerHTML == 'X') alert("hastec arajin xaxacoxy");
         if (all_block[2].innerHTML == 'X' && all_block[4].innerHTML == 'X' && all_block[6].innerHTML == 'X') alert("hastec arajin xaxacoxy");
+        if (all_block[0].innerHTML == 'X' && all_block[1].innerHTML == 'X' && all_block[2].innerHTML == 'X') alert("hastec arajin xaxacoxy");
         // O-neri hamar
         if (all_block[0].innerHTML == 'O' && all_block[1].innerHTML == 'O' && all_block[2].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
         if (all_block[3].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[5].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
         if (all_block[6].innerHTML == 'O' && all_block[7].innerHTML == 'O' && all_block[8].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
         if (all_block[0].innerHTML == 'O' && all_block[3].innerHTML == 'O' && all_block[6].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
+        if (all_block[2].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[6].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
         if (all_block[1].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[7].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
         if (all_block[2].innerHTML == 'O' && all_block[5].innerHTML == 'O' && all_block[8].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
         if (all_block[0].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[8].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
-        if (all_block[2].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[6].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
     }
 }
+
+
+
+let matrix = function matrix(m = 3, n = 3) {
+    var result = []
+    for(var i = 0; i < n; i++) {
+        result.push(new Array(m).fill(' '))
+    }
+    return result
+}
+console.log(matrix(3,3));
