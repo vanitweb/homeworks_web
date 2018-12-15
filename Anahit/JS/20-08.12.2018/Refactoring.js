@@ -48,7 +48,7 @@ function func1(s, a, b) {
                 break;
             }
         }
-        if(aIndex != -1 && bIndex == -1) {
+      /*  if(aIndex != -1 && bIndex == -1) {
             return aIndex;
         } else if (aIndex == -1 && bIndex != -1) {
             return bIndex;
@@ -56,7 +56,8 @@ function func1(s, a, b) {
             return Math.max(aIndex, bIndex);
         } 
         return -1;
-    }
+    }*/
+     return Math.max(aIndex, bIndex);
 }
 console.log('2rd lucum');
 console.log(func1("sfgryhf", "g", "f"));
