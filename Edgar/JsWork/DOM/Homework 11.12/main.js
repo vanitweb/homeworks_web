@@ -37,9 +37,13 @@ function checkBraces(value) {
 
 /*3. Рефакторинг*/
 function func (s, a, b) {
-			If (s.match(/^$/)) return -1;
+			If (s.match(/^$/)) {
+                return -1;
+            }
 			var aIndex = s.lastIndexOf(a);
-			If (aIndex == -1) return s.lastIndexOf(b);
+			If (aIndex == -1) {
+                return s.lastIndexOf(b);
+            }
 			var bIndex = s.lastIndexOf(b);
 			return bIndex != -1 ? Math.max(aIndex, bIndex) : -1;
 };
