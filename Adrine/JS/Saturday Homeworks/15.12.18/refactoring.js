@@ -46,6 +46,5 @@ function func(s, a, b) {
     return Math.max(aIndex, bIndex);
 }
 
-
 console.log(func('dbsadg', 's', 'g'));
 console.log(func('abasassa', 'a', 's'));
