@@ -1,34 +1,10 @@
-let size = 10;
-const dasht = function(){
-    let table = document.getElementsByTagName("table")[0];
-    for(let i = 0; i < size; i++){
-        let tr = document.createElement("tr");
-        table.appendChild(tr);
-        for(let j = 0; j < size; j++){
-            let td = document.createElement("td");
-            td.setAttribute("onclick","xaxacox(event)")
-            tr.appendChild(td);
-        }
-    }
-}
-const sksel = function(){
-    dasht();
-    document.getElementsByTagName("button")[0].style.display = "none";
-    let res = document.createElement("button");
-    res.setAttribute("onclick", "noric()")
-    res.textContent = "noric";
-    document.getElementsByTagName("body")[0].appendChild(res);
-}
+let size;
+const td = document.getElementsByTagName("td");
 const stugum = function(e){
-    let haaxtanak = false;
-    let td = document.getElementsByTagName("td");
-    let arg = e.target.textContent;
     let tox,
         syun;
-    let countTox = 0;
-    let countSyun = 0;
-    let countAnkyun1 = 0;
-    let countAnkyun2 = 0;
+    let count = 0;
+    let tdTextContent = e.target.textContent; 
     for(let i in td){
         if(td[i] === e.target){
             tox = parseInt(i/size);
@@ -36,45 +12,52 @@ const stugum = function(e){
         }
     }
     for(let i = tox * size; i < tox * size + size; i++){
-        if(td[i].textContent === arg){
-            countTox++;
+        if(td[i].textContent === tdTextContent){
+            count++;
         }
     }
-    if(countTox === size){
-        return alert(`haxtanak ${arg}`)
+    if(count === size){
+        noric();
+        return alert(`haxtanak ${tdTextContent}`)
     }
+    count = 0;
     for(let i = syun; i < td.length; i += size){
-        if(td[i].textContent === arg){
-            countSyun++;
+        if(td[i].textContent === tdTextContent){
+            count++;
         }
     }
-    if(countSyun === size){
-        return alert(`haxtanak ${arg}`)
+    if(count === size){
+        noric();
+        return alert(`haxtanak ${tdTextContent}`)
     }
-    for(let i = 0; i < td.length; i += size){
-        let j = i / size;
-        if(td[i + j].textContent === arg){
-            countAnkyun1++;
+    if(tox === syun){
+        count = 0;
+        for(let i = 0; i < td.length; i += size){
+            if(td[i + i/size].textContent === tdTextContent){
+                count++;
+            }
+        }
+        if(count === size){
+            noric();
+            return alert(`haxtanak ${tdTextContent}`)
         }
     }
-    if(countAnkyun1 === size){
-        return alert(`haxtanak ${arg}`)
-    }
-    for(let i = size; i <= td.length; i += size){
-        let j = i / size;
-        if(td[i - j].textContent === arg){
-            countAnkyun2++;
-            console.log(i,j)
+    if(tox + syun === size -1){
+        count = 0;
+        for(let i = size; i <= td.length; i += size){
+            if(td[i - i/size].textContent === tdTextContent){
+                count++;
+            }
         }
-    }
-    if(countAnkyun2 === size){
-        return alert(`haxtanak ${arg}`)
+        if(count === size){
+            noric();
+            return alert(`haxtanak ${tdTextContent}`)
+        }   
     }
 }
-const xaxacox1 = function(){
+const clojure = function(){
     let count = 0;
     return function(e){
-        let td = document.getElementsByTagName("td")[0];
         if(!e.target.textContent){
             count++; 
             (count % 2 === 0) ? e.target.textContent = "O" : e.target.textContent = "X";
@@ -84,7 +67,30 @@ const xaxacox1 = function(){
         }
     }
 }
-const xaxacox = xaxacox1();
+const xaxacox = clojure();
 const noric = function(){
-    location.reload()
+    for(let i in td){
+        td[i].textContent = "";
+    }
+}
+const dasht = function(){
+    const table = document.getElementsByTagName("table")[0];
+    for(let i = 0; i < size; i++){
+        const tr = document.createElement("tr");
+        table.appendChild(tr);
+        for(let j = 0; j < size; j++){
+            const td = document.createElement("td");
+            td.setAttribute("onclick","xaxacox(event)")
+            tr.appendChild(td);
+        }
+    }
+}
+const sksel = function(){
+    size = parseInt(prompt("dashti tiv"));
+    dasht();
+    document.getElementsByTagName("button")[0].style.display = "none";
+    const noric = document.createElement("button");
+    noric.setAttribute("onclick", "noric()")
+    noric.textContent = "noric";
+    document.body.appendChild(noric);
 }

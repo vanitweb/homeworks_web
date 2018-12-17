@@ -4,8 +4,8 @@
 	background: orangered;
 }
 .block{
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	float: left;
 	border: 1px solid white;
 	box-sizing: border-box;

@@ -1,12 +1,12 @@
 var k = 0;
-var CELL_SIZE;
-var size;
 const x = function() 
 {
 	const stugum = function()
     {
-		
+		syun = document.getElementsByTagName("td");
 		let chisht = false;
+		size = parseInt(document.getElementById("input").value);///sranq stex grelem vorovhetev et popoxakannery cher gtnum... 
+		CELL_SIZE = size;
 		let maxSize = CELL_SIZE * CELL_SIZE;
 		//գլխավոր անկյունագիծ
 		for(let i = 0; i <= maxSize; i += (CELL_SIZE+1))
@@ -19,7 +19,7 @@ const x = function()
 		//2րդ անկյունագիծ
 		for(let i = CELL_SIZE - 1; i <= (maxSize - CELL_SIZE) ; i += (CELL_SIZE-1))
 		{
-			if((syun[i].textContent = "X") && (syun[i + (CELL_SIZE - 1)].textContent = "X") && (syun[i + (CELL_SIZE - 1) + (CELL_SIZE - 1)].textContent = "X"))
+			if((syun[i].textContent === "X") && (syun[i + (CELL_SIZE - 1)].textContent === "X") && (syun[i + (CELL_SIZE - 1) + (CELL_SIZE - 1)].textContent === "X"))
 			{
 				chisht = true;
 			}
@@ -29,7 +29,7 @@ const x = function()
 		{
 			for(i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
 			{
-				if((syun[i].textContent = "X") && (syun[i + CELL_SIZE].textContent = "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent = "X"))
+				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent/*stex asuma textContent chi karum dni bayc verevum es CELL_SIZE-in tvelem parseInt*/ === "X"))
 				{
 					chisht = true;
 				}
@@ -40,7 +40,7 @@ const x = function()
 		{
 			for(i = j; i <= j + (CELL_SIZE - 1); i++)
 			{
-				if((syun[i].textContent = "X") && (syun[i + 1].textContent = "X") && (syun[i + 2].textContent = "X"))
+				if((syun[i].textContent === "X") && (syun[i + 1].textContent === "X") && (syun[i + 2].textContent === "X"))
 				{
 					chisht = true;
 				}
@@ -48,10 +48,9 @@ const x = function()
 		}
 		if(chisht = true)
 		{
-			alert("հաղթանակ");
+			alert("հաղթանակ");//shat depqerum 5rd qaylic heto talisa haxtanak bayc chpiti tar....
 		}
     }
-    
 	let count = 0;
 	let isX = true;
 	return function(e)
@@ -60,24 +59,19 @@ const x = function()
         {
 			count++;
 			e.target.textContent = isX ? 'X' : 'O';
-			isX = !isX;
-             
+			isX = !isX;   
 		}
         if(count >= 5)
         {
             stugum();
         }
 	}
-
 }
 const setValue = x();
-    
 const drawTable = function() //նկարել
 {
-	
-    size = document.getElementById("input").value;
-    CELL_SIZE = size;
-	var syun = document.getElementsByTagName("td");
+    var size = parseInt(document.getElementById("input").value);
+    var CELL_SIZE = parseInt(size);
 	const table = document.getElementsByTagName('table')[0];
 	for(let i = 0; i < CELL_SIZE; ++i)
     {
@@ -88,13 +82,24 @@ const drawTable = function() //նկարել
             const td = document.createElement('td');
             tr.appendChild(td);
             td.setAttribute('onclick', 'setValue(event)');
-            
         }
 	}
 }
-
-
 const startGame = function ()
 {
     drawTable();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
