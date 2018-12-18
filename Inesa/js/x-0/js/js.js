@@ -42,7 +42,7 @@ const x = function()
 		//սյուն
 		for(let j = 0; j <= (CELL_SIZE - 1); j++)
 		{
-			for(let i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
+			for(let i = j; i <= maxSize; i += CELL_SIZE)
 			{
 				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "X"))
 				{
@@ -52,7 +52,7 @@ const x = function()
 		}
 		for(let j = 0; j <= (CELL_SIZE - 1); j++)
 		{
-			for(let i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
+			for(let i = j; i <= maxSize; i += CELL_SIZE)
 			{
 				if((syun[i].textContent === "O") && (syun[i + CELL_SIZE].textContent === "O") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "O"))
 				{
@@ -84,11 +84,19 @@ const x = function()
 		//print
 		if(chisht === true)
 		{
+			for(let i = 0; i <= syun.length-1; i++)
+			{
+				syun[i] === "";
+			}
 			alert("Հաղթանակ");
 		}
+		
     }
+	
+	
 	let count = 0;
 	let isX = true;
+	
 	return function(e)
     {
 		if (!e.target.textContent) 
@@ -102,9 +110,9 @@ const x = function()
             stugum();
         }
 	}
+	
 }
 const setValue = x();
-    
 const drawTable = function() //նկարել
 {
     let size = parseInt(document.getElementById("input").value);
