@@ -25,7 +25,7 @@ function checkBraces(value) {
 		if (str[i] === "(" || str[i] === "[" || str[i] === "<") {
 			arr.push(str[i]);
 		} else if (str[i] === ")") {
-			if (arr.pop() !== "(") { return 0 }last
+			if (arr.pop() !== "(") { return 0 }
 		} else if (str[i] === "]") {
 			if (arr.pop() !== "[") { return 0 }
 		} else if (str[i] === ">")  {

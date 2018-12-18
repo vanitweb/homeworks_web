@@ -1,5 +1,4 @@
 //3. Рефакторинг
-
 /*function func(s, a, b) {
    if (s.match(/^$/)) {
        return -1;
@@ -36,29 +35,16 @@
    }
 }
 console.log(func('', 'b', 'a'));*/
- // Как бы вы переписали этот код?
-  
-function func(s, a, b) {
-	if (s.length == 0) {
-       return -1;
-   }
-    var aIndex = s.indexOf(a);
-	var bIndex = s.indexOf(b);
-	if(aIndex != -1 && bIndex == -1) {
-		
-			return aIndex;
-		}
-		else if (aIndex == -1 && bIndex != -1){
-			return bIndex;
-		}
-		else if (aIndex != -1 && bIndex != -1){
-		 return Math.max(aIndex, bIndex);
-	}
-	
-	else return -1;
-}
-	
-	
 
-console.log(func('dbsadg', 's', 'g'));  
-console.log(func('abasassa', 'a', 's'));  
+// Как бы вы переписали этот код?
+function func(s, a, b) {
+    if (s.length == 0) {
+        return -1;
+    }
+    let aIndex = s.lastIndexOf(a);
+    let bIndex = s.lastIndexOf(b);
+    return Math.max(aIndex, bIndex);
+}
+
+console.log(func('dbsadg', 's', 'g'));
+console.log(func('abasassa', 'a', 's'));

@@ -104,11 +104,25 @@ function func(s, a, b) {
       return -1;
   }
 }
-console.log(func("afsasfassaff", "s", "f"));
+console.log(func("btyty", "a", "b"));
+console.log(func("tayatyb", "a", "b"));
+console.log(func("atyty", "a", "b"));
+console.log(func("tytbby", "a", "b"));
+console.log(func("aaatytbby", "a", "b"));
+
 
 //kam
-function func1(s, a, b) {
-   let x = s.length-1;
-   return x;
-}
-console.log(func1("afsasfassaff", "s", "f"));
+function newFunc(s, a, b) {
+   let indexA = s.lastIndexOf('a');
+   let indexB = s.lastIndexOf('b'); 
+      let maxIndex =  Math.max(indexB, indexA); 
+      if(maxIndex == 0){
+        return '-1';
+      }  
+      else return maxIndex;
+   }
+console.log(newFunc("btyty", "a", "b"));
+console.log(newFunc("tayatyb", "a", "b"));
+console.log(newFunc("atyty", "a", "b"));
+console.log(newFunc("tytbby", "a", "b"));
+console.log(newFunc("aaatytbby", "a", "b"));

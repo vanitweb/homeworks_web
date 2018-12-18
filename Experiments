@@ -46,3 +46,37 @@ const validate = function(startValue, step) {
 	if (isEqual) {
 	}
 }
+
+
+
+//pakagcer
+//validate brackets in string
+
+function isOpenBrackets( c ) {
+	const openBrackets = ['(', '{', '[', '<'];
+	return openBrackets.indexOf(c) !== -1;
+	//return c === '(' || c === '{' || c === '[' || c === '<';
+}
+
+function isCloseBrackets( c ) {
+	return c === ')' || c === '}' || c === ']' || c === '>';
+}
+
+function getPair(c) {// ASSERT(isCloseBrackets(str[i]));
+	const obj = { "}" : "{", "]" : "[", ">" : "<" };
+	return obj[c];
+}
+
+function validateBrackets(str) {
+	let stack = new Array();
+	for(let i = 0, len = str.length; i < len; i++) {
+		if(isOpenBrackets(str[i])) {
+			stack.push(str[i]);
+		} else if (isCloseBrackets(str[i])) {
+			if (stack.length === 0 || getPair(str[i]) !== stack.pop()) {
+				return false;
+			}
+		}
+	}
+	return stack.length === 0;
+}
