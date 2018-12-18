@@ -1,10 +1,10 @@
 let restarButton = document.querySelector('#restart');
 restarButton.addEventListener("click", restartGame);
 
-var currentGamerElem = document.querySelector('#turnon');
+let currentGamerElem = document.querySelector('#turnon');
 
-var cells = getFieldCells("#field td");
-var gamerTurn = getDefaultgamer();
+let cells = getFieldCells("#field td");
+let gamerTurn = getDefaultgamer();
 prepareField();
 
 function prepareField() {
