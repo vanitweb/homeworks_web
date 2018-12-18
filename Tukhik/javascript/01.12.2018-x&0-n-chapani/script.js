@@ -16,54 +16,8 @@ const x = function() {
             stugumSyuneriHamar(e);
             yerkrordakanAnkyunagits(e)
             if(count >= 2*CELL_SIZE-1){
-<<<<<<< HEAD
-                for(let i = 0; i < CELL_SIZE; i++){
-                    let qanak = 0;
-                    if(tr[e.target.parentElement.rowIndex].children[i].textContent  == e.target.textContent ){
-                        qanak++
-                        if(qanak = CELL_SIZE){
-                            alert(`haxtec ${e.target.textContent} xaxacox@`);
-                                newGame();
-                                break;
-                            }
-                        }
-                    }
-                    for(let i = 0; i < CELL_SIZE; i++){
-                    let qanak2 = 0;
-                    if(tr[i].children[e.target.cellIndex].textContent === e.target.textContent  ){
-                        qanak2++
-                        if(qanak2 = CELL_SIZE){
-                            alert(`haxtec ${e.target.textContent} xaxacox@`);
-                        newGame();  
-                        break;
-                        } 
-                        }   
-                     for(let i = 0; i < CELL_SIZE; i++){
-                    if(e.target.cellIndex  === e.target.parentNode.rowIndex){
-                        let qanak3 = 0;
-                        if(tr[e.target.parentNode.rowIndex].children[e.target.cellIndex].textContent  == e.target.textContent ){
-                            qanak3++
-                            if(qanak3 = CELL_SIZE){
-                                alert(`haxtec ${e.target.textContent} xaxacox@`);
-                                newGame();
-                                break;
-                            }
-                        }
-                    }
-                    else if (e.target.cellIndex  + e.target.parentNode.rowIndex  == CELL_SIZE){
-                        let qanak4 = 0;
-                        if(tr[CELL_SIZE-i].children[i].textContent  == tr[e.target.parentNode.rowIndex].children[e.target.cellIndex].textContent ){
-                            qanak4 ++
-                            if(qanak = CELL_SIZE){
-                                alert(`haxtec ${e.target.textContent} xaxacox@`);
-                                newGame();
-                                break;
-                            }
-                         }
-                    }
-=======
-            let tbl = document.getElementsByTagName("table")[0];
-            stugumToxeriHamar(e);
+                let tbl = document.getElementsByTagName("table")[0];
+                stugumToxeriHamar(e);
             }
         }
     }
@@ -80,15 +34,11 @@ function glxavorAnkyunagits(e){
                 if(k == CELL_SIZE){
                 alert(`haxtec ${cell.textContent}-iky`);
                 newGame();
->>>>>>> 8ee4db28201d336aebf5a13dea335bd8d55428de
                 }
             }
         }
         
     }
-<<<<<<< HEAD
-	}
-=======
 }
 
 function yerkrordakanAnkyunagits(e){
@@ -135,7 +85,6 @@ if(tr[j].children[e.target.cellIndex].textContent === e.target.textContent ){
             }
         }
     }
->>>>>>> 8ee4db28201d336aebf5a13dea335bd8d55428de
 }
 
 let newGame =function () {    
