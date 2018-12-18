@@ -49,6 +49,9 @@ const nav2 = function(e){
         if(nav.nav2[i].length === 0){
             nav.nav2.splice(i, 1)
         }
+        if(nav.nav2.length === 0){
+            
+        }
     }    
     console.log(2,nav.nav2)
 }
@@ -84,19 +87,15 @@ const stugum = function(e){
         }
     }
     if(nav.nav1.length !== 0){
-        if(e.target.textContent === "1"){
-            return   
-        }else{
-            nav1(e);
-        }
+        nav1(e);
     }
-    if(nav.nav2.length !== 0 && e.target.textContent !== "2"){
+    if(nav.nav2.length !== 0){
         nav2(e);
     }
-    if(nav.nav3.length !== 0 && e.target.textContent !== "3"){
+    if(nav.nav3.length !== 0){
         nav3(e);
     }
-    if(nav.nav4.length !== 0 && e.target.textContent !== "4"){
+    if(nav.nav4.length !== 0){
         nav4(e)
     }
     for(let i in nav){
