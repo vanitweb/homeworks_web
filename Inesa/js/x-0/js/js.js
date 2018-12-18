@@ -1,17 +1,18 @@
 var k = 0;
+
 const x = function() 
 {
 	const stugum = function()
     {
-		syun = document.getElementsByTagName("td");
+		let syun = document.getElementsByTagName("td");
+		let size = parseInt(document.getElementById("input").value);
+		let CELL_SIZE = size;
 		let chisht = false;
-		size = parseInt(document.getElementById("input").value);///sranq stex grelem vorovhetev et popoxakannery cher gtnum... 
-		CELL_SIZE = size;
 		let maxSize = CELL_SIZE * CELL_SIZE;
 		//գլխավոր անկյունագիծ
 		for(let i = 0; i <= maxSize; i += (CELL_SIZE+1))
 		{
-			if((syun[i].textContent === "X") && (syun[i + (CELL_SIZE+1)].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "X"))
+			if((syun[i].textContent === "X") && ((syun[i + (CELL_SIZE+1)]).textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "X"))
 			{
 				chisht = true;
 			}
@@ -29,7 +30,7 @@ const x = function()
 		{
 			for(i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
 			{
-				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent/*stex asuma textContent chi karum dni bayc verevum es CELL_SIZE-in tvelem parseInt*/ === "X"))
+				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "X"))
 				{
 					chisht = true;
 				}
@@ -46,9 +47,9 @@ const x = function()
 				}
 			}
 		}
-		if(chisht = true)
+		if(chisht === true)
 		{
-			alert("հաղթանակ");//shat depqerum 5rd qaylic heto talisa haxtanak bayc chpiti tar....
+			alert("հաղթանակ");
 		}
     }
 	let count = 0;
@@ -68,10 +69,11 @@ const x = function()
 	}
 }
 const setValue = x();
+    
 const drawTable = function() //նկարել
 {
-    var size = parseInt(document.getElementById("input").value);
-    var CELL_SIZE = parseInt(size);
+    let size = parseInt(document.getElementById("input").value);
+    let CELL_SIZE = size;
 	const table = document.getElementsByTagName('table')[0];
 	for(let i = 0; i < CELL_SIZE; ++i)
     {
@@ -84,6 +86,7 @@ const drawTable = function() //նկարել
             td.setAttribute('onclick', 'setValue(event)');
         }
 	}
+	let syun = document.getElementsByTagName("td");
 }
 const startGame = function ()
 {
