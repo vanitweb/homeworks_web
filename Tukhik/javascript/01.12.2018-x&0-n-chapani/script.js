@@ -16,8 +16,8 @@ const x = function() {
             stugumSyuneriHamar(e);
             yerkrordakanAnkyunagits(e)
             if(count >= 2*CELL_SIZE-1){
-            let tbl = document.getElementsByTagName("table")[0];
-            stugumToxeriHamar(e);
+                let tbl = document.getElementsByTagName("table")[0];
+                stugumToxeriHamar(e);
             }
         }
     }
