@@ -11,16 +11,24 @@
                 height: 200px;
                 font-size: 3em;
                 }
+            body {
+                 background-color: green;
+                 }
         </textarea>
         <div style="background-color:#01AAE1;"> Hiiiiiiiiiiiii</div>
         <div style="background-color:#00FFEE;"> Byyyyyyyyy </div>
     </body>
     <script>
-        setInterval(function(){
-                       var value = document.getElementById('area').value; 
-                       const style = document.createElement('style');
-                       document.body.appendChild(style);
-                       style.textContent = value;
-                       }, 5000);
+        var textArea = document.getElementById('area'); 
+        textArea.onblur = function() { 
+            if(!document.getElementsByTagName('style')) {
+                const style = document.createElement('style');
+                document.body.appendChild(style);
+            } else {
+                const style = document.getElementsByTagName('style');
+            } 
+            style.textContent = textArea.value;
+            setTimeout(function() { style.textContent = " ";} , 5000);
+        }        
     </script>       
 </html>

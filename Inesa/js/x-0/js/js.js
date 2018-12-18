@@ -1,78 +1,56 @@
 var k = 0;
-var syun = [];
 const x = function() 
 {
-    const stugum = function()
+	const stugum = function()
     {
-		//տողեր
-		var chisht;
-		for(let qanak = 1; qanak <= CELL_SIZE; qanak++)
+		syun = document.getElementsByTagName("td");
+		let chisht = false;
+		size = parseInt(document.getElementById("input").value);///sranq stex grelem vorovhetev et popoxakannery cher gtnum... 
+		CELL_SIZE = size;
+		let maxSize = CELL_SIZE * CELL_SIZE;
+		//գլխավոր անկյունագիծ
+		for(let i = 0; i <= maxSize; i += (CELL_SIZE+1))
 		{
-			for(let m = 0; m < CELL_SIZE; m++)
+			if((syun[i].textContent === "X") && (syun[i + (CELL_SIZE+1)].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "X"))
 			{
-				for(let n = 1; n <= CELL_SIZE; n++)
-				{
-					for(let i = 0 + (m * CELL_SIZE); i < n * CELL_SIZE; i++)
-					{
-						if(syun[i-1] != syun[i])
-						{
-							chisht = false;
-						}
-						else
-						{
-							chisht = true;
-						}
-					}
-				}
+				chisht = true;
 			}
 		}
-		//սյուներ
-		for(let qanak = 0; qanak < CELL_SIZE; qanak++)
+		//2րդ անկյունագիծ
+		for(let i = CELL_SIZE - 1; i <= (maxSize - CELL_SIZE) ; i += (CELL_SIZE-1))
 		{
-			for(let i = qanak; i <= ((CELL_SIZE-1)*CELL_SIZE)+1; i = i+CELL_SIZE)
+			if((syun[i].textContent === "X") && (syun[i + (CELL_SIZE - 1)].textContent === "X") && (syun[i + (CELL_SIZE - 1) + (CELL_SIZE - 1)].textContent === "X"))
 			{
-				if(syun[i-1] != syun[i])
-				{
-					chisht = false;
-				}
-				else
+				chisht = true;
+			}
+		}
+		//սյուն
+		for(j = 0; j < (CELL_SIZE - 1); j++)
+		{
+			for(i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
+			{
+				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent/*stex asuma textContent chi karum dni bayc verevum es CELL_SIZE-in tvelem parseInt*/ === "X"))
 				{
 					chisht = true;
 				}
 			}
 		}
-		//անկյունագծեր
-
-		for(let i = 0; i < CELL_SIZE; i = i+(CELL_SIZE+1))
+		//տող
+		for(j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
 		{
-			if(syun[i-1] != syun[i])
+			for(i = j; i <= j + (CELL_SIZE - 1); i++)
 			{
-				chisht = false;
-			}
-			else
-			{
-				chisht = true;
+				if((syun[i].textContent === "X") && (syun[i + 1].textContent === "X") && (syun[i + 2].textContent === "X"))
+				{
+					chisht = true;
+				}
 			}
 		}
-
-		for(let i = CELL_SIZE-1; i < CELL_SIZE * (CELL_SIZE - 1); i = i +(CELL_SIZE-1))
-		{
-			if(syun[i-1] != syun[i])
-			{
-				chisht = false;
-			}
-			else
-			{
-				chisht = true;
-			}
-		}
-
 		if(chisht = true)
 		{
-			alert("հաղթանակ");
+			alert("հաղթանակ");//shat depqerum 5rd qaylic heto talisa haxtanak bayc chpiti tar....
 		}
     }
-    
 	let count = 0;
 	let isX = true;
 	return function(e)
@@ -80,52 +58,48 @@ const x = function()
 		if (!e.target.textContent) 
         {
 			count++;
-			e.target.textContent = isX ? 'X' : '0';
-			isX = !isX;
-          /* ?????????????? if(isX === true)
-                {
-                    syun[count-1] = 1;
-                }
-            else
-            {
-                syun[count-1] = 0;
-            }????????????????*/
-             
+			e.target.textContent = isX ? 'X' : 'O';
+			isX = !isX;   
 		}
         if(count >= 5)
         {
             stugum();
         }
 	}
-
 }
 const setValue = x();
-    
 const drawTable = function() //նկարել
 {
-	var CELL_SIZE;
-    let size = document.getElementById("input").value;
-    CELL_SIZE = size;
-    
-    syun.length = CELL_SIZE*CELL_SIZE;
+    var size = parseInt(document.getElementById("input").value);
+    var CELL_SIZE = parseInt(size);
 	const table = document.getElementsByTagName('table')[0];
 	for(let i = 0; i < CELL_SIZE; ++i)
     {
 		const tr = document.createElement('tr');
+		table.appendChild(tr);
         for(let j = 0; j < CELL_SIZE; ++j)
         {
             const td = document.createElement('td');
-            
             tr.appendChild(td);
             td.setAttribute('onclick', 'setValue(event)');
-            table.appendChild(tr);
-            syun[i] = td; //vercnum e 1in ev 2rd vandaknery!!!
         }
 	}
 }
-
-
 const startGame = function ()
 {
     drawTable();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

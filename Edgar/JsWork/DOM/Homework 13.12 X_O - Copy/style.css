@@ -1,0 +1,21 @@
+td{
+	width: 80px;
+	height: 80px;
+	border: 1px solid black;
+	background-color: ghostwhite;
+	color: darkorange;
+	cursor: pointer;
+	text-align: center;
+	font-size: 60px;
+}
+button{
+	padding: 15px;
+	border: 3px solid black;
+	background-color: green;
+	color: white;
+	font-size: 20px;
+}
+
+table{
+	margin: 0 auto;
+}

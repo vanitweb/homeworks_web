@@ -1,17 +1,16 @@
-function setBodyAttr(attr, value){
-      if (document.body) eval('document.body.'+attr+'="'+value+'"');
-      else notSupported();
-}
+//homework 1
 function myFunc() {
-	let stile = document.getElementsByTagName("textarea").value;
-	document.body.style.cssText = stile;
+	let inputText = document.getElementsByTagName("textarea")[0].value;
+	let newStyle = document.getElementsByTagName("style")[0];
+	newStyle.textContent = inputText;
 }
 function cssStyle() {
-	setInterval(myFunc, 5000);
+	if(document.getElementsByTagName("textarea")[0].value) {
+		setTimeout(myFunc, 5000);
+	}
+	
 }
-
 //homework2
-
 function homework2(attr) {
 	if(attr === 0) {
 		document.getElementById("addAtrr").style.display = "block";
@@ -39,7 +38,23 @@ function homework2(attr) {
 	}
 }
 function addButton() {
-	let atr = document.getElementById("atr").value;
-	let value = document.getElementById("val").value;
-	document.getElementById("addAtrr").style.atr = value;
+	const elem = document.getElementById("elem").value;
+	const element = document.getElementsByTagName(elem)[0];
+	const att = document.createAttribute(document.getElementById("atr").value);
+	att.value = document.getElementById("val").value;
+	element.setAttributeNode(att);
+}
+function change() {
+	const newContent = document.getElementById("elem").value;
+	document.getElementsByTagName(newContent)[0].textContent = document.getElementsByClassName("changeAtrr")[0].value;
+}
+function addElement() {
+	const elem = document.getElementById("elem").value;
+	const newElement = document.createElement(elem);
+    document.body.appendChild(newElement);
+}
+function print() {
+	const attr = document.body.attributes;
+	const div = document.getElementById("printAtrr");
+	div.textContent += `${attr[0].name}="${attr[0].value}"`;
 }
