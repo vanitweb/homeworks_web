@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+<!-- 	<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="css.css">
+<script src="js.js" defer></script>
+</head>
+</head>
+<body>
+ <div>
+  
+ 
+      <select id="mySelect">
+         
+    <option >1. ավելացնել ատրիբուտ </option>
+    <option>2. փոխել պարունակությունը</option>
+    <option>3. ավելացնել էլեմենտ</option>
+    <option>4. տպել ատրիբուտները</option>
+  
+   </select>
+   <button onclick="myFunction()">Try it</button>
+ </div>
+ <script>
+function myFunction() {
+        let x = document.getElementById("mySelect").selectedIndex;
+        if(x==0){ 
+       
+    let name = document.createElement("input");
+     document.body.appendChild(name);
+    let valu = document.createElement("input");
+    document.body.appendChild(valu);
+        }
+         if(x==1){
+ let poxelParnakutyun = document.createElement("input");
+     document.body.appendChild(poxelParnakutyun);
+         }
+        if(x==2){
+let norParnakutyun = document.createElement("input");
+     document.body.appendChild(norParnakutyun);
+        }
+        if(x==3){
+            
+        }
+
+}
+</script>
+</body>
+</html>

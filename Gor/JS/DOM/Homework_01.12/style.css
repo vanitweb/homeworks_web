@@ -1,26 +1,25 @@
 #game{
-	width: 150px;
-	height: 150px;
-	background: orangered;
+	width: 300px;
+	height: 300px;
+	background: red;
 }
 .block{
-	width: 50px;
-	height: 50px;
+	width: 100px;
+	height: 100px;
 	float: left;
-	border: 1px solid white;
+	border: 1px solid black;
 	box-sizing: border-box;
-	line-height: 50px;
+	line-height: 100px;
 	text-align: center;
-	font-style: 40px;
+	font-size: 80px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 #btn{
-	background: orangered;
+	background: red;
 	padding: 10px;
 	text-align: center;
 	font-size: 16px;
 	margin-top: 10px;
 	font-weight: 600;
-	border: 2px dashed #000;
 }
