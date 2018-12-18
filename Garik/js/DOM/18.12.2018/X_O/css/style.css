@@ -1,0 +1,21 @@
+table {
+    margin:  auto;
+}
+td {
+    width: 70px;
+    height: 70px;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 800;
+    border: 1px solid ;
+}
+td:hover{
+    cursor: pointer;
+}
+button{
+    margin-left: 45%;
+    height: 40px;
+    width: 10%;
+    font-weight: 700;
+    font-size: 1.5em
+}
