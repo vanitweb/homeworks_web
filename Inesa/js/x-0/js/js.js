@@ -17,6 +17,13 @@ const x = function()
 				chisht = true;
 			}
 		}
+		for(let i = 0; i <= maxSize; i += (CELL_SIZE+1))
+		{
+			if((syun[i].textContent === "O") && ((syun[i + (CELL_SIZE+1)]).textContent === "O") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "O"))
+			{
+				chisht = true;
+			}
+		}
 		//2րդ անկյունագիծ
 		for(let i = CELL_SIZE - 1; i <= (maxSize - CELL_SIZE) ; i += (CELL_SIZE-1))
 		{
@@ -25,10 +32,17 @@ const x = function()
 				chisht = true;
 			}
 		}
-		//սյուն
-		for(j = 0; j < (CELL_SIZE - 1); j++)
+		for(let i = CELL_SIZE - 1; i <= (maxSize - CELL_SIZE) ; i += (CELL_SIZE-1))
 		{
-			for(i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
+			if((syun[i].textContent === "O") && (syun[i + (CELL_SIZE - 1)].textContent === "O") && (syun[i + (CELL_SIZE - 1) + (CELL_SIZE - 1)].textContent === "O"))
+			{
+				chisht = true;
+			}
+		}
+		//սյուն
+		for(let j = 0; j <= (CELL_SIZE - 1); j++)
+		{
+			for(let i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
 			{
 				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "X"))
 				{
@@ -36,10 +50,20 @@ const x = function()
 				}
 			}
 		}
-		//տող
-		for(j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
+		for(let j = 0; j <= (CELL_SIZE - 1); j++)
 		{
-			for(i = j; i <= j + (CELL_SIZE - 1); i++)
+			for(let i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
+			{
+				if((syun[i].textContent === "O") && (syun[i + CELL_SIZE].textContent === "O") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "O"))
+				{
+					chisht = true;
+				}
+			}
+		}
+		//տող
+		for(let j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
+		{
+			for(let i = j; i <= j + (CELL_SIZE - 1); i++)
 			{
 				if((syun[i].textContent === "X") && (syun[i + 1].textContent === "X") && (syun[i + 2].textContent === "X"))
 				{
@@ -47,9 +71,20 @@ const x = function()
 				}
 			}
 		}
+		for(let j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
+		{
+			for(let i = j; i <= j + (CELL_SIZE - 1); i++)
+			{
+				if((syun[i].textContent === "O") && (syun[i + 1].textContent === "O") && (syun[i + 2].textContent === "O"))
+				{
+					chisht = true;
+				}
+			}
+		}
+		//print
 		if(chisht === true)
 		{
-			alert("հաղթանակ");
+			alert("Հաղթանակ");
 		}
     }
 	let count = 0;
