@@ -84,9 +84,7 @@ function stopGame(cells) {
     }
 }
 
-function showWinner(name) {
-    alert(name + "'s Wins");
-}
+
 
 function showCurrentGamer(name, elem) {
     elem.textContent = name;
@@ -97,6 +95,7 @@ function getDefaultgamer() {
 }
 
 //false "X", "O"
+let count = 0;
 function chekWin(cells) {
     var winnerCombo = [
         [0, 1, 2],
