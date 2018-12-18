@@ -1,0 +1,16 @@
+table{
+	font-size: 3em;
+	width: 150px;
+	height: 150px;
+	margin: auto;
+	border: 2px solid black;
+}
+tr {
+	border: 2px solid black;
+}
+stargtGame{   background: #eee;
+        box-shadow:0 0 10px rgba(0,0,0,1);
+        font-family: Verdana;
+        font-size:  14px;
+}
+
