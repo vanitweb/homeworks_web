@@ -15,7 +15,7 @@ const x = function() {
             if(count >= 2*CELL_SIZE-1){
                 for(let i = 0; i < CELL_SIZE; i++){
                     let qanak = 0;
-                    if(tr[e.target.cellIndex].children[i].textContent  == e.target.textContent ){
+                    if(tr[e.target.parentElement.rowIndex].children[i].textContent  == e.target.textContent ){
                         qanak++
                         if(qanak = CELL_SIZE){
                             alert(`haxtec ${e.target.textContent} xaxacox@`);
@@ -38,7 +38,7 @@ const x = function() {
                     if(e.target.cellIndex  === e.target.parentNode.rowIndex){
                         let qanak3 = 0;
                         if(tr[e.target.parentNode.rowIndex].children[e.target.cellIndex].textContent  == e.target.textContent ){
-                        qanak3++
+                            qanak3++
                             if(qanak3 = CELL_SIZE){
                                 alert(`haxtec ${e.target.textContent} xaxacox@`);
                                 newGame();
@@ -61,6 +61,8 @@ const x = function() {
             }
         }
     }
+	}
+}
 
 let newGame =function () {
     
