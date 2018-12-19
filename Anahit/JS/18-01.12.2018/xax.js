@@ -1,4 +1,4 @@
-//X - 0 xax // hin arjeqner@ pahum e, 1 angam e chisht xaxum ????????????????
+//X - 0 xax
 
 const tdArray = document.getElementsByTagName('td');
 const size  = 3;
