@@ -70,8 +70,7 @@ const startGame = function() {
         count = 0;
         for(let i = 0; i < len; ++i) {
             tdArray[i].innerHTML = "";
-        } 
-        
+        }        
     } else {
         drawTable();
     }
