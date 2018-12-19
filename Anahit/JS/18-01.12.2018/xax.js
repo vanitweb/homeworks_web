@@ -3,65 +3,51 @@
 const tdArray = document.getElementsByTagName('td');
 const size  = 3;
 const len = size * size;
-
-const reset = function() {
-    document.getElementsByTagName('button')[0].style.display = 'block';
-    document.getElementsByTagName('button')[0].onclick = function () {
-        for(let i = 0; i < len; ++i) {
-            tdArray[i].innerHTML = "";
-        }
-    }             
-}
-
-const stugum = function(e, arr) {
-    let syun = e.target.cellIndex;
+let count = 0;
+const stugum = function(e) {
+    const syun = e.target.cellIndex;
     let tox = 0;
     for(let i = syun; i < len; i += size ) {
-        if(e.target !== arr[i]) {
+        if(e.target !== tdArray[i]) {
             tox++;
         } else {
             break;
         }
     }
-    let index = tox * size + syun;
+    const index = tox * size + syun;
 
     const entastugum = function (start, limit, step) {
         let result = true;
         for(let k = start; k < limit ; k += step) {
-            if(arr[k].textContent !== arr[index].textContent) {
+            if(tdArray[k].textContent !== tdArray[index].textContent) {
                 result = false;
             }
         }
         return result;
     }
-
-    if(entastugum( tox * size, tox * size + size, 1)) {//tox
-        reset();
-        return alert(`xaxn avartvec haxtec  ${arr[index].innerHTML}`);
-    } else if(entastugum(syun, len, size)) { //syun
-        reset();
-        return alert(`xaxn avartvec haxtec  ${arr[index].innerHTML}`);
-    } else if(tox === syun && entastugum(0 , len, size + 1)) { //ankyunagcer
-        reset();
-        return alert(`xaxn avartvec haxtec  ${arr[index].innerHTML}`);
-    } else if(tox + syun === size - 1 && entastugum(size - 1 , len - size + 1, size - 1)) {
-        reset();
-        return alert(`xaxn avartvec haxtec  ${arr[index].innerHTML}`); 
+    const toxovHaxtanak = entastugum( tox * size, tox * size + size, 1);
+    const syunovHaxtanak = entastugum(syun, len, size);
+    const ankyunagcovHaxtanak1 = tox === syun && entastugum(0 , len, size + 1);
+    const ankyunagcovHaxtanak2 = tox + syun === size - 1 && entastugum(size - 1 , len - size + 1, size - 1);
+    const haxtanak = toxovHaxtanak || syunovHaxtanak || ankyunagcovHaxtanak1 || ankyunagcovHaxtanak2;
+    if(haxtanak) {
+        document.getElementsByTagName('button')[0].style.display = 'block';
+        return alert(`xaxn avartvec haxtec  ${tdArray[index].innerHTML}`); 
     } 
 }
-
 const x = function() {
-    let count = 0;
     let isX = true;
     return function(e){
         if (!e.target.textContent) {
             count++;
             e.target.textContent = isX ? 'X' : '0';
             isX = !isX;   
+            if(count >= size * 2 - 1) {
+                stugum(e);
+            }
             if (count === len) {
+                document.getElementsByTagName('button')[0].style.display = 'block';
                 return alert(`xaxn avartvec voch voqi `);
-            } else  if(count >= size * 2 - 1) {
-                stugum(e, tdArray);
             }
         }
     }
@@ -80,6 +66,14 @@ const drawTable = function() {
     }
 }
 const startGame = function() {
-    drawTable();
+    if(document.getElementsByTagName('td').length) {
+        count = 0;
+        for(let i = 0; i < len; ++i) {
+            tdArray[i].innerHTML = "";
+        } 
+        
+    } else {
+        drawTable();
+    }
     document.getElementsByTagName('button')[0].style.display = 'none'; 
 }
