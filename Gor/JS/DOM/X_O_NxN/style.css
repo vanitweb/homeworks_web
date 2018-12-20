@@ -16,3 +16,10 @@ td {
 td:hover {
 	cursor: pointer;
 }
+button {
+	padding: 3px;
+	border: 1px solid blue;
+	border-radius: 5px;
+	font-size: 25px;
+	background: transparent;
+}

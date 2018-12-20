@@ -59,7 +59,7 @@ const checkErkAnk = function() {
 		print(td[size - 1].textContent);
 	}
 }
-const check = function(e) {
+const check = function(e, step) {
 	let tdIndex, colIndex, rowIndex;
 	const td = document.getElementsByTagName("td");
 	for(let i in td) {
@@ -77,6 +77,10 @@ const check = function(e) {
 	if(rowIndex + colIndex === size - 1) {
 		checkErkAnk();
 	}
+	if(step === size * size) {
+		setTimeout(function() {alert("Xaxn avartvec voch voqi")}, 100);
+		setTimeout(reset,200);
+	}
 }
 const game1 = function() {
 	let step = 0;
@@ -89,7 +93,7 @@ const game1 = function() {
 			}
 			step++;
             if(step >= size * 2 - 1) {
-				check(e);
+				check(e, step);
             }
         }
     }
