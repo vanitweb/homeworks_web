@@ -43,11 +43,11 @@ function addIfEven(num) { //= to ===
 function displayEvenNumbers() {
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
     var evenNumbers = [];
-    for (var i = 0; i < numbers.length - 1; i++) { // jnjel em ;
-        if (numbers % 2 === 0); { // = to ===
-            evenNumbers.push(i);
+    for (var i = 0; i < numbers.length; i++) { // jnjel em ;
+        if (numbers[i] % 2 === 0) { // = to ===
+            evenNumbers.push(numbers[i]);
         }
-        return evenNumbers;
     }
+        return evenNumbers;
 }
-displayEvenNumbers();
+console.log(displayEvenNumbers());
