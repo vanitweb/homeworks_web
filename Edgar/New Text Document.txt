@@ -3,8 +3,12 @@ data.displayInfo;// jnjel em ()-y
 
 
 //2
-var data = {};
-data.displayInfo = "bar";//jnjel em '.foo'-n
+var data = {
+displayInfo:{
+    foo:25
+}  
+};
+data.displayInfo.foo = "bar";//kam  jnjel  '.foo'-n
 
 
 
