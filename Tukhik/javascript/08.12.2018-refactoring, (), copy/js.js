@@ -109,7 +109,9 @@ console.log(func("tayatyb", "a", "b"));
 console.log(func("atyty", "a", "b"));
 console.log(func("tytbby", "a", "b"));
 console.log(func("aaatytbby", "a", "b"));
-
+console.log(func("", "a", "b"));
+console.log(func("a", "b"));
+console.log('kam');
 
 //kam
 function newFunc(s, a, b) {
@@ -126,3 +128,5 @@ console.log(newFunc("tayatyb", "a", "b"));
 console.log(newFunc("atyty", "a", "b"));
 console.log(newFunc("tytbby", "a", "b"));
 console.log(newFunc("aaatytbby", "a", "b"));
+console.log(newFunc("", "a", "b"));
+console.log(newFunc("a", "b"));
