@@ -1,6 +1,10 @@
 var data = {};
-data.displayInfo;// jnjel em ()-y
-
+try{
+data.displayInfo();// jnjel em ()-y
+}
+catch(e){
+    console.log(`Gtnvel e sxal ${e.name} tipi`);
+}
 
 //2
 var data = {
