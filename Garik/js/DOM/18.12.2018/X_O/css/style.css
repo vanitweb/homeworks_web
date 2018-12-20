@@ -19,37 +19,3 @@ button{
     font-weight: 700;
     font-size: 1.5em
 }
-var data = {};
-Object.prototype.displayInfo = function(){
-    console.log(1)
-}
-data.displayInfo();
-
-var data = {};
-data.displayInfo = {};
-data.displayInfo.foo = "bar";
-
-
-let thing;
-function data(){
-    thing = "foo";
-}
-data();
-thing;
-
-
-
-
-for(var i=0; i < 5; i++){
-    console.log(i);
-}
-
-
-
-function addIfEven(num){
-    if(num % 2 ==
-       = 0){
-        return num + 5;
-    }
-    return num;
-}
