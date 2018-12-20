@@ -32,3 +32,17 @@ function addIfEven(num){
     }
     return num;
 }
+
+
+//6
+function displayEvenNumbers(){
+    var numbers = [1,2,3,4,5,6,7,8];
+    var evenNumbers = [];
+    for(var i=0; i<numbers.length-1; i++;){
+        if(numbers % 2 = 0); {
+            evenNumbers.push(i);
+        }
+        return evenNumbers;
+    }
+}
+displayEvenNumbers();
