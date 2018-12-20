@@ -1,24 +1,23 @@
 var data = {};
-try{
-data.displayInfo();// jnjel em ()-y
-}
-catch(e){
-    console.log(`Gtnvel e sxal ${e.name} tipi`);
+try {
+    data.displayInfo(); 
+} catch (e) {
+    console.log(`Gtnvel e sxal: data objecty chuni displayInfo Function: Uxxel`);
 }
 
 //2
 var data = {
-displayInfo:{
-    foo:25
-}  
+    displayInfo: {
+        foo: 25
+    }
 };
-data.displayInfo.foo = "bar";//kam  jnjel  '.foo'-n
+data.displayInfo.foo = "bar"; 
 
 
 
 //3
-function data1(){
-     thing = "foo";// jnjel em var bary, u anunn em poxel vor xonflikt charajana
+function data1() {
+    thing = "foo"; // jnjel em var bary, u anunn em poxel vor xonflikt charajana
 }
 data1();
 thing;
@@ -26,25 +25,25 @@ thing;
 
 
 //4
-for(var i=0; i < 5; i++){ // > to <
+for (var i = 0; i < 5; i++) { // > to <
     console.log(i);
 }
 
 
 
 //5
-function addIfEven(num){ //= to ===
-    if(num % 2 === 0){
+function addIfEven(num) { //= to ===
+    if (num % 2 === 0) {
         return num + 5;
     }
     return num;
 }
 //6
-function displayEvenNumbers(){
-    var numbers = [1,2,3,4,5,6,7,8];
+function displayEvenNumbers() {
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
     var evenNumbers = [];
-    for(var i=0; i<numbers.length-1; i++){// jnjel em ;
-        if(numbers % 2 === 0); {// = to ===
+    for (var i = 0; i < numbers.length - 1; i++) { // jnjel em ;
+        if (numbers % 2 === 0); { // = to ===
             evenNumbers.push(i);
         }
         return evenNumbers;
