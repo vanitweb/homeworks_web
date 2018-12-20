@@ -16,8 +16,9 @@ data.displayInfo.foo = "bar";
 
 
 //3
+var thing;
 function data1() {
-    thing = "foo"; // jnjel em var bary, u anunn em poxel vor xonflikt charajana
+    thing = "foo"; 
 }
 data1();
 thing;
