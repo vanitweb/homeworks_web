@@ -28,8 +28,10 @@ function data(){
 data();
 thing;
 //uxxum
-var thing = "foo";
-function data(){}
+var thing;
+function data(){
+	thing = "foo";
+}
 data();
 thing;
 
@@ -76,16 +78,16 @@ function displayEvenNumbers(){
 displayEvenNumbers();
 //uxxum
 function displayEvenNumbers(){
-    var numbers = [1,2,3,4,5,6,7,8];
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
     var evenNumbers = [];
-    for(var i=0; i<numbers.length-1; i++)
+    for(var i = 0; i < numbers.length - 1; i++)
 	{
         if(numbers[i] % 2 === 0)
 		{
-            evenNumbers.push(i);
+            evenNumbers.push(numbers[i]);
         }
-        return evenNumbers;
     }
+	return evenNumbers;
 }
 displayEvenNumbers();
 

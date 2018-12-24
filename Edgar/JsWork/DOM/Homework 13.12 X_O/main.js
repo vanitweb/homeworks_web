@@ -4,10 +4,10 @@ const button = document.getElementsByTagName('button')[0];
 const startGame = function(){
     drawTable();
     document.getElementsByTagName("button")[0].style.display = "none";
-    let res = document.createElement("button");
-    res.setAttribute("onclick", "noric()")
-    res.textContent = "noric";
-    document.getElementsByTagName("body")[0].appendChild(res);
+    let newBtn = document.createElement("button");
+    newBtn.setAttribute("onclick", "noric()")
+    newBtn.textContent = "noric";
+    document.getElementsByTagName("body")[0].appendChild(newBtn);
 }
 
 const drawTable = function (m = 3, n = 3) {
@@ -69,6 +69,9 @@ const stugum = function(e){
     if(haaxtanak === true){
         document.getElementsByTagName("table")[0].style.display = "none";
     }
+}
+const noric = function(){
+    location.reload()
 }
 
 
