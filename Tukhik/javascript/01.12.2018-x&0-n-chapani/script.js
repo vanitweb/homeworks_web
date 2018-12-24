@@ -29,7 +29,7 @@ function glxavorAnkyunagits(e){
     let m = cell.cellIndex
     if(cell.cellIndex == cell.parentNode.rowIndex ) {
         for(let m = 0; m < CELL_SIZE; m++){
-            if(cell.cellIndex == m && td[m].textContent == td[cell.cellIndex].textContent){
+            if(cell.cellIndex === m && td[m].textContent === td[cell.cellIndex].textContent){
                 k++;
                 if(k == CELL_SIZE){
                 alert(`haxtec ${cell.textContent}-iky`);
@@ -46,11 +46,11 @@ function yerkrordakanAnkyunagits(e){
     let td = document.getElementsByTagName("td");
     let cell = e.target || window.event.srcElement; 
     let n = cell.cellIndex;
-    if(cell.cellIndex + cell.parentNode.rowIndex == CELL_SIZE-1) {
+    if(cell.cellIndex + cell.parentNode.rowIndex === CELL_SIZE-1) {
         for(let n = 0; n < CELL_SIZE; n++){
-            if(n + cell.parentNode.rowIndex == CELL_SIZE-1 && td[n].textContent == td[cell.cellIndex].textContent){
+            if(n + cell.parentNode.rowIndex === CELL_SIZE-1 && td[n].textContent === td[cell.cellIndex].textContent){
             q++;
-                if(q == CELL_SIZE) {
+                if(q === CELL_SIZE) {
                 alert (`haxtec ${e.target.textContent}-iky`);
                 newGame();
                 }
@@ -64,7 +64,7 @@ function stugumToxeriHamar (e) {
     let td = document.getElementsByTagName("td");
     var cell = e.target || window.event.srcElement;
     let xo = tr[cell.parentNode.rowIndex].textContent;
-        if(xo.substring(0, CELL_SIZE) == "XXXXXXXXXX" ||  xo.substring(0, CELL_SIZE) == "0000000000"){
+        if(xo.substring(0, CELL_SIZE) === "XXXXXXXXXX" ||  xo.substring(0, CELL_SIZE) === "0000000000"){
             alert('haxtanak');
             newGame();
         }
