@@ -1,20 +1,82 @@
 'use strict';
-let isX = true;
-const CELL_SIZE = 7;
-const CELL_SIZE2 = 5;
+
 const table = document.getElementsByTagName('table')[0];
 const button = document.getElementsByTagName('button')[0];
 
 const x = function() {
-    let count = 0;
-    return function(e){
-        if (!e.target.textContent) {
-            count++;
-            e.target.textContent = isX ? 'X' : '0';
-            isX = !isX;
+	let step = 0;
+	return function(e){
+		if(e.target.textContent === '') {
+			if(step % 2 === 0) {
+				e.target.textContent = 'X'
+			} else {
+				e.target.textContent = 'O'
+			}
+			step++;
+            if(step >= size * 2 - 1) {
+				check(e, step);
+            }
         }
-		validate();
     }
+}
+const check = function(e, step) {
+	let tdIndex, colIndex, rowIndex;
+	const td = document.getElementsByTagName("td");
+	for(let i in td) {
+		if(td[i] === e.target) {
+			tdIndex = i;
+		}
+	}
+	colIndex = tdIndex % size;
+	rowIndex = (tdIndex - colIndex) / size;
+	checkRow(rowIndex);
+	checkCol(colIndex);
+	if(rowIndex === colIndex) {
+		checkGlxAnk();
+	}
+	if(rowIndex + colIndex === size - 1) {
+		checkErkAnk();
+	}
+	if(step === size * size) {
+		setTimeout(function() {alert("Xaxn avartvec voch voqi")}, 100);
+		setTimeout(reset,200);
+	}
+}
+const checkRow = function(rowIndex) {
+	const td = document.getElementsByTagName("td");
+	let count = 0;
+	for(let i = size * rowIndex; i < (rowIndex + 1) * size - 1; i++) {
+		if(td[i].textContent === td[i + 1].textContent) {
+			count++;
+		}
+	}
+	if(count === size - 1) {
+		print(td[rowIndex * size].textContent);
+	}
+}
+const checkCol = function(colIndex) {
+	const td = document.getElementsByTagName("td");
+	let count = 0;
+	for(let i = colIndex; i < size * size - size; i += size) {
+		if(td[i].textContent === td[i + size].textContent) {
+			count++;
+		}
+	}
+	if(count === size - 1) {
+		print(td[colIndex].textContent);
+	}
+}
+const checkErkAnk = function() {
+	const td = document.getElementsByTagName("td");
+	let count = 0;
+	for(let i = size * (size - 1); i > size; i -= size - 1) {
+		if(td[i].textContent === td[i - size + 1].textContent) {
+			count++;
+		}
+	}
+	if(count === size - 1) {
+		print(td[size - 1].textContent);
+	}
 }
 
 const setValue = x();
