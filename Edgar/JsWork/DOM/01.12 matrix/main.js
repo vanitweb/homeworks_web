@@ -40,25 +40,4 @@ window.onload = function() {
         if (all_block[0].innerHTML == 'O' && all_block[4].innerHTML == 'O' && all_block[8].innerHTML == 'O') alert("hastec erkrord xaxacoxy");
     }
 }
-<<<<<<< HEAD:Edgar/JsWork/01.12 matrix/main.js
-<<<<<<< HEAD
-console.log(matrix(3,3));
 
-for(let i = 0; i<9; i++){
-	 
-}
-=======
->>>>>>> 8d47174d13cdeab8186e0cece963da0763594f38
-=======
-
-
-
-let matrix = function matrix(m = 3, n = 3) {
-    var result = []
-    for(var i = 0; i < n; i++) {
-        result.push(new Array(m).fill(' '))
-    }
-    return result
-}
-console.log(matrix(3,3));
->>>>>>> 25dcc39d6a63436f2c8115c0416f8400bb429eb1:Edgar/JsWork/DOM/01.12 matrix/main.js

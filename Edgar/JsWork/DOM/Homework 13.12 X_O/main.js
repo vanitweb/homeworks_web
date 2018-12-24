@@ -1,112 +1,79 @@
-'use strict';
-let isX = true;
-const CELL_SIZE = 7;
-const CELL_SIZE2 = 5;
-const table = document.getElementsByTagName('table')[0];
+'use strict'
 const button = document.getElementsByTagName('button')[0];
 
-const x = function() {
-    let count = 0;
-    return function(e){
-        if (!e.target.textContent) {
-            count++;
-            e.target.textContent = isX ? 'X' : '0';
-            isX = !isX;
-        }
-		validate();
-    }
+const startGame = function(){
+    drawTable();
+    document.getElementsByTagName("button")[0].style.display = "none";
+    let newBtn = document.createElement("button");
+    newBtn.setAttribute("onclick", "noric()")
+    newBtn.textContent = "noric";
+    document.getElementsByTagName("body")[0].appendChild(newBtn);
 }
 
-const setValue = x();
-const drawTable = function (m = 10, n = 10) {
+const drawTable = function (m = 3, n = 3) {
+    const table = document.getElementsByTagName('table')[0];
     for(let i = 0; i < m; ++i) {
         const tr = document.createElement('tr');
         for(let j = 0; j < n; ++j) {
             const td = document.createElement('td');
-            td.setAttribute('onclick', 'setValue(event)');
+            td.setAttribute("onclick","xaxacox(event)");
             tr.appendChild(td);
         }
         table.appendChild(tr);
     }
 }
+const gamePlayer = function(){
+    let count = 0;
+    return function(e){
+        let td = document.getElementsByTagName("td")[0];
+        if(!e.target.textContent){
+            count++; 
+            (count % 2 === 0) ? e.target.textContent = "O" : e.target.textContent = "X";
+            if(count >= 5){
+                console.log(count)
+                stugum(e);
+            }
+        }
+    }
+}
+const xaxacox = gamePlayer();
 
 
-let  step = 0;
-const validate = function() {
-	let flag = false;
-	let flag1 = false;
-	for(let i = 0; i < CELL_SIZE2; i++){
-		step++;
-		let winRowX = true,
-		winColumnX = true,
-		winLeftTopX = true,
-		winLeftBottomX = true,
-		winRow0 = true,
-		winColumn0 = true,
-		winLeftTop0 = true,
-		winLeftBottom0 = true;
-		for(let k = 0; k < CELL_SIZE2; k++){
-			if(table.rows[i].cells[k].textContent !== 'X') {
-				winRowX = false;
-			}
 
-			if(table.rows[k].cells[i].textContent !== 'X' ) {
-				winColumnX = false;
-			}
-			
-			if(table.rows[k].cells[k].textContent !== 'X' ) {
-				winLeftTopX = false;
-			}
-			
-			if(table.rows[CELL_SIZE2-1-k].cells[k].textContent !== 'X' ) {
-				winLeftBottomX = false;
-			}
-			if(table.rows[i].cells[k].textContent !== '0') {
-				winRow0 = false;
-			}
-
-			if(table.rows[k].cells[i].textContent !== '0' ) {
-				winColumn0 = false;
-			}
-			
-			if(table.rows[k].cells[k].textContent !== '0' ) {
-				winLeftTop0 = false;
-			}
-			
-			if(table.rows[CELL_SIZE2-1-k].cells[k].textContent !== '0' ) {
-				winLeftBottom0 = false;
-			}
-		}
-		if(winRowX || winColumnX || winLeftTopX || winLeftBottomX || winRow0 || winColumn0 || winLeftTop0 || winLeftBottom0){
-		flag = true;
-		break;
-		}
-		else{
-			flag1 = true;
-		}
-	}  
-
-	if (flag ) {
-		alert("Win");
-		tryAgain();
-	}
-	else if(flag == false && step == Math.pow(CELL_SIZE2, 3)){
-		alert("Standoff");
-		tryAgain();
-	}
+const stugum = function(e){
+    let haaxtanak = false;
+    let td = document.getElementsByTagName("td");
+    let arg = e.target.textContent;
+    for(let i = 0; i <= size - 3; i++){
+        for(let j = 0; j < td.length; j += size){
+            if(td[i + j].textContent === arg && td[i + j + 1].textContent === arg && td[i + j + 2].textContent === arg) {
+                haaxtanak = true;
+                alert(`haxtanak ${arg}`);
+            }
+        }
+    }
+    for(let i = 0; i < td.length - (2 * size); i++){
+        if(td[i].textContent === arg && td[i + size].textContent === arg && td[i + (2 * size)].textContent === arg) {
+            haaxtanak = true;
+            alert(`haxtanak ${arg}`);
+        }
+        if(td[i].textContent === arg && td[i + size + 1].textContent === arg && td[i + (2 * size) + 2].textContent === arg) {
+            haaxtanak = true;
+            alert(`haxtanak ${arg}`);
+        }
+        if(td[i].textContent === arg && td[i + size - 1].textContent === arg && td[i + (2 * size) - 2].textContent === arg) {
+            haaxtanak = true;
+            alert(`haxtanak ${arg}`);
+        }
+    }
+    if(haaxtanak === true){
+        document.getElementsByTagName("table")[0].style.display = "none";
+    }
+}
+const noric = function(){
+    location.reload()
 }
 
-const tryAgain = function(){
-	button.textContent ="Try again";
-	button.style.display = 'block';
-	table.textContent = "";
-	isX = !isX;
-}
-
-const startGame = function() {
-	drawTable();
-	button.style.display = 'none';    
-}
 
 
   

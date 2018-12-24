@@ -4,10 +4,31 @@ let cell, row, shipLenght, ship;
 const size = 10;
 const table = document.getElementsByTagName('table')[0];
 
+
 const paint = function(n,m) {
 	ship = ship.split('').slice(0, 1);
-	for(let  i = n; i < n + shipLenght; i++){
+	let len = n + shipLenght;
+	for(let  i = n; i < len; i++){
 		table.rows[m].cells[i].textContent = ship;
+		if(m === 0){
+			table.rows[m + 1].cells[i].style.pointerEvents = 'none';
+		}
+		else if (m === size - 1){
+			table.rows[m - 1].cells[i].style.pointerEvents = 'none';
+		}
+		else{
+			table.rows[m + 1].cells[i].style.pointerEvents = 'none';
+			table.rows[m - 1].cells[i].style.pointerEvents = 'none';
+		}
+	}
+	if(n === 0){
+		table.rows[m].cells[len-1].style.pointerEvents = 'none';
+	}else if(n === size - 1){
+		table.rows[m].cells[n - 1].style.pointerEvents = 'none'
+	}
+	else {
+		table.rows[m].cells[len-1].style.pointerEvents = 'none';
+		table.rows[m].cells[n - 1].style.pointerEvents = 'none';
 	}
 }
 
@@ -33,16 +54,43 @@ const func = function(e){
 
 
 const validate = function(n, m) {
-	if(n + shipLenght <= size){
+	if(n + shipLenght < size){
+		for(let  i = n; i < n + shipLenght + 1; ++i){
+			if(table.rows[m].cells[i].textContent){
+				return false;
+			}
+		}
 		for(let  i = n; i < n + shipLenght; ++i){
-			if(!table.rows[m].cells[i].textContent){
-				return true;
-			}	
+			if (m === 0){
+				if(table.rows[m].cells[i].textContent || 
+				table.rows[m + 1].cells[i].textContent){
+				return false;
+				}
+			}
+			else if(m === size - 1){
+				if(table.rows[m].cells[i].textContent ||
+				table.rows[m - 1].cells[i].textContent){
+				return false;
+				}
+			}
+			else if(
+			table.rows[m].cells[i].textContent ||
+			table.rows[m - 1].cells[i].textContent ||
+			table.rows[m + 1].cells[i].textContent){
+				return false;
+			}
+		}	
+	}else if(n + shipLenght === size){
+		for(let  i = n; i < n + shipLenght; ++i){
+			if(table.rows[m].cells[i].textContent){
+				return false;
+			}
 		}	
 	}
 	else {
 		return false;
 	}
+	return true;
 }
 
 
@@ -55,7 +103,7 @@ const func1 = function(e) {
 		}else{
 			alert('Ընտրիր նավը!');
 		}
-	} 
+	}
 }
 
 
@@ -76,7 +124,6 @@ const drowTable = function() {
 const addShips = function(e) {
 	const div = document.getElementsByTagName('div')[0];
 	div.style.display = 'block';
-	
 }
 
 
