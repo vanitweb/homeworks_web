@@ -7,10 +7,13 @@ console.log(`Array after sorting: ${array}`);
 const binarySearch = function(arr, val) {
 	let mid = Math.floor(arr.length / 2);
 	if(arr.length === 0) {
-		return `Value ${val} is not here.`;
+		return `Array is empty`;
+	}
+	else if(arr.length === 1 && arr[0] !== val) {
+		return `Value ${val} is not here.`
 	}
 	else if(arr[mid] === val) {
-		return `Value: ${val} is here.`;
+		return `Value ${val} is here.`;
 	}
 	else if(val > arr[mid]) {
 		return binarySearch(arr.slice(mid, arr.length), val);
@@ -19,4 +22,4 @@ const binarySearch = function(arr, val) {
 		return binarySearch(arr.slice(0, mid), val);
 	}
 }
-console.log(binarySearch(array, 24));
+console.log(binarySearch(array, 5));
