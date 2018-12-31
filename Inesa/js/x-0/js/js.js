@@ -1,17 +1,25 @@
 var k = 0;
+
 const x = function() 
 {
 	const stugum = function()
     {
-		syun = document.getElementsByTagName("td");
+		let syun = document.getElementsByTagName("td");
+		let size = parseInt(document.getElementById("input").value);
+		let CELL_SIZE = size;
 		let chisht = false;
-		size = parseInt(document.getElementById("input").value);///sranq stex grelem vorovhetev et popoxakannery cher gtnum... 
-		CELL_SIZE = size;
 		let maxSize = CELL_SIZE * CELL_SIZE;
 		//գլխավոր անկյունագիծ
 		for(let i = 0; i <= maxSize; i += (CELL_SIZE+1))
 		{
-			if((syun[i].textContent === "X") && (syun[i + (CELL_SIZE+1)].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "X"))
+			if((syun[i].textContent === "X") && ((syun[i + (CELL_SIZE+1)]).textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "X"))
+			{
+				chisht = true;
+			}
+		}
+		for(let i = 0; i <= maxSize; i += (CELL_SIZE+1))
+		{
+			if((syun[i].textContent === "O") && ((syun[i + (CELL_SIZE+1)]).textContent === "O") && (syun[i + CELL_SIZE + CELL_SIZE + 2].textContent === "O"))
 			{
 				chisht = true;
 			}
@@ -24,21 +32,38 @@ const x = function()
 				chisht = true;
 			}
 		}
-		//սյուն
-		for(j = 0; j < (CELL_SIZE - 1); j++)
+		for(let i = CELL_SIZE - 1; i <= (maxSize - CELL_SIZE) ; i += (CELL_SIZE-1))
 		{
-			for(i = j; i <= (maxSize - CELL_SIZE); i += CELL_SIZE)
+			if((syun[i].textContent === "O") && (syun[i + (CELL_SIZE - 1)].textContent === "O") && (syun[i + (CELL_SIZE - 1) + (CELL_SIZE - 1)].textContent === "O"))
 			{
-				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent/*stex asuma textContent chi karum dni bayc verevum es CELL_SIZE-in tvelem parseInt*/ === "X"))
+				chisht = true;
+			}
+		}
+		//սյուն
+		for(let j = 0; j <= (CELL_SIZE - 1); j++)
+		{
+			for(let i = j; i <= maxSize; i += CELL_SIZE)
+			{
+				if((syun[i].textContent === "X") && (syun[i + CELL_SIZE].textContent === "X") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "X"))
+				{
+					chisht = true;
+				}
+			}
+		}
+		for(let j = 0; j <= (CELL_SIZE - 1); j++)
+		{
+			for(let i = j; i <= maxSize; i += CELL_SIZE)
+			{
+				if((syun[i].textContent === "O") && (syun[i + CELL_SIZE].textContent === "O") && (syun[i + CELL_SIZE + CELL_SIZE].textContent === "O"))
 				{
 					chisht = true;
 				}
 			}
 		}
 		//տող
-		for(j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
+		for(let j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
 		{
-			for(i = j; i <= j + (CELL_SIZE - 1); i++)
+			for(let i = j; i <= j + (CELL_SIZE - 1); i++)
 			{
 				if((syun[i].textContent === "X") && (syun[i + 1].textContent === "X") && (syun[i + 2].textContent === "X"))
 				{
@@ -46,13 +71,32 @@ const x = function()
 				}
 			}
 		}
-		if(chisht = true)
+		for(let j = 0; j <= (maxSize - CELL_SIZE); j += CELL_SIZE)
 		{
-			alert("հաղթանակ");//shat depqerum 5rd qaylic heto talisa haxtanak bayc chpiti tar....
+			for(let i = j; i <= j + (CELL_SIZE - 1); i++)
+			{
+				if((syun[i].textContent === "O") && (syun[i + 1].textContent === "O") && (syun[i + 2].textContent === "O"))
+				{
+					chisht = true;
+				}
+			}
 		}
+		//print
+		if(chisht === true)
+		{
+			for(let i = 0; i <= syun.length-1; i++)
+			{
+				syun[i] === "";
+			}
+			alert("Հաղթանակ");
+		}
+		
     }
+	
+	
 	let count = 0;
 	let isX = true;
+	
 	return function(e)
     {
 		if (!e.target.textContent) 
@@ -66,12 +110,13 @@ const x = function()
             stugum();
         }
 	}
+	
 }
 const setValue = x();
 const drawTable = function() //նկարել
 {
-    var size = parseInt(document.getElementById("input").value);
-    var CELL_SIZE = parseInt(size);
+    let size = parseInt(document.getElementById("input").value);
+    let CELL_SIZE = size;
 	const table = document.getElementsByTagName('table')[0];
 	for(let i = 0; i < CELL_SIZE; ++i)
     {
@@ -84,6 +129,7 @@ const drawTable = function() //նկարել
             td.setAttribute('onclick', 'setValue(event)');
         }
 	}
+	let syun = document.getElementsByTagName("td");
 }
 const startGame = function ()
 {

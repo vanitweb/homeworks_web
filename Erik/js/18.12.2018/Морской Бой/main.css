@@ -1,0 +1,24 @@
+h1 {
+	text-align: center;
+	color: #22ABF3; 
+}
+table {
+	border-color: #22ABF3;
+	margin-left: 36%;
+}
+td {
+	background-color: #8DD6FC;
+	width: 50px;
+	height: 50px;
+}
+td:hover{
+	background-color: #117FB9;
+}
+
+.raketo {
+	background-image: url(raket.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 50px;
+	width: 50px;
+}

@@ -1,6 +1,7 @@
 input {
-	height: 30px;
+	height: 20px;
 	width: 100px;
+	border: 2px solid;
 }
 button {
 	background-color: grey;

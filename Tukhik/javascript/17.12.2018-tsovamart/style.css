@@ -1,0 +1,16 @@
+td{
+	width: 50px;
+	height: 50px;
+	border: 0.5px solid black;
+	font-size: 30px;
+	text-align: center;
+	background-color: lightblue;
+}
+table{
+	float: left;
+}
+
+tr {
+	width: 20px;
+	height: 20px;
+}
