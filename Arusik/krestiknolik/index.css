@@ -1,0 +1,20 @@
+table{
+	font-size: 35px;
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	border: 2px solid black;
+}
+td {
+	border: 2px solid black;
+	width: 45px;
+	height: 45px;
+	margin: 2px;
+	padding: 2px;
+}
+stargtGame{   background: #eee;
+        box-shadow:0 0 10px rgba(0,0,0,1);
+        font-family: Verdana;
+        font-size:  14px;
+}
+
