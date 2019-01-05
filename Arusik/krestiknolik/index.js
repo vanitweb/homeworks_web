@@ -38,12 +38,12 @@ const td = document.getElementsByTagName('td');
 const table = document.getElementsByTagName('table');
 let countCheck, winner;
 if(xIndex === yIndex) {
-	for (let i = 0; i < dimOfField - 1; i += 2) {
-		for (let j = 0; j < dimOfField - 1; j += 2) {
+	for (let i = 0; i < dimOfField; i ++) {
+		for (let j = 0; j < dimOfField; j ++) {
 			if (i === j) {
-				if(table.rows[i].cells[j] === table.rows[i+1].cells[j+1]) {
+				if(table.rows[i].cells[j].textContent === table.rows[xIndex].cells[yIndex].textContent) {
 					countCheck ++;
-					winner = table.rows[i].cells[j];
+					winner = table.rows[xIndex].cells[yIndex].textContent;
 				}
 			}
 		}
@@ -53,21 +53,21 @@ if(xIndex === yIndex) {
 if(countCheck === dimOfField) {
 	alert(`haxtec ${winner}`);
 } else {
-	for (let i = 0; i < dimOfField; i += 2){
-		if(table.rows[xIndex].cells[i].textContent === table.rows[xIndex].cells[i + 1].textContent) {
+	for (let i = 0; i < dimOfField; i ++){
+		if(table.rows[xIndex].cells[i].textContent === table.rows[xIndex].cells[yIndex].textContent) {
 			countCheck ++;
-			winner = table.rows[xIndex].cells[i].textContent;
+			winner = table.rows[xIndex].cells[yIndex].textContent;
 		} else {
 			countCheck = 0;
-			for (let i = 0; i < dimOfField; i += 2) {
-				if(table.rows[i].cells[yIndex].textContent === table.rows[i+1].cells[yIndex].textContent) {
+			for (let i = 0; i < dimOfField; i ++) {
+				if(table.rows[i].cells[yIndex].textContent === table.rows[xIndex].cells[yIndex].textContent) {
 					countCheck ++;
-					winner = table.rows[i].cells[yIndex].textContent;
+					winner = table.rows[xIndex].cells[yIndex].textContent;
 				}
 			}
 		}
 	}
-	if(count === dimOfField) {
+	if(countCheck === dimOfField) {
 		alert(`haxtec ${winner}`);
 	} else {
 		if (count >= dimOfField*dimOfField) {
