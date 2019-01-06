@@ -5,21 +5,20 @@ array.sort(function(a, b) {
 });
 console.log(`Array after sorting: ${array}`);
 const binarySearch = function(arr, val) {
-	let mid = Math.floor(arr.length / 2);
-	if(arr.length === 0) {
-		return `Array is empty`;
+	let left = 0;
+	let rigth = arr.length - 1;
+	while(left <= rigth) {
+		let mid = Math.floor((left + rigth) / 2);
+		if(val > arr[mid]) {
+			left = mid + 1;
+		}
+		else if(val < arr[mid]) {
+			rigth = mid -1;
+		}
+		else {
+			return mid;
+		}
 	}
-	else if(arr.length === 1 && arr[0] !== val) {
-		return `Value ${val} is not here.`
-	}
-	else if(arr[mid] === val) {
-		return `Value ${val} is here.`;
-	}
-	else if(val > arr[mid]) {
-		return binarySearch(arr.slice(mid, arr.length), val);
-	}
-	else {
-		return binarySearch(arr.slice(0, mid), val);
-	}
+	return -1;
 }
 console.log(binarySearch(array, 5));
