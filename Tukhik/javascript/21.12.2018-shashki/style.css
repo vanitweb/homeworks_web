@@ -1,13 +1,18 @@
 td{
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	border: 0.5px solid black;
 	font-size: 30px;
 	text-align: center;
 	
 }
+h1 {
+	color: #BB5454;
+	
+}
 table{
-	float: left;
+	float: center;
+
 }
 
 tr {
@@ -28,8 +33,7 @@ color: lightblue;
       width: 35px;
       height: 35px;
       border-radius: 25px;
-      background: white;
-      
+      background: white; 
     }
 
 
@@ -39,3 +43,21 @@ color: lightblue;
       border-radius: 25px;
       background: #F56E6E; 
     }
+.circleWhiteTama{
+      width: 35px;
+      height: 35px;
+      border-radius: 25px;
+      background: white;
+      border-style: solid;
+ 	  border-color: #711B1B;
+    }
+
+  .circleBlackTama {
+  	width: 35px;
+      height: 35px;
+      border-radius: 25px;
+      background:  #F56E6E;
+      border-style: solid;
+ 	  border-color: #803939; 
+  }
+  
