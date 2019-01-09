@@ -2,8 +2,8 @@
 
 let tbl = document.getElementsByTagName("table")[0];
 let cellIndexClick1, rowIndexClick1, cellIndexClick2, rowIndexClick2;
-let classNameLeftClick, upCellRight, upCellLeft, nextUpCellLeft;
-var nextUpCellLeft2, nextUpCellRight2, nextUpCellRight;
+let classNameLeftClick, classNameRightClick, upCellRight, upCellLeft, nextUpCellLeft;
+var nextUpCellLeft2, nextUpCellRight2, nextUpCellRight, classUpCellLeft;
 let upCellRight2, upCellLeft2, cellNumLeftClick, cellNumRightClick;
 let className, nextUpCellRightI, nextUpCellLeftI, qanakElem, k;
 let counter = 1;
@@ -11,6 +11,7 @@ let counterRightClick = 1;
 let black = 12,
 	white = 12;
 let colorWB;
+
 
 const haxtanak = function () {
 	++counterRightClick;
@@ -29,10 +30,10 @@ const haxtanak = function () {
 }
 
 const qayl = function () {
-	if (document.getElementsByTagName("div")[cellNumRightClick].className === '') {
-		document.getElementsByTagName("div")[cellNumLeftClick].className = '';
+	if (classNameRightClick.className === '') {
+		classNameLeftClick.className = '';
 		color();
-		document.getElementsByTagName("div")[cellNumRightClick].className = colorWB;
+		classNameRightClick.className = colorWB;
 		tama();
 		++counterRightClick;
 		++counter;
@@ -53,22 +54,21 @@ const colorTanel = function () {
 }
 
 const tanel = function () {
-	document.getElementsByTagName("div")[cellNumLeftClick].className = '';
+	classNameLeftClick.className = '';
 	color();
-	document.getElementsByTagName("div")[cellNumRightClick].className = colorWB;
+	classNameRightClick.className = colorWB;
 	tama();
 	haxtanak();
 }
 
-
 const tama = function () {
 	if (counterRightClick % 2 === 0) {
 		if (rowIndexClick2 == 0) {
-			document.getElementsByTagName("div")[cellNumRightClick].className = 'circleBlackTama';
+			classNameRightClick.className = 'circleBlackTama';
 		}
 	} else {
 		if (rowIndexClick2 == 7) {
-			document.getElementsByTagName("div")[cellNumRightClick].className = 'circleWhiteTama';
+			classNameRightClick.className = 'circleWhiteTama';
 		}
 	}
 }
@@ -81,9 +81,9 @@ const whiteClick = function () {
 	} else {
 		nextUpCellLeft = cellIndexClick1 - 2 + (rowIndexClick1 + 2) * 8;
 		if (cellNumRightClick === nextUpCellLeft) {
-			if (document.getElementsByTagName("div")[upCellLeft].className === 'circleBlack' ||
-				document.getElementsByTagName("div")[upCellLeft].className === 'circleBlackTama') {
-				document.getElementsByTagName("div")[upCellLeft].className = '';
+			if (classUpCellLeft.className === 'circleBlack' ||
+				classUpCellLeft.className === 'circleBlackTama') {
+				classUpCellLeft.className = '';
 				tanel();
 			}
 		} else {
@@ -108,7 +108,7 @@ const blackClick = function () {
 		nextUpCellLeft2 = cellIndexClick1 - 2 + (rowIndexClick1 - 2) * 8;
 		if (cellNumRightClick === nextUpCellLeft2) {
 			if (document.getElementsByTagName("div")[upCellLeft2].className === 'circleWhite' ||
-				document.getElementsByTagName("div")[upCellLeft].className === 'circleWhiteTama') {
+				classUpCellLeft.className === 'circleWhiteTama') {
 				document.getElementsByTagName("div")[upCellLeft2].className = '';
 				tanel();
 			}
@@ -116,7 +116,7 @@ const blackClick = function () {
 			nextUpCellRight2 = nextUpCellLeft2 + 4;
 			if (cellNumRightClick === nextUpCellRight2) {
 				if (document.getElementsByTagName("div")[upCellRight2].className === 'circleWhite' ||
-					document.getElementsByTagName("div")[upCellLeft].className === 'circleWhiteTama') {
+					classUpCellLeft.className === 'circleWhiteTama') {
 					document.getElementsByTagName("div")[upCellRight2].className = '';
 					tanel();
 				}
@@ -130,6 +130,8 @@ const funcRef = function (e) {
 	cellIndexClick2 = parseInt(cell.cellIndex);
 	rowIndexClick2 = parseInt(cell.parentNode.rowIndex);
 	cellNumRightClick = cellIndexClick2 + rowIndexClick2 * 8;
+	classUpCellLeft = document.getElementsByTagName("div")[upCellLeft];
+	classNameRightClick = document.getElementsByTagName("div")[cellNumRightClick];
 	if (counterRightClick % 2 != 0) {
 		whiteClick();
 	} else {
@@ -152,8 +154,8 @@ function alertRowCellClick1(e) {
 		cellIndexClick1 = parseInt(cell.cellIndex);
 		rowIndexClick1 = parseInt(cell.parentNode.rowIndex);
 		cellNumLeftClick = cellIndexClick1 + rowIndexClick1 * 8;
+		classNameLeftClick = document.getElementsByTagName("div")[cellNumLeftClick];
 		if (counter % 2 != 0) {
-			classNameLeftClick = document.getElementsByTagName("div")[cellNumLeftClick];
 			if (classNameLeftClick.className === "circleBlack" || classNameLeftClick.className === '' || classNameLeftClick.className === "circleBlackTama") {
 				alert('սպիտակ քարերով խաղացողի հերթն է');
 			}
@@ -164,7 +166,6 @@ function alertRowCellClick1(e) {
 				window.oncontextmenu = funcRef;
 			}
 		} else {
-			classNameLeftClick = document.getElementsByTagName("div")[cellNumLeftClick];
 			if (classNameLeftClick.className === "circleWhite" || classNameLeftClick.className === '' || classNameLeftClick.className === "circleWhiteTama") {
 				alert('կարմիր քարերով խաղացողի հերթն է');
 			}
@@ -180,6 +181,17 @@ function alertRowCellClick1(e) {
 tbl.addEventListener("click", alertRowCellClick1);
 
 
+
+
+
+
+
+
+
+
+
+
+
 const blackTama = function () {
 	if (rowIndexClick1 - rowIndexClick2 == 0) {
 		alert('nuyn texum mi sexmeq');
@@ -191,7 +203,7 @@ const blackTama = function () {
 
 				if (cellNumRightClick === upCellLeft || cellNumRightClick === upCellRight) {
 					if (document.getElementsByTagName("div")[cellNumRightClick].className === '') {
-						document.getElementsByTagName("div")[cellNumLeftClick].className = '';
+						classNameLeftClick.className = '';
 						document.getElementsByTagName("div")[cellNumRightClick].className = 'circleBlackTama';
 						++counterRightClick;
 						++counter;
@@ -206,7 +218,7 @@ const blackTama = function () {
 				upCellRight = upCellLeft + 2;
 				if (cellNumRightClick === upCellLeft || cellNumRightClick === upCellRight) {
 					if (document.getElementsByTagName("div")[cellNumRightClick].className === '') {
-						document.getElementsByTagName("div")[cellNumLeftClick].className = '';
+						classNameLeftClick.className = '';
 						document.getElementsByTagName("div")[cellNumRightClick].className = 'circleBlackTama';
 						++counterRightClick;
 						++counter;
@@ -244,13 +256,13 @@ const blackTama = function () {
 						}
 						if (qanakElem <= 1) {
 							if (qanakElem == 0) {
-								document.getElementsByTagName("div")[cellNumLeftClick].className = '';
+								classNameLeftClick.className = '';
 								document.getElementsByTagName("div")[cellNumRightClick].className = 'circleBlackTama';
 								++counterRightClick;
 								++counter;
 							} else {
 								document.getElementsByTagName("div")[k].className = '';
-								document.getElementsByTagName("div")[cellNumLeftClick].className = '';
+								classNameLeftClick.className = '';
 								document.getElementsByTagName("div")[cellNumRightClick].className = 'circleBlackTama';
 								++counterRightClick;
 								++counter;
