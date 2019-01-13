@@ -9,13 +9,23 @@
 <body>
 	<p><button id="btnStartGame">Սկսել Ծովամարտը</button></p>
 	<p><button id="btnAddShips">Ավելացնել նավեր</button></p>
+	<p><button id="btnSecondField">Նկարել երկրորդ դաշտ</button></p>
 	<div>
 		<input  onclick="func()" type="submit" id="oneShip" value="x">
 		<input  onclick="func()" type="submit" id="twoShip" value="xx">
 		<input onclick="func()" type="submit" id="threeShip" value="xxx">
 		<input onclick="func()" type="submit" id="fourShip" value="xxxx">
+		<table>
+		<tr>
+			<td style="background-color:red">Ոչ հավանական դաշտեր /right click mouse</td>
+			<td style="background-color:black; color:white">Կրակած դաշտեր</td>
+			<td style="background-color:grey">Ձախողած դաշտեր</td>
+		<tr>
+	</table>
 	</div>
-	<table>
+	<table id="firts">
+	</table>
+	<table id="second" oncontextmenu="return false">
 	</table>
 </body>
 </html>
