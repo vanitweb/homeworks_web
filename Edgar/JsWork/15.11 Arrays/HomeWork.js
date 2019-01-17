@@ -25,6 +25,7 @@ m(mass);
 let positiv = r.filter(function(v) {
     return v > 0;
 });
+    console.log("positiv", positiv);
 // նոր մասսիվը փոխանցել reduce Ֆունկցիային, վերադարձնելով դրական թվերի գումարը 
 let g = positiv.reduce(function(sum, val) {
     return sum + val;
@@ -82,50 +83,6 @@ let massObj = [{
         register: "2017.02.15"
     }
 ];
-
-function Main(arr, format) {
-    switch (format) {
-        case "surname":
-            return arr.sort(function(x, y) {
-                if (x.surname < y.surname) {
-                    return -1;
-                }
-                if (x.surname > y.surname) {
-                    return 1;
-                }
-                return 0;
-            });
-            break;
-        case "name":
-            return arr.sort(function(x, y) {
-                if (x.name < y.name) {
-                    return -1;
-                }
-                if (x.name > y.name) {
-                    return 1;
-                }
-                return 0;
-            });
-            break;
-        case "age":
-            return arr.sort(function(a, b) {
-                return a.age - b.age;
-            });
-            break;
-        case "register":
-            return arr.sort(function(x, y) {
-                if (x.register < y.register) {
-                    return -1;
-                }
-                if (x.register > y.register) {
-                    return 1;
-                }
-                return 0;
-            });
-            break;
-    }
-}
-console.log("by name", Main(massObj, "age"));
 
 console.log("--------------------------------------");
 // kam

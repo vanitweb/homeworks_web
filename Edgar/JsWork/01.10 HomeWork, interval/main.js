@@ -24,7 +24,6 @@ fun(1, 20)
 
 // myInterval Ֆունկցիա
 function testF(){
-    console.log("My interval");
 }
 function myInterval(f, sec){
     setTimeout(f, sec);
