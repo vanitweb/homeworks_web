@@ -15,3 +15,15 @@ td {
 td:hover {
 	cursor: pointer;
 }
+.black {
+	background: url(me2.gif);
+	background-size: contain;
+}
+.white {
+	background: url(you2.gif);
+	background-size: contain;
+}
+
+.nan {
+	background: red;
+}
