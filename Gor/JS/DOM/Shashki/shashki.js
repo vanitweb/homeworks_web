@@ -61,8 +61,9 @@ const isTrueStep = function(row, col) {
 	return false;
 }
 const isUtelStep = function(row, col) {
+	const uxxutyun = (col - vercracCar.y) / 2;
 	if(row === vercracCar.x + 2 * player && (col === vercracCar.y + 2 || col === vercracCar.y - 2)) {
-		if(table[vercracCar.x + player][col - player] === player * -1) {
+		if(table[vercracCar.x + player][vercracCar.y + uxxutyun] === player * -1) {
 			return true;
 		}
 		return false;
@@ -70,6 +71,7 @@ const isUtelStep = function(row, col) {
 	return false;
 }
 const utel = function(row, col) {
+	const uxxutyun = (col - vercracCar.y) / 2;
 	td[vercracCar.x * size + vercracCar.y].setAttribute('class', 'nan');
 	table[vercracCar.x][vercracCar.y] = 0;
 	if(player === 1) {
@@ -78,8 +80,8 @@ const utel = function(row, col) {
 		td[row * size + col].setAttribute('class', 'white');
 	}
 	table[row][col] = player;
-	table[vercracCar.x + player][col - player] = 0;
-	td[(vercracCar.x + player) * size + (col - player)].setAttribute('class', 'nan');
+	table[vercracCar.x + player][vercracCar.y + uxxutyun] = 0;
+	td[(vercracCar.x + player) * size + vercracCar.y + uxxutyun].setAttribute('class', 'nan');
 	player *= -1;
 	emptyCar();
 }
@@ -146,5 +148,8 @@ const game = function(event) {
 		else if(isUtelStep(row, col)) {
 			utel(row, col);
 		}
+	}
+	else if(row === vercracCar.x && col === vercracCar.y) {
+		emptyCar();
 	}
 }
