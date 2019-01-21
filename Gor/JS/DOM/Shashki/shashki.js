@@ -57,27 +57,81 @@ const isTrueTd = function(row, col) {
 const isTrueStep = function(row, col) {
 	if(row === vercracCar.x + player && (col === vercracCar.y + 1 || col === vercracCar.y - 1)) {
 		return true;
-	} else {
+	}
+	return false;
+}
+const isUtelStep = function(row, col) {
+	if(row === vercracCar.x + 2 * player && (col === vercracCar.y + 2 || col === vercracCar.y - 2)) {
+		if(table[vercracCar.x + player][col - player] === player * -1) {
+			return true;
+		}
 		return false;
 	}
+	return false;
+}
+const utel = function(row, col) {
+	td[vercracCar.x * size + vercracCar.y].setAttribute('class', 'nan');
+	table[vercracCar.x][vercracCar.y] = 0;
+	if(player === 1) {
+		td[row * size + col].setAttribute('class', 'black');
+	} else {
+		td[row * size + col].setAttribute('class', 'white');
+	}
+	table[row][col] = player;
+	table[vercracCar.x + player][col - player] = 0;
+	td[(vercracCar.x + player) * size + (col - player)].setAttribute('class', 'nan');
+	player *= -1;
+	emptyCar();
 }
 const firstStep = function(row, col) {
 	vercracCar.x = row;
 	vercracCar.y = col;
 }
-const secondStep = function(row, col) {
-	if(isTrueStep(row, col)) {
-		td[vercracCar.x * size + vercracCar.y].setAttribute('class', 'nan');
-		table[vercracCar.x][vercracCar.y] = 0;
-		if(player === 1) {
-			td[row * size + col].setAttribute('class', 'black');
-		} else {
-			td[row * size + col].setAttribute('class', 'white');
+const reset = function() {
+	location.reload();
+}
+const stugum = function() {
+	let playerOne = 0;
+	let playerTwo = 0;
+	for(let i = 0; i < size; i++) {
+		for(let j = 0; j < size; j++) {
+			if(table[i][j] === 1) {
+				playerOne++;
+			}
+			else if(table[i][j] === -1) {
+				playerTwo++;
+			}
 		}
-		table[row][col] = player;
-		player *= -1;
-		emptyCar();
 	}
+	if(playerOne === 0 || playerTwo === 0) {
+		alert("Xaxn avartvec!!!");
+		reset();
+	}
+	else if(playerOne === 2 && playerTwo === 2) {
+		alert("Voch voqi!!!");
+		reset();
+	}
+	else if(playerOne === 1 && playerTwo === 1) {
+		alert("Voch voqi!!!");
+		reset();
+	}
+	else if((playerOne === 2 && playerTwo === 1) || (playerOne === 1 && playerTwo === 2)) {
+		alert("Voch voqi!!!");
+		reset();
+	}
+}
+const secondStep = function(row, col) {
+	td[vercracCar.x * size + vercracCar.y].setAttribute('class', 'nan');
+	table[vercracCar.x][vercracCar.y] = 0;
+	if(player === 1) {
+		td[row * size + col].setAttribute('class', 'black');
+	} else {
+		td[row * size + col].setAttribute('class', 'white');
+	}
+	table[row][col] = player;
+	player *= -1;
+	emptyCar();
+	stugum();
 }
 const game = function(event) {
 	let col = event.target.cellIndex;
@@ -86,6 +140,11 @@ const game = function(event) {
 		firstStep(row, col);
 	}
 	else if(table[row][col] === 0 && (vercracCar.x || vercracCar.y) && isTrueTd(row, col)) {
-		secondStep(row, col);
+		if(isTrueStep(row, col)) {
+			secondStep(row, col);
+		}
+		else if(isUtelStep(row, col)) {
+			utel(row, col);
+		}
 	}
 }
