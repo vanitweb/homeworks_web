@@ -12,7 +12,6 @@ function start (){
             tr.appendChild(td);
         }
     }
-    document.getElementsByTagName("button")[0].style.display = "none";
 }
 
 
@@ -95,6 +94,7 @@ let controller = {
     }
 };
 
+// Dashti stugum
 function parseGuess(guess) {
     var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
