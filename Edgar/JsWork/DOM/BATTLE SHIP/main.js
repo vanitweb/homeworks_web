@@ -32,7 +32,7 @@ let view = {
     }
 };
 
-view.displayMessage("Tap tap, is this thing on?");
+view.displayMessage("FIRE!");
 let model = {
     boardSize: 7,
     numShips: 3,
@@ -54,14 +54,14 @@ let model = {
     fire: function(guess) {
         for (let i = 0; i < this.numShips; i++) {
             let ship = this.ships[i];
-            let index = ship.locations.indexOf(guess); //Получаем массив клеток, занимаемых кораблем. Стоит напомнить, что это свойство корабля, в котором хранится массив.
+            let index = ship.locations.indexOf(guess); 
             if (index >= 0) {
                 ship.hits[index] = "hit";
                 view.displayHit(guess);
                 view.displayMessage("HIT!");
                 if (this.isSunk(ship)) {
                     view.displayMessage("You sank my battleship!");
-                    this.shipsSunk++;//Мы добавим проверку здесь, после того как будем точно знать, что выстрел попал в корабль. Если корабль потоплен, то мы увеличиваем счетчик потопленных кораблей в свойстве shipsSunk модели.
+                    this.shipsSunk++;
                 }
                 return true;
             }
