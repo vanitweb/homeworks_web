@@ -45,9 +45,18 @@ border-color: rgb(83, 175, 19);
 font-size: 1em;
 }
 
+button{
+    display: block;
+    margin-left: 10%;
+    width: 40%;
+    font-weight: 700;
+    font-size: 1.5em
+}
+
 .hit {
 background: url("img/ship.png") no-repeat center center;
 }
 .miss {
 background: url("img/miss.png") no-repeat center center;
 }
+
