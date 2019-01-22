@@ -50,6 +50,7 @@ const drowTable = function() {
 const emptyCar = function() {
 	delete vercracCar.x;
 	delete vercracCar.y;
+	stugum();
 }
 const isTrueTd = function(row, col) {
 	return (row + col) % 2;
@@ -133,7 +134,6 @@ const secondStep = function(row, col) {
 	table[row][col] = player;
 	player *= -1;
 	emptyCar();
-	stugum();
 }
 const game = function(event) {
 	let col = event.target.cellIndex;
