@@ -1,5 +1,7 @@
 // Ստեղծել օբյեկտ հետևյալ կառուցվածքով՝ Institut-> name, gradaran, 
 // fakultet->ambion,lsaran, dekanat->dekan ashxatoxner 
+
+//literal
 let institut = {
 	name: 'VPH',
 	gradaran: 'matGradaran',
