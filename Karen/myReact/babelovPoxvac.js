@@ -1,6 +1,6 @@
 "use strict";
 
-function tick() {
+function jam() {
     ReactDOM.render(React.createElement(
         "div",
         null,
@@ -13,4 +13,4 @@ function tick() {
         )
     ), document.getElementById("app"));
 }
-setInterval(tick, 1000);
+setInterval(jam, 1000);
