@@ -14,8 +14,9 @@ background: url("img/board.jpg") no-repeat;
 #messageArea {
 position: absolute;
 top: 0px;
-left: 0px;
+left: 45%;
 color: rgb(83, 175, 19);
+font-size: 30px;
 }
 /* haxordagrutyan hamar end */
 

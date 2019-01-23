@@ -1,22 +1,21 @@
-const td = document.getElementsByTagName("td");
+/*const td = document.getElementsByTagName("td");
 
 function start (){
+    let idCount = "00"
     const table = document.getElementsByTagName("table")[0];
     for(let i = 0; i < 7; i++){
         let tr = document.createElement("tr");
         table.appendChild(tr);
         for(let j = 0; j < 7; j++){
             let td = document.createElement("td");
-            var myID = document.createElement("id");
-            myID.setAttribute("value", ID)
+            let myID = document.createElement("id");
+            myID.setAttribute("value", idCount)
             tr.appendChild(td);
+            idCount = tostring(idCount++);
         }
     }
     document.getElementsByTagName("button")[0].style.display = "none";
-}
-
-
-
+}*/
 let view = {
     displayMessage: function(msg) {
         let messageArea = document.getElementById("messageArea");
@@ -32,38 +31,30 @@ let view = {
     }
 };
 
-view.displayMessage("Tap tap, is this thing on?");
+view.displayMessage("FIRE!");
 let model = {
     boardSize: 7,
     numShips: 3,
     shipLength: 3,
     shipsSunk: 0,
-    ships: [{
-            locations: ["06", "16", "26"],
-            hits: ["", "", ""]
-        },
-        {
-            locations: ["24", "34", "44"],
-            hits: ["", "", ""]
-        },
-        {
-            locations: ["10", "11", "12"],
-            hits: ["", "", ""]
-        }
+    ships: [
+    { locations: [0, 0, 0],  hits: ["", "", ""]},
+    { locations: [0, 0, 0],  hits: ["", "", ""]},
+    { locations: [0, 0, 0],  hits: ["", "", ""]},
     ],
     fire: function(guess) {
         for (let i = 0; i < this.numShips; i++) {
             let ship = this.ships[i];
-            let index = ship.locations.indexOf(guess); //Получаем массив клеток, занимаемых кораблем. Стоит напомнить, что это свойство корабля, в котором хранится массив.
+            let index = ship.locations.indexOf(guess);
             if (index >= 0) {
                 ship.hits[index] = "hit";
                 view.displayHit(guess);
                 view.displayMessage("HIT!");
                 if (this.isSunk(ship)) {
                     view.displayMessage("You sank my battleship!");
-                    this.shipsSunk++;//Мы добавим проверку здесь, после того как будем точно знать, что выстрел попал в корабль. Если корабль потоплен, то мы увеличиваем счетчик потопленных кораблей в свойстве shipsSunk модели.
+                    this.shipsSunk++;
+                    return true;
                 }
-                return true;
             }
         }
         view.displayMiss(guess);
@@ -77,29 +68,68 @@ let model = {
             }
         }
         return true;
+    },
+    generateShipLocations: function() {
+        var locations;
+        for (var i = 0; i < this.numShips; i++) {
+            do {
+                locations = this.generateShip();
+            } while (this.collision(locations));
+            this.ships[i].locations = locations;
+        }
+    },
+    generateShip: function() {
+        let direction = Math.floor(Math.random() * 2);
+        let row, col;
+        if (direction === 1) {
+            row = Math.floor(Math.random() * this.boardSize);
+            col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+        } else {
+            row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+            col = Math.floor(Math.random() * this.boardSize);
+        }
+          let newShipLocations = [];
+        for (let i = 0; i < this.shipLength; i++) {
+            if (direction === 1) {
+                newShipLocations.push(row + "" + (col + i));
+            } else {
+                newShipLocations.push((row + i) + "" + col);
+            }
+        }
+        return newShipLocations;
+    },
+    collision: function(locations) {
+        for (let i = 0; i < this.numShips; i++) {
+            let ship = model.ships[i];
+            for (let j = 0; j < locations.length; j++) {
+                if (ship.locations.indexOf(locations[j]) >= 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
-
 };
 
 let controller = {
     guesses: 0,
     processGuess: function(guess) {
         let location = parseGuess(guess);
-         if (location) {
+        if (location) {
             this.guesses++;
             let hit = model.fire(location);
             if (hit && model.shipsSunk === model.numShips) {
                 view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
-}
+            }
         }
     }
 };
-
+// Tvyalneri mutqagrman stugum
 function parseGuess(guess) {
     var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
     if (guess === null || guess.length !== 2) {
-        alert("Xndrum enq grel Mecatar ev nshel 0-6 tvery.");
+        alert("DASHTY PETQ E PARUNAKI 2 NISH: Xndrum enq grel Mecatar ev nshel 0-6 tvery.");
     } else {
         firstChar = guess.charAt(0);
         let row = alphabet.indexOf(firstChar);
@@ -118,30 +148,27 @@ function parseGuess(guess) {
 
 //onclick
 function init() {
-let fireButton = document.getElementById("fireButton");
-fireButton.onclick = handleFireButton;
-let guessInput = document.getElementById("guessInput");
-guessInput.onkeypress = handleKeyPress;
+    let fireButton = document.getElementById("fireButton");
+    fireButton.onclick = handleFireButton;
+    let guessInput = document.getElementById("guessInput");
+    guessInput.onkeypress = handleKeyPress;
+    model.generateShipLocations();
 }
 
 
 function handleFireButton() {
-let guessInput = document.getElementById("guessInput");
-let guess = guessInput.value;
-controller.processGuess(guess);
-guessInput.value = "";
+    let guessInput = document.getElementById("guessInput");
+    let guess = guessInput.value;
+    controller.processGuess(guess);
+    guessInput.value = "";
 }
 
 // enteri hamar
 function handleKeyPress(e) {
-let fireButton = document.getElementById("fireButton");
-if (e.keyCode === 13) {// enter =13
-fireButton.click();
-return false;
+    let fireButton = document.getElementById("fireButton");
+    if (e.keyCode === 13) { // enter = 13
+        fireButton.click();
+        return false;
+    }
 }
-}
-
 window.onload = init;
-
-
-
