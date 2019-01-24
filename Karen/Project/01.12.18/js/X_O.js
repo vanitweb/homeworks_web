@@ -8,7 +8,7 @@ const setValue = function(e) {
         e.target.textContent = isX ? 'X' : 'O';
         isX = !isX;
     }
-    if (count >= 2 * n - 1) {
+    if (count >= (2 * n - 1)) {
     	stugum();
     };
 }
@@ -37,17 +37,20 @@ const stugum = function () {
 	while(j < n) {
 		for(let i = 0; i < n - 1; i++) {
 			if(table.rows[j].cells[i].textContent == table.rows[j].cells[i + 1].textContent) {
-				i++;
-				if(i == n) {
+				if(i == (n - 2)) {
 					return console.log('haxt tox');
 				}
 			}
 			if(table.rows[i].cells[j].textContent == table.rows[i + 1].cells[j].textContent) {
-				i++;
-				if(i == n) {
+				if(i == (n - 2)) {
 					return console.log('haxt syun');
 				}
 			}
+			//if(table.rows[i].cells[i].textContent == table.rows[i + 1].cells[i + 1].textContent) {
+			//	if(i == (n - 2)) {
+			//		return console.log('haxt anky1');
+			//	}
+			//}
 		}
 		j++;
 	}

@@ -14,8 +14,15 @@ function start (){
             idCount = tostring(idCount++);
         }
     }
+<<<<<<< HEAD
     document.getElementsByTagName("button")[0].style.display = "none";
 }*/
+=======
+}
+
+
+
+>>>>>>> 863c24ac4d637712eb674cac1f1c923a8e5bfa0d
 let view = {
     displayMessage: function(msg) {
         let messageArea = document.getElementById("messageArea");
@@ -45,7 +52,11 @@ let model = {
     fire: function(guess) {
         for (let i = 0; i < this.numShips; i++) {
             let ship = this.ships[i];
+<<<<<<< HEAD
             let index = ship.locations.indexOf(guess);
+=======
+            let index = ship.locations.indexOf(guess); 
+>>>>>>> 863c24ac4d637712eb674cac1f1c923a8e5bfa0d
             if (index >= 0) {
                 ship.hits[index] = "hit";
                 view.displayHit(guess);
@@ -53,7 +64,10 @@ let model = {
                 if (this.isSunk(ship)) {
                     view.displayMessage("You sank my battleship!");
                     this.shipsSunk++;
+<<<<<<< HEAD
                     return true;
+=======
+>>>>>>> 863c24ac4d637712eb674cac1f1c923a8e5bfa0d
                 }
             }
         }
@@ -124,7 +138,12 @@ let controller = {
         }
     }
 };
+<<<<<<< HEAD
 // Tvyalneri mutqagrman stugum
+=======
+
+// Dashti stugum
+>>>>>>> 863c24ac4d637712eb674cac1f1c923a8e5bfa0d
 function parseGuess(guess) {
     var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 

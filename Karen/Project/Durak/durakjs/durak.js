@@ -31,15 +31,20 @@ function distribution() {                 //bajanum
 		let w = 'cardc' + player[i];
 		let q = 'cardc' + comp[i];
 		document.getElementById('player').appendChild(document.getElementById(w));
+		document.getElementById(w).setAttribute("class", "player");
 		document.getElementById('comp').appendChild(document.getElementById(q));
-
+		document.getElementById(q).setAttribute("class", "player");
+	}
+	for(let i = 1; i < cards.length; i++){
+		let k = 'cardc' + cards[i];
+		document.getElementById(k).setAttribute("class", "card");
 	}
 }
 
 
 function start() {
 	cardMixing();
-	//distribution();
+	distribution();
 }
 
 
