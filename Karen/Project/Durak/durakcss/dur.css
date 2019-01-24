@@ -26,10 +26,7 @@
     margin: 0 auto;
 }
 #trump {
-	position: absolute;
-	z-index: 1;
-	top: 200px;
-	right: 90px;
+	
 }
 #cardc1 {
 	position: absolute;

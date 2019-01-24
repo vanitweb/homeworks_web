@@ -4,6 +4,8 @@ let cards = [];
 let dasht = [];
 let trump = 0;
 
+
+
 function cardMixing() {                   //qarer@ xarnel
 	for(let i = 0; i < 36; i++) {
 		cards[i] = i + 1;
@@ -20,8 +22,10 @@ function cardMixing() {                   //qarer@ xarnel
 	}
 	cards.sort(Rand);
 	trump = cards[0];      //kozr arajin qartne ,bajan 4 i mnacordov kgtnenq mast
+	//kozrStacum();
 	let p = 'cardc' + trump;
 	document.getElementById('trump').appendChild(document.getElementById(p));
+	
 }
 
 function distribution() {                 //bajanum
@@ -47,6 +51,12 @@ function start() {
 	distribution();
 }
 
-
-console.log(player,comp,cards);
+function kozrStacum() {
+	let mast = trump%4;
+	for(i = 0; i < 36; i++) {
+		if(mast == cards[i]%4) {
+			cards[i] = cards[i] + 36;
+		}
+	}
+}
 

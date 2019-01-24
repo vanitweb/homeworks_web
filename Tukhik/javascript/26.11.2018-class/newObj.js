@@ -1,5 +1,7 @@
 // Ստեղծել օբյեկտ հետևյալ կառուցվածքով՝ Institut-> name, gradaran, 
 // fakultet->ambion,lsaran, dekanat->dekan ashxatoxner 
+
+//newObj
 let institut = new Object();
 institut.fakultet = new Object();
 institut.fakultet.dekanat = new Object();
