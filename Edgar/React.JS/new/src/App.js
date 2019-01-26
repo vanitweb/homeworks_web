@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {MyClass} from './MyClass';
 
 class App extends Component {
+    state = {
+      name: "Jhon"  
+    };
+    ymF = () => {
+        this.setState({name:"SEd"});
+    }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>
-            Hello world
-          </h1>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <MyClass  name = {this.state.name}/>
+        
+        <button > </button>  
       </div>
     );
   }
