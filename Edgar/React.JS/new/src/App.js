@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Info} from './Info';
+import {Input} from './Input';
 
 class App extends Component {
+  state = {
+    value1 : ''
+  }
+  onChangeValue = (event) => {
+    const val = event.target.value;
+    this.setState({value1:val});
+  };
+clear = () => {
+  this.setState({value1:''});
+}
   render() {
+    const {value1} = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    <Input value = {value1} onChange = {this.onChangeValue} clearInput={this.clear}/>
+    <Info value = {value1} />
       </div>
     );
   }
