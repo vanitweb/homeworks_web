@@ -1,0 +1,7 @@
+src-i meji App.js-y sarqel .jsx
+kam kodov grel gutum mv App.jsx
+input ev info komponent
+
+
+inputi mej inch grenq infoum tpi\
+
