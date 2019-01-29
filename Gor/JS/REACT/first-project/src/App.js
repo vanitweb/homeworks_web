@@ -7,13 +7,18 @@ import {Info} from './Info';
 import {Input} from './Input';
 import {Search} from './Search';
 import {Text} from './Text';
+import {Button} from './Button';
 
 class App extends Component {
 	state = {
 		value1 : '',
 		count : 0,
 		searchValue: '',
-		text: "asasasassgdsghfaSasasjkhgas"
+		text: "asasasassgdsghfaSasasjkhgas",
+		btnName: ''
+	}
+	onclick = (e) => {
+		this.setState({btnName: e.target.value});
 	}
 	search = (event) => {
 		const val = event.target.value;
@@ -35,13 +40,14 @@ class App extends Component {
 		this.setState({value1:''});
 	}
 	render() {
-		const {value1, searchValue, count, text} = this.state;
+		const {value1, searchValue, count, text, btnName} = this.state;
     	return (
 		  <div className="App">
 			<Input value = {value1} onChange = {this.onChangeValue} clearInput={this.clear}/>
-			<Info value = {value1} />
+			<Info value = {value1} val={btnName}/>
 			<Search value = {searchValue} onchange = {this.search} searchCount = {count}/>
 			<Text text={text}/>
+			<Button onclick={this.onclick} />
 		  </div>
 		);
   	}
