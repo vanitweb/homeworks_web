@@ -13,7 +13,6 @@ class App extends Component {
         let index = text.indexOf(inputVal);
         if(index !== -1){
             count++;
-            this.setState({count:count})
             return this.fun(text.slice(index + inputVal.length), inputVal, count)
         }else{
             this.setState({count:count})
