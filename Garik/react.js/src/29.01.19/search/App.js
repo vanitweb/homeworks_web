@@ -17,7 +17,6 @@ class App extends Component {
             return this.fun(text.slice(index + inputVal.length), inputVal, count)
         }else{
             this.setState({count:count})
-            return console.log(count);
         }
     }
     search = () => {
