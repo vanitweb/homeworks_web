@@ -27,18 +27,8 @@ function checkBrackets(text) {
 	let countDzevavor = 0;
 	let countQarakusi = 0;
 	let countMecPoqr = 0;
-	let masiv = [];
-	for(let j = 0; j < text.length; j++){
-		if(text[j] === ")" || text[j] === "("
-              || text[j] === ">" || text[j] === "<"
-              || text[j] === "}" || text[j] === "{"
-              || text[j] === "]" || text[j] === "["){
-				masiv.push(text[j]);
-		}
-	}
-	console.log(masiv);
-	for (let i = 0; i < masiv.length; i++) {
-		switch (masiv[i]) {
+	for (let i = 0; i < text.length; i++) {
+		switch (text[i]) {
 			case "(":
 				countKlor++;
 				break;
@@ -46,7 +36,7 @@ function checkBrackets(text) {
 				countKlor--;
 				if (countKlor < 0) {
 					return false;
-				}else if (masiv[i-1] === "{" || masiv[i-1] === "[" || masiv[i-1] === "<"){
+				}else if (text[i-1] === "{" || text[i-1] === "[" || text[i-1] === "<"){
 					return false;
 				}
 			    break;
@@ -57,7 +47,7 @@ function checkBrackets(text) {
 				countDzevavor--;
 				if (countDzevavor < 0) {
 					return false;
-				}else if (masiv[i-1] === "[" || masiv[i-1] === "(" || masiv[i-1] === "<"){
+				}else if (text[i-1] === "[" || text[i-1] === "(" || text[i-1] === "<"){
 					return false;
 				}
 				break;
@@ -68,7 +58,7 @@ function checkBrackets(text) {
 				countQarakusi--;
 				if (countQarakusi < 0) {
 					return false;
-				}else if (masiv[i-1] === "{" || masiv[i-1] === "(" || masiv[i-1] === "<"){
+				}else if (text[i-1] === "{" || text[i-1] === "(" || text[i-1] === "<"){
 					return false;
 				}
 				break;
@@ -79,7 +69,7 @@ function checkBrackets(text) {
 				countMecPoqr--;
 				if (countMecPoqr < 0) {
 					return false;
-				}else if (masiv[i-1] === "{" || masiv[i-1] === "(" || masiv[i-1] === "["){
+				}else if (text[i-1] === "{" || text[i-1] === "(" || text[i-1] === "["){
 					return false;
 				}
 				break;
@@ -114,5 +104,28 @@ function func(s, a, b) {
 		}
 	}else if (s.lastIndexOf(b) !== -1){
 		return s.lastIndexOf(b);
+	}
+}
+
+function func(s, a, b) {
+	if (s === "") {
+		return -1;
+	}
+	const indexA = s.lastIndexOf(a);
+	const indexB = s.lastIndexOf(b);
+	if (indexA === -1 && indexB === -1) {
+		return -1;
+	}else if (indexA !== -1) {
+		if (indexB === -1) {
+			return indexA;
+		}else if(indexB !== -1){
+			if (indexA > indexB){
+				return indexA;
+			}else {
+				return indexB;
+			}
+		}
+	}else if (indexB !== -1){
+		return indexB;
 	}
 }

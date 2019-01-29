@@ -18,10 +18,10 @@ const x = function() {
 }
 
 const setValue = x();
-const drawTable = function (m = 7, n = 7) {
-    for(let i = 0; i< m; ++i) {
+const drawTable = function (m = 10, n = 10) {
+    for(let i = 0; i < m; ++i) {
         const tr = document.createElement('tr');
-        for(let j = 0; j< n; ++j) {
+        for(let j = 0; j < n; ++j) {
             const td = document.createElement('td');
             td.setAttribute('onclick', 'setValue(event)');
             tr.appendChild(td);
