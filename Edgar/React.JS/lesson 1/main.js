@@ -1,3 +1,7 @@
-let r = "sebo"
-let  f = elem => `hello ${elem}`;
-console.log(f("Sebast"));
+
+
+
+ let str = document.getElementById("param").textContent;
+ console.log("str", str);
+  
+
