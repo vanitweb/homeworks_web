@@ -1,0 +1,31 @@
+
+td{
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+}
+.sever{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25px;
+}
+.karmirner{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 25px;
+}
+table{
+    margin: auto;
+    border: 1px solid;
+}
+button:hover{
+    cursor: pointer;
+}
+.sever:focus{
+    background-color: rgba(0, 0, 0, 0.5)
+}
+.karmirner:focus{
+    background-color: rgba(256, 0, 0, 0.5)
+}
