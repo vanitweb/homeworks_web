@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-
 import {Info} from './Info';
 import {Input} from './Input';
 import {Search} from './Search';
