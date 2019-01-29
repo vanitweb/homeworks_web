@@ -10,13 +10,9 @@ class App extends Component {
 		value1: '',
 		value2: '',
 		count: 0,
-		content : 
 		myText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
 	}
-	onButtonClick = (event)=> {
-		const content = event.target.textContent;
-		this.setState({})
-	}
+	
 		
 	findCount = (event) => {
 		const value3 = event.target.value;
@@ -41,9 +37,6 @@ class App extends Component {
 			<Input value ={value1} onChange ={this.onChangeValue} clearInput={this.clearInput}/>
 			<Info value = {value1} />
 			<Search myText={myText} count={count} value={value2} onChange={this.findCount} />
-			<Button onclick={onButtonClick}/>
-			<Button onclick={onButtonClick}/>
-			<Button onclick={onButtonClick}/>
 		  </div>
 		);
   	}
