@@ -1,0 +1,12 @@
+input {
+    border: 2px solid aquamarine;
+    border-radius: 5px;
+    height: 40px;
+}
+
+p {
+    float: right;
+    height: 300px;
+    width: 200px;
+    background-color: beige;
+}

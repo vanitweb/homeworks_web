@@ -1,0 +1,30 @@
+td{
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+	
+}
+
+button{
+	border: 1px solid black;
+	font-size: 30px;
+}
+
+#firts{
+	float:left;
+}
+
+#second{
+	float:right;
+}
+
+input{
+	font-size:30px;
+}
+
+div{
+	display: none;
+}

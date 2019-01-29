@@ -1,0 +1,36 @@
+table.board {
+    margin-left: auto; 
+    margin-right: auto; 
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+table.board tr td {
+    width: 50px;
+    height: 50px;
+    background: rgba(159, 149, 142, 0.96);
+}
+
+table.board tr:nth-child(odd) td:nth-child(even){
+    background: #000;
+}
+table.board tr:nth-child(even) td:nth-child(odd){
+    background: #000;
+}
+
+div.checker {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: 0;
+}
+    div.checker.white {
+    background: #fff;
+    }
+    div.checker.black {
+    background: red;
+    }
+
+    td.highlight {
+        background: #0094ff;
+    }

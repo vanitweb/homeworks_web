@@ -1,20 +1,78 @@
 'use strict';
 let isX = true;
-const CELL_SIZE = 7;
+let haxtanak = false;
+const CELL_SIZE = 10;
+
 const table = document.getElementsByTagName('table')[0];
+const tr = document.getElementsByTagName("tr"); 
+const td = document.getElementsByTagName("td"); 
 const button = document.getElementsByTagName('button')[0];
 
+const tryAgain = function(){
+	button.textContent ="Try again";
+	button.style.display = 'block';
+	table.textContent = "";
+	isX = true;
+	haxtanak = false;
+}	
+	
+const validate = function(e, start, to){
+	let tdContent = e.target.textContent;
+	let count = 0;
+	for(let i = start; i < to; i++){
+		if(td[i].textContent === tdContent){
+			count++;
+		}
+	}
+	if(count === CELL_SIZE){
+		setTimeout(function(){
+			alert('Win');
+			haxtanak = true;
+			tryAgain();
+		}, 200);
+		haxtanak = false;
+	}
+	else if(haxtanak === false && count === CELL_SIZE * CELL_SIZE){
+		setTimeout(function(){
+			alert("game over");
+			tryAgain();
+		}, 200);
+	}
+}
+
+const stugum = function(e){
+    const m = e.target.cellIndex;
+    const t = e.target.parentNode.rowIndex;
+	const td = document.getElementsByTagName("td"); 
+	if(m === t ){
+		validate(e, m, td.length, CELL_SIZE);
+        validate(e, t * CELL_SIZE, t * CELL_SIZE + CELL_SIZE);
+        validate(e, 0, td.length, CELL_SIZE + 1);
+	}else if(t + m === CELL_SIZE -1){
+		validate(e, m, td.length, CELL_SIZE);
+        validate(e, t * CELL_SIZE, t * CELL_SIZE + CELL_SIZE);
+        validate(e, CELL_SIZE - 1, td.length, CELL_SIZE - 1 - 1)
+	}else{
+		validate(e, m, td.length, CELL_SIZE);
+        validate(e, t * CELL_SIZE, t * CELL_SIZE + CELL_SIZE);
+	}
+}
+
+
 const x = function() {
-    let count = 0;
+	let count = 0;
     return function(e){
         if (!e.target.textContent) {
             count++;
-            e.target.textContent = isX ? 'X' : '0';
+			e.target.textContent = isX ? 'X' : '0';
             isX = !isX;
-        }
-		validate();
+			if(count >= 2 * CELL_SIZE - 1){
+                stugum(e);
+            }
+		}
     }
 }
+
 
 const setValue = x();
 const drawTable = function() {
@@ -29,83 +87,7 @@ const drawTable = function() {
     }
 }
 
-let  step = 0;
-const validate = function() {
-	let flag = false;
-	let flag1 = false;
-	for(let i = 0; i < CELL_SIZE; i++){
-		step++;
-		let winRowX = true,
-		winColumnX = true,
-		winLeftTopX = true,
-		winLeftBottomX = true,
-		winRow0 = true,
-		winColumn0 = true,
-		winLeftTop0 = true,
-		winLeftBottom0 = true;
-		for(let k = 0; k < CELL_SIZE; k++){
-			if(table.rows[i].cells[k].textContent !== 'X') {
-				winRowX = false;
-			}
-
-			if(table.rows[k].cells[i].textContent !== 'X' ) {
-				winColumnX = false;
-			}
-			
-			if(table.rows[k].cells[k].textContent !== 'X' ) {
-				winLeftTopX = false;
-			}
-			
-			if(table.rows[CELL_SIZE-1-k].cells[k].textContent !== 'X' ) {
-				winLeftBottomX = false;
-			}
-			if(table.rows[i].cells[k].textContent !== '0') {
-				winRow0 = false;
-			}
-
-			if(table.rows[k].cells[i].textContent !== '0' ) {
-				winColumn0 = false;
-			}
-			
-			if(table.rows[k].cells[k].textContent !== '0' ) {
-				winLeftTop0 = false;
-			}
-			
-			if(table.rows[CELL_SIZE-1-k].cells[k].textContent !== '0' ) {
-				winLeftBottom0 = false;
-			}
-		}
-		if(winRowX || winColumnX || winLeftTopX || winLeftBottomX || winRow0 || winColumn0 || winLeftTop0 || winLeftBottom0){
-		flag = true;
-		break;
-		}
-		else{
-			flag1 = true;
-		}
-	}  
-
-	if (flag ) {
-		alert("Win");
-		tryAgain();
-	}
-	else if(flag == false && step == Math.pow(CELL_SIZE, 3)){
-		alert("Standoff");
-		tryAgain();
-	}
-}
-
-const tryAgain = function(){
-	button.textContent ="Try again";
-	button.style.display = 'block';
-	table.textContent = "";
-	isX = !isX;
-}
-
 const startGame = function() {
 	drawTable();
 	button.style.display = 'none';    
 }
-
-
-  
-

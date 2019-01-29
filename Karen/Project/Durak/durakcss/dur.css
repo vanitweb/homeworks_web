@@ -1,0 +1,42 @@
+#card {
+	float: left;
+	width: 25%;
+    background-color: aqua;
+    height: 300px;
+}
+
+#player {
+	float: left;
+	background-color: yellow;
+    width: 25%;
+    height: 300px;
+}
+
+#comp {
+	float: left;
+	height: 300px;
+    width: 25%;
+    background-color: red;
+}
+#slot{
+	float: left;
+	width: 49%;
+    height: 400px;
+    background-color: blue;
+    margin: 0 auto;
+}
+#trump {
+	
+}
+#cardc1 {
+	position: absolute;
+	left: 5px;
+	top: 0px;
+	z-index: 98;
+}
+.player{
+	float: left;
+}
+.card{
+	display: none;
+}

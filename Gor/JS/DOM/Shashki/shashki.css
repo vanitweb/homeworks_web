@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+table {
+	margin: auto;
+}
+td {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 24px;
+	border: 1px solid blue;
+}
+td:hover {
+	cursor: pointer;
+}
+.black {
+	background: url(me2.gif);
+	background-size: contain;
+}
+.white {
+	background: url(you2.gif);
+	background-size: contain;
+}
+
+.nan {
+	background: white;
+}

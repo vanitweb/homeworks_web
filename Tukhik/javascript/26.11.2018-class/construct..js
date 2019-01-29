@@ -1,6 +1,6 @@
 //Ստեղծել օբյեկտ հետևյալ կառուցվածքով՝ Institut-> name, gradaran, 
 //fakultet->ambion,lsaran, dekanat->dekan ashxatoxner 
-
+//constructiv
 function Institut(fakultet, name, gradaran) {
 		this.fakultet = fakultet;
 		this.name = name;
