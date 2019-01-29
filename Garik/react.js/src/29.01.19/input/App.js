@@ -26,17 +26,4 @@ class App extends Component {
         );
     }
 }
-//export default App;
-//var x = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
-//let count = 0;
-//var y = 't';
-//function fun(text){
-//	let z = text.indexOf(y);
-//  	if(z !== -1){
-//      	count++;
-//    	return fun(text.slice(z + y.length))
-//    }else{
-//    	return console.log(count);
-//    }
-//}
-//fun(x)
+export default App;
