@@ -6,9 +6,9 @@ class Input extends React.Component {
     	const {clearInput} = this.props;
 		return (
 		 <div>
-			<button onClick={clearInput}>ggg</button>
-			<button onClick={clearInput}>Click</button>
-			<button onClick={clearInput}>me</button>
+	<button Click= {onChangeValue}>{this.props.value1} </button>
+			<button onClick={onChangeValue}>Click</button>
+			<button onClick={onChangeValue}>me</button>
 		 </div>
 		)
 	}
