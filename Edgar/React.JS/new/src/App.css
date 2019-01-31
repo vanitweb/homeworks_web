@@ -36,8 +36,19 @@ input {
   border: 3px dashed #000;
 }
 button{
-  margin: 5px;
+  width: 160px;
+  display: block;
   background: green;
   color:#fff;
   padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  position: relative;
+}
+h1,h2,h3,h4,h5,h6,p{
+  font-size: 30px ;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: overline;
 }
