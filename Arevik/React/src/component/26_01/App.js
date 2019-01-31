@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Info} from './Info';
 import {Input} from './Input';
 import {Search} from './Search';
-import {Button} from './Button';
+
 
 class App extends Component {
 	
@@ -17,7 +17,7 @@ class App extends Component {
 	findCount = (event) => {
 		const value3 = event.target.value;
 		const txt = this.state.myText;
-		this.setState({value2: value3, count: ({txt}.match(/{value3}/g) || []).length});
+		this.setState({value2: value3, count: (txt.match(/value3/g) || []).length});
 	};
 	
 	
