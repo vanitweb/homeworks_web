@@ -1,54 +1,80 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Info} from './Info';
-import {Info2} from './Info2';
-import {Input} from './Input';
-import {Input2} from './Input2';
-import {MyButtons} from './Components/MyButtons';
+import List from './List';
 
-class App extends Component {
-  state = {
-    value1 : '',
-    value1 : ''
-  };
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: '',
+      items: []
+    };
+  }
 
+  componentDidMount() {
+    fetch('https://todo-api-london.now.sh/lists', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        list: {
+          name: 'my list'
+        }
+      })
+    })
+    .then((res) => res.json())
+    .then(( data ) => {
+      this.setState({
+        listId: data.list.id
+      });
+    });
+  }
 
-  static propTypes = {
-    value1: PropTypes.string.isRequired,
-    OnVlueChange: PropTypes.func.isRequired;
-};
+  onChange = (event) => {
+    this.setState({ term: event.target.value });
+  }
 
+  onSubmit = (event) => {
+    event.preventDefault();
+    const { listId, term } = this.state;
 
-  onChangeValue = (event) => {
-    const elem = event.target.value;
-    this.setState({value1:elem});
-  };
-clear = () => {
-  this.setState({value1:''});
-}
+    fetch('https://todo-api-london.now.sh/items', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        item: {
+          list_id: listId,
+          description: term
+        }
+      })
+    })
+    .then(() => {
+      return fetch(`https://todo-api-london.now.sh/lists/${listId}`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        }
+      }).then((res) => res.json())
+    })
+    .then((data) => {
+      this.setState({
+        items: data.list.items.map(({ description }) => description)
+      })
+    });
+  }
 
- onChangeValue2 = (event) => {
-    const elem2 = event.target.value;
-    this.setState({value2:elem2});
-    let str = document.getElementById('param').textContent;
-    console.log("str", str);
-  let res = str.split(" ");
-  let found = res.filter(x => x === elem2);
-  console.log(`handipum e ${found.length} angam`);
-  };
   render() {
-    const {value1} = this.state;
-    const {value2} = this.state;
     return (
-      <div className="App">
-    <Input value = {value1} onChange = {this.onChangeValue} clearInput={this.clear}/>
-    <Info value = {value1} />
-    <Input2 value = {value2} onChange = {this.onChangeValue2}/>
-    <Info2 value = {value2} />
-    <h4 id = "param">Es im anush Hayastani sirum arevaham barn em sirum</h4>
+      <div>
+        <form className="App" onSubmit={this.onSubmit}>
+          <input value={this.state.term} onChange={this.onChange} />
+          <button>Submit</button>
+        </form>
+        <List items={this.state.items} />
       </div>
     );
   }
 }
-
-export default App;

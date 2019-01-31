@@ -1,51 +1,80 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './App.css';
-import {Info} from './Components/Info';
-import {MyButtons} from './Components/MyButtons';
+import List from './List';
 
-
-
-class App extends Component {
-  state = {
-    value1 : '',
-    
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: '',
+      items: []
+    };
   }
-  static propTypes = {
-      myFunc: PropTypes.func.isRequired,
-      myFunc2: PropTypes.func.isRequired,
-      myFunc3: PropTypes.func.isRequired,
-      value1: PropTypes.string.isRequired,
-    }
-    /*-----------------------------------*/
-myFunc = (e) => {
-    this.setState({value1: e.target.value});
-};
-    /*-----------------------------------*/
-myFunc2 = (e) => {
-  let myString ="Hello from React.This is a <p> tag"
-  let newP = React.createElement("p",
-                             { className: "paragraph" },
-                               myString
-                             );
-  this.setState({value1: newP});
-};
-    /*-----------------------------------*/
-myFunc3 = (e) => {
-    let createInput = React.createElement("input", {placeholder: "Now I'm Input"})
-    this.setState({value1: createInput});
-};
-    /*-----------------------------------*/
-render() {
-    const {value1} = this.state;
-  return (
+
+  componentDidMount() {
+    fetch('https://todo-api-london.now.sh/lists', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        list: {
+          name: 'my list'
+        }
+      })
+    })
+    .then((res) => res.json())
+    .then(( data ) => {
+      this.setState({
+        listId: data.list.id
+      });
+    });
+  }
+
+  onChange = (event) => {
+    this.setState({ term: event.target.value });
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    const { listId, term } = this.state;
+
+    fetch('https://todo-api-london.now.sh/items', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        item: {
+          list_id: listId,
+          description: term
+        }
+      })
+    })
+    .then(() => {
+      return fetch(`https://todo-api-london.now.sh/lists/${listId}`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        }
+      }).then((res) => res.json())
+    })
+    .then((data) => {
+      this.setState({
+        items: data.list.items.map(({ description }) => description)
+      })
+    });
+  }
+
+  render() {
+    return (
       <div>
-      <MyButtons onChange = {this.myFunc} onChange2 = {this.myFunc2} onChange3 = {this.myFunc3}/>
-      <Info element ={value1}/>
+        <form className="App" onSubmit={this.onSubmit}>
+          <input value={this.state.term} onChange={this.onChange} />
+          <button>Submit</button>
+        </form>
+        <List items={this.state.items} />
       </div>
     );
   }
 }
-
-
-export default App;
