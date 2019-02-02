@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import {Button} from './Button';
+
 class Task extends Component {
 	state = {
-		value:'katarvac e?'
+		value:'katarvac e'
 	}
 	funcKatarel = () =>
 	{
-		this.setState({value:"aaa"});
+		this.setState({value:"+"});
+	}
+	funcJnjel = () =>
+	{
+		var a = true;
 	}
   render() {
     return (
-	<div>
-		<p> {this.props.children} 
-			<Button onclickB={this.funcKatarel} value={this.state.value}/>
-			<Button value={"jnjel"}/>
+		a && <p> {this.props.children} 
+			<Button onclick={this.funcKatarel} value={this.state.value}/>
+			<Button value={"jnjel"} onclick={this.funcJnjel}/>
 		</p>
 		
-	</div>
 	)
   }
 }
