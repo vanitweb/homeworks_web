@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ToDoList from './ToDoList';
+import Lesson1 from './Lesson1';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<ToDoList />, document.getElementById('root'));
+ReactDOM.render(<Lesson1 />, document.getElementById('root'));
 serviceWorker.unregister();
 
