@@ -24,7 +24,7 @@ class App extends Component {
 		let myArray = this.state.myArray.slice();
 		myArray.push(this.state.newVal);
 		this.setState ({myArray: myArray})
-		console.log(myArray);
+		
 	};
 	
 		
@@ -40,4 +40,4 @@ class App extends Component {
   	}
 }
 
-export default App;
+export default App; 

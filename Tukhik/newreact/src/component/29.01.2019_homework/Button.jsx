@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Button extends React.Component {
+class Button extends Component {
 	
 	static PropTypes = {
 		name: PropTypes.string.isRequired,
+		nameData: PropTypes.number.isRequired,
 		onClick: PropTypes.func.isRequired
 	}
 	
 	render(){
-		const {onClick, onChange, name, value}= this.props;
+		const {name, nameData, onClick}= this.props;
 		return (
-		<div>
-			<input value={value} onChange={onChange}/>
-			<button onClick={onClick} >{name}</button>
-		</div>
+			<button nameData={nameData} onClick={onClick}>{name}</button>
 		)
 	}
 }
