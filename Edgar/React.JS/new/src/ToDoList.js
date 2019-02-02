@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Todo} from './Components/Todo';
 import './App.css';
 
-class App extends Component {
+class ToDoList extends Component {
 	state = {
 		newTodo: '',
 		toDoArray: []
@@ -23,14 +23,15 @@ class App extends Component {
 		});
 	}
 	
+	
 	render() {
 		const {message, newTodo} = this.state;
     	return (
 		  <div>
 		  <Todo 
-		  onSubmit= {(e) => this.formSubmited(e)}
-		  onChange = {(e) =>this.newTodoChanged(e)}
-		  valueInput = {newTodo}/>
+			  onSubmit={this.formSubmited}
+			  onChange={this.newTodoChanged}
+			  valueInput={newTodo}/>
 		  	<ul>
 		  	{this.state.toDoArray.map(item =>{
 		  		return <li key = {item.title}>
@@ -42,4 +43,4 @@ class App extends Component {
   	}
 }
 
-export default App;
+export default ToDoList;
