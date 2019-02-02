@@ -34,7 +34,7 @@ class App extends Component {
 		return (
 			<div>
 				<Button name="addTask" onClick={this.onClick} onChange={this.onChange}/>
-				{myArray.map(item=>(<p key={item}>{item}</p>))}	
+				{  }	
 			</div>
 		);
   	}
