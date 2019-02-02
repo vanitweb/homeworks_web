@@ -3,7 +3,8 @@ import {Button} from './Button';
 
 class Task extends Component {
 	state = {
-		value:'katarvac e'
+		value:'katarvac e',
+		a:"true"
 	}
 	funcKatarel = () =>
 	{
@@ -11,13 +12,13 @@ class Task extends Component {
 	}
 	funcJnjel = () =>
 	{
-		var a = true;
+		this.setState({a:"false"});
 	}
   render() {
     return (
-		a && <p> {this.props.children} 
+		(this.state.a==="true") && <p> {this.props.children} 
 			<Button onclick={this.funcKatarel} value={this.state.value}/>
-			<Button value={"jnjel"} onclick={this.funcJnjel}/>
+			<Button onclick={this.funcJnjel} value={"jnjel"}/>
 		</p>
 		
 	)
