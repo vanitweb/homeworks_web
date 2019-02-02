@@ -13,7 +13,6 @@ class App extends Component {
 	functionChenge = (event) =>
 	{
 		this.setState({value: event.target.value});
-		console.log(event.target.value);
 	}
   render() {
     return (
