@@ -11,14 +11,14 @@ class Content extends Component {
 	render() {
 		const {item,
 			   complete,
-			   active,
-			   clickcomolete
+			   clickcomolete,
+			   close
 			  } = this.props;
 		return(
-			active && <div>
+			<div>
 				<h1>{item}</h1>
 				<button onClick={clickcomolete}>{complete}</button>
-				<button>&times;</button>
+				<button onClick={close}>&times;</button>
 			</div>
 		);
 	}

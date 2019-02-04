@@ -6,17 +6,40 @@ class App extends Component {
 		currentTask: '',
 		list: [],
 	}
+	close = (event) => {
+		const arr = event.target.parentNode.parentNode.childNodes;
+		const element = event.target.parentNode;
+		let indexOfElement;
+		for(let i = 1; i < arr.length; i++) {
+			if(arr[i] === element) {
+				indexOfElement = i;
+				break;
+			}
+		}
+		let temp = [...this.state.list];
+		temp.splice(indexOfElement - 1, 1);
+		this.setState({list: temp});
+	}
 	clickComolete = (event) => {
-		const key = event.target.parentNode.className;
-		console.log(key);
-		//this.setState({complete});
+		const arr = event.target.parentNode.parentNode.childNodes;
+		const element = event.target.parentNode;
+		let indexOfElement;
+		for(let i = 1; i < arr.length; i++) {
+			if(arr[i] === element) {
+				indexOfElement = i;
+				break;
+			}
+		}
+		let temp = [...this.state.list];
+		temp[indexOfElement - 1].complete = "Done";
+		this.setState({list: temp});
 	}
 	onchange = (event) => {
 		this.setState({currentTask: event.target.value});
 	}
 	onclick = () => {
 		let arr = [...this.state.list];
-		arr.push({key: new Date(), value:this.state.currentTask, complete: 'Complete', isActive: true});
+		arr.push({key: new Date(), value:this.state.currentTask, complete: 'Complete'});
 		this.setState({list: arr});
 	}
 	render() {
@@ -25,7 +48,7 @@ class App extends Component {
 		  <div className="App">
 			<Button onchange={this.onchange} onclick={this.onclick}/>
 			{list.map(item => (
-            		<Content key={item.key} item={item.value} complete={item.complete} active={item.isActive} clickcomolete={this.clickComolete} />
+            		<Content key={item.key} item={item.value} complete={item.complete} clickcomolete={this.clickComolete} close={this.close} />
           	))}
 		  </div>
 		);
