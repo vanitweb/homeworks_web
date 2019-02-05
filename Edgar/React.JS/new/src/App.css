@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: red;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,9 +30,37 @@
     transform: rotate(360deg);
   }
 }
-input {
-    margin:5px;
-    padding: 15px;
-    border: 3px solid #000;
+form{
+  margin-top: 25px;
 }
 
+input {
+  padding: 15px;
+  border: 3px solid #000;
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+ input[ type = "checkbox" ]{
+  display: inline;
+  width: auto;
+  margin: 5px
+  
+ }
+
+button{
+  font-size: 16px;
+  display: block;
+  width: 60%;
+  height: 55px;
+  background: #fff;
+  color:#000;
+  padding: 10px;
+  margin-top: 15px;
+  margin: 15px auto;
+}
+h1,h2,h3,h4,h5,h6,p{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}

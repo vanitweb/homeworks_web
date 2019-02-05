@@ -29,11 +29,16 @@ const dashtXaxacox1 = function() {
     }
 }
 
+const avelacnelNaver = function(){
+	
+}
+
 const startGame = function() {
     dashtXaxacox();
    document.getElementsByTagName('button')[0].style.display = 'none';    
 }
 const startGame1 = function() {
+	avelacnelNaver();
     dashtXaxacox1();
    document.getElementsByTagName('button')[0].style.display = 'none';    
 }

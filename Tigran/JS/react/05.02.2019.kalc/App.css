@@ -1,0 +1,39 @@
+
+.Header {
+	  height: 500px;
+  background-color: blue;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+div {
+  height: 320px;
+  width: 250px;
+  background-image: linear-gradient(red, yellow);
+}
+button {
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+input {
+  height: 30px;
+  width: 200px;
+}
