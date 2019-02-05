@@ -25,6 +25,7 @@ class App extends Component {
           time: new Date().toLocaleString()
         });
 		console.log('tick');
+		console.log('tick');
       }
       render() {
         return (
