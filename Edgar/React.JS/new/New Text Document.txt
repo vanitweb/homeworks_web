@@ -5,3 +5,49 @@ input ev info komponent
 
 inputi mej inch grenq infoum tpi\
 
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import {MyClass} from './MyClass';
+
+class App extends Component {
+    state = {
+      name: "Jhon"  
+    };
+    ymF = () => {
+        this.setState({name:"SEd"});
+    }
+  render() {
+    return (
+      <div className="App">
+        <MyClass  name = {this.state.name}/>
+        
+        <button > </button>  
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+-----------------
+
+import React, { Component } from 'react';
+
+
+class MyClass extends Component {
+    onchange = () =>{
+        this.props.onchange();
+    };
+    render() {
+        return(
+            <div className="App">
+                My Component
+                {this.props.name}
+                <button onClick={this.onchange}>Change Name</button>
+            </div>    
+    );  
+    }
+}
+export {MyClass};
