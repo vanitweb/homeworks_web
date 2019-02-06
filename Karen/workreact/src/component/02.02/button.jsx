@@ -7,12 +7,41 @@ class Button extends Component {
       height: '50px',
       width: '50px',
       borderRadius: '5px',
-      fontSize: '30px'
+      fontSize: '25px'
     }
     return (
-      <button onClick={this.props.onClick} value={this.props.val} style={styl}>
-        {this.props.val}
-      </button>
+      <table>
+        <tr>
+          <button onClick={this.props.gortoxutyun} style={styl}>MR</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>M+</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>M-</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>x2</button>
+        </tr>
+        <tr>
+          <button onClick={this.props.onClick} style={styl}>1</button>
+          <button onClick={this.props.onClick} style={styl}>2</button>
+          <button onClick={this.props.onClick} style={styl}>3</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>*</button>
+        </tr>
+        <tr>
+          <button onClick={this.props.onClick} style={styl}>4</button>
+          <button onClick={this.props.onClick} style={styl}>5</button>
+          <button onClick={this.props.onClick} style={styl}>6</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>/</button>
+        </tr>
+        <tr>
+          <button onClick={this.props.onClick} style={styl}>7</button>
+          <button onClick={this.props.onClick} style={styl}>8</button>
+          <button onClick={this.props.onClick} style={styl}>9</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>-</button>
+        </tr>
+        <tr>
+          <button onClick={this.props.onClick} style={styl}>0</button>
+          <button onClick={this.props.cl} style={styl}>C</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>=</button>
+          <button onClick={this.props.gortoxutyun} style={styl}>+</button>
+        </tr>
+      </table>
     )
   }
 }

@@ -3,49 +3,56 @@ import Display from './input.jsx';
 import Button from './button.jsx';
 
 class App extends Component {
-  state = { gortox: ''}
+  state = { gortox: '',
+    gortox1: '',
+    ardyunq: '',
+    poxox: true,
+  }
+
   mutq = (e) => {
-    const value = e.target.value;
-    switch (value) {
-      case 'C':
-        this.setState({gortox: ''});
+    const value = e.target.textContent;
+    if(this.state.poxox){
+      this.setState({gortox: this.state.gortox += value})
+    }else{
+      this.setState({gortox1: this.state.gortox1 += value})
+    }
+  }
+  ClearF = () => {
+    this.setState({gortox: ''});
+    this.setState({gortox1: ''})
+    this.setState({poxox: true});
+  }
+
+  gortoxutyun = (e) => {
+    let erkrordhert = '';
+    const nshan = e.target.textContent;
+    let ashx;
+    this.setState({poxox: false});
+    switch (erkrordhert){
+      case '-':
+        ashx -= parseFloat(this.state.gortox1);
         break;
-      case '=':
-        const x = eval(this.state.gortox);
-        this.setState({gortox: x });
+      case '+':
+        ashx += parseFloat(this.state.gortox1);
+        break;
+      case '/':
+        ashx /= parseFloat(this.state.gortox1);
+        break;
+      case '*':
+        ashx *= parseFloat(this.state.gortox1);
         break;
       default:
-        this.setState({gortox: this.state.gortox += value});
-        break;
+        ashx = parseFloat(this.state.gortox);
     }
+    erkrordhert = nshan;
+    this.setState({ardyunq: ashx});
   }
   render() {
     return (
       <table className="App">
-        <Display val={this.state.gortox} />
+        <Display val={this.state.gortox} va={this.state.gortox1}/>
         <tr>
-          <Button onClick={this.mutq} val='C' />
-          <Button onClick={this.mutq} val='0' />
-          <Button onClick={this.mutq} val='*' />
-          <Button onClick={this.mutq} val='/' />
-        </tr>
-        <tr>
-          <Button onClick={this.mutq} val='7' />
-          <Button onClick={this.mutq} val='8' />
-          <Button onClick={this.mutq} val='9' />
-          <Button onClick={this.mutq} val='-' />
-        </tr>
-        <tr>
-          <Button onClick={this.mutq} val='4' />
-          <Button onClick={this.mutq} val='5' />
-          <Button onClick={this.mutq} val='6' />
-          <Button onClick={this.mutq} val='+' />
-        </tr>
-        <tr>
-          <Button onClick={this.mutq} val='1' />
-          <Button onClick={this.mutq} val='2' />
-          <Button onClick={this.mutq} val='3' />
-          <Button onClick={this.mutq} val='=' />
+          <Button onClick={this.mutq} gortoxutyun = {this.gortoxutyun} cl={this.ClearF}/>
         </tr>
       </table>
     )
