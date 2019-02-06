@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Display from './input.jsx';
-import Button from './button.jsx';
+import Display from './Input.jsx';
+import Button from './Button.jsx';
 
 class App extends Component {
   state = { gortox: '',
