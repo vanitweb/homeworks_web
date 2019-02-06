@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/05.02/App';
+import App from './Components/Calculator/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
