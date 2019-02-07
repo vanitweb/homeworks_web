@@ -3,7 +3,7 @@ import './Calculator.css';
 import {Button} from './Components/Calculator/Button';
 import {Input} from './Components/Calculator/Input';
 import {ClearButton} from './Components/Calculator/ClearButton';
-import {math} from 'mathjs';
+import * as math from 'mathjs';
 class Calculator extends Component {
     state ={
       input:''
@@ -18,7 +18,6 @@ class Calculator extends Component {
     };
 
   render() {
-    
     return(
       <div className="app">
         <div className="calc-wrapper">
