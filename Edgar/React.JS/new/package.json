@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "mathjs": "^5.4.2",
+    "mobx": "^5.9.0",
+    "mobx-react": "^5.4.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
@@ -22,5 +24,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.5"
+  }
 }

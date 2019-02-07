@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 class Lesson1 extends Component {
-
   state = {
       data: null
+      stopTime: 
     }
-componentWillMount(){
-console.log("componentWillMount");
+componentUnMount(){
+clearInterval(this.myinterval);
 }
   componentDidMount(){
     console.log("componentDidMount");
-    setInterval(() => {
+    let myinterval =setInterval(() => {
       let myTime = new Date().toLocaleString()
       this.setState({
         data: myTime
@@ -20,7 +20,7 @@ console.log("componentWillMount");
 
   render() {
     return(
-      <div>
+    <div>
       {this.state.data}
     </div>
     )
