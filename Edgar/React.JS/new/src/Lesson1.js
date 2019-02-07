@@ -9,12 +9,13 @@ class Lesson1 extends Component {
     }
 componentWillUnMount(){
 console.log("componentWillUnMount");
-if(this.state.value = 0){
-clearInterval(this.interval)
-  
-}
+clearInterval(this.interval);
 }
 
+componentDidUpdate(){
+  console.log("componentDidUpdate");
+
+}
   componentDidMount (){
     console.log("componentDidMount");
     this.timeUpdate2();
@@ -24,12 +25,12 @@ timeUpdate2(){
      this.interval = setInterval(() => {
       this.setState({
         data: new Date().toLocaleString(),
-        value:this.state.value - 1
       })
     }, 1000)
 }
 
   render() {
+    
     const {timeUpdate} = this.state;
     return(
       <div>
