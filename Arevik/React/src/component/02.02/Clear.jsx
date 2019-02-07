@@ -1,8 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 import "./App.css";
 
-export const Clear = props => (
-	<button className="clear" onClick={props.Clear}>
-		{props.children}
-	</button>
-);
+class Clear extends Component {
+	render() {
+		return(
+			<button className="clear" onClick={this.props.Clear}>
+			{this.props.children}
+			</button>
+		);
+	}
+};
+export {Clear};

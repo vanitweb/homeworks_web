@@ -8,7 +8,7 @@ class Display extends Component {
   		backgroundColor: 'aqua',
   		fontSize: '40px'
   	}
-    return <h1 style={stil} >{this.props.val}</h1>
+    return <h1 style={stil} >{this.props.val}{this.props.va}</h1>
   }
 }
 

@@ -1,11 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
 import "./App.css";
 
-export const Button = props => (
-	<button
-		className="button"
-		onClick={() => props.onClick(props.children)}
-	>
-		{props.children}
-	</button>
-);
+class Button extends Component {
+	render() {
+		const {addToInput } = this.props;
+		return(
+			<button	className="button"  onClick={addToInput}>
+			{this.props.children}
+			</button>
+		);
+	}
+}
+export {Button};
+
