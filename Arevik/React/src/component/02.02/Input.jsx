@@ -1,4 +1,14 @@
-import React from "react";
+import React, {Component} from "react";
 import "./App.css";
 
-export const Input = props => <div className="input">{props.input}</div>;
+class Input extends Component{
+		
+	render() {
+		const{ value, makeFromInput} = this.props;
+			return(
+			<div className="input" onChange={makeFromInput}>{value}</div>
+		);
+	}
+
+} 
+export {Input};
