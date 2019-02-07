@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import {Content} from './Content';
+
 class App extends Component {
 	state = {
 		currentTime: (new Date()).toString(),
