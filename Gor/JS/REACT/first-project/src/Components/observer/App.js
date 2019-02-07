@@ -8,7 +8,7 @@ class App extends Component {
 	state = {
 		list: []
 	}
-	@observable currentTask = 0;
+	@observable currentTask = "";
 	close = (event) => {
 		const arr = event.target.parentNode.parentNode.childNodes;
 		const element = event.target.parentNode;
