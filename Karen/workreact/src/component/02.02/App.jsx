@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Display from './Input.jsx';
+import Display from './input.jsx';
 import Button from './Button.jsx';
 
 class App extends Component {
