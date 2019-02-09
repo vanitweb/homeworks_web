@@ -350,10 +350,13 @@ module.exports = function(webpackEnv) {
                   [
                     "@babel/plugin-proposal-decorators",
                     {
-                      decoratorsBeforeExport: true
+                      legacy: true
                     }
                   ],
-                  "@babel/plugin-proposal-class-properties"
+                  "@babel/plugin-proposal-class-properties",
+                  {
+                  	loose: true
+                  }
                 ],
                 presets: ['@babel/preset-env', '@babel/preset-react'],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
