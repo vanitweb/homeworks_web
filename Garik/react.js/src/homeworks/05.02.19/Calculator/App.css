@@ -1,0 +1,24 @@
+.App{
+    width: 220px;
+    text-align: center;
+    margin:auto;
+    border: 2px solid;
+}
+input{
+    margin-top: 20px;
+    height: 30px;
+    margin-left: 3%;
+}
+button{
+    font-weight: 400;
+    font-size: 18px;
+    width: 40px;
+    height: 30px;
+    margin-left: 3%;
+}
+button:hover{
+    cursor: pointer;
+}
+.result{
+    width: 80px;
+}

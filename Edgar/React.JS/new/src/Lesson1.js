@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
+import {StopTime} from './Components/StopTime';
+
 
 class Lesson1 extends Component {
- state = {
-    date: ''
-  };
-componentDidMount() {
-  setInterval(this.setState({date: new Date().toLocaleString()}),1000)
-}
+  state = {
+      stopTimer: true
+    }
+ 
 
   render() {
-	  const {date} = this.state;
-    return (
-      <div class="date">
-		
-        <h1> ddd {date}</h1>
-      </div>
-    );
+      const{stopTimer}= this.state;
+    return(
+    <div>
+     <StopTime/>
+    </div>
+    )
   }
 }
 

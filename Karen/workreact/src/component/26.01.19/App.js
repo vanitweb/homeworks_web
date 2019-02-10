@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import Input from './input.jsx';
 import Info from './info.jsx';
-
+import {observer} from 'mobx-react';
+import {observable} from 'mobx';
+@observer
 class App extends Component {
-  state = {textInfo: ''};
+  @observable textInfo = '';
+  @observable textInfo1 = '';
+
   fun = (e) => {
     const txt = e.target.value;
-    this.setState({textInfo: txt});
+    this.textInfo = txt;
+    this.textInfo1 = txt;
   }
   jnjel = () => {
-    this.setState({textInfo: ''})  
+    this.textInfo = '';  
   }
   render() {
     return (
       <div className="App">
-        <Input value={this.state.textInfo} onChange={this.fun} jnjel={this.jnjel}/>
-        <Info valu={this.state.textInfo}/>
+        <Input value={this.textInfo} onChange={this.fun} jnjel={this.jnjel}/>
+        <Info valu={this.textInfo1}/>
       </div>
     );
   }
