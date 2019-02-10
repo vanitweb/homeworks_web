@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './component/05.02.2019-calc/App.js';
-import * as serviceWorker from './serviceWorker';
+import App from './component/08.02.2019-classwork/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App name="react"/>, document.getElementById('test'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
