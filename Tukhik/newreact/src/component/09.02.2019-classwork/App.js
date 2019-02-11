@@ -11,7 +11,7 @@ class App extends Component {
     
 	@computed
 	get updateText() {
-		return `TTT ${this.text}`;
+		return `TTTTTT ${this.text}`;
 	}
 	
 	changeText = (event)=> {
