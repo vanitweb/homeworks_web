@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Content extends Component {
+class Tasks extends Component {
 	static propTypes = {
 		item: PropTypes.string,
 		complete: PropTypes.string,
@@ -26,4 +26,4 @@ class Content extends Component {
 	}
 }
 
-export {Content};
+export {Tasks};

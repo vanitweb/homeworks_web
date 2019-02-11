@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Button} from './Button';
-import {Content} from './Content';
+import {Tasks} from './Tasks';
 import {observable, computed} from 'mobx';
 import {observer}  from 'mobx-react';
 @observer
@@ -46,7 +46,7 @@ class App extends Component {
 		this.taskEndDate = event.target.value.toString();
 	}
 	@computed get addDay() {
-		return `Օր՝ ${this.taskStartDate} -${this.taskEndDate}`;
+		return `Օր՝ ${this.taskStartDate} - ${this.taskEndDate}`;
 	}
 	onchange = (event) => {
 		this.currentTask = event.target.value;
@@ -62,7 +62,7 @@ class App extends Component {
 		  <div className="App">
 			<Button onchange={this.onchange} onclick={this.onclick} startDate={this.startDate} endDate={this.endDate} />
 			{list.map(item => (
-            		<Content key={item.key} item={item.value} complete={item.complete} day={this.addDay} clickcomolete={this.clickComolete} close={this.close} />
+            		<Tasks key={item.key} item={item.value} complete={item.complete} day={this.addDay} clickcomolete={this.clickComolete} close={this.close} />
           	))}
 		  </div>
 		);
