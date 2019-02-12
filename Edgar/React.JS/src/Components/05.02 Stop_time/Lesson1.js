@@ -1,10 +1,5 @@
-import React, {
-    Component
-} from 'react';
-import {
-    StopTime
-} from './Components/StopTime';
-
+import React, {Component} from 'react';
+import {StopTime} from './StopTime';
 
 class Lesson1 extends Component {
     state = {

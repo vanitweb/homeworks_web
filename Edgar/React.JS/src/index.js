@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Lesson1 from './Lesson1';
+import App from './Components/Observables/App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Lesson1 />, document.getElementById('root'));
+ReactDOM.render(< App/>, document.getElementById('root'));
 serviceWorker.unregister();
 
