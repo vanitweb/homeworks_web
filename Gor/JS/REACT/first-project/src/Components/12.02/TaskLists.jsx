@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 class TaskLists extends Component {
 	static propTypes = {
-		item: PropTypes.string
+		item: PropTypes.string,
+		day: PropTypes.string
 	};
 	render() {
-		const {item} = this.props;
+		const {item, day} = this.props;
 		return(
-			<h1>{item}</h1>
+			<h1>{item} {day}</h1>
 		);
 	}
 }
