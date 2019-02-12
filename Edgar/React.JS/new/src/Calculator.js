@@ -4,9 +4,13 @@ import {Button} from './Components/Calculator/Button';
 import {Input} from './Components/Calculator/Input';
 import {ClearButton} from './Components/Calculator/ClearButton';
 import * as math from 'mathjs';
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
+
+@observer
 class Calculator extends Component {
     state ={
-      input:''
+      this.input:''
     }
 
     addToInput = (val) => {

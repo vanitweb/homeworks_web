@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import {StopTime} from './Components/StopTime';
+import React, {
+    Component
+} from 'react';
+import {
+    StopTime
+} from './Components/StopTime';
 
 
 class Lesson1 extends Component {
-  state = {
-      stopTimer: true
+    state = {
+        stopTimer: true,
     }
- 
 
-  render() {
-      const{stopTimer}= this.state;
-    return(
-    <div>
-     <StopTime/>
-    </div>
-    )
-  }
-}
+    stopTimer = this.stopTimer.bind(this)
 
-export default Lesson1;
+    stopTimer() {
+        this.setState({
+            stopTimer: false
+        })
+    }
+
+    render() {
+        return this.state.stopTimer ? ( 
+            <div>
+            <StopTime/>
+            <button onClick={this.stopTimer}>Stop Time</button>
+            </div>) : null
+        }
+    }
+
+    export default Lesson1;
