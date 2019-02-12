@@ -4,7 +4,6 @@ import {observer} from 'mobx-react';
 
 @observer
 class Task extends Component {
-	
 	render() {
 		const{taskList, delateTask}=this.props;
 		return (
@@ -15,9 +14,7 @@ class Task extends Component {
 						<li key={taskList.indexOf(item)}>
 							<input value={item[0]} />
 							<button><b>{item[1]}</b></button>
-							<button
-								onClick={delateTask} 
-								value = {taskList.indexOf(item)}>
+							<button	onClick={delateTask}> 
 								<b>Հեռացնել առաջադրանքը</b>
 							</button>
 						</li>

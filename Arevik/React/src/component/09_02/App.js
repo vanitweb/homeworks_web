@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
 import {observable, computed} from 'mobx';
 import {AddItem} from './AddItem.jsx';
 import {TaskList} from './TaskList.jsx';
+import {Input} from './Input.jsx';
 
 
 @observer
@@ -52,16 +53,17 @@ class App extends Component {
 					dateInterval={this.dateInterval}
 				/>
         		<TaskList taskList={this.taskList} delateTask={this.delateTask} />
+				<Input value='Filter' />
       		</Fragment>
     	);
   	}
 }
 
 App.propTypes = {
-  taskList: PropTypes.array,
-  newTaskName: PropTypes.string,
-  newTaskStartDate: PropTypes.number,
-  newTaskEndDate: PropTypes.number
+  taskList: PropTypes.array.isRequired,
+  newTaskName: PropTypes.string.isRequired,
+  newTaskStartDate: PropTypes.number.isRequired,
+  newTaskEndDate: PropTypes.number.isRequired
 }
 
 export default App;

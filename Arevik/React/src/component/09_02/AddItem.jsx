@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
-import { Input } from './Input.jsx';
-import { Button } from './Button.jsx';
+import {Input} from './Input.jsx';
+import {Button} from './Button.jsx';
 import {Date} from './Date.jsx';
 
 
@@ -13,7 +13,6 @@ class AddItem extends Component {
 				<Date onChange={addStartDate} value={newTaskStartDate} />
 				<Date onChange={addEndDate} value={newTaskEndDate}/>
 				<Button addNewTask={addNewTask} />
-				<Input value={newTaskName} />
       		</Fragment>
     	);
 	}
