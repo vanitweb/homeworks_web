@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Button} from './Button';
 import {Tasks} from './Tasks';
+import {Search} from './Search';
+import {TaskLists} from './TaskLists';
 import {observable, computed} from 'mobx';
 import {observer}  from 'mobx-react';
 @observer
@@ -11,6 +13,7 @@ class App extends Component {
 	@observable currentTask = "";
 	@observable taskStartDate = "";
 	@observable taskEndDate = "";
+	@observable currentSearch = "";
 	close = (event) => {
 		const arr = event.target.parentNode.parentNode.childNodes;
 		const element = event.target.parentNode;
@@ -51,10 +54,16 @@ class App extends Component {
 	onchange = (event) => {
 		this.currentTask = event.target.value;
 	}
+	onchangeSearch = (event) => {
+		this.currentSearch = event.target.value;
+	}
 	onclick = () => {
 		let arr = [...this.state.list];
-		arr.push({key: new Date(), value:this.currentTask, complete: 'Complete', date: this.taskDay });
+		arr.push({key: new Date(), value:this.currentTask, complete: 'Complete', date: this.addDay});
 		this.setState({list: arr});
+	}
+	@computed get taskList() {
+		return this.state.list.filter(item => (item.value === this.currentSearch));
 	}
 	render() {
 		const {list} = this.state;
@@ -62,7 +71,11 @@ class App extends Component {
 		  <div className="App">
 			<Button onchange={this.onchange} onclick={this.onclick} startDate={this.startDate} endDate={this.endDate} />
 			{list.map(item => (
-            		<Tasks key={item.key} item={item.value} complete={item.complete} day={this.addDay} clickcomolete={this.clickComolete} close={this.close} />
+            		<Tasks key={item.key} item={item.value} complete={item.complete} day={item.date} clickcomolete={this.clickComolete} close={this.close} />
+          	))}
+			<Search onchange={this.onchangeSearch} />
+			{this.taskList.map(item => (
+            		<TaskLists key={new Date()} item={item.value} day={item.date} />
           	))}
 		  </div>
 		);

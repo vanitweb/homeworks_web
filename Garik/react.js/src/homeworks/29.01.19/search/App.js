@@ -1,3 +1,4 @@
+// inputi mej grvac@ nayi texti mej qani angama krknvum Cntrl f
 import React, { Component } from 'react';
 import './App.css';
 
