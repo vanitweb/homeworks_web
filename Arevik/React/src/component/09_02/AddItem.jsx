@@ -13,7 +13,7 @@ class AddItem extends Component {
 				<Date onChange={addStartDate} value={newTaskStartDate} />
 				<Date onChange={addEndDate} value={newTaskEndDate}/>
 				<Button addNewTask={addNewTask} />
-      		</Fragment>
+			</Fragment>
     	);
 	}
 }
