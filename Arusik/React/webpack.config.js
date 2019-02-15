@@ -337,6 +337,18 @@ module.exports = function(webpackEnv) {
                 
                 plugins: [
                   [
+                    require.resolve('babel-plugin-named-asset-import'),
+                    {
+                      loaderMap: {
+                        svg: {
+                          ReactComponent:
+                            '@svgr/webpack?-prettier,-svgo![path]',
+                        },
+                      },
+                    },
+                  ],
+				  plugins: [
+                  [
                     "babel-plugin-named-asset-import",
                     {
                       loaderMap: {
@@ -353,13 +365,13 @@ module.exports = function(webpackEnv) {
                       legacy: true
                     }
                   ],
-				  ["@babel/plugin-proposal-class-properties",
-					  {
-						  loose:true
-					  }
-				  ],
+                  "@babel/plugin-proposal-class-properties"
+				  {
+					  loose: true
+				  }
                 ],
 				presets: ['@babel/preset-env', '@babel/preset-react'],
+                ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
                 // directory for faster rebuilds.

@@ -1,3 +1,4 @@
+//butonin sexmelis inputi mejin@ textov beri u 2 buton voroncic mekin sexmelis jnjuma text@ myusin sexmelis chi toxum jnjel
 import React, { Component } from 'react';
 import './App.css';
 import Form from './Form';

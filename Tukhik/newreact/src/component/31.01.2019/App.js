@@ -1,43 +1,51 @@
 import React, { Component } from 'react';
-import {Button} from './Button';
-
+import  { Tasks } from './Tasks';
 
 class App extends Component {
 	
-	state = {
-		value: '',
-		myArray: [],
-		newVal: null
-	};
+    constructor(props) {
+        super(props);
+        this.state = { tasks: [], text: '' };
+        this.delateTasks = this.delateTasks.bind(this);
+    }
+
+    addTask(e) {
+        e.preventDefault();
+        this.setState({ 
+        	tasks: [ this.state.text, ...this.state.tasks ],
+        	text: ''
+        });
+    }
+
+    delateTasks(task, i){
+        const tasks = this.state.tasks.slice();
+        tasks.splice(i, 1);
+        this.setState({tasks: tasks});
+    }
+
+    changeValue(e) {
+        this.setState({ text: e.target.value})
+    }
 	
-	onChange = (event) => {
-		const value = this.state.value;
-		const newVal = this.state.newVal;
-		this.setState({
-			value: event.target.value,
-			newVal: this.state.value
-		})
-		console.log(value);
-	};
+	isComplete(e) {
+		e.target.textContent = 'Done';
+		e.target.disabled = true;
+	}
 	
-	onClick = (event) => {
-		let myArray = this.state.myArray.slice();
-		myArray.push(this.state.newVal);
-		this.setState ({myArray: myArray})
-		
-	};
-	
-		
-	
-	render() {
-		const {value, item, myArray, newVal} = this.state;
-		return (
-			<div>
-				<Button name="addTask" onClick={this.onClick} onChange={this.onChange}/>
-				{  }	
-			</div>
-		);
-  	}
+    render() {
+        return(
+            <div>
+                <form >
+                    <input
+						value={this.state.text}
+						onChange={(e) => {this.changeValue(e)}}
+                    />
+                    <button onClick = {(e) => this.addTask(e)}>add Tasks</button>
+                </form>
+                <Tasks tasks={this.state.tasks} delateTasks={this.delateTasks} isComplete={ (e) => this.isComplete(e)}/>
+            </div>
+        );
+    }
 }
 
-export default App; 
+export default App;

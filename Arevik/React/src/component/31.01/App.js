@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import  { Tasks } from './Tasks';
+import  { observable, computed, action } from 'mobx';
+import  { observer } from 'mobx-react';
 
+
+@observer
 class App extends Component {
 	
-    constructor(props) {
-        super(props);
-        this.state = { tasks: [], text: '' };
-        this.delateTasks = this.delateTasks.bind(this);
-    }
+	state = {
+		tasks: [],
+		text: ''
+	}
 
     addTask(e) {
         e.preventDefault();
@@ -17,10 +20,11 @@ class App extends Component {
         });
     }
 
-    delateTasks(task, i){
-        const tasks = this.state.tasks.slice();
+    delateTasks = (task, i) => {
+		return(const tasks = this.state.tasks.slice();
         tasks.splice(i, 1);
         this.setState({tasks: tasks});
+		);
     }
 
     changeValue(e) {
