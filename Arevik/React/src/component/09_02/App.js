@@ -1,45 +1,56 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
-import {observable, computed} from 'mobx';
+import {computed} from 'mobx';
 import {AddItem} from './AddItem.jsx';
 import {TaskList} from './TaskList.jsx';
 import {Input} from './Input.jsx';
-
+import {AppStore} from './stores/AppStore'
 
 @observer
 class App extends Component {
-
-  	@observable taskList = [];
-	@observable newTaskName = '';
-	@observable newTaskStartDate = '';
-	@observable newTaskEndDate = '';
 	
+	appStore = new AppStore();
+
+  
 	addNewTask = () => {
-		this.taskList = [...this.taskList, [this.newTaskName, this.dateInterval]];
+		this.appStore.taskList = [...this.appStore.taskList, [this.appStore.newTaskName, this.dateInterval]];
 	}
 
 	addTaskName = (event) => {
-		this.newTaskName = event.target.value;
+		this.appStore.newTaskName = event.target.value;
 	}
 
 	addStartDate = (event) => {
-		this.newTaskStartDate = event.target.value;
+		this.appStore.newTaskStartDate = event.target.value;
 	}
 
 	addEndDate = (event) => {
-		this.newTaskEndDate = event.target.value;
+		this.appStore.newTaskEndDate = event.target.value;
 	}
 
 	delateTask = (event) => {
 		const item = event.target.value;
-		this.taskList.splice(item, 1);
+		this.appStore.taskList.splice(item, 1);
 	}
 	
 		
 	@computed
 	get dateInterval() {
-		return `${this.newTaskStartDate} -- ${this.newTaskEndDate}`;
+		return `${this.appStore.newTaskStartDate} -- ${this.appStore.newTaskEndDate}`;
+	}
+	
+	@computed
+	get filterTask() {
+		return this.appStore.taskList.filter(o => 
+			Object.keys(o).some(k => 
+				o[k].toString().toLowerCase().indexOf(this.appStore.searchValue) !== -1)
+		);
+    }
+	
+	
+	searchTask =(event) => {
+		this.appStore.searchValue = event.target.value;
 	}
 		
   	render() {
@@ -51,10 +62,18 @@ class App extends Component {
 					addStartDate={this.addStartDate}
 					addEndDate={this.addEndDate}
 					dateInterval={this.dateInterval}
+					
 				/>
-        		<TaskList taskList={this.taskList} delateTask={this.delateTask} />
-				<Input value='Filter' />
-      		</Fragment>
+        		<TaskList
+					taskList={this.appStore.taskList}
+					delateTask={this.delateTask}
+					filterTask={this.filterTask}
+				/>
+				<Input
+					onchange={this.searchTask}
+					searchvalue={this.appStore.searchvalue}
+				/>
+			</Fragment>
     	);
   	}
 }

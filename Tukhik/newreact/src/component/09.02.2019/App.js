@@ -1,85 +1,72 @@
-import React, { Component } from 'react';
-import  { Tasks } from './Tasks';
-import  { observable, computed, action } from 'mobx';
-import  { observer } from 'mobx-react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
+import {observer} from 'mobx-react';
+import {observable, computed} from 'mobx';
+import {AddItem} from './AddItem.jsx';
+import {TaskList} from './TaskList.jsx';
+import {Input} from './Input.jsx';
+
 
 @observer
 class App extends Component {
-    @observable text = "";
-    constructor(props) {
-        super(props);
-        this.state = { tasks: [], text: '' };
-        this.delateTasks = this.delateTasks.bind(this);
-    }
 
-    addTask(e) {
-        e.preventDefault();
-        let tasks = [ this.state.text, ...this.state.tasks ];
-        
-        
-    }
+  	@observable taskList = [];
+	@observable newTaskName = '';
+	@observable newTaskStartDate = '';
+	@observable newTaskEndDate = '';
+	@observable searchValue = '';
 
-    delateTasks(task, i){
-        const tasks = this.state.tasks.slice();
-        tasks.splice(i, 1);
-        this.setState({tasks: tasks});
-    }
+	poisk = (e) => {
+		this.searchValue = e.target.value;
+	}
 
-    changeValue(e) {
-        this.setState({ text: e.target.value})
-    }
-    
-    isComplete(e) {
-        e.target.textContent = 'Done';
-        e.target.disabled = true;
-    }
-    
-    render() {
-        return(
-            <div>
-                <form >
-                    <input
-                        value={this.state.text}
-                        onChange={(e) => {this.changeValue(e)}}
-                    />
-                    <button onClick = {(e) => this.addTask(e)}>add Tasks</button>
-                </form>
-                <Tasks tasks={this.state.tasks} delateTasks={this.delateTasks} isComplete={ (e) => this.isComplete(e)}/>
-            </div>
-        );
-    }
+	@computed get shearch() {
+		return this.taskList.filter(i => {return i[0].match(this.searchValue)});
+	}
+	
+	addNewTask = () => {
+		this.taskList = [...this.taskList, [this.newTaskName, this.dateInterval]];
+	}
+
+	addTaskName = (e) => {
+		this.newTaskName = e.target.value;
+	}
+
+	addStartDate = (e) => {
+		this.newTaskStartDate = e.target.value;
+	}
+
+	addEndDate = (e) => {
+		this.newTaskEndDate = e.target.value;
+	}
+
+	delateTask = (e) => {
+		const item = e.target.value;
+		this.taskList.splice(item, 1);
+	}
+	
+		
+	@computed
+	get dateInterval() {
+		return `${this.newTaskStartDate} - ${this.newTaskEndDate}`;
+	}
+		
+  	render() {
+    	return (
+      		<Fragment>
+      		<p>Search<Input  val = {this.searchValue} onchange = {this.poisk} placeholder='search'/></p>
+        		<AddItem
+					addNewTask={this.addNewTask}
+					addTaskName={this.addTaskName}
+					addStartDate={this.addStartDate}
+					addEndDate={this.addEndDate}
+					dateInterval={this.dateInterval}
+				/>
+        		<TaskList taskList={this.taskList} delateTask={this.delateTask} />
+				
+      		</Fragment>
+    	);
+  	}
 }
 
-export default App; 
-/*
-
-
- - App (
-        observable properties: searchValue, taskList, newTaskName, newTaskStartDate, newTaskEndDate;
-        return: AddItem, TaskList, Input (search-i hamar)
-    )
-        - AddItem (
-            props: newTaskName, newTaskStartDate, newTaskEndDate,
-            return:
-                3 Input (taski anuni u start/end date-i hamar),
-                Button task avelacnelu hamar
-        )
-        - Input (
-            props: value, onChange
-            return: input
-        )
-        - Button (
-            props: text, onClick
-            return: button
-        )
-        - TaskList (
-            props: taskList, searchValue
-            computed property: filteredTaskList
-            return: Task array
-        )
-            - Task (
-                props: task,
-                computed properties: dateInterval(taskStartDate - taskEndDate)
-                return: task-ի անուն, ինտերվալ, Button (jnjelu hamar)
-            )*/
+export default App;

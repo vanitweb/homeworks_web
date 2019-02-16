@@ -7,68 +7,59 @@ let naviQanak3 = 0;
 let naviQanak2 = 0;
 let naviQanak1 = 0;
 let count = 0;
+let isTrue = true;
 let naviHatikneriQanak = 0;
 const toxFun = function(tox, syun, simbol) {
     let syun1 = syun;
     while(syun1 + count <= size){
         const index = tox * size + syun;
 	for(let k = index; k < index + count; ++k){
-            if( tdArray[k] === undefined) {
-                try {
-                    tdArray[k] === undefined;
-                } catch(e) {
-                    console.log("keteri mi mas@ dashtic durs e @nkel");
-                }
-            } else {
+            try {
                 tdArray[k].innerHTML = simbol;
-            } 
-            syun1++;
+            } catch(e) {
+                console.log("keteri mi mas@ dashtic durs e @nkel");
+            }
+            syun1++; 
         }
     }
 }
 const syunFun = function(tox, syun) {
      const index = tox * size + syun;
      for(let k = index; k <= index + 2 * size; k += size) {
-         if( tdArray[k] === undefined) {
-             try {
-                 tdArray[k] === undefined;
-             } catch(e) {
-                 console.log("keteri mi mas@ dashtic durs e @nkel");
-             }
-          } else {
-              tdArray[k].innerHTML = '.';
-	  } 
+         try {
+             tdArray[k].innerHTML = '.';
+         } catch(e) {
+             console.log("keteri mi mas@ dashtic durs e @nkel");
+         }     
      }
 }
 const texadrmanStugum = function(tox, syun) {
     const vandak = tox === 0 || tox === size - 1 || syun === 0 || syun === size - 1;
     const index = tox * size + syun;
     let index1;
+    //isTrue = true;
     if(syun === 0){
         index1 = index - size;
     } else {
         index1 = index - size - 1;
     }
-    let isTrue = true;
     if(syun + count > size) { 
         return alert(`aydtex hnaravor che texadrel`);
     } else {
         for(let step = index1; step <= index1 + 2 * size ; step += size) { 
             for(let k = step; k <= step  + count + 1; ++k) { 
-               if(k % (size - 1) === 0) {
-                   break;
-               }
-                if( tdArray[k] === undefined) {
-                    try {
-                        tdArray[k] === undefined;
-                    } catch(e) {
-                        console.log("keteri mi mas@ dashtic durs e @nkel");
-                    }
-                } else if(tdArray[k].innerHTML === '*') { 
-                    isTrue = false;
+                if(k % (size - 1) === 0) {
+                    break;
                 }
-            }
-        } 
+                try {
+                    if(tdArray[k].innerHTML === '*'){
+                        isTrue = false;
+                    } 
+                } catch(e) {
+                    console.log("keteri mi mas@ dashtic durs e @nkel");
+                }
+            } 
+        } console.log(isTrue);
         if(!vandak && isTrue) {
             toxFun(tox - 1, syun , '.');
             toxFun(tox, syun, '*');
@@ -112,14 +103,7 @@ const texadrmanStugum = function(tox, syun) {
 const naviTexadrum = function(e) {
     if(count != 0) {
         const syun = e.target.cellIndex;
-        let tox = 0;
-        for(let i = syun; i < size * size; i += size ) {
-            if(e.target !== tdArray[i]) {
-                tox++;
-            } else {
-                break;
-            }
-        } 
+        const tox = e.target.parentElement.rowIndex;
         texadrmanStugum(tox, syun);
     }
 }
