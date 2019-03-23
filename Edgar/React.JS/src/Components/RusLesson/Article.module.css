@@ -1,0 +1,11 @@
+li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 50px;
+}
+button{
+	margin-left: 25px;
+}
+.Card{
+	width: 250px;
+}
