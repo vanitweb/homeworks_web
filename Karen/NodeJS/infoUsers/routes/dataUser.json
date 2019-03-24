@@ -1,0 +1,24 @@
+[{
+    "id": 0,
+    "name": "Tom",
+    "surname": "Anderson",
+    "gender": "male",
+    "email": "asd@na.jh",
+    "age": 24
+},
+{
+    "id": 1,
+    "name": "Bili",
+    "surname": "Toronton",
+    "gender": "male",
+    "email": "asd@na.jh",
+    "age": 44
+},
+{
+    "id":2,
+    "name": "Anna",
+    "surname": "Anderson",
+    "gender": "female",
+    "email": "asd@na.jh",
+    "age": 34
+}]

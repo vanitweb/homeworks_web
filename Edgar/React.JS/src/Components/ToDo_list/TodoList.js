@@ -35,7 +35,7 @@ class ToDoList extends Component {
 		  	<ul>
 		  	{this.state.toDoArray.map(item =>{
 		  		return <li key = {item.title}>
-		  		<input type="checkbox"/>{item.title}</li>
+		  		{item.title}</li>
 		  	})}
 		  	</ul>
 		  </div>
