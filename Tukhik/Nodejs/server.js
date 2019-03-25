@@ -2,12 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
+var fs = require("fs");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+//2-rd ketn e mnum
 
-
-var artists = [ 
+var users = [ 
 	{id: 1,
 	name: 'Any',
 	surname: 'Nazaretyan',
@@ -31,20 +32,25 @@ var artists = [
 	}
 ]
 
-app.get('/artists', function (req, res) {
-	res.send(artists);
+app.get('/', function (req, res) {
+	res.send("Hello");
 })
 
-app.get('/artists/:id', function (req, res) {
+app.get('/users', function (req, res) {
+	var users = fs.readFileSync("data.json", "utf8");
+	res.send(users);
+})
+
+app.get('/users/:id', function (req, res) {
 	console.log(req.params);
-	var artist = artists.find(function(artist){
-		return artist.id === Number(req.params.id);
+	var user = users.find(function(user){
+		return user.id === Number(req.params.id);
 	});
-	res.send(artist);
+	res.send(user);
 })
 
-app.post('/artists/', function(req, res){
-	var artist = {
+app.post('/users/', function(req, res){
+	var user = {
 		id: Date.now(),
 		name: req.body.name,
 		surname: req.body.surname,
@@ -52,25 +58,26 @@ app.post('/artists/', function(req, res){
 		gender: req.body.gender,
 		email: req.body.email
 	}
-	artists.push(artist);
-	res.send(artist);
+	users.push(user);
+	res.send(user);
 })
 
-app.put('/artists/:id', function(req, res) {
-	var artist = artists.find(function(artist){
-		return artist.id === Number(req.params.id);
+app.put('/users/:id', function(req, res) {
+	var user = users.find(function(user){
+		return user.id === Number(req.params.id);
 	});
-	artist.name = req.body.name;
-	artist.surname = req.body.surname;
-	artist.age = req.body.age;
-	artist.gender = req.body.gender;
-	artist.email = req.body.email;
+	user.id = req.body.id;
+	user.name = req.body.name;
+	user.surname = req.body.surname;
+	user.age = req.body.age;
+	user.gender = req.body.gender;
+	user.email = req.body.email;
 	res.sendStatus(200);
 })
 
-app.delete('/artists/:id', function(req, res){
-	artists = artists.filter(function(artist){
-		return artist.id !== Number(req.params.id);
+app.delete('/users/:id', function(req, res){
+	users = users.filter(function(user){
+		return user.id !== Number(req.params.id);
 	})
 	res.sendStatus(200);
 })
