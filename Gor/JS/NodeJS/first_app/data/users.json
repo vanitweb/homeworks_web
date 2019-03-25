@@ -1,6 +1,1 @@
-{
-    "users": [
-       {"id": "0", "name": "Jon", "surname": "Doe", "age": 25, "gender": "male", "email": "jondoe@example.com"},
-        {"id": "1", "name": "Jone", "surname": "Doee", "age": 26, "gender": "male", "email": "jondoe@example.ru"}
-   ]
-}
+{"users":{"1":{"id":"1","name":"Gor","surname":"Manukyan","age":25,"gender":"male","email":"gorman93@mail.ru"},"1553529602190":{"id":1553529602190,"name":"Gor","surname":"Manukyan","age":25,"gender":"male","email":"gorman93@mail.ru"}}}
