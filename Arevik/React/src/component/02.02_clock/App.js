@@ -1,27 +1,46 @@
 import React, { Component } from 'react';
-import Clock from 'react-clock';
- 
+
 class App extends Component {
-  state = {
-    date: new Date(),
-  }
+	constructor(props) {
+		super(props)
+		this.changeTime()
+		this.state = {
+			date: (new Date()).toLocaleString()
+		}
+	}
+	componentWillMount() {
+		console.log('component will be mount');
+	};  //Mounting events
+	componentDidMount() {
+		console.log('component was  mounted');
+	};	//Mounting events
+	
+	componentWillReceiveProps() {};
+	shouldComponentUpdate() {
+		return false;
+	};
+	componentWillUpdate() {
+		console.log('component was  updateed');
+	};	
+	componentDidUpDate() {};
+	
+	componentWillUnmount() {
+		
+	};
  
-  componentDidMount() {
-    setInterval(
-      () => this.setState({ date: new Date() }),
-      1000
-    );
-  }
+ 	changeTime() {
+		setTimeout(()=>{
+			console.log('time changed');
+			this.setState({
+				date: (new Date()).toLocaleString()
+			})
+		}, 1000);
+	}
  
   render() {
-    return (
-      <div>
-        <p>Current time:</p>
-        <Clock
-          value={this.state.date}
-        />
-      </div>
-    );
+    return <div>{this.state.date}</div>;
   }
 }
+
+
 export default App;

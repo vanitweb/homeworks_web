@@ -1,0 +1,28 @@
+[
+	{
+		"id": 1,
+		"name": "Arevik",
+		"surname": "Gharagyozyan",
+		"age": 35,
+		"gender": "female",
+		"email": "arevik83@mail.ru"
+	},
+		{
+		"id": 2,
+		"name": "Tukhik",
+		"surname": "Gharagyozyan",
+		"age": 33,
+		"gender": "female",
+		"email": "tukhik85@mail.ru"
+	},
+		{
+		"id": 3,
+		"name": "Arusik",
+		"surname": "Apinyan",
+		"age": 31,
+		"gender": "female",
+		"email": "arusik87@mail.ru"
+	}
+
+]
+
