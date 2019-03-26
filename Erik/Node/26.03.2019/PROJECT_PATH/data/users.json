@@ -1,0 +1,27 @@
+[  	
+	{	
+		"id" : 1,
+	  	"name" : "Gago",
+	  	"surname" : "Axabakyan"	,
+	  	"age" : "65",
+	  	"gender" : "txa",
+	  	"email" : "g-axabakyan@bk.ru"
+	  		
+	},
+	{
+		"id" : 2,
+		"name" : "Gago",
+		"surname" : "Axabakyan"	,
+		"age" : "65",
+		"gender" : "txa",
+		"email" : "g-axabakyan@bk.ru"	
+	},
+	{
+		"id" : 3,
+		"name" : "Gago",
+		"surname" : "Axabakyan"	,
+		"age" : "65",
+		"gender" : "txa",
+		"email" : "g-axabakyan@bk.ru"	
+	}
+]
