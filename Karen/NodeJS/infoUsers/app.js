@@ -108,7 +108,7 @@ app.put("/usersInfo", function(req, res){
         	res.send(user);
         }
     };
-    res.status(404).send(user);
+    res.status(404).send();
 });
 
 // catch 404 and forward to error handler
