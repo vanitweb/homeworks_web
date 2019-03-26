@@ -1,44 +1,18 @@
 var express = require('express');
+const jsonfile = require('jsonfile');
 var router = express.Router();
-var users = [
-{
-	id: 1,
-	name: 'Ani',
-	surname: 'Hakobyan',
-	age: 25,
-	gender: 'female',
-	email: 'ani.hakobyan12@mail.ru'
-},
-{	
-	id: 2,
-	name: 'Arman',
-	surname: 'Araratyan',
-	age: 18,
-	gender: 'male',
-	email: 'arman.araratyan90@mail.ru'
-
-},
-{
-	id: 3,
-	name: 'Maria',
-	surname: 'Nikoghosyan',
-	age: 52,
-	gender: 'female',
-	email: 'marianikoghosyan@mail.ru'
-},
-{
-	id: 3,
-	name: 'Lilia',
-	surname: 'Amiryan',
-	age: 24,
-	gender: 'female',
-	email: 'lilia.95@mail.ru'
-}
-];
+const filePath = '.data/users.json';
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  res.send(users);
+  jsonfile.readFile(file, function(err, obj) {
+	  if(err) console.log(err);
+	  const users = {};
+	  for (item in obj.users) {
+		  users[item] = {"name":obj.users[item].name, "surname":obj.users[item].surname, "age":obj.users[item].age}
+	  }
+	  res.send(users);
+  })
 });
 router.get('/:id', function (req, res) {
 	var user = users.find(function(user) {
