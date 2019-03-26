@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "name",
+      "surname": "surname",
+      "age": "age",
+      "gender": "gender",
+      "email": "email@mail.ru"
+    },
+    {
+      "id": 1,
+      "name": "name",
+      "surname": "surname",
+      "age": "age",
+      "gender": "gender",
+      "email": "email@mail.ru"
+    },
+    {
+      "id": 2,
+      "name": "name",
+      "surname": "surname",
+      "age": "age",
+      "gender": "gender",
+      "email": "email@mail.ru"
+    },
+    {
+      "id": 3,
+      "name": "name",
+      "surname": "surname",
+      "age": "age",
+      "gender": "gender",
+      "email": "email@mail.ru"
+    }
+  ]
+}
