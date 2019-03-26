@@ -1,23 +1,23 @@
-var users = [ 
-	{id: 1,
-	name: 'Kara',
-	surname: 'Nazaretyan',
-	age: 22,
-	gender: 'female',
-	email: 'anyNaz@mail.ru'
+[ 
+	{"id": 1,
+	"name": "Kara",
+	"surname": "Nazaretyan",
+	"age": 44,
+	"gender": "female",
+	"email": "anyNaz@mail.ru"
 	},
-	{id: 2,
-	name: 'Olga',
-	surname: 'Igityan',
-	age: 25,
-	gender: 'female',
-	email: 'OlgaIgit@mail.ru'
+	{"id": 2,
+	"name": "Kara",
+	"surname": "Nazaretyan",
+	"age": 55,
+	"gender": "female",
+	"email": "anyNaz@mail.ru"
 	},
-	{id: 3,
-	name: 'Vasya',
-	surname: 'Proshyan',
-	age: 21,
-	gender: 'male',
-	email: 'Vasya@mail.ru'
+		{"id": 3,
+	"name": "Kara",
+	"surname": "Nazaretyan",
+	"age": 66,
+	"gender": "female",
+	"email": "anyNaz@mail.ru"
 	}
 ]

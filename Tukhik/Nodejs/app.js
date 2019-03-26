@@ -2,42 +2,17 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express();
-var fs = require("fs");
 
+var users = require("./data.json");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-//2-rd ketn e mnum
-
-var users = [ 
-	{id: 1,
-	name: 'Any',
-	surname: 'Nazaretyan',
-	age: 22,
-	gender: 'female',
-	email: 'anyNaz@mail.ru'
-	},
-	{id: 2,
-	name: 'Olga',
-	surname: 'Igityan',
-	age: 25,
-	gender: 'female',
-	email: 'OlgaIgit@mail.ru'
-	},
-	{id: 3,
-	name: 'Vasya',
-	surname: 'Proshyan',
-	age: 21,
-	gender: 'male',
-	email: 'Vasya@mail.ru'
-	}
-]
 
 app.get('/', function (req, res) {
 	res.send("Hello");
 })
 
 app.get('/users', function (req, res) {
-	var users = fs.readFileSync("data.json", "utf8");
+	
 	res.send(users);
 })
 
@@ -85,3 +60,4 @@ app.delete('/users/:id', function(req, res){
 app.listen(3012, function() {
 	console.log("API app started")
 })
+module.exports = app;
