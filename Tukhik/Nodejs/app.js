@@ -1,63 +1,41 @@
+var createError = require('http-errors');
 var express = require('express');
-var bodyParser = require('body-parser');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
 var app = express();
 
-var users = require("./data.json");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-app.get('/', function (req, res) {
-	res.send("Hello");
-})
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/users', function (req, res) {
-	
-	res.send(users);
-})
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
-app.get('/users/:id', function (req, res) {
-	console.log(req.params);
-	var user = users.find(function(user){
-		return user.id === Number(req.params.id);
-	});
-	res.send(user);
-})
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
 
-app.post('/users/', function(req, res){
-	var user = {
-		id: Date.now(),
-		name: req.body.name,
-		surname: req.body.surname,
-		age: req.body.age,
-		gender: req.body.gender,
-		email: req.body.email
-	}
-	users.push(user);
-	res.send(user);
-})
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-app.put('/users/:id', function(req, res) {
-	var user = users.find(function(user){
-		return user.id === Number(req.params.id);
-	});
-	user.id = req.body.id;
-	user.name = req.body.name;
-	user.surname = req.body.surname;
-	user.age = req.body.age;
-	user.gender = req.body.gender;
-	user.email = req.body.email;
-	res.sendStatus(200);
-})
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
 
-app.delete('/users/:id', function(req, res){
-	users = users.filter(function(user){
-		return user.id !== Number(req.params.id);
-	})
-	res.sendStatus(200);
-})
-
-app.listen(3012, function() {
-	console.log("API app started")
-})
 module.exports = app;
