@@ -1,0 +1,21 @@
+var data = 
+{
+	"1" = {
+		id:"1",
+		name:"Armine",
+		surname:"Isahakyan",
+		age:"15"
+	},
+	"2" = {
+		id:"2",
+		name:"Vardan",
+		surname:"Karapetyan",
+		age:"25"
+	},
+	"3" = {
+		id:"3",
+		name:"Ani",
+		surname:"Hakobyan",
+		age:"22"
+	}
+}
