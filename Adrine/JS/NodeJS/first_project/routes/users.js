@@ -1,23 +1,28 @@
 var express = require('express');
 const jsonfile = require('jsonfile');
 var router = express.Router();
-const filePath = '.data/users.json';
+const filePath = './data/users.json';
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  jsonfile.readFile(file, function(err, obj) {
-	  if(err) console.log(err);
-	  const users = {};
-	  for (item in obj.users) {
-		  users[item] = {"name":obj.users[item].name, "surname":obj.users[item].surname, "age":obj.users[item].age}
+  jsonfile.readFile(filePath, function(err, obj) {
+	  if(err){
+		  return
+	  res.status(500).send("External server error");
 	  }
 	  res.send(users);
   })
 });
-router.get('/:id', function (req, res) {
-	var user = users.find(function(user) {
-		return user.id === Number(req.params.id);
-	});
-	res.send(user);
-})
+router.get('/:id', function(req, res) {
+    jsonfile.readFile(filePath, function (err, obj) {
+        if(err) {
+			return res.status(500).send("External server error");
+		}
+		const userID = req.params.id;
+		if(!obj.users[userID]) {
+			return res.status(404).send("Data not found");
+		}
+        res.status(200).send(obj.users[userID]);
+    })
+});
 module.exports = router;
