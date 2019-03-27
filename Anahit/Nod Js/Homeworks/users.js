@@ -1,28 +1,28 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
-const jsonfile = require('jsonfile');
-const filePath = './data/users.json';
-const fs = require("fs");
+// const jsonfile = require('jsonfile');
+// const filePath = './../data/users.json';
+//const fs = require("fs");
 
 /* GET users listing*/
 // 1. Create new user - name, surname, age, gender, email 
 
 // /*2. Get all users - name, surname, age*/
 
-router.get('/', function(req, res) {
-  jsonfile.readFile("filePath", "utf8", function(error,data){ 
-    // if(!data ){
-    //   return res.status(500).send("server error");
-    // }  
-    let returnObj = {};
-    for(item in data) {
-            returnObj[item] = {"name": item.name, "surname": item.surname, "age": item.age};
-        }
-        res.status(200).send(returnObj);
-    });
+// router.post('/', function(req, res) {
+//   jsonfile.readFile("filePath", "utf8", function(error,data){ 
+//     if(!data || error){
+//       return res.status(500).send("server error");
+//     }  
+//     let returnObj = {};
+//     for(item in filePath) {
+//             returnObj[item] = {"name":filePath[item].name, "surname": filePath[item].surname, "age": filePath[item].age};
+//         }
+//         res.status(200).send(returnObj);
+//     });
   
-});
+// });
 
 
 
