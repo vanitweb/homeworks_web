@@ -1,31 +1,30 @@
 {
     "1": {
-			"name": "Anna",  
-			"surname": "Vardanyan",
-			"age": 15,
-			"gender": "femininity",
-			"email": "emailAnna"
-		   }, 
-    "2": {    
-			"name": "Aram",  
-			"surname": "Sardaryan",
-			"age": 18,
-			"gender": "masculinity",
-			"email": "emailAram"
-		   }, 
+        "name": "Anna",
+        "surname": "Vardanyan",
+        "age": 15,
+        "gender": "femininity",
+        "email": "emailAnna"
+    },
+    "2": {
+        "name": "Aram",
+        "surname": "Sardaryan",
+        "age": 18,
+        "gender": "masculinity",
+        "email": "emailAram"
+    },
     "3": {
-			"name": "Ani",  
-			"surname": "Mamyan",
-			"age": 30,
-			"gender": "femininity",
-			"email": "emailAni"
-		   }, 
+        "name": "Ani",
+        "surname": "Mamyan",
+        "age": 30,
+        "gender": "femininity",
+        "email": "emailAni"
+    },
     "4": {
-			"name": "Mariam",  
-			"surname": "Stepanyan",
-			"age": 17,
-			"gender": "femininity",
-			"email": "emailMariam"
-		   }
+        "name": "Mariam",
+        "surname": "Stepanyan",
+        "age": 17,
+        "gender": "femininity",
+        "email": "emailMariam"
+    }
 }
-
