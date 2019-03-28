@@ -1,28 +1,34 @@
-[
-	{
-		"id": 1,
-		"name": "Arevik",
-		"surname": "Gharagyozyan",
-		"age": 35,
-		"gender": "female",
-		"email": "arevik83@mail.ru"
-	},
-		{
-		"id": 2,
-		"name": "Tukhik",
-		"surname": "Gharagyozyan",
-		"age": 33,
-		"gender": "female",
-		"email": "tukhik85@mail.ru"
-	},
-		{
-		"id": 3,
-		"name": "Arusik",
-		"surname": "Apinyan",
-		"age": 31,
-		"gender": "female",
-		"email": "arusik87@mail.ru"
-	}
-
-]
-
+{
+  "1": {
+    "id": 1,
+    "name": "Arsen",
+    "surname": "Karapetyan",
+    "age": "12",
+    "gender": "male",
+    "email": "karen@mail.ru"
+  },
+  "2": {
+    "id": 2,
+    "name": "Tukhik",
+    "surname": "Gharagyozyan",
+    "age": 33,
+    "gender": "female",
+    "email": "tukhik85@mail.ru"
+  },
+  "1553792964401": {
+    "id": 1553792964401,
+    "name": "Anush",
+    "surname": "Gharagyozyan",
+    "age": "33",
+    "gender": "female",
+    "email": "anush@mail.ru"
+  },
+  "1553793236573": {
+    "id": 1553793236573,
+    "name": "Armen",
+    "surname": "Manukyan",
+    "age": "3324",
+    "gender": "male",
+    "email": "armen@mail.ru"
+  }
+}
