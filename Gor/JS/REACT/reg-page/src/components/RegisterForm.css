@@ -1,0 +1,9 @@
+form {
+    width: 500px;
+    border: 1px solid grey;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 10px 10px 50px 0px cadetblue;
+    border-radius: 5px;
+    padding: 5px;
+    color: black; 
+}

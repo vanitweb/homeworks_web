@@ -42,4 +42,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(function(req, res) {
+  res.send(404, err.message);
+});
+
+app.use(function(err, req, res, next) {
+	res.send(404, "ds");
+	next();
+});
+
 module.exports = app;

@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+#root {
+    background-image: url(http://b.rgbimg.com/users/i/ia/iammi-z/600/mgm6vwQ.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input.form-control {
+    background: transparent;
+    color: black;
+    border-color: rgb(0, 123, 255);
+}
+
+input.form-control::placeholder {
+    color: black;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
