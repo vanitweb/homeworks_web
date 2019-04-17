@@ -80,6 +80,9 @@ class Store {
     @computed get isActiveCardData() {
         return Object.keys(this.userData.cardData).length !== 4;
     }
+    @computed get regData() {
+        return this.userData;
+    }
 }
 
 export {Store};

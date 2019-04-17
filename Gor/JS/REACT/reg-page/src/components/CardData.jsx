@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 import {observer} from 'mobx-react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 @observer
 class CardData extends Component {
@@ -47,6 +48,16 @@ class CardData extends Component {
             this.context.store.cardDataEmpty(event.target);
             event.target.className = "is-invalid form-control";
         }
+    }
+    onSubmit = (event) => {
+        const user = this.context.store.regData;
+        axios.post('/add', user)
+        .then(
+            res => {
+                console.log(res);
+                this.context.store.nextStep();
+            })
+        .catch(err => console.log(err));
     }
   render() {
       const {nextStep, prevStep, cardDataValues, isActiveCardData} = this.context.store;
