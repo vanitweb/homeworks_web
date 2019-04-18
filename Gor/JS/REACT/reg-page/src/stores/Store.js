@@ -26,7 +26,7 @@ class Store {
         return value.match(/^((0[1-9])|(1[0-2]))\/(\d{2})$/);
     }
     cardNumberValidation = (value) => {
-        return value.match(/^(\d{4}[- ]){3}\d{4}|\d{16}$/);
+        return value.match(/^\d{16}$/);
     }
     cardCvcValidation = (value) => {
         return value.match(/^[0-9]{3,4}$/);
