@@ -50,23 +50,7 @@ class CardData extends Component {
         }
     }
     onSubmit = () => {
-        const user = {
-			personalData: {},
-			profileDetalis: {},
-			cardData: {}
-		};
-		user.personalData.firstName = this.context.store.regData.personalData.firstName;
-		user.personalData.lastName = this.context.store.regData.personalData.lastName;
-		user.personalData.country = this.context.store.regData.personalData.country;
-		user.personalData.city = this.context.store.regData.personalData.city;
-		user.personalData.address = this.context.store.regData.personalData.address;
-		user.personalData.email = this.context.store.regData.personalData.email;
-		user.personalData.password = this.context.store.regData.personalData.password;
-		user.profileDetalis.package = this.context.store.regData.profileDetalis.package;
-		user.cardData.cardNumber = parseInt(this.context.store.regData.cardData.cardNumber);
-		user.cardData.cardName = this.context.store.regData.cardData.cardName;
-		user.cardData.cardCvc = parseInt(this.context.store.regData.cardData.cardCvc);
-		user.cardData.cardDate = this.context.store.regData.cardData.cardDate;
+        const user = this.context.store.getRegData();
 		console.log(user);
         axios.post('http://localhost:4000/serverport/add', user)
         .then(res => {
