@@ -33,13 +33,13 @@ const ServerPort = new Schema({
   },
   cardData: {
 	  cardNumber: {
-		  type: Number
+		  type: String
 	  },
 	  cardName: {
 		  type: String
 	  },
 	  cardCvc: {
-		  type: Number
+		  type: String
 	  },
 	  cardDate: {
 		  type: String
