@@ -13,8 +13,8 @@ class Store {
     constructor() {
         extendObservable(this, this.storeValues);
     }
-    isNotEmpty = (value) => {
-        return value.length !== 0;
+    textValidation = (value) => {
+        return value.match(/^([a-zA-Z]){1,25}$/);
     }
     passwordValidation = (value) => {
         return value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,10}$/);
@@ -31,36 +31,54 @@ class Store {
     cardCvcValidation = (value) => {
         return value.match(/^[0-9]{3,4}$/);
     }
+    onChange = category => event => {
+        let isValid;
+        switch (event.target.name) {
+            case 'email':
+                isValid = this.emailValidation(event.target.value);
+                break;
+            case 'password':
+                isValid = this.passwordValidation(event.target.value);
+                break;
+            case 'cardDate':
+                isValid = this.cardDateValidation(event.target.value);
+                break;
+            case 'cardNumber':
+                isValid = this.cardNumberValidation(event.target.value);
+                break;
+            case 'cardCvc':
+                isValid = this.cardCvcValidation(event.target.value);
+                break;
+            default:
+                isValid = this.textValidation(event.target.value);
+        }
+        if(isValid) {
+            this.userData[category][event.target.name] = event.target.value;
+            event.target.className = "is-valid form-control";
+        } else {
+            event.target.className = "is-invalid form-control";
+            if(this.userData[category][event.target.name]) {
+                delete this.userData[category][event.target.name];
+            }
+        }
+    }
+    onChangeProfile = (event) => {
+        this.userData.profileDetalis.package = (event.target.value);
+    }
     nextStep = () => {
         this.currentStep += 1;
     }
     prevStep = () => {
         this.currentStep -= 1;
     }
+    startStep = () => {
+        this.currentStep = 1;
+    }
     @computed get step() {
         return this.currentStep;
     }
     get maxStep() {
         return this.regisrtationSteps;
-    }
-    personalData = (target) => {
-        this.userData.personalData[target.name] = target.value;
-    }
-    personalDataEmpty = (target) => {
-        if(this.userData.personalData[target.name]) {
-            delete this.userData.personalData[target.name];
-        }
-    }
-    cardDataEmpty = (target) => {
-        if(this.userData.cardData[target.name]) {
-            delete this.userData.cardData[target.name];
-        }
-    }
-    profileDetalis = (value) => {
-        this.userData.profileDetalis.package = value;
-    }
-    cardData = (target) => {
-        this.userData.cardData[target.name] = target.value;
     }
     personalDataValues = (key) => {
         return this.userData.personalData[key];

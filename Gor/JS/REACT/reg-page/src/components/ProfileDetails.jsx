@@ -8,24 +8,21 @@ class ProfileDetails extends Component {
     static contextTypes = {
         store: PropTypes.object.isRequired
     };
-    onChange = (event) => {
-        this.context.store.profileDetalis(event.target.value);
-    }
   render() {
-      const {nextStep, prevStep, profileDetalisValues, isActiveProfileDetails} = this.context.store;
+      const {nextStep, prevStep, profileDetalisValues, isActiveProfileDetails, onChangeProfile} = this.context.store;
     return (
         <Fragment>
             <FormGroup tag="fieldset">
               <legend>Select your package</legend>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="packages" defaultChecked={profileDetalisValues() === "Standart Package" && 'true'} value="Standart Package" onClick={this.onChange} />
+                  <Input type="radio" name="packages" defaultChecked={profileDetalisValues() === "Standart Package" && 'true'} value="Standart Package" onClick={onChangeProfile} />
                   Standart Package
                 </Label>
               </FormGroup>
               <FormGroup check>
                 <Label check>
-                  <Input type="radio" name="packages" defaultChecked={profileDetalisValues() === "Premium Package" && 'true'} value="Premium Package" onClick={this.onChange}/>
+                  <Input type="radio" name="packages" defaultChecked={profileDetalisValues() === "Premium Package" && 'true'} value="Premium Package" onClick={onChangeProfile}/>
                   Premium Package
                 </Label>
               </FormGroup>

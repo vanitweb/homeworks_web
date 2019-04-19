@@ -14,68 +14,42 @@ class CardData extends Component {
     static contextTypes = {
         store: PropTypes.object.isRequired
     };
-    onChange = (event) => {
-        if(this.context.store.isNotEmpty(event.target.value)) {
-            this.context.store.cardData(event.target);
-            event.target.className = "is-valid form-control";
-        } else {
-            event.target.className = "is-invalid form-control";
-        }
-    }
-    onChangeNumber = (event) => {
-        if(this.context.store.cardNumberValidation(event.target.value)) {
-            this.context.store.cardData(event.target);
-            event.target.className = "is-valid form-control";
-        } else {
-            this.context.store.cardDataEmpty(event.target);
-            event.target.className = "is-invalid form-control";
-        }
-    }
-    onChangeCvc = (event) => {
-        if(this.context.store.cardCvcValidation(event.target.value)) {
-            this.context.store.cardData(event.target);
-            event.target.className = "is-valid form-control";
-        } else {
-            this.context.store.cardDataEmpty(event.target);
-            event.target.className = "is-invalid form-control";
-        }
-    }
-    onChangeDate = (event) => {
-        if(this.context.store.cardDateValidation(event.target.value)) {
-            this.context.store.cardData(event.target);
-            event.target.className = "is-valid form-control";
-        } else {
-            this.context.store.cardDataEmpty(event.target);
-            event.target.className = "is-invalid form-control";
-        }
-    }
     onSubmit = () => {
         const user = this.context.store.getRegData();
-		console.log(user);
+        console.log(user);
         axios.post('http://localhost:4000/serverport/add', user)
         .then(res => {
             console.log(res.data);
             this.context.store.nextStep();
+        })
+        .catch(err => {
+            alert("Oooops! Something was wrong. Please, try agane");
+            this.context.store.startStep();
         });
     }
   render() {
-      const {prevStep, cardDataValues, isActiveCardData} = this.context.store;
+    const {
+        prevStep,
+        cardDataValues,
+        isActiveCardData,
+        onChange
+    } = this.context.store;
     return (
         <Fragment>
             <FormGroup>
-              <Input placeholder="Credit Card number" onChange={this.onChangeNumber} defaultValue={cardDataValues('cardNumber')} name='cardNumber' />
+              <Input placeholder="Credit Card number" onChange={onChange('cardData')} defaultValue={cardDataValues('cardNumber')} name='cardNumber' />
               <FormFeedback>Credit Card number containing 16 numbers</FormFeedback>
             </FormGroup>
             <FormGroup>
-              <Input placeholder="Credit Card name" onChange={this.onChange} defaultValue={cardDataValues('cardName')} name='cardName' />
+              <Input placeholder="Credit Card name" onChange={onChange('cardData')} defaultValue={cardDataValues('cardName')} name='cardName' />
               <FormFeedback>Credit Card name can not be empty</FormFeedback>
             </FormGroup>
             <FormGroup>
-              <Input placeholder="Credit Card CVC" onChange={this.onChangeCvc} name='cardCvc' defaultValue={cardDataValues('cardCvc')} />
+              <Input placeholder="Credit Card CVC" onChange={onChange('cardData')} name='cardCvc' defaultValue={cardDataValues('cardCvc')} />
               <FormFeedback>Credit Card CVC containing 3 or 4 numbers</FormFeedback>
             </FormGroup>
             <FormGroup>
-              <Input placeholder="Credit Card expiration date" onChange={this.onChangeDate} name='cardDate' defaultValue={cardDataValues('cardDate')} />
+              <Input placeholder="Credit Card expiration date" onChange={onChange('cardData')} name='cardDate' defaultValue={cardDataValues('cardDate')} />
               <FormFeedback>Credit Card expiration date format: MM/YY</FormFeedback>
             </FormGroup>
             <Button color="primary" className="mx-2" onClick={prevStep}>Previous</Button>
