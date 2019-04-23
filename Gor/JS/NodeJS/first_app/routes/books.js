@@ -1,38 +1,39 @@
 var express = require('express');
-const jsonfile = require('jsonfile');
+var jsonfile = require('jsonfile');
 var uniqid = require('uniqid');
 var router = express.Router();
-const filePath = './data/users.json';
+const filePath = './data/books.json';
 
-/* GET users listing. */
 router.get('/', function(req, res) {
-    jsonfile.readFile(filePath, function (err, obj) {
+    jsonfile.readFile(filePath, function(err, obj) {
         if(err) {
-			return res.status(500).send("External server error");
-		}
-        const users = {};
-        for(item in obj.users) {
-            users[item] = {"name":obj.users[item].name, "surname": obj.users[item].surname, "age": obj.users[item].age}
+            return res.status(500).send("Server error");
         }
-        res.status(200).send(users);
+        const books = {};
+        for(item in obj.books) {
+            books[item] = {
+                "bookName": obj.books[item].bookName,
+                "author": obj.books[item].author,
+                "count": obj.books[item].count
+            };
+        }
+        return res.status(200).send(books);
     })
 });
 
-/* GET user by ID. */
 router.get('/:id', function(req, res) {
-    jsonfile.readFile(filePath, function (err, obj) {
+    jsonfile.readFile(filePath, function(err, obj) {
         if(err) {
-			return res.status(500).send("External server error");
-		}
-		const userID = req.params.id;
-		if(!obj.users[userID]) {
-			return res.status(404).send("Data not found");
-		}
-        res.status(200).send(obj.users[userID]);
+            return res.status(500).send("Server error");
+        }
+        const bookID = req.params.id;
+        if(!obj.books[bookID]) {
+            return res.status(404).send("Book not found");
+        }
+        return res.status(200).send(obj.books[bookID]);
     })
 });
 
-/* Add a new user. */
 router.post('/', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
@@ -44,17 +45,20 @@ router.post('/', function(req, res) {
         if(Object.keys(req.body).length === 0) {
             return res.status(400).send("Bad request: Body is empty");
         }
-        if(req.body.name === "" || req.body.name === "" || req.body.email === "") {
+        if(req.body.title === "" || req.body.author === "" || req.body.pages === "") {
             return res.status(400).send("Bad request: Missing or additional keys.");
         }
         const key = uniqid();
-        obj.users[key] = {
+        obj.books[key] = {
             id: key,
-            name: req.body.name,
-            surname: req.body.surname,
-            age: req.body.age,
-            gender: req.body.gender,
-            email: req.body.email
+            title: req.body.title,
+            author: req.body.author,
+            pages: req.body.pages,
+            country: req.body.country,
+            language: req.body.language,
+            link: req.body.link,
+            published: req.body.published
+            
         }
         jsonfile.writeFile(filePath, obj, function(err, obj) {
             if(err) {
@@ -65,27 +69,25 @@ router.post('/', function(req, res) {
     })
 });
 
-/* Delete user data. */
 router.delete('/:id', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
 			return res.status(500).send("External server error");
 		}
-        const userID = req.params.id;
-        if(!obj.users[userID]) {
-            return res.status(400).send("Bad request");
+        const bookID = req.params.id;
+        if(!obj.books[bookID]) {
+            return res.status(404).send("Book not found");
         }
-        delete obj.users[userID];
+        delete obj.books[bookID];
         jsonfile.writeFile(filePath, obj, function(err, obj) {
             if(err) {
                 return res.status(500).send("External server error");
             }
-        res.status(204).send("No Content");
+            res.status(204).send("Delete complate");
         })
     })
 });
 
-/* Change user data. */
 router.put('/:id', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
@@ -97,17 +99,17 @@ router.put('/:id', function(req, res) {
         if(Object.keys(req.body).length === 0) {
             return res.status(400).send("Bad request: Body is empty");
         }
-        if(req.body.name === "" || req.body.name === "" || req.body.email === "") {
+        if(req.body.title === "" || req.body.author === "" || req.body.pages === "") {
             return res.status(400).send("Bad request: Missing or additional keys.");
         }
-        const iserID = req.params.id;
-        if(!obj.users[iserID]) {
+        const bookID = req.params.id;
+        if(!obj.books[bookID]) {
             return res.status(404).send("Data not found");
         }
         const keys = Object.keys(req.body);
         keys.forEach(function(item){
-            if(obj.users[bookID][item] && req.body[item] !== "") {
-                obj.users[bookID][item] = req.body[item];
+            if(obj.books[bookID][item] && req.body[item] !== "") {
+                obj.books[bookID][item] = req.body[item];
             }
         });
         jsonfile.writeFile(filePath, obj, function(err, obj) {
