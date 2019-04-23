@@ -7,18 +7,13 @@ const filePath = './data/users.json';
 router.get('/', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
-			return res.status(500).send("There was an error reading the file!");
+			return res.status(500).send("External server error");
 		}
 		const users = {};
         for(item in obj.users) {
             users[item] = {"name":obj.users[item].name, "surname": obj.users[item].surname, "age": obj.users[item].age}
         }
-       // for (var key in users)
-        //if (users.hasOwnProperty(key)) {
 			res.status(200).send(users);
-		//}
-        //return res.status(500).send("data is empty");
-		
     })
 });
 
@@ -26,11 +21,11 @@ router.get('/', function(req, res) {
 router.get('/:id', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
-			return res.status(500).send("There was an error reading the file!");
+			return res.status(500).send("External server error");
 		}
 		const userID = req.params.id;
 		if(!(obj.users[userID])) {
-			return res.status(404).send("Data was not found with the given id");
+			return res.status(404).send("Data not found");
 		}
         res.status(200).send(obj.users[userID]);
     })
@@ -43,6 +38,9 @@ router.post('/', function(req, res) {
         if(err) {
 			return res.status(500).send("There was an error reading the file!");
 		}
+		if(!req.body || req.body.name === "" || req.body.name === "" || req.body.email === "") {
+            return res.status(400).send("Bad request");
+        }
         const key = Date.now();
         obj.users[key] = {
             id: key,
@@ -52,15 +50,13 @@ router.post('/', function(req, res) {
             gender: req.body.gender,
             email: req.body.email
         }
-	 if(Object.keys(obj.users[key])==['id', 'name', 'surname', 'age', 'gender', 'email']){
-        jsonfile.writeFile(filePath, obj, function(err, obj) {
-            if (err) console.error(err)
+	     jsonfile.writeFile(filePath, obj, function(err, obj) {
+            if(err) {
+                return res.status(500).send("External server error");
+            }
             res.status(200).send("ok");
         })
-	 }
-	 else {
-		res.status(500).send("have missing  or additional keys");
-	 }
+	
     })
 });
 
@@ -70,29 +66,26 @@ router.post('/', function(req, res) {
 router.put('/:id', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
-			return res.status(500).send("There was an error reading the file!");
+			return res.status(500).send("External server error");
 		}
-        const key = req.params.id;
-		if((typeof key) !="string"){
-			return res.status(500).send("ID - not string");
-            }
-        obj.users[key] = {
-            id: key,
-            name: req.body.name,
-            surname: req.body.surname,
-            age: req.body.age,
-            gender: req.body.gender,
-            email: req.body.email
+        if(!req.body || req.body.name === "" || req.body.name === "" || req.body.email === "") {
+            return res.status(400).send("Bad request");
         }
-		 if(Object.keys(obj.users[key])==['id', 'name', 'surname', 'age', 'gender', 'email']){
+        const key = req.params.id;
+        if(!obj.users[key]) {
+            return res.status(404).send("Data not found");
+        }
+        obj.users[key].name = req.body.name;
+        obj.users[key].surname = req.body.surname;
+        obj.users[key].age = req.body.age;
+        obj.users[key].gender = req.body.gender;
+        obj.users[key].email = req.body.email;
         jsonfile.writeFile(filePath, obj, function(err, obj) {
-            if (err) console.error(err)
+            if(err) {
+                return res.status(500).send("External server error");
+            }
             res.status(200).send("ok");
         })
-		}
-		 else {
-		res.status(500).send("have missing  or additional keys");
-	 }
     })
 });
 
@@ -101,14 +94,19 @@ router.put('/:id', function(req, res) {
 router.delete('/:id', function(req, res) {
     jsonfile.readFile(filePath, function (err, obj) {
         if(err) {
-			return res.status(500).send("There was an error reading the file!");
+			return res.status(500).send("External server error");
 		}
-        delete obj.users[req.params.id];
+        const userID = req.params.id;
+        if(!obj.users[userID]) {
+            return res.status(400).send("Bad request");
+        }
+        delete obj.users[userID];
         jsonfile.writeFile(filePath, obj, function(err, obj) {
-            if (err) console.error(err)
-            res.status(200).send("ok");
+            if(err) {
+                return res.status(500).send("External server error");
+            }
+        res.status(204).send("No Content");
         })
     })
 });
-
 module.exports = router;
