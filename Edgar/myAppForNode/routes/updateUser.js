@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var jsonData = require('../data/users.json')
 var bodyParser = require('body-parser')
-
+const jsonfile = require('jsonfile');
+const file = './data/users.json';
 router.use( bodyParser.json() );
 router.use( bodyParser.urlencoded({extended:true}) );
 

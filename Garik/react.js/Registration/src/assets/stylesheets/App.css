@@ -1,0 +1,81 @@
+body{
+    font-size: 16px;
+    font-weight: 300;
+    color: #FFF;
+    line-height: 30px;
+    background-image: url(../image/4k-wallpaper-architecture-bird-s-eye-view-1482778.jpg);
+    background-repeat:round no-repeat;
+}
+.App{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Registration{
+    width: 40%;
+}
+.RegistrationHead{
+    overflow: hidden;
+    padding: 20px 25px 5px 25px;
+}
+.headRight h3{
+    font-size: 22px;
+}
+.headRight p{
+    margin-right: 10px;
+}
+.headRight{
+    float: left;
+    display:;
+    width: 75%;
+}
+.headLeft{
+    float: left;
+    display:;
+    width: 25%;
+    padding-top: 5px;
+    font-size: 66px;
+    color: #ddd;
+    text-align: right;
+}
+.RegistrationStep{
+    padding: 25px 25px 30px 25px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0 0 4px 4px;
+    text-align: left;
+}
+.form-control{
+    background-color: rgba(255,255,255,0.4);
+    color: #FFF;
+    font-weight: 500
+}
+.form-control::placeholder{
+    color: #FFF;
+}
+.form-control:focus{
+    background-color: rgba(255,255,255,0.8);
+}
+.form-control.is-valid{
+    border:3px;
+    border-color: rgba(0,255,0,0.3)
+}
+.form-control.is-valid:focus{
+    border-color: rgba(0,255,0,0.3)
+}
+.btn-secondary{
+    height: 50px;
+    padding: 0 20px;
+    background-color: rgba(0,255,0,0.3);
+    border-radius: 4px;
+}
+.btn-secondary:hover{
+    opacity: 0.6;
+    color: #fff;
+}
+.btn-secondary:disabled{
+    background-color: rgba(255,0,0,0.5);
+}
+.step2Text{
+    font-size: 1.5em;
+}
